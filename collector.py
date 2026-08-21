@@ -139,6 +139,15 @@ def normalize_master(raw_bootstrap: dict) -> dict:
             "form": float(e.get("form", 0) or 0),  # FPL's own recent-actual-returns signal --
                                                      # used to sanity-check the underlying-stats
                                                      # projection below, see forecast.py
+            "points_per_game": float(e.get("points_per_game", 0) or 0),  # last-season/season-to-date
+                                                     # ACTUAL converted output rate -- this is what's
+                                                     # displayed as "Pts/Match" on FPL's own site.
+                                                     # Unlike "form", this doesn't reset to 0 every
+                                                     # preseason, so it's the only real outcome-based
+                                                     # signal available before the new season starts.
+            "minutes": minutes,  # BUG FIX: this was computed above but never actually output here --
+                                  # forecast.py's small-sample trust logic silently defaulted to
+                                  # "fully trust every player" for all of production as a result.
             "news": e.get("news", ""),  # FREE human-written injury/doubt text from FPL's own editors
             "news_added": e.get("news_added"),  # ISO timestamp of when the news text was last updated
             "start_probability": estimate_start_probability(e),
