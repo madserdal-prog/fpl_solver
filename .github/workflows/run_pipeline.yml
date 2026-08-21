@@ -1,0 +1,45 @@
+name: FPL solver run
+
+on:
+  schedule:
+    # Once a day, well ahead of typical Fri/Sat deadlines. Adjust as needed --
+    # FPL deadlines shift around cup rounds and holiday schedules, which is
+    # exactly why auto-gw detection (resolve_gw in run_real.py) matters more
+    # than a fixed day-of-week here.
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests numpy scipy
+
+      - name: Run solver (free critic, no API cost)
+        run: python run_real.py
+
+      - name: Post to Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          # Pick up whichever solver_solution_gw*.json file run_real.py just wrote,
+          # and extract the gameweek number from its own filename.
+          for f in solver_solution_gw*.json; do
+            gw="${f#solver_solution_gw}"; gw="${gw%.json}"
+            python report.py --solution "$f" --gw "$gw" --critic-flags "critic_flags_gw${gw}.json"
+          done
+
+      - name: Commit solution files
+        run: |
+          git config user.name "fpl-auto-pipeline-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add solver_solution_gw*.json critic_flags_gw*.json forecast_gw*.json
+          git diff --staged --quiet || git commit -m "Auto solver run $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push
