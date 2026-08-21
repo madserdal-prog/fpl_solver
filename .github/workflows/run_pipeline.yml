@@ -8,6 +8,11 @@ on:
     # than a fixed day-of-week here.
     - cron: '0 9 * * *'
   workflow_dispatch:
+    inputs:
+      initial_team:
+        description: 'Build initial squad from scratch (no transfer penalty, e.g. GW1 before deadline)'
+        type: boolean
+        default: false
 
 jobs:
   run:
@@ -23,7 +28,13 @@ jobs:
         run: pip install requests numpy scipy
 
       - name: Run solver (free critic, no API cost)
-        run: python run_real.py
+        run: |
+          if [ "${{ github.event.inputs.initial_team }}" = "true" ]; then
+            echo "Running with --initial-team (building from scratch, no transfer penalty)"
+            python run_real.py --initial-team
+          else
+            python run_real.py
+          fi
 
       - name: Post to Slack
         env:
