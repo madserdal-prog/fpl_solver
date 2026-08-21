@@ -69,6 +69,13 @@ def main():
                          help="Use critic.py (Anthropic API + live web search) instead of the "
                               "free critic. Costs money per run, requires ANTHROPIC_API_KEY. "
                               "Catches more than the free critic (transfer sagas, rotation risk).")
+    parser.add_argument("--initial-team", action="store_true",
+                         help="Build the best possible squad from scratch, ignoring my_team.json's "
+                              "current_squad and applying NO transfer penalty. Use this for your "
+                              "very first GW1 squad, before FPL's first deadline has passed -- real "
+                              "FPL doesn't limit changes at that point, so the solver shouldn't "
+                              "either. This does NOT consume a wildcard chip; it's a separate, "
+                              "correct case (see my_team.json's chips_available, which stays untouched).")
     args = parser.parse_args()
     args.gw = resolve_gw(args.gw)
 
@@ -87,6 +94,11 @@ def main():
 
     my_team = my_team_module.load_my_team(args.my_team)
     kwargs = my_team_module.to_solver_kwargs(my_team, active_chip=args.chip)
+
+    if args.initial_team:
+        kwargs["unlimited_transfers"] = True
+        print("(--initial-team set: building from scratch, current_squad ignored for transfer-cost "
+              "purposes, no chip consumed)")
 
     # --- Step 1: raw mathematical solution (no news awareness yet) ---
     draft_solution = solver.solve(pool, **kwargs)
@@ -137,6 +149,9 @@ def main():
     print(json.dumps(final_solution, indent=2, ensure_ascii=False))
     if critic_summary:
         print(f"\nCritic summary: {critic_summary}")
+    if args.initial_team:
+        print(f"\n=== Copy these into my_team.json's \"current_squad\" once you've set this team on FPL ===")
+        print(json.dumps(final_solution["squad_ids"], ensure_ascii=False))
     print(f"\nWrote {out_path}")
 
 
