@@ -136,6 +136,9 @@ def normalize_master(raw_bootstrap: dict) -> dict:
             "ict_index_per_90": round(ict_index * per90_factor, 2),
             "chance_of_playing_next_round": chance,
             "status": e.get("status", "a"),
+            "form": float(e.get("form", 0) or 0),  # FPL's own recent-actual-returns signal --
+                                                     # used to sanity-check the underlying-stats
+                                                     # projection below, see forecast.py
             "news": e.get("news", ""),  # FREE human-written injury/doubt text from FPL's own editors
             "news_added": e.get("news_added"),  # ISO timestamp of when the news text was last updated
             "start_probability": estimate_start_probability(e),
