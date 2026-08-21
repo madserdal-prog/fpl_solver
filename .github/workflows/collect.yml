@@ -1,0 +1,33 @@
+name: FPL data collection
+
+on:
+  schedule:
+    # 3x/day, matching the guide's design. Times in UTC.
+    - cron: '0 6 * * *'
+    - cron: '0 14 * * *'
+    - cron: '0 22 * * *'
+  workflow_dispatch:  # lets you trigger it manually from the GitHub Actions tab too
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests numpy scipy
+
+      - name: Run collector
+        run: python collector.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name "fpl-auto-pipeline-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add master_data.json fixtures.json events.json data/
+          git diff --staged --quiet || git commit -m "Auto-update FPL data $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push
