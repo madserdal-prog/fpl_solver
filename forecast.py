@@ -84,6 +84,8 @@ def make_synthetic_master(seed: int = 42, n_teams: int = 10):
                 "ict_index_per_90": ict,
                 "chance_of_playing_next_round": chance,
                 "status": status,
+                "minutes": int(rng.integers(300, 1000)),  # trustworthy sample by default in this demo
+                "form": round(max(0.0, quality * 6 + rng.normal(0, 0.5)), 1),  # roughly consistent with quality
                 # Minutes probability -- in practice derived from the last 5 matches' minutes pattern
                 "start_probability": float(np.clip(0.5 + quality * 0.4 + rng.normal(0, 0.05), 0.03, 0.98)),
             })
@@ -140,6 +142,10 @@ def build_fixture_lookup(fixtures):
     return lookup
 
 
+MINUTES_TRUST_THRESHOLD = 300  # matches collector.py's MIN_SAMPLE_MINUTES -- below this,
+                                # the underlying-stats projection is blended with real "form"
+
+
 def p_play(element):
     """P(player) -- probability of meaningful playing time this round."""
     if element["status"] == "i":
@@ -154,10 +160,24 @@ def compute_xp_series(element, fixture_lookup, start_gw, horizon):
     """
     Computes xP for one player for each round in the horizon, following
     the guide's formula. Returns a list of length `horizon`.
+
+    IMPORTANT -- form-blending safeguard: expected_goals_per_90 etc. are
+    derived from underlying "process" stats (chance quality), which can
+    diverge sharply from FPL's own "form" field (actual recent returns),
+    especially in a small minutes sample (e.g. early season, or right
+    after a player returns from injury). A player can look great on
+    process stats while genuinely producing nothing in real matches --
+    exactly the situation that caused an unproven, zero-form player to get
+    picked as captain. Below MINUTES_TRUST_THRESHOLD minutes, the raw
+    process-based estimate is blended with FPL's own form figure,
+    proportional to how little we should trust the small sample.
     """
     pos = element["element_type"]
     goal_pts = GOAL_POINTS[pos]
     play_prob = p_play(element)
+    minutes = element.get("minutes", MINUTES_TRUST_THRESHOLD)  # assume trustworthy if absent (synthetic data)
+    trust = min(1.0, minutes / MINUTES_TRUST_THRESHOLD) if minutes else 0.0
+    form = element.get("form", 0.0)  # FPL's own recent-actual-points signal, same scale as a single-match score
 
     series = []
     for i in range(horizon):
@@ -178,15 +198,24 @@ def compute_xp_series(element, fixture_lookup, start_gw, horizon):
         )
         expected_bonus = (element["ict_index_per_90"] / 10.0) * BONUS_SCALE * game_factor
 
-        xp = play_prob * (
+        process_based_xp = play_prob * (
             attack_value
             + APPEARANCE_POINTS * game_factor
             + expected_bonus
             - fdr_adjustment * game_factor
         )
+
+        # Blend: trust the process-based estimate proportional to sample size,
+        # fall back toward real recent form for the rest. This directly
+        # prevents a small, lucky (or unlucky) sample of underlying stats
+        # from dominating the projection when actual results say otherwise.
+        form_based_xp = play_prob * form * game_factor
+        xp = trust * process_based_xp + (1 - trust) * form_based_xp
+
         series.append(round(max(0.0, xp), 2))
 
     return series
+
 
 
 def build_forecast(master, fixtures, start_gw, horizon=5):
