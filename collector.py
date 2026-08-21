@@ -32,6 +32,7 @@ BOOTSTRAP_URL = "https://fantasy.premierleague.com/api/bootstrap-static/"
 FIXTURES_URL = "https://fantasy.premierleague.com/api/fixtures/"
 
 ELEMENT_TYPE_MAP = {1: "GK", 2: "DEF", 3: "MID", 4: "FWD"}
+MIN_SAMPLE_MINUTES = 300  # ~3.3 full matches -- floor for per-90 extrapolation, see normalize_master()
 
 RAW_DIR = "data/raw"
 PRICE_HISTORY_PATH = "data/price_history.csv"
@@ -91,13 +92,29 @@ def normalize_master(raw_bootstrap: dict) -> dict:
       - expected_goals / expected_assists (season total, string in the API) ->
         per-90 figures, since the guide's xP formula uses per-90 rates
       - ict_index (season total, string in the API) -> per-90
+
+    IMPORTANT: per-90 rates are shrunk toward zero for players with a small
+    minutes sample (see MIN_SAMPLE_MINUTES below). Without this, a player
+    with e.g. 25 minutes played who happened to register 0.3 expected
+    goals in that tiny sample gets extrapolated to an absurd
+    expected_goals_per_90 (0.3 * 90/25 = 1.08 -- higher than any elite
+    striker's real rate). This is exactly what caused a player recently
+    back from a long injury layoff to dominate the model's captaincy pick
+    despite genuinely being a risky, low-minutes option.
     """
     team_id_to_name = {t["id"]: t["name"] for t in raw_bootstrap["teams"]}
 
     elements = []
     for e in raw_bootstrap["elements"]:
         minutes = int(e.get("minutes", 0) or 0)
-        per90_factor = (90.0 / minutes) if minutes > 0 else 0.0
+        # Use max(minutes, MIN_SAMPLE_MINUTES) as the denominator: for anyone
+        # with fewer minutes than this floor, the per-90 rate is calculated
+        # as if they'd played the floor amount, not their tiny actual sample.
+        # This is a simple form of shrinkage toward zero for small samples --
+        # not full Bayesian regression to a position-average prior, but it
+        # directly prevents the extrapolation blow-up above.
+        effective_minutes = max(minutes, MIN_SAMPLE_MINUTES)
+        per90_factor = (90.0 / effective_minutes) if minutes > 0 else 0.0
 
         expected_goals = float(e.get("expected_goals", 0) or 0)
         expected_assists = float(e.get("expected_assists", 0) or 0)
