@@ -1,0 +1,8 @@
+{
+  "current_squad": [226, 251, 387, 498, 200, 388, 229, 480, 155, 368, 481, 156, 379, 55, 106],
+  "bank": 0.0,
+  "free_transfers": 1,
+  "chips_available": ["wildcard", "bench_boost", "free_hit", "triple_captain"],
+  "locked_players": [],
+  "notes": "GW1 squad, built manually from Pick Team screenshots."
+}
