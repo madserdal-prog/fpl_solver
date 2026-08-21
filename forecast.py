@@ -144,6 +144,12 @@ def build_fixture_lookup(fixtures):
 
 MINUTES_TRUST_THRESHOLD = 300  # matches collector.py's MIN_SAMPLE_MINUTES -- below this,
                                 # the underlying-stats projection is blended with real "form"
+FORM_INFLUENCE = 0.35  # minimum weight given to recent actual form, REGARDLESS of sample size --
+                        # this is what catches an established player whose season-cumulative
+                        # underlying stats are still good from an early hot patch, but whose
+                        # recent actual output has genuinely collapsed. Without this, a player
+                        # with plenty of minutes gets full "trust" and the small-sample blend
+                        # above does nothing to catch a pure recency decline.
 
 
 def p_play(element):
@@ -177,7 +183,18 @@ def compute_xp_series(element, fixture_lookup, start_gw, horizon):
     play_prob = p_play(element)
     minutes = element.get("minutes", MINUTES_TRUST_THRESHOLD)  # assume trustworthy if absent (synthetic data)
     trust = min(1.0, minutes / MINUTES_TRUST_THRESHOLD) if minutes else 0.0
-    form = element.get("form", 0.0)  # FPL's own recent-actual-points signal, same scale as a single-match score
+
+    # Use whichever real outcome-signal is actually informative: "form" resets
+    # to 0 for everyone at the start of a new season (no games played yet this
+    # season), so it can't discriminate between players at that point. Before
+    # any real form exists, fall back to points_per_game -- last season's
+    # (or season-to-date's) ACTUAL converted points rate, which is what's
+    # displayed as "Pts/Match" on FPL's own site. This is what catches a
+    # player whose underlying process stats (expected_goals_per_90 etc.)
+    # look good, but who has a genuine history of NOT converting that
+    # process into real points.
+    form = element.get("form", 0.0)
+    outcome_anchor = form if form > 0 else element.get("points_per_game", 0.0)
 
     series = []
     for i in range(horizon):
@@ -206,11 +223,21 @@ def compute_xp_series(element, fixture_lookup, start_gw, horizon):
         )
 
         # Blend: trust the process-based estimate proportional to sample size,
-        # fall back toward real recent form for the rest. This directly
-        # prevents a small, lucky (or unlucky) sample of underlying stats
-        # from dominating the projection when actual results say otherwise.
-        form_based_xp = play_prob * form * game_factor
-        xp = trust * process_based_xp + (1 - trust) * form_based_xp
+        # fall back toward the real outcome-anchor (form, or points_per_game if
+        # form isn't informative yet) for the rest. This directly prevents a
+        # small, lucky (or unlucky) sample of underlying stats from dominating
+        # the projection when actual results say otherwise.
+        outcome_based_xp = play_prob * outcome_anchor * game_factor
+        sample_blend = trust * process_based_xp + (1 - trust) * outcome_based_xp
+
+        # Second, SEPARATE safeguard: give the outcome-anchor a minimum say
+        # regardless of how many minutes the player has -- catches an
+        # established player whose season-cumulative rates are still propped
+        # up by an early hot patch, even though recent actual form (or
+        # historical points_per_game) says otherwise. Without this,
+        # sample_blend above trusts the process estimate completely once
+        # minutes are high, no matter how badly the outcome-anchor disagrees.
+        xp = (1 - FORM_INFLUENCE) * sample_blend + FORM_INFLUENCE * outcome_based_xp
 
         series.append(round(max(0.0, xp), 2))
 
