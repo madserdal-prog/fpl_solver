@@ -1,108 +1,26 @@
 {
   "critic_output": {
-    "flags": [
-      {
-        "player_name": "Haaland",
-        "risk_level": "medium",
-        "reason": "Headline mentions injury-related terms: \"Man City XI vs Bournemouth: Confirmed team news, predicted lineup and injury latest for Premier League - London Evening Standard\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi4gFBVV95cUxPZzlRWnJJcVBtNmFBSlpnWjNmQzZKN0NjMnhOMk8wZXF3YXFxTlJSQ0ZXbFBub1M0dW44ak55d0dHdmJqSWxrV3pzUDNkMWY3NVBGaVR0aDd6NmdfNThwMzV6U1RzTzJDczZ5allacjQzVzk1UzRmSmhyRldvRGxVQnlnNzE1V0lDbWtGeXE1bDNxNTdsWTJVN05rNWpBYWt1LW4wLVpGbzZyaVNjWnF5WkFfT0NmNG0yWTc5NXc4ZTRRd29NM1VjcWR1Q3doNVprdzFDako1LTlveDQ3NjNzay1n?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Ballard",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"The Scout’s FPL Gameweek 1 transfer radar - Premier League\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMijwFBVV95cUxNZzFsT3RSTnIwSzQ0NWY5VXhpSlZtdEVvNHdSUkdTdWxYNkEzUVZGR2NlLThWNTM4TmI1dWQ0OHFCdDRmR25UeEE5bWtKVnV3NVZKRGJPRXNabFFDeWdvODZ5RFJwQmJmak5nX3NsSWNVdEhmZTE4REZEdnFXTFhDeDF1eXZfZTAtY0w4LXdUYw?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "B.Fernandes",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Transfer news LIVE: Galatasaray in Bruno Fernandes bid as Liverpool eye Ibrahim Mbaye - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi0AFBVV95cUxPejFfUWRUV0lfVy02RWxydVB3eWN5SnpEb2NpTTRYWnlHcExZbGthSHJiRDJkMU9Oa0tDaGtTOFNKRHhLMlNmWnhFSXdwYmh5dzh1SlJBemdSdTlkb3ZQRzVNVWZmSUQyNmwxOUlZQk1Jc1hMbEtEcmJ1NTJ1SjZZZGRMcW5Fd3hSRGN0bUVNRXRPWmxoTGM1dGxCQ3lHVWVyb3dSRmk3ZUxpMkVOcFVpTnFkclp6SlB2b1oxR1E2SmdvemJIZHF5M2x5QlUtdGdK?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Muñoz",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Spurs Lead £20m Transfer Battle for Key Crystal Palace Defender - Read Crystal Palace\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMipwFBVV95cUxQS2x2ZEROUXBPNWt1b1cxeDUwbkY3dUtwUE9fNzVsYlhtOXpUUC1hT2VaR3VLa2lzdVdreVN3aFpXQmxGcm1GbktfS000Z0dLYURrak9VUW9lQ0tYYUZSdS1PMmgtQWVJRHZVUm5JSHdKdk1VRWNUVW12aU5fV3kxbHlDZnZDbjlBOElFbVJLQXIyMkNhSEg5NjJBODVtOF9WaG9JMmt3dw?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Justin",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"James Justin - Player profile 26/27 - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMickFVX3lxTE54RW0zTVdGTU1pc3hRdGhpMGhDdUdzeDd6aVQzZHVKX3hZTkFyeVJnUk5BbW5zLVBPbl9ldXpyRjhzWmY0WExhX3dyYkw3MkN0WXUtN01lX2Fya3dCT011ZHNDMVFmdUtOZTM0UXNXQ29mQQ?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Awoniyi",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Coventry City transfer news: Taiwo Awoniyi signs from Nottingham Forest for £9m - BBC\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8xWHcwdkltNlNYSVJ1ZlN3TnQwOV9pOWF3YVVXMzUwQkJ5MlpKbE16UExSN0xmZUg4R2hIUjQwdXFBN2NfM3pDUlZGb2Y2bHJiRkJ6ZXBKS2VIbFlrNTkwbTJGVnpnUGs?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Brooks",
-        "risk_level": "medium",
-        "reason": "Unspecified injury - 75% chance of playing",
-        "source": "FPL API status/chance_of_playing_next_round fields",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Perri",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Lucas Perri transfer frozen as Leeds United exit drama kicks off - Yahoo Sports\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiigFBVV95cUxQWk5IR0lEemZjMC1rSEFoa3FzV2xKbFJUWUlRNE5TdzNxVUJDZTNUQVE0U08zbm5jSHgtOVRRU2tjdGJnSFByUHd2NFdxTkVkeVdDTC0yTVBQOHd2Z0NRNXlDQTJlTUhPMDVteTBQVnFwRXM1enNxc2diR0x3N29aQkM2aHl4b3dwalE?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Mukiele",
-        "risk_level": "medium",
-        "reason": "Headline mentions injury-related terms: \"Mukiele & Alderete injury latest as Le Bris updates on absent Sunderland stars - The Northern Echo\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMipAFBVV95cUxNQ3NHMlphQVN5QzA4eExZLW9SQks5WkxTZnlnMWdLUlc1VXJMeVhnN2Y4N3VnQzVTT2hWb3BKXzBWVlVXYVdlSTBGRWJxeEFxVWhqcE9PZEtvSjc4c0taS0JzaXpmRmhfVE83SFpIdEM0aUoyNkw2OW1aQ0hTVVJZdk85eFd6U09rbnY1YjV4UE1zZnUxN054dlRfVGNtdDQ2ZFJEUQ?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Garnacho",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Alejandro Garnacho aims subtle parting shot at Chelsea after sealing Aston Villa transfer - Goal.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMingFBVV95cUxNMWJ3bUhLVXZydzRIeC1hQVR2ZF9nakdnR284c0NFUk1lTEQ4dUVtbEwzYnlQc2dRRXU5ZGI3MW9BaWs3S1dXMzJPRVFSUHNyaGtISkstSUt6eXJfSll3SEVTazVVaE5MZWhaSnV1N0g4VGJwWk02VGNFMjJFLXFuemdpWGNCaWFQU0h1MGdCQ080RWV1T1o1UEJIUTJ3Zw?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Sarr",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Galatasaray submit official bid for Crystal Palace star Ismaïla Sarr - Football Place\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiiAFBVV95cUxQWmRKc3Bwc3JCbDhrclF0ZzRrMmJwWk8wR1F3bE41SDJZOFgzeTVIcEJOdldhTVBlcmY4ZGlBMGdNVXh2eU9LbzZ1TUpXWHZlYldUaVlkOTJIeVdEZmd4dG9aSVJYLVE3cmxRM0tPMzZGdGMzd1laVVZpUDJ3SG9ldjI0SVZWXzZl?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Palmer",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
-        "recommendation": "monitor"
-      }
-    ],
-    "summary": "Found 12 medium-risk (Haaland, Ballard, B.Fernandes, Muñoz, Justin, Awoniyi, Brooks, Perri, Mukiele, Garnacho, Sarr, Palmer) based on FPL data and Google News headlines."
+    "flags": [],
+    "summary": "No flags found for this squad."
   },
-  "risk_penalty": {
-    "411": 3.0,
-    "532": 3.0,
-    "426": 3.0,
-    "201": 3.0,
-    "332": 3.0,
-    "492": 3.0,
-    "74": 3.0,
-    "326": 3.0,
-    "533": 3.0,
-    "160": 3.0,
-    "208": 3.0,
-    "301": 3.0
-  },
+  "risk_penalty": {},
   "blocked_captain_ids": [],
   "unmatched_names": [],
-  "news_lookup_errors": []
+  "news_lookup_errors": [
+    "Okafor: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Okafor%22%20Leeds%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Kelleher: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Kelleher%22%20Brentford%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Haaland: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Haaland%22%20Man%20City%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Muñoz: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Mu%C3%B1oz%22%20Crystal%20Palace%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "O.Dango: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22O.Dango%22%20Brentford%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Awoniyi: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Awoniyi%22%20Coventry%20City%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Sarr: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Sarr%22%20Crystal%20Palace%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Mukiele: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Mukiele%22%20Sunderland%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Roefs: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Roefs%22%20Sunderland%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Ballard: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Ballard%22%20Sunderland%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Van Hecke: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Van%20Hecke%22%20Spurs%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "B.Fernandes: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22B.Fernandes%22%20Man%20Utd%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Calvert-Lewin: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Calvert-Lewin%22%20Leeds%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Wilson: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Wilson%22%20Leeds%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "De Cuyper: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22De%20Cuyper%22%20Brighton%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en"
+  ]
 }
