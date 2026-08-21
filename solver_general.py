@@ -264,8 +264,11 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
 
     return {
         "squad": [pool_by_id[i]["name"] for i in squad_ids],
+        "squad_ids": squad_ids,  # actual FPL player IDs -- copy these straight into my_team.json
         "starting_xi": [pool_by_id[i]["name"] for i in xi_ids],
+        "starting_xi_ids": xi_ids,
         "captain": pool_by_id[captain_id]["name"],
+        "captain_id": captain_id,
         "transfers_in": [pool_by_id[i]["name"] for i in transfers_in],
         "transfers_out": [pool_by_id[i]["name"] for i in transfers_out],
         "transfers_made": transfers_made,
