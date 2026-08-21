@@ -1,9 +1,26 @@
 {
   "critic_output": {
     "flags": [],
-    "summary": "No status/news flags found in FPL's own data for this squad."
+    "summary": "No flags found for this squad."
   },
   "risk_penalty": {},
   "blocked_captain_ids": [],
-  "unmatched_names": []
+  "unmatched_names": [],
+  "news_lookup_errors": [
+    "Enzo: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Enzo%22%20Chelsea%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "O'Reilly: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22O%27Reilly%22%20Man%20City%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Pickford: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Pickford%22%20Everton%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Senesi: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Senesi%22%20Spurs%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Watkins: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Watkins%22%20Aston%20Villa%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Isak: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Isak%22%20Liverpool%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Dasilva: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Dasilva%22%20Coventry%20City%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Thiago: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Thiago%22%20Brentford%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Szoboszlai: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Szoboszlai%22%20Liverpool%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Neto: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Neto%22%20Chelsea%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Gibbs-White: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Gibbs-White%22%20Nott%27m%20Forest%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Lecomte: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lecomte%22%20Fulham%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Lacroix: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Lacroix%22%20Chelsea%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Guéhi: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Gu%C3%A9hi%22%20Man%20City%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
+    "Tarkowski: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Tarkowski%22%20Everton%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en"
+  ]
 }
