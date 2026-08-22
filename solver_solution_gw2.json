@@ -1,0 +1,86 @@
+{
+  "squad": [
+    "Raya",
+    "White",
+    "Ødegaard",
+    "Watkins",
+    "Thiago",
+    "Enzo",
+    "Neto",
+    "Lacroix",
+    "Tarkowski",
+    "Lecomte",
+    "Szoboszlai",
+    "Isak",
+    "Guéhi",
+    "Gibbs-White",
+    "Senesi"
+  ],
+  "squad_ids": [
+    1,
+    10,
+    15,
+    55,
+    106,
+    155,
+    156,
+    200,
+    229,
+    251,
+    368,
+    379,
+    388,
+    480,
+    498
+  ],
+  "starting_xi": [
+    "Raya",
+    "White",
+    "Ødegaard",
+    "Thiago",
+    "Enzo",
+    "Neto",
+    "Lacroix",
+    "Tarkowski",
+    "Szoboszlai",
+    "Guéhi",
+    "Gibbs-White"
+  ],
+  "starting_xi_ids": [
+    1,
+    10,
+    15,
+    106,
+    155,
+    156,
+    200,
+    229,
+    368,
+    388,
+    480
+  ],
+  "captain": "Ødegaard",
+  "captain_id": 15,
+  "transfers_in": [
+    "Raya",
+    "White",
+    "Ødegaard"
+  ],
+  "transfers_out": [
+    "Pickford",
+    "O'Reilly",
+    "Anderson"
+  ],
+  "transfers_made": 3,
+  "free_transfers_used": 1,
+  "hit_taken": 2,
+  "hit_cost": 8,
+  "expected_points": -1.33,
+  "risk_adjusted_players": [
+    "Senesi",
+    "Lecomte",
+    "Watkins",
+    "Isak"
+  ],
+  "blocked_from_captaincy_in_squad": []
+}
