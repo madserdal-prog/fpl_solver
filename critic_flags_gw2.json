@@ -2,48 +2,6 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Anderson",
-        "risk_level": "medium",
-        "reason": "Headline mentions injury-related terms: \"Man City XI vs Bournemouth: Confirmed team news, predicted lineup and injury latest for Premier League - London Evening Standard\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi4gFBVV95cUxPZzlRWnJJcVBtNmFBSlpnWjNmQzZKN0NjMnhOMk8wZXF3YXFxTlJSQ0ZXbFBub1M0dW44ak55d0dHdmJqSWxrV3pzUDNkMWY3NVBGaVR0aDd6NmdfNThwMzV6U1RzTzJDczZ5allacjQzVzk1UzRmSmhyRldvRGxVQnlnNzE1V0lDbWtGeXE1bDNxNTdsWTJVN05rNWpBYWt1LW4wLVpGbzZyaVNjWnF5WkFfT0NmNG0yWTc5NXc4ZTRRd29NM1VjcWR1Q3doNVprdzFDako1LTlveDQ3NjNzay1n?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Coyle",
-        "risk_level": "medium",
-        "reason": "Ankle injury - 75% chance of playing",
-        "source": "FPL API status/chance_of_playing_next_round fields",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Szoboszlai",
-        "risk_level": "medium",
-        "reason": "Headline mentions injury-related terms: \"Liverpool XI vs Newcastle: Confirmed team news, predicted lineup, injury latest for Premier League - London Evening Standard\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi6wFBVV95cUxNZGcwVGRCbHBad1N2QmRBa2hGcUlLcWc1c1k2Q25Wd1ZSRnYtN0g3R3JtUjFtaGxUekhZTHlwemdpNExvNVFwOHd4Q25WLW9wQUQ0RXlTQ1BSb3dSNVZqV2tBWGFGX1JFS0h4dnV6bHJMd3djU0xLY1FNT3czTnVyczZJTkFuWVRwdG5ONF9TQ2NLSGlPT2FyRkh2R2VKTVRYR2ZXNnV3X24ySmItQk83YVpoZ2ZjRFJRUzRobk9tbGtpSjJRVGJaWms1dmYzby12RndjOW9vOE5rQllubVE0N0RTZUpSNkh3RDRJ?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Lecomte",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Benjamin Lecomte - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMid0FVX3lxTE12MjBZN1hnZDR5a0c4Tnl6UF9CWFUxNEUySHVjb0trb21jNVYtMWdIc3g1YTJGam1lR01Gb1lfWVlyR0tXdUdEX2pfeThkUnEtaDBCVk5kTE1TUEl3cVNsWGJMNmZ2aHBGVWdINFdQSk5EX0lNQnE4?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Watkins",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Watkins could leave Villa before transfer deadline - Emery - BBC\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9jeC1XT3RrSFZ5OHhzc1o4TjM5UUk1dFdHWjVIZVNCcXY0QTM3RGQ0VUo4V2ZaUl9rMVBDQTJNeDJRZVh0TnFaRjNjSmdncDkzNDNYekdudUM3MmZzMFpodGc0VWZqbFU?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Pickford",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Everton's 'well-settled' Jordan Pickford hailed as Chelsea transfer claim made - Liverpool Echo\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTHRrU0hEU2Z0ZGZ2UFhtOE1hRGxNd2JtMmZfbGNHV3ljUWhMcUlQeG91UXh5SjluZHVORTN3RTZPTEZobUR6dDJJbzNGV1hXUVpQLTYwdnhjM3dFaXFfdnE0MTBwOU9KejdQX3MzenZyU0ltNmRBMy1adjVjaFI2dGZnUGZkb2NYTXU4bUQ0UnQxRTNCWnhMZEJjT0RsY1NBanMzaUJRZjdLaUHSAbABQVVfeXFMUG9RWUhGQUIzaHdOM0Y5TzZIdWw5dkh4WFJOY3dKRHgydlhXNW1VbnI4eHlkdXNtNXZ6SlJvU1pQQnY5SUNydWZoVTU5RzA0alVPYXBjLWFfOHQ1aDVRVnRCMWlzWUo4dEZmdUp6WDhmR2dTZlBaMkg4NDNTYUg0TGFKdGFJZEJNcEdOM1p2X1hPeUxxcE1iaGYwR3JIRklXYWJMOXVpT3FhRTFNOWR2NTI?oc=5",
-        "recommendation": "monitor"
-      },
-      {
         "player_name": "Mendy",
         "risk_level": "medium",
         "reason": "Thigh injury - 75% chance of playing",
@@ -58,10 +16,10 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Gibbs-White",
+        "player_name": "Watkins",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Morgan Gibbs-White - Player profile 26/27 - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiekFVX3lxTE1ocUdqMUE5U256SG9qUDZuYWpTZS0zMjJUN19UZmZ0aDNEZEIxNWh5eEY1MlVaemR2ZW1YRHp6SnNjOV9Pc3lBUWkyWFhMdUlZS0Mya250YmloNUpueHZ4YXpMZGd4dUsxOWVYQ3BfajRaTTBraVVscURn?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Watkins could leave Villa before transfer deadline - Emery - BBC\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE5zWk9aWk5uaDM5VFZfc2xPVk1iX0RSMVdXc3oxdzA1QVZnTzh6alVCLWxtRUZLQ1RYQ3ZNSWE2MXhCZmRya1ltZjU3SURnUU43OHM0YUJCdjE3MWhqWk5DSFczcEE3VnBvMmc?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -72,27 +30,45 @@
         "recommendation": "monitor"
       },
       {
+        "player_name": "Lecomte",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Benjamin Lecomte - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMid0FVX3lxTE12MjBZN1hnZDR5a0c4Tnl6UF9CWFUxNEUySHVjb0trb21jNVYtMWdIc3g1YTJGam1lR01Gb1lfWVlyR0tXdUdEX2pfeThkUnEtaDBCVk5kTE1TUEl3cVNsWGJMNmZ2aHBGVWdINFdQSk5EX0lNQnE4?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Gibbs-White",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Morgan Gibbs-White - Player profile 26/27 - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiekFVX3lxTE1ocUdqMUE5U256SG9qUDZuYWpTZS0zMjJUN19UZmZ0aDNEZEIxNWh5eEY1MlVaemR2ZW1YRHp6SnNjOV9Pc3lBUWkyWFhMdUlZS0Mya250YmloNUpueHZ4YXpMZGd4dUsxOWVYQ3BfajRaTTBraVVscURn?oc=5",
+        "recommendation": "monitor"
+      },
+      {
         "player_name": "Senesi",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Spurs snap up Senesi, Leeds land Wilson: The Premier League’s best bargain transfers this summer - LiveScore\"",
         "source": "Google News: https://news.google.com/rss/articles/CBMi-gFBVV95cUxNOGhaN1ZwUG1WdUZ4bFRsMVJSOTdkcVB6ZWJGMV9sMVZKU3l4dVluOS1LUkJQbGhiaFk3eHVKRnhGU3R4bWFjUXpGZV9tQ0c5RnFXY1FhdUR6Q2ZBTzRpWWk5cHcwdlRRVWtEQ2lRLXBkdllaMnhPbkhDLWRTYUNQSmRkWWxVX29GbXV0b3dsanE2N2tEdHN6S3lDNVE3cGZ6c1pldWtEclMwUk1iY0tTbVowd25pNnBrRXZJN0N3RWphODFMbTl2dVRSNGpxcUxPVmFzbnc2OEFMVW1tNExGbXkwRHVHVVkyUnBzcldtdFNaU1VySGhvTlhn?oc=5",
         "recommendation": "monitor"
+      },
+      {
+        "player_name": "Anderson",
+        "risk_level": "medium",
+        "reason": "Knock - 75% chance of playing | Also: Headline suggests an active transfer situation: \"Ayyoub Bouaddi transfer: Why do Man City want to spend big on another midfielder after signing Elliot Anderson? - Sky Sports\"",
+        "source": "FPL API status/chance_of_playing_next_round fields",
+        "recommendation": "monitor"
       }
     ],
-    "summary": "Found 11 medium-risk (Anderson, Coyle, Szoboszlai, Lecomte, Watkins, Pickford, Mendy, Enzo, Gibbs-White, Ajayi, Senesi) based on FPL data and Google News headlines."
+    "summary": "Found 8 medium-risk (Mendy, Enzo, Watkins, Ajayi, Lecomte, Gibbs-White, Senesi, Anderson) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "481": 3.0,
-    "280": 3.0,
-    "368": 3.0,
-    "251": 3.0,
-    "55": 3.0,
-    "226": 3.0,
     "586": 3.0,
     "155": 3.0,
-    "480": 3.0,
+    "55": 3.0,
     "279": 3.0,
-    "498": 3.0
+    "251": 3.0,
+    "480": 3.0,
+    "498": 3.0,
+    "481": 3.0
   },
   "blocked_captain_ids": [],
   "unmatched_names": [],
