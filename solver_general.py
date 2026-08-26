@@ -62,9 +62,19 @@ def make_synthetic_pool(seed: int = 42, n_teams: int = 10):
                 "position": pos,
                 "price": price,
                 "xp": xp,
+                "rotation_value": xp,  # no real multi-week horizon in this synthetic demo --
+                                        # defaults to the same as xp so old tests still behave
+                                        # identically; see the dedicated rotation-value test
+                                        # for a scenario where the two genuinely diverge.
             })
             pid += 1
     return pool
+
+
+HORIZON_DISCOUNT = 0.85  # per gameweek further out -- reflects that forecasts further
+                          # into the future are less certain, so they should count for
+                          # less when deciding whether a player is worth having in the
+                          # squad at all (not for deciding who starts THIS week).
 
 
 def load_pool_from_forecast(forecast_path: str, master_data_path: str, horizon_gw: int = 0):
@@ -72,6 +82,19 @@ def load_pool_from_forecast(forecast_path: str, master_data_path: str, horizon_g
     Real data loading. forecast_gw{N}.json gives xP per player per round in
     the 5-round horizon (`horizon_gw`=0 -> this round, 1 -> next, etc.).
     master_data (from the bootstrap-static dump) gives position/price/team.
+
+    Two separate values are produced per player:
+      "xp"             -- THIS round's estimate only. Used to decide who
+                           starts and who's captain, since that's a
+                           decision about one specific set of fixtures.
+      "rotation_value" -- a discounted average across the WHOLE horizon.
+                           Used to decide whether a player is worth having
+                           in the 15-man squad at all -- e.g. a player who
+                           looks mediocre this week but strong from GW+2
+                           onward (returning from injury, a fixture swing,
+                           a double gameweek coming up) should still be
+                           attractive to hold on the bench now, not just
+                           judged on this week's number alone.
     """
     with open(forecast_path, encoding="utf-8") as f:
         forecast = json.load(f)
@@ -81,13 +104,17 @@ def load_pool_from_forecast(forecast_path: str, master_data_path: str, horizon_g
     pool = []
     for entry in forecast["players"]:
         master_player = master_by_id[entry["id"]]
+        xp_series = entry["xP"]
+        weights = [HORIZON_DISCOUNT ** i for i in range(len(xp_series))]
+        rotation_value = sum(w * xp for w, xp in zip(weights, xp_series)) / sum(weights)
         pool.append({
             "id": entry["id"],
             "name": master_player["web_name"],
             "team": master_player["team"],
             "position": master_player["element_type"],  # map to GK/DEF/MID/FWD on your side
             "price": master_player["now_cost"] / 10.0,
-            "xp": float(entry["xP"][horizon_gw]),
+            "xp": float(xp_series[horizon_gw]),
+            "rotation_value": round(rotation_value, 3),
         })
     return pool
 
@@ -98,9 +125,16 @@ def load_pool_from_forecast(forecast_path: str, master_data_path: str, horizon_g
 
 def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
           locked_ids=None, unlimited_transfers=False, risk_penalty=None,
-          blocked_captain_ids=None):
+          blocked_captain_ids=None, bench_weight=None):
     """
     Solves the MILP for the best legal squad given the forecasts.
+
+    bench_weight: overrides the module-level BENCH_WEIGHT constant when
+      given. Used to answer "what's the best squad if bench points count
+      fully this week" (bench_weight=1.0) -- i.e. evaluating a genuine
+      Bench Boost alternative, WITHOUT touching transfer limits (Bench
+      Boost does not grant extra free transfers, it only changes whether
+      bench points count).
 
     unlimited_transfers=True is used for wildcard/free hit rounds (no
     transfer penalty, build the squad from scratch).
@@ -132,23 +166,34 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
                                  the free ones (a plain number, not yes/no)
 
     Objective (maximized):
-      BENCH_WEIGHT * sum(adjusted_points * in_squad)
-      + (1-BENCH_WEIGHT) * sum(adjusted_points * in_starting_xi)
+      BENCH_WEIGHT * sum(adjusted_rotation_value * in_squad)
+      + sum((adjusted_points - BENCH_WEIGHT * adjusted_rotation_value) * in_starting_xi)
       + sum(adjusted_points * is_captain)
       - HIT_COST * extra_transfers_count
 
-    where adjusted_points = xP - risk_penalty. This gives starting players
-    full value (BENCH_WEIGHT + (1-BENCH_WEIGHT) = 1 * adjusted_points),
-    while bench players only count BENCH_WEIGHT * adjusted_points --
-    exactly as described in the guide (bench weighting is optional, but
-    reduces the risk of the solver "hiding" good value unused on the bench).
+    where adjusted_points = this round's xP - risk_penalty (used for
+    starting/captaincy decisions -- a decision about ONE specific set of
+    fixtures), and adjusted_rotation_value = a discounted multi-week
+    average xP - risk_penalty (used for squad membership -- whether a
+    player is worth HOLDING at all, including bench players who may not
+    play this week but could next week). The starting-xi term is written
+    to cancel out the squad term's rotation_value contribution, so a
+    starter ends up valued at pure adjusted_points (not a blend), while a
+    bench player ends up valued at BENCH_WEIGHT * adjusted_rotation_value.
     """
     current_squad_ids = set(current_squad_ids or [])
     locked_ids = set(locked_ids or [])
     risk_penalty = risk_penalty or {}
     blocked_captain_ids = set(blocked_captain_ids or [])
+    bench_weight = BENCH_WEIGHT if bench_weight is None else bench_weight
     num_players = len(pool)
+    # Squad membership is valued by rotation_value (horizon-aware -- "is this
+    # player worth HOLDING at all, given where their fixtures/role are
+    # trending"), while starting/captaincy is valued by xp (this week's
+    # number only -- "who should actually play THIS specific gameweek").
     adjusted_points = np.array([player["xp"] - risk_penalty.get(player["id"], 0.0) for player in pool])
+    adjusted_rotation_value = np.array(
+        [player.get("rotation_value", player["xp"]) - risk_penalty.get(player["id"], 0.0) for player in pool])
 
     # Every player gets THREE yes/no variables (in_squad, in_starting_xi,
     # is_captain), laid out back-to-back in one long array, plus one final
@@ -247,9 +292,22 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
     # Objective: scipy.optimize.milp always MINIMIZES, so every coefficient
     # here is negated -- minimizing negative points is the same as
     # maximizing points.
+    #
+    # The three terms per player must ADD UP correctly depending on which
+    # combination of (in_squad, in_starting_xi, is_captain) ends up 1:
+    #   bench (in_squad=1 only):            BENCH_WEIGHT * rotation_value
+    #   starter, not captain:                xp                     <- pure xp, no rotation_value mixed in
+    #   captain (also a starter):            2 * xp
+    # Since in_squad=1 is ALWAYS true whenever in_starting_xi=1 (a player
+    # can't start without being in the squad), the squad-term's contribution
+    # would otherwise leak into the starter's total. The starting-xi term is
+    # therefore set to (xp - BENCH_WEIGHT * rotation_value) specifically so
+    # it exactly cancels that leakage out, leaving starters valued by pure
+    # xp and bench players valued by discounted rotation_value.
     objective_coefficients = np.zeros(num_variables)
-    objective_coefficients[SQUAD_OFFSET:SQUAD_OFFSET + num_players] = -BENCH_WEIGHT * adjusted_points
-    objective_coefficients[STARTING_XI_OFFSET:STARTING_XI_OFFSET + num_players] = -(1 - BENCH_WEIGHT) * adjusted_points
+    objective_coefficients[SQUAD_OFFSET:SQUAD_OFFSET + num_players] = -bench_weight * adjusted_rotation_value
+    objective_coefficients[STARTING_XI_OFFSET:STARTING_XI_OFFSET + num_players] = \
+        -(adjusted_points - bench_weight * adjusted_rotation_value)
     objective_coefficients[CAPTAIN_OFFSET:CAPTAIN_OFFSET + num_players] = -adjusted_points
     objective_coefficients[EXTRA_TRANSFERS_INDEX] = HIT_COST
 
@@ -274,6 +332,8 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
     hit_cost = HIT_COST * hit_taken
 
     pool_by_id = {player["id"]: player for player in pool}
+    bench_ids = [i for i in squad_ids if i not in xi_ids]
+    bench_points = round(sum(pool_by_id[i]["xp"] for i in bench_ids), 2)
     expected_points = float(
         sum(pool_by_id[i]["xp"] for i in xi_ids)
         + pool_by_id[captain_id]["xp"]  # captain bonus
@@ -295,7 +355,8 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
         "free_transfers_used": min(transfers_made, free_transfers),
         "hit_taken": hit_taken,
         "hit_cost": hit_cost,
-        "expected_points": round(expected_points, 2),  # nominal xP, NOT risk-adjusted
+        "expected_points": round(expected_points, 2),  # nominal xP, NOT risk-adjusted, EXCLUDES bench
+        "bench_points": bench_points,  # sum of xp for the 4 bench players (what Bench Boost would add)
         "squad_value": squad_value,  # total price of the 15-man squad
         "bank_remaining": bank_remaining,  # budget left over after buying this squad
         "risk_adjusted_players": [pool_by_id[pid]["name"] for pid in risk_penalty
