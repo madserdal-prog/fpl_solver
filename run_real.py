@@ -31,6 +31,7 @@ import solver_general as solver
 import forecast
 import critic_free
 import collector
+import checks
 
 
 def resolve_gw(gw_arg, events_path="events.json"):
@@ -76,6 +77,9 @@ def main():
                               "FPL doesn't limit changes at that point, so the solver shouldn't "
                               "either. This does NOT consume a wildcard chip; it's a separate, "
                               "correct case (see my_team.json's chips_available, which stays untouched).")
+    parser.add_argument("--no-bench-boost-check", action="store_true",
+                         help="Skip the full Bench Boost re-optimization check (feature flag -- "
+                              "see checks.RUN_BENCH_BOOST_ALTERNATIVE for the same toggle in code).")
     args = parser.parse_args()
     args.gw = resolve_gw(args.gw)
 
@@ -152,6 +156,29 @@ def main():
     if args.initial_team:
         print(f"\n=== Copy these into my_team.json's \"current_squad\" once you've set this team on FPL ===")
         print(json.dumps(final_solution["squad_ids"], ensure_ascii=False))
+
+    # --- Price momentum (informational only -- never changes the pick) ---
+    price_notes = checks.collect_price_momentum_notes(
+        final_solution["transfers_in"], final_solution["transfers_out"], master)
+    if price_notes:
+        print("\n=== Price momentum notes (timing only, doesn't affect the recommendation) ===")
+        for note in price_notes:
+            print(f"  - {note}")
+    final_solution["price_momentum_notes"] = price_notes
+
+    # --- Bench Boost alternative (feature-flagged, see checks.py) ---
+    bench_boost_note = None
+    if checks.RUN_BENCH_BOOST_ALTERNATIVE and not args.no_bench_boost_check \
+            and "bench_boost" in my_team.get("chips_available", []):
+        print("\n=== Bench Boost alternative check ===")
+        bb_solution = solver.solve(pool, bench_weight=1.0, **kwargs)
+        bench_boost_note = checks.bench_boost_summary(final_solution, bb_solution)
+        print(f"  {bench_boost_note}")
+    final_solution["bench_boost_note"] = bench_boost_note
+
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(final_solution, f, ensure_ascii=False, indent=2)
+
     print(f"\nWrote {out_path}")
 
 
