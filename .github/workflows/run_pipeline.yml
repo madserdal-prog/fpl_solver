@@ -27,6 +27,30 @@ jobs:
       - name: Install dependencies
         run: pip install requests numpy scipy
 
+      - name: Refresh my_team.json from your actual FPL team
+        env:
+          FPL_TEAM_ID: ${{ secrets.FPL_TEAM_ID }}
+        run: |
+          # Auto-detects the current gameweek from events.json (written by collector.py),
+          # then pulls picks for the PREVIOUS gameweek -- that reflects your squad as it
+          # actually stands right now, including any real transfers you've made since.
+          # --allow-missing means: if that gameweek's picks aren't public yet (e.g. its
+          # deadline hasn't passed), this step quietly does nothing rather than failing
+          # the whole workflow -- my_team.json just stays as it was.
+          LAST_GW=$(python -c "
+          import json
+          with open('events.json') as f:
+              events = json.load(f)
+          import collector
+          current = collector.get_current_gameweek(events)
+          print(max(1, current['id'] - 1))
+          " 2>/dev/null || echo "")
+          if [ -n "$LAST_GW" ]; then
+            python fetch_my_team.py --team-id "$FPL_TEAM_ID" --gw "$LAST_GW" --allow-missing
+          else
+            echo "Could not determine last gameweek (events.json missing?) -- skipping refresh."
+          fi
+
       - name: Run solver (free critic, no API cost)
         run: |
           if [ "${{ github.event.inputs.initial_team }}" = "true" ]; then
@@ -47,11 +71,11 @@ jobs:
             python report.py --solution "$f" --gw "$gw" --critic-flags "critic_flags_gw${gw}.json"
           done
 
-      - name: Commit solution files
+      - name: Commit updated files
         run: |
           git config user.name "fpl-auto-pipeline-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add solver_solution_gw*.json critic_flags_gw*.json forecast_gw*.json
+          git add solver_solution_gw*.json critic_flags_gw*.json forecast_gw*.json my_team.json
           git diff --staged --quiet || git commit -m "Auto solver run $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git pull --rebase --autostash origin main
           git push
