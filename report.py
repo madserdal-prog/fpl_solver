@@ -73,6 +73,16 @@ def format_message(solution: dict, gw: int, critic_summary: str = None,
     if my_team is not None:
         chips = my_team.get("chips_available", [])
         lines.append(f"*Chips available:* {', '.join(chips) if chips else 'none remaining'}")
+
+    # Price momentum -- informational only, doesn't affect the recommendation above.
+    if solution.get("price_momentum_notes"):
+        lines.append(":chart_with_upwards_trend: " + " | ".join(solution["price_momentum_notes"]))
+
+    # Bench Boost alternative -- only present when checks.RUN_BENCH_BOOST_ALTERNATIVE
+    # was on and bench_boost was actually available this run (see run_real.py).
+    if solution.get("bench_boost_note"):
+        lines.append(f":bench: {solution['bench_boost_note']}")
+
     lines.append("")
 
     # Full squad -- starting XI first (captain marked with (C)), bench listed
