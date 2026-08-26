@@ -148,12 +148,22 @@ def normalize_master(raw_bootstrap: dict) -> dict:
             "minutes": minutes,  # BUG FIX: this was computed above but never actually output here --
                                   # forecast.py's small-sample trust logic silently defaulted to
                                   # "fully trust every player" for all of production as a result.
+            "transfers_in_event": int(e.get("transfers_in_event", 0) or 0),  # net transfer momentum THIS
+            "transfers_out_event": int(e.get("transfers_out_event", 0) or 0),  # gameweek -- FREE, and this
+                                  # is the actual live signal FPL's own price-change algorithm reacts to.
+                                  # Used purely as an informational timing note (see report.py) -- NEVER
+                                  # to change which players the solver picks, per FPL community consensus
+                                  # that team value should never be chased at the cost of points.
             "news": e.get("news", ""),  # FREE human-written injury/doubt text from FPL's own editors
             "news_added": e.get("news_added"),  # ISO timestamp of when the news text was last updated
             "start_probability": estimate_start_probability(e),
         })
 
-    return {"elements": elements}
+    return {
+        "elements": elements,
+        "total_managers": raw_bootstrap.get("total_players", 0),  # for scaling transfers_in/out_event
+                                                                    # into a meaningful percentage
+    }
 
 
 def normalize_fixtures(raw_fixtures: list, raw_bootstrap: dict) -> list:
@@ -306,6 +316,7 @@ def main():
 
 def _self_test_sample_data():
     raw_bootstrap = {
+        "total_players": 9000000,  # realistic order of magnitude for total FPL managers
         "events": [
             {"id": 3, "deadline_time": "2026-08-14T17:30:00Z", "is_next": False,
              "is_current": False, "finished": True},
@@ -326,7 +337,7 @@ def _self_test_sample_data():
                 "total_points": 48, "minutes": 630,
                 "expected_goals": "4.21", "expected_assists": "3.10",
                 "ict_index": "112.4", "chance_of_playing_next_round": None,
-                "status": "a",
+                "status": "a", "transfers_in_event": 180000, "transfers_out_event": 3000,  # clearly rising
             },
             {
                 "id": 202, "web_name": "Salah", "team": 2, "element_type": 3,
@@ -334,7 +345,7 @@ def _self_test_sample_data():
                 "total_points": 61, "minutes": 700,
                 "expected_goals": "6.50", "expected_assists": "2.90",
                 "ict_index": "150.2", "chance_of_playing_next_round": 75,
-                "status": "d",
+                "status": "d", "transfers_in_event": 2000, "transfers_out_event": 210000,  # clearly falling
             },
             {
                 "id": 303, "web_name": "Haaland", "team": 3, "element_type": 4,
