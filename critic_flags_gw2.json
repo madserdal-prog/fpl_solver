@@ -2,13 +2,6 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Guéhi",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"With Guéhi in midfield, Maresca makes transfer needs clear in Man City win - ESPN\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMixAFBVV95cUxPelNKdDdKTEZpdmk1eklvYTVTUTIxWTVOU3BMenhZdDJaSzlMSjJBR0luMVdKWllUalBWSUdGUi1pVkVreXhINS1VaTJDNkJjQS1kekhlaFltb1EySHJKS2paNWJlbjViLUZxQ1J4M1lXbmsteS1ncGdvUmktYWNTMVdHZzlabG9YR2xMX2VVU2xVOWtZb2JyNVNTRFd6R1FOTUxUNThOZXJrcThMQThfd2l2Z2h6NGwzMTF2YTZ0MDR4V3k5?oc=5",
-        "recommendation": "monitor"
-      },
-      {
         "player_name": "Gibbs-White",
         "risk_level": "medium",
         "reason": "Knee injury - 75% chance of playing | Also: Headline suggests an active transfer situation: \"Morgan Gibbs-White - Player profile 26/27 - Transfermarkt\"",
@@ -16,10 +9,10 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Lecomte",
+        "player_name": "João Pedro",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Benjamin Lecomte - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMid0FVX3lxTE12MjBZN1hnZDR5a0c4Tnl6UF9CWFUxNEUySHVjb0trb21jNVYtMWdIc3g1YTJGam1lR01Gb1lfWVlyR0tXdUdEX2pfeThkUnEtaDBCVk5kTE1TUEl3cVNsWGJMNmZ2aHBGVWdINFdQSk5EX0lNQnE4?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Premier League buildup, transfers and João Pedro signs new Chelsea deal – as it happened - The Guardian\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi1wFBVV95cUxOM1ZrV2FXZlJ0MFpURVR5eVZDaEQ1bHFia2dxWHpJRzduUzdmZ2FuNjBaZzRkLWlrb2ZZN0gzRTdHRms4d2RYM21wRVU5QjhKU0lMQ1hfblgxNDQ3TnNGVG5EN1AtTmgtSW5Mb2x0cjF0ZDNEM1lOUzNkX3Mwb2dVNmRPdXotMU0yV0IyQmhkRkFfd0NPSEhpOUxUSGJUQ2o1enBZNlNrMXpNZHhNdnkzSkltQUlwNWh2VHlRUGpjWW9SSHExNW1XaDVUMkNJektGSG1nX3lCMA?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -30,53 +23,36 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Enzo",
+        "player_name": "Coyle",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Enzo Fernandez transfer news: Manchester City to make late move for Chelsea midfielder - Paper Talk - Sky Sports\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi-gFBVV95cUxQMFdBTE91TUlEWXZwTUFyc05wRHVyR3BLdlB4Q0JUNnN4eXBUNE9oWWxkeUt0QXZwNFdPZTVsY00tTDFvYnBfY0xPeXU2SjNRcVdPZS1WUEFaMF9ZS0NmXzdaVzFQVzU5SzlHY2gxcjZTUjRNYThnbUlGTWlhX0w4NGNpTjVZaVBFWDNrS1p3dUI2OFlkcjIzZmcyWm9ORXhSTWdmLVlCWTVHTExqNzI5MHlYRlI4M3VrYzZReXFyRTMzV1MxNkVWSXRmUzZZRmFWRUZWWUxqRkc2V3FWRzRYMDFPZVc1NktZNG93NnBYU1g1Q3hSc2tETmtB?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Anderson",
-        "risk_level": "medium",
-        "reason": "Knock - 75% chance of playing | Also: Headline mentions injury-related terms: \"Early crisis for Man City? Enzo Maresca provides Elliot Anderson injury update after dramatic Premier League comeback victory over Bournemouth - Goal.com\"",
+        "reason": "Ankle injury - 75% chance of playing",
         "source": "FPL API status/chance_of_playing_next_round fields",
         "recommendation": "monitor"
       },
       {
-        "player_name": "Senesi",
+        "player_name": "Palmer",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Spurs snap up Senesi, Leeds land Wilson: The Premier League’s best bargain transfers this summer - Yahoo Sports\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMigwFBVV95cUxQOGpxdmtQWnNGQzdzTWtIN2dEMmZGSmYyS2ZXWnBuMGpoYUpCYkcxbE43RjYtMkE2VmxaOC1xcWFfdjJMaFNrbndMUm13MXc2SGpvbTZEZWpSX2V1dXdzMW1abzVQUk5DX2ViNVZFVW9QYll0WUFNbjczcXFxbXY5aEl1VQ?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Wrexham Linked With A Move for Ipswich Town Goalkeeper Alex Palmer - roundtable.io\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiuwFBVV95cUxORF9Ebmg5R3FGcm0zVmVYSURsWllpOG4xYzVBY2hNSWFDYkZpamVTbnVzLUtKc1VjZF8zdzVkLXd0MWRveFdZeG5MbDZjSGpjNExVQnJldWlfUEh3V3lpUURkdHVPN1BnYXRsX2Q3NC0yRFN2LUszMjFEOWMzejBoRVhhR1BqTVBTb2FKbWhJWXBHRmRFZ0N0elhDQ1Axdk5CcDJRdi1FMkVvY20zOV8ySVl0Rzd0VDJfMEc0?oc=5",
         "recommendation": "monitor"
       },
       {
-        "player_name": "Watkins",
+        "player_name": "Okafor",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Ollie Watkins OUT of Aston Villa squad to face Brighton as talks continue over shock Al Hilal transfer - The Sun\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMinAFBVV95cUxQSTV3NE9TZnIzZU1ObnFBdU92UlNmM2czX0RobTZzSVhDV19EZEc0X095VHFidHAtR3BmN1R6c0oxb2ctYkZRV1MxdmdVNWw3Y3VYekE2ZTFUcGF1X3hSMF9iMUlzYXN5RjQzYS1ESmlKNFJTX0FaZmtWWENxV0NvVnJ6WmcwTTFDb3dLTEo3RXZTaWQ5T1drRWhqcHY?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Szoboszlai",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Liverpool salary guide 2026/27: Who is highest earner after Mohamed Salah's exit? - thenationalnews.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiigFBVV95cUxNUDFOZVd1QVJkWEhkU29TeTJMOUNEaUpjOFVXeW9DVXgyai1CX056VzNuX3RwSFVnNzhhNkt5TS1XdzZjZDVlUG5XeC1jcXJKNk43dEw3MmVTOTI2d3FIWDdzSy1XWEhsYTNqTnRXVF9HRTBFSzFyLU5MZENoZlZ0WS1VR0Y1bGFqNHc?oc=5",
+        "reason": "Headline mentions injury-related terms: \"Team news from Leeds | Key duo ruled out - Tottenham Hotspur\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMijAFBVV95cUxOYWhTa2hCQkVxdmw1d2lCcGxFMTNtN00xRHZDT2RrRjZDLUZRcEFvdEhmc1Q5cDBta3VxN1o2TXcxMHNZSDBpVTRuTHBaQXBkWW1kRFNaZ05WQ3RuQWVvallMWjZVYS04WG1sT3djSXhxek9BNFp4Y0N4eWJad21LOUxKQkRRSnJIVUpvSw?oc=5",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 9 medium-risk (Guéhi, Gibbs-White, Lecomte, Ajayi, Enzo, Anderson, Senesi, Watkins, Szoboszlai) based on FPL data and Google News headlines."
+    "summary": "Found 6 medium-risk (Gibbs-White, João Pedro, Ajayi, Coyle, Palmer, Okafor) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "388": 3.0,
     "480": 3.0,
-    "251": 3.0,
+    "165": 3.0,
     "279": 3.0,
-    "155": 3.0,
-    "481": 3.0,
-    "498": 3.0,
-    "55": 3.0,
-    "368": 3.0
+    "280": 3.0,
+    "301": 3.0,
+    "336": 3.0
   },
   "blocked_captain_ids": [],
   "unmatched_names": [],

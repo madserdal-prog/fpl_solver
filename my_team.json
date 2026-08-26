@@ -1,8 +1,29 @@
 {
-  "current_squad": [226, 251, 387, 498, 200, 388, 229, 480, 155, 368, 481, 156, 379, 55, 106],
+  "current_squad": [
+    529,
+    498,
+    387,
+    115,
+    327,
+    427,
+    12,
+    154,
+    480,
+    165,
+    106,
+    82,
+    347,
+    336,
+    229
+  ],
   "bank": 0.0,
-  "free_transfers": 1,
-  "chips_available": ["wildcard", "bench_boost", "free_hit", "triple_captain"],
+  "free_transfers": 2,
+  "chips_available": [
+    "wildcard",
+    "bench_boost",
+    "free_hit",
+    "triple_captain"
+  ],
   "locked_players": [],
-  "notes": "GW1 squad, built manually from Pick Team screenshots."
+  "notes": "current_squad/bank auto-refreshed from FPL. free_transfers computed from your real FPL transfer history (see compute_free_transfers()). chips_available/locked_players carried over from the previous file -- edit them manually if they need correcting."
 }
