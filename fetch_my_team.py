@@ -58,10 +58,16 @@ def fetch_entry_history(team_id: int) -> dict:
 
 def compute_free_transfers(history_data: dict, upcoming_gw: int) -> int:
     """
-    Simulates FPL's actual free-transfer rollover rule forward from GW1 to
+    Simulates FPL's actual free-transfer rollover rule forward from GW2 to
     determine how many free transfers are available going into `upcoming_gw`:
 
-      - Start with 1 free transfer for GW1.
+      - GW1 has NO free-transfer concept at all -- building your initial
+        squad isn't a "transfer" in this accounting. The first free
+        transfer only exists once the GW1 deadline has passed, i.e. it's
+        available starting GW2 (this is a hard-won bug fix: an earlier
+        version of this function looped over GW1 too, granting a phantom
+        extra rollover right at the start that then compounded forward
+        every week after -- always off by exactly one, permanently).
       - Each gameweek you don't use your free transfer, it banks (+1),
         up to a maximum of 5.
       - If you use more transfers than you have banked, you take a hit,
@@ -73,14 +79,17 @@ def compute_free_transfers(history_data: dict, upcoming_gw: int) -> int:
         transfers" when playing a Wildcard), even though the chip itself
         gives you unlimited free changes that week.
 
-    Returns 1 (the safe default) if history is empty (e.g. before GW1).
+    Returns 1 (the safe default) if history is empty (e.g. before GW1) or
+    if upcoming_gw is GW2 (the first gameweek with any free transfer at all).
     """
     chip_by_event = {c["event"]: c["name"] for c in history_data.get("chips", [])}
     gameweeks = sorted(history_data.get("current", []), key=lambda g: g["event"])
 
-    free_transfers = 1
+    free_transfers = 1  # what's available starting GW2 -- the first free transfer ever granted
     for gw_stats in gameweeks:
         event = gw_stats["event"]
+        if event < 2:
+            continue  # GW1: no free-transfer concept, skip it entirely
         if event >= upcoming_gw:
             break
 
@@ -214,12 +223,12 @@ def _self_test_entry_data():
 def _self_test_history_data():
     """
     Realistic 5-gameweek scenario to test compute_free_transfers() against:
-      GW1: 0 transfers (initial squad)      -> banks to 2 for GW2
-      GW2: 0 transfers (banked again)       -> banks to 3 for GW3
-      GW3: 2 transfers, no hit (had 3 FT)   -> drops to 1 banked, +1 = 2 for GW4
-      GW4: wildcard played, 8 transfers     -> doesn't touch banked count, +1 = 3 for GW5
-      GW5: 0 transfers                      -> banks to 4 for GW6
-    Expected free_transfers going into GW6: 4
+      GW1: not counted at all (no free-transfer concept for the initial squad)
+      GW2: 0 transfers (banked)             -> 1 -> 2 for GW3
+      GW3: 2 transfers, no hit (had 2 FT)   -> drops to 0 banked, +1 = 1 for GW4
+      GW4: wildcard played, 8 transfers     -> doesn't touch banked count, +1 = 2 for GW5
+      GW5: 0 transfers                      -> banks to 3 for GW6
+    Expected free_transfers going into GW6: 3
     """
     return {
         "current": [
