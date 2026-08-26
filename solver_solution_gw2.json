@@ -74,11 +74,18 @@
   "hit_taken": 0,
   "hit_cost": 0,
   "expected_points": 35.52,
+  "bench_points": 1.91,
   "squad_value": 97.6,
   "bank_remaining": 2.4,
   "risk_adjusted_players": [
-    "Gibbs-White",
-    "Ajayi"
+    "Ajayi",
+    "Gibbs-White"
   ],
-  "blocked_from_captaincy_in_squad": []
+  "blocked_from_captaincy_in_squad": [],
+  "price_momentum_notes": [
+    "Hinshelwood looks likely to RISE in price soon (net +1.03% of managers this GW)",
+    "Ajayi looks likely to RISE in price soon (net +0.35% of managers this GW)",
+    "O'Reilly looks likely to FALL in price soon (net -0.24% of managers this GW)"
+  ],
+  "bench_boost_note": "Boosting THIS week's normal bench: +1.91 pts (total 37.43). Restructuring specifically for Bench Boost instead: 38.29 pts (+0.86 vs. just boosting the normal squad)."
 }

@@ -2,17 +2,10 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Gibbs-White",
+        "player_name": "Ajayi",
         "risk_level": "medium",
-        "reason": "Knee injury - 75% chance of playing | Also: Headline suggests an active transfer situation: \"Morgan Gibbs-White - Player profile 26/27 - Transfermarkt\"",
+        "reason": "Hamstring injury - 75% chance of playing",
         "source": "FPL API status/chance_of_playing_next_round fields",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Okafor",
-        "risk_level": "medium",
-        "reason": "Headline mentions injury-related terms: \"Team news from Leeds | Key duo ruled out - Tottenham Hotspur\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMijAFBVV95cUxOYWhTa2hCQkVxdmw1d2lCcGxFMTNtN00xRHZDT2RrRjZDLUZRcEFvdEhmc1Q5cDBta3VxN1o2TXcxMHNZSDBpVTRuTHBaQXBkWW1kRFNaZ05WQ3RuQWVvallMWjZVYS04WG1sT3djSXhxek9BNFp4Y0N4eWJad21LOUxKQkRRSnJIVUpvSw?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -23,28 +16,35 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Ajayi",
-        "risk_level": "medium",
-        "reason": "Hamstring injury - 75% chance of playing",
-        "source": "FPL API status/chance_of_playing_next_round fields",
-        "recommendation": "monitor"
-      },
-      {
         "player_name": "Palmer",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Wrexham Linked With A Move for Ipswich Town Goalkeeper Alex Palmer - roundtable.io\"",
         "source": "Google News: https://news.google.com/rss/articles/CBMiuwFBVV95cUxORF9Ebmg5R3FGcm0zVmVYSURsWllpOG4xYzVBY2hNSWFDYkZpamVTbnVzLUtKc1VjZF8zdzVkLXd0MWRveFdZeG5MbDZjSGpjNExVQnJldWlfUEh3V3lpUURkdHVPN1BnYXRsX2Q3NC0yRFN2LUszMjFEOWMzejBoRVhhR1BqTVBTb2FKbWhJWXBHRmRFZ0N0elhDQ1Axdk5CcDJRdi1FMkVvY20zOV8ySVl0Rzd0VDJfMEc0?oc=5",
         "recommendation": "monitor"
+      },
+      {
+        "player_name": "Okafor",
+        "risk_level": "medium",
+        "reason": "Headline mentions injury-related terms: \"Team news from Leeds | Key duo ruled out - Tottenham Hotspur\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMijAFBVV95cUxOYWhTa2hCQkVxdmw1d2lCcGxFMTNtN00xRHZDT2RrRjZDLUZRcEFvdEhmc1Q5cDBta3VxN1o2TXcxMHNZSDBpVTRuTHBaQXBkWW1kRFNaZ05WQ3RuQWVvallMWjZVYS04WG1sT3djSXhxek9BNFp4Y0N4eWJad21LOUxKQkRRSnJIVUpvSw?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Gibbs-White",
+        "risk_level": "medium",
+        "reason": "Knee injury - 75% chance of playing | Also: Headline suggests an active transfer situation: \"Morgan Gibbs-White - Player profile 26/27 - Transfermarkt\"",
+        "source": "FPL API status/chance_of_playing_next_round fields",
+        "recommendation": "monitor"
       }
     ],
-    "summary": "Found 5 medium-risk (Gibbs-White, Okafor, Coyle, Ajayi, Palmer) based on FPL data and Google News headlines."
+    "summary": "Found 5 medium-risk (Ajayi, Coyle, Palmer, Okafor, Gibbs-White) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "480": 3.0,
-    "336": 3.0,
-    "280": 3.0,
     "279": 3.0,
-    "301": 3.0
+    "280": 3.0,
+    "301": 3.0,
+    "336": 3.0,
+    "480": 3.0
   },
   "blocked_captain_ids": [],
   "unmatched_names": [],
