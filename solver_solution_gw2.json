@@ -36,10 +36,10 @@
   "starting_xi": [
     "Saka",
     "Kelleher",
-    "Thiago",
     "De Cuyper",
     "Hinshelwood",
     "Palmer",
+    "João Pedro",
     "Tarkowski",
     "Ajayi",
     "Bijol",
@@ -49,10 +49,10 @@
   "starting_xi_ids": [
     12,
     82,
-    106,
     115,
     123,
     154,
+    165,
     229,
     279,
     327,
@@ -73,11 +73,12 @@
   "free_transfers_used": 2,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 33.76,
+  "expected_points": 35.52,
+  "squad_value": 97.6,
+  "bank_remaining": 2.4,
   "risk_adjusted_players": [
     "Gibbs-White",
-    "Ajayi",
-    "João Pedro"
+    "Ajayi"
   ],
   "blocked_from_captaincy_in_squad": []
 }
