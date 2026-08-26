@@ -1,90 +1,89 @@
 {
   "squad": [
-    "Watkins",
     "Thiago",
     "Hinshelwood",
+    "Neto",
     "Lacroix",
     "Pickford",
     "Tarkowski",
     "Lecomte",
     "Ajayi",
-    "Mendy",
-    "Enciso",
+    "Coyle",
     "Szoboszlai",
     "Isak",
+    "O'Reilly",
     "Anderson",
-    "Gibbs-White",
-    "Senesi"
+    "Osula",
+    "Gibbs-White"
   ],
   "squad_ids": [
-    55,
     106,
     123,
+    156,
     200,
     226,
     229,
     251,
     279,
-    586,
-    591,
+    280,
     368,
     379,
+    387,
     481,
-    480,
-    498
+    465,
+    480
   ],
   "starting_xi": [
     "Thiago",
     "Hinshelwood",
+    "Neto",
     "Lacroix",
     "Pickford",
     "Tarkowski",
     "Ajayi",
-    "Mendy",
-    "Enciso",
-    "Szoboszlai",
+    "Coyle",
     "Isak",
-    "Senesi"
+    "O'Reilly",
+    "Osula"
   ],
   "starting_xi_ids": [
     106,
     123,
+    156,
     200,
     226,
     229,
     279,
-    586,
-    591,
-    368,
+    280,
     379,
-    498
+    387,
+    465
   ],
-  "captain": "Mendy",
-  "captain_id": 586,
+  "captain": "Ajayi",
+  "captain_id": 279,
   "transfers_in": [
     "Hinshelwood",
     "Ajayi",
-    "Mendy",
-    "Enciso"
+    "Coyle",
+    "Osula"
   ],
   "transfers_out": [
+    "Watkins",
     "Enzo",
-    "Neto",
-    "O'Reilly",
-    "Guéhi"
+    "Guéhi",
+    "Senesi"
   ],
   "transfers_made": 4,
   "free_transfers_used": 1,
   "hit_taken": 3,
   "hit_cost": 12,
-  "expected_points": 29.86,
+  "expected_points": 20.31,
   "risk_adjusted_players": [
+    "Gibbs-White",
     "Lecomte",
     "Ajayi",
-    "Gibbs-White",
     "Anderson",
-    "Watkins",
-    "Mendy"
+    "Szoboszlai"
   ],
   "blocked_from_captaincy_in_squad": []
 }

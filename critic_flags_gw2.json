@@ -2,6 +2,20 @@
   "critic_output": {
     "flags": [
       {
+        "player_name": "Guéhi",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"With Guéhi in midfield, Maresca makes transfer needs clear in Man City win - ESPN\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMixAFBVV95cUxPelNKdDdKTEZpdmk1eklvYTVTUTIxWTVOU3BMenhZdDJaSzlMSjJBR0luMVdKWllUalBWSUdGUi1pVkVreXhINS1VaTJDNkJjQS1kekhlaFltb1EySHJKS2paNWJlbjViLUZxQ1J4M1lXbmsteS1ncGdvUmktYWNTMVdHZzlabG9YR2xMX2VVU2xVOWtZb2JyNVNTRFd6R1FOTUxUNThOZXJrcThMQThfd2l2Z2h6NGwzMTF2YTZ0MDR4V3k5?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Gibbs-White",
+        "risk_level": "medium",
+        "reason": "Knee injury - 75% chance of playing | Also: Headline suggests an active transfer situation: \"Morgan Gibbs-White - Player profile 26/27 - Transfermarkt\"",
+        "source": "FPL API status/chance_of_playing_next_round fields",
+        "recommendation": "monitor"
+      },
+      {
         "player_name": "Lecomte",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Benjamin Lecomte - Transfermarkt\"",
@@ -16,24 +30,10 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Neto",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Neto Transfer News: Arsenal, Tottenham and Manchester City enter race for in-demand Chelsea star - LiveScore\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi6AFBVV95cUxQbGNTTDI3amdUUDk0TlJ5X3lkLW5tdnMyMnpTRlFVaU9FXzBIbEFWOWZSR0NxQV9zSDRZMFBkZ240ZDh6WnNMc2tSOWRXSzNQNU1vZjE4WlJGUUpHcGNYUEFGNjA4cm5TUElmQWhQb29GLWVibGR2T29QVFRmMHFOODNLZVZLVDg3V00xRkZubnpERnJGSHB2b0U2c3ZjWjVabTZqb3VIaFV2djVvU01FUkNnaDFlUUxoQ1h6QndUdms5bnBfdmlDcm1tY1ZyN25hSVNBRWI3OFhlNlphd2tJSnR4d3V4M002?oc=5",
-        "recommendation": "monitor"
-      },
-      {
         "player_name": "Enzo",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Chelsea will sell Enzo Fernandez on two conditions as Man City prepare new bid - Metro.co.uk\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiswFBVV95cUxPOFdsSGZ2Rk5yR1R3N25OU2pOaFdiZjYtSlFEOXpldElPMWxMendXdE5TRG9RWWxuRThteHU4TGFQMmlDNTNtRU9XOVExN3ZmUkszeDJkTjBjTkpjLTVwRXo0ZjI2MW4zVzF6VkFSNG1wMkFmbTdUS21ZektLem9uMmlYRFNqb3liYlhFYmh1MFNFOHZTRGVBaTkwQk8welM1d1F5Wmx3TW9meXJGWWwySlhBUdIBuAFBVV95cUxNVEVNSXk4dEh4ZDlEZU52QU5rdklOMHJja2ZKaVVIZ3F5b2ZZRkJVajhKdDNRV2lPTGpnNnFJX1ZXd2w5QTV2ZlU1RE9UaGdOZGtxSTc2ZmdrM1JnMG9NNWNVc1NxQkd3MEQwd0Vsbno3LTlNMkZhVXVGNU9JNmFXZzdGdmFFYi1HZms5X1FNSE1JQzNvcUNXdngyWTFlYm9iaTMwUmlxaEdCWDZ0RUI5b2N4dE13ZWNl?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Gibbs-White",
-        "risk_level": "medium",
-        "reason": "Knee injury - 75% chance of playing | Also: Headline suggests an active transfer situation: \"Morgan Gibbs-White - Player profile 26/27 - Transfermarkt\"",
-        "source": "FPL API status/chance_of_playing_next_round fields",
+        "reason": "Headline suggests an active transfer situation: \"Enzo Fernandez transfer news: Manchester City to make late move for Chelsea midfielder - Paper Talk - Sky Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi-gFBVV95cUxQMFdBTE91TUlEWXZwTUFyc05wRHVyR3BLdlB4Q0JUNnN4eXBUNE9oWWxkeUt0QXZwNFdPZTVsY00tTDFvYnBfY0xPeXU2SjNRcVdPZS1WUEFaMF9ZS0NmXzdaVzFQVzU5SzlHY2gxcjZTUjRNYThnbUlGTWlhX0w4NGNpTjVZaVBFWDNrS1p3dUI2OFlkcjIzZmcyWm9ORXhSTWdmLVlCWTVHTExqNzI5MHlYRlI4M3VrYzZReXFyRTMzV1MxNkVWSXRmUzZZRmFWRUZWWUxqRkc2V3FWRzRYMDFPZVc1NktZNG93NnBYU1g1Q3hSc2tETmtB?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -44,39 +44,39 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Guéhi",
+        "player_name": "Senesi",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"With Guéhi in midfield, Maresca makes transfer needs clear in Man City win - ESPN\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMixAFBVV95cUxPelNKdDdKTEZpdmk1eklvYTVTUTIxWTVOU3BMenhZdDJaSzlMSjJBR0luMVdKWllUalBWSUdGUi1pVkVreXhINS1VaTJDNkJjQS1kekhlaFltb1EySHJKS2paNWJlbjViLUZxQ1J4M1lXbmsteS1ncGdvUmktYWNTMVdHZzlabG9YR2xMX2VVU2xVOWtZb2JyNVNTRFd6R1FOTUxUNThOZXJrcThMQThfd2l2Z2h6NGwzMTF2YTZ0MDR4V3k5?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Spurs snap up Senesi, Leeds land Wilson: The Premier League’s best bargain transfers this summer - Yahoo Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMigwFBVV95cUxQOGpxdmtQWnNGQzdzTWtIN2dEMmZGSmYyS2ZXWnBuMGpoYUpCYkcxbE43RjYtMkE2VmxaOC1xcWFfdjJMaFNrbndMUm13MXc2SGpvbTZEZWpSX2V1dXdzMW1abzVQUk5DX2ViNVZFVW9QYll0WUFNbjczcXFxbXY5aEl1VQ?oc=5",
         "recommendation": "monitor"
       },
       {
         "player_name": "Watkins",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Aston Villa: Ollie Watkins transfer saga leaves Villa shellshocked - BBC\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1sQlFoaU9qZ3Z3dmhIbWh3THM0ZEhpb1A4cHhoZHN1ZEZVUl9SMi1mdlFRQXhTTEw0UW4tcFY2WFpqYmJ4Z0FTSWdHLTRwazhoeVZ6Y3ZHcHRSQnJJRHJiR2JOeTZXcS11LWc?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Ollie Watkins OUT of Aston Villa squad to face Brighton as talks continue over shock Al Hilal transfer - The Sun\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMinAFBVV95cUxQSTV3NE9TZnIzZU1ObnFBdU92UlNmM2czX0RobTZzSVhDV19EZEc0X095VHFidHAtR3BmN1R6c0oxb2ctYkZRV1MxdmdVNWw3Y3VYekE2ZTFUcGF1X3hSMF9iMUlzYXN5RjQzYS1ESmlKNFJTX0FaZmtWWENxV0NvVnJ6WmcwTTFDb3dLTEo3RXZTaWQ5T1drRWhqcHY?oc=5",
         "recommendation": "monitor"
       },
       {
-        "player_name": "Mendy",
+        "player_name": "Szoboszlai",
         "risk_level": "medium",
-        "reason": "Thigh injury - 75% chance of playing",
-        "source": "FPL API status/chance_of_playing_next_round fields",
+        "reason": "Headline suggests an active transfer situation: \"Liverpool salary guide 2026/27: Who is highest earner after Mohamed Salah's exit? - thenationalnews.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiigFBVV95cUxNUDFOZVd1QVJkWEhkU29TeTJMOUNEaUpjOFVXeW9DVXgyai1CX056VzNuX3RwSFVnNzhhNkt5TS1XdzZjZDVlUG5XeC1jcXJKNk43dEw3MmVTOTI2d3FIWDdzSy1XWEhsYTNqTnRXVF9HRTBFSzFyLU5MZENoZlZ0WS1VR0Y1bGFqNHc?oc=5",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 9 medium-risk (Lecomte, Ajayi, Neto, Enzo, Gibbs-White, Anderson, Guéhi, Watkins, Mendy) based on FPL data and Google News headlines."
+    "summary": "Found 9 medium-risk (Guéhi, Gibbs-White, Lecomte, Ajayi, Enzo, Anderson, Senesi, Watkins, Szoboszlai) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
+    "388": 3.0,
+    "480": 3.0,
     "251": 3.0,
     "279": 3.0,
-    "156": 3.0,
     "155": 3.0,
-    "480": 3.0,
     "481": 3.0,
-    "388": 3.0,
+    "498": 3.0,
     "55": 3.0,
-    "586": 3.0
+    "368": 3.0
   },
   "blocked_captain_ids": [],
   "unmatched_names": [],
