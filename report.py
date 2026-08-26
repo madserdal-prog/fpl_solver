@@ -28,26 +28,61 @@ import sys
 import requests
 
 
-def format_message(solution: dict, gw: int, critic_summary: str = None) -> str:
-    lines = [f"*GW{gw} solver recommendation*"]
+def format_message(solution: dict, gw: int, critic_summary: str = None,
+                    news_lookup_errors: list = None, news_systematically_blocked: bool = False) -> str:
+    lines = [f"*GW{gw} solver recommendation*", ""]
 
+    # Transfers -- explicit IN/OUT labels instead of an arrow, since "A <- B"
+    # reads ambiguously (which one are you actually buying?). One bullet per
+    # swap is also easier to scan than a single long comma-separated line,
+    # especially with 5+ transfers on an initial-team build.
+    lines.append("*Transfers:*")
     if solution.get("transfers_in"):
-        transfers = ", ".join(
-            f"{i} <- {o}" for i, o in zip(solution["transfers_in"], solution["transfers_out"])
-        )
-        hit_note = f" (hit taken: -{solution['hit_cost']})" if solution.get("hit_cost") else ""
-        lines.append(f"Transfers: {transfers}{hit_note}")
+        for player_in, player_out in zip(solution["transfers_in"], solution["transfers_out"]):
+            lines.append(f"  • IN: *{player_in}*   OUT: {player_out}")
+        if solution.get("hit_cost"):
+            lines.append(f"  _(hit taken: -{solution['hit_cost']} points)_")
     else:
-        lines.append("Transfers: none")
+        lines.append("  none")
+    lines.append("")
 
-    lines.append(f"Captain: *{solution['captain']}*")
-    lines.append(f"Expected points: {solution['expected_points']}")
+    # Full squad -- starting XI first (captain marked with (C)), bench listed
+    # separately, so you can see the whole 15 the solver is actually working
+    # with, not just what changed from last week.
+    starting_xi = solution.get("starting_xi", [])
+    squad = solution.get("squad", [])
+    captain = solution.get("captain")
+    bench = [p for p in squad if p not in starting_xi]
+
+    xi_display = [f"{p} (C)" if p == captain else p for p in starting_xi]
+    lines.append(f"*Starting XI:* {', '.join(xi_display)}")
+    if bench:
+        lines.append(f"*Bench:* {', '.join(bench)}")
+    lines.append("")
+
+    lines.append(f"*Captain:* {captain}")
+    lines.append(f"*Expected points:* {solution['expected_points']}")
 
     if solution.get("risk_adjusted_players"):
         lines.append(f":warning: Risk-adjusted (news flags found): {', '.join(solution['risk_adjusted_players'])}")
 
     if critic_summary:
         lines.append(f"\n_Critic summary: {critic_summary}_")
+
+    # IMPORTANT: without this, a fully-failed Google News check (e.g. blocked
+    # from GitHub Actions' shared IPs) and a genuinely clean squad look IDENTICAL
+    # in Slack -- both just say "no flags found". Surface the distinction explicitly.
+    if news_systematically_blocked:
+        lines.append(
+            f":rotating_light: Google News lookup failed for ALL players this run -- looks like a "
+            f"systematic block (e.g. Google rejecting GitHub Actions' IP range), not random flakiness. "
+            f"Treat \"no flags\" above with real caution: only FPL's own status data was actually checked."
+        )
+    elif news_lookup_errors:
+        lines.append(
+            f":warning: Google News lookup failed for {len(news_lookup_errors)} player(s) this run "
+            f"(isolated hiccup) -- FPL's own status data was still checked normally for them."
+        )
 
     lines.append("\nReview and make your transfers on fantasy.premierleague.com before the deadline.")
     return "\n".join(lines)
@@ -76,11 +111,16 @@ def main():
         solution = json.load(f)
 
     critic_summary = None
+    news_lookup_errors = None
+    news_systematically_blocked = False
     if args.critic_flags and os.path.exists(args.critic_flags):
         with open(args.critic_flags, encoding="utf-8") as f:
-            critic_summary = json.load(f)["critic_output"].get("summary")
+            critic_flags_data = json.load(f)
+        critic_summary = critic_flags_data["critic_output"].get("summary")
+        news_lookup_errors = critic_flags_data.get("news_lookup_errors")
+        news_systematically_blocked = critic_flags_data.get("news_systematically_blocked", False)
 
-    message = format_message(solution, args.gw, critic_summary)
+    message = format_message(solution, args.gw, critic_summary, news_lookup_errors, news_systematically_blocked)
     send_to_slack(message, webhook_url)
     print("Posted to Slack.")
     print("\n--- Message sent ---")
