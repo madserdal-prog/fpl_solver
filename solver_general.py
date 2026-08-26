@@ -80,13 +80,13 @@ def load_pool_from_forecast(forecast_path: str, master_data_path: str, horizon_g
     master_by_id = {p["id"]: p for p in master["elements"]}
     pool = []
     for entry in forecast["players"]:
-        m = master_by_id[entry["id"]]
+        master_player = master_by_id[entry["id"]]
         pool.append({
             "id": entry["id"],
-            "name": m["web_name"],
-            "team": m["team"],
-            "position": m["element_type"],  # map to GK/DEF/MID/FWD on your side
-            "price": m["now_cost"] / 10.0,
+            "name": master_player["web_name"],
+            "team": master_player["team"],
+            "position": master_player["element_type"],  # map to GK/DEF/MID/FWD on your side
+            "price": master_player["now_cost"] / 10.0,
             "xp": float(entry["xP"][horizon_gw]),
         })
     return pool
@@ -120,134 +120,152 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
       injury) where even a small risk_penalty isn't enough to prevent
       captaincy selection due to the doubling bonus.
 
-    Variables:
-      x[p]   -- in the 15-man squad
-      s[p]   -- in the starting XI (s <= x)
-      cap[p] -- captain (cap <= s, exactly one)
-      extra_transfers -- continuous, >= max(0, transfers - free transfers)
+    Decision variables per player (each is a yes/no 0/1 switch, except the
+    last one which is a plain number):
+      in_squad[player]     -- is this player one of the 15?
+      in_starting_xi[player] -- is this player in the starting XI? (only
+                                 possible if in_squad[player] is also yes)
+      is_captain[player]     -- is this player the captain? (only possible
+                                 if in_starting_xi[player] is also yes;
+                                 exactly one player gets "yes" overall)
+      extra_transfers_count  -- how many transfers this squad needs beyond
+                                 the free ones (a plain number, not yes/no)
 
     Objective (maximized):
-      BENCH_WEIGHT * sum(xp_adj*x) + (1-BENCH_WEIGHT) * sum(xp_adj*s) + sum(xp_adj*cap)
-      - HIT_COST * extra_transfers
+      BENCH_WEIGHT * sum(adjusted_points * in_squad)
+      + (1-BENCH_WEIGHT) * sum(adjusted_points * in_starting_xi)
+      + sum(adjusted_points * is_captain)
+      - HIT_COST * extra_transfers_count
 
-    where xp_adj = xP - risk_penalty. This gives starting players full
-    value (BENCH_WEIGHT + (1-BENCH_WEIGHT) = 1 * xp_adj), while bench
-    players only count BENCH_WEIGHT * xp_adj -- exactly as described in
-    the guide (bench weighting is optional, but reduces the risk of the
-    solver "hiding" good value unused on the bench).
+    where adjusted_points = xP - risk_penalty. This gives starting players
+    full value (BENCH_WEIGHT + (1-BENCH_WEIGHT) = 1 * adjusted_points),
+    while bench players only count BENCH_WEIGHT * adjusted_points --
+    exactly as described in the guide (bench weighting is optional, but
+    reduces the risk of the solver "hiding" good value unused on the bench).
     """
     current_squad_ids = set(current_squad_ids or [])
     locked_ids = set(locked_ids or [])
     risk_penalty = risk_penalty or {}
     blocked_captain_ids = set(blocked_captain_ids or [])
-    P = len(pool)
-    xp = np.array([p["xp"] - risk_penalty.get(p["id"], 0.0) for p in pool])
+    num_players = len(pool)
+    adjusted_points = np.array([player["xp"] - risk_penalty.get(player["id"], 0.0) for player in pool])
 
-    # Variable indexing: [x_0..x_{P-1}, s_0..s_{P-1}, cap_0..cap_{P-1}, extra_transfers]
-    n_vars = 3 * P + 1
-    X, S, CAP, ET = 0, P, 2 * P, 3 * P
+    # Every player gets THREE yes/no variables (in_squad, in_starting_xi,
+    # is_captain), laid out back-to-back in one long array, plus one final
+    # plain number (extra_transfers_count) at the very end. These offsets
+    # say where each player's block of three variables begins.
+    num_variables = 3 * num_players + 1
+    SQUAD_OFFSET = 0
+    STARTING_XI_OFFSET = num_players
+    CAPTAIN_OFFSET = 2 * num_players
+    EXTRA_TRANSFERS_INDEX = 3 * num_players
 
     constraints = []
 
-    # Position requirements in the 15-man squad
-    for pos, req in SQUAD_REQ.items():
-        row = np.zeros(n_vars)
-        for i, p in enumerate(pool):
-            if p["position"] == pos:
-                row[X + i] = 1
-        constraints.append(LinearConstraint(row, req, req))
+    # Position requirements in the 15-man squad (e.g. exactly 2 goalkeepers)
+    for position, required_count in SQUAD_REQ.items():
+        constraint_row = np.zeros(num_variables)
+        for i, player in enumerate(pool):
+            if player["position"] == position:
+                constraint_row[SQUAD_OFFSET + i] = 1
+        constraints.append(LinearConstraint(constraint_row, required_count, required_count))
 
-    # Budget
-    row = np.zeros(n_vars)
-    for i, p in enumerate(pool):
-        row[X + i] = p["price"]
-    constraints.append(LinearConstraint(row, -np.inf, budget))
+    # Budget: total price of the 15-man squad must not exceed what's available
+    constraint_row = np.zeros(num_variables)
+    for i, player in enumerate(pool):
+        constraint_row[SQUAD_OFFSET + i] = player["price"]
+    constraints.append(LinearConstraint(constraint_row, -np.inf, budget))
 
-    # Max 3 per club
-    for t in sorted(set(p["team"] for p in pool)):
-        row = np.zeros(n_vars)
-        for i, p in enumerate(pool):
-            if p["team"] == t:
-                row[X + i] = 1
-        constraints.append(LinearConstraint(row, -np.inf, MAX_PER_CLUB))
+    # Max 3 players from any one club
+    for team_name in sorted(set(player["team"] for player in pool)):
+        constraint_row = np.zeros(num_variables)
+        for i, player in enumerate(pool):
+            if player["team"] == team_name:
+                constraint_row[SQUAD_OFFSET + i] = 1
+        constraints.append(LinearConstraint(constraint_row, -np.inf, MAX_PER_CLUB))
 
-    # Starting XI size
-    row = np.zeros(n_vars)
-    row[S:S + P] = 1
-    constraints.append(LinearConstraint(row, 11, 11))
+    # Starting XI must be exactly 11 players
+    constraint_row = np.zeros(num_variables)
+    constraint_row[STARTING_XI_OFFSET:STARTING_XI_OFFSET + num_players] = 1
+    constraints.append(LinearConstraint(constraint_row, 11, 11))
 
-    # Formation
-    for pos, (lo, hi) in XI_MIN_MAX.items():
-        row = np.zeros(n_vars)
-        for i, p in enumerate(pool):
-            if p["position"] == pos:
-                row[S + i] = 1
-        constraints.append(LinearConstraint(row, lo, hi))
+    # Formation: e.g. between 3 and 5 defenders in the starting XI
+    for position, (min_starters, max_starters) in XI_MIN_MAX.items():
+        constraint_row = np.zeros(num_variables)
+        for i, player in enumerate(pool):
+            if player["position"] == position:
+                constraint_row[STARTING_XI_OFFSET + i] = 1
+        constraints.append(LinearConstraint(constraint_row, min_starters, max_starters))
 
-    # s <= x
-    for i in range(P):
-        row = np.zeros(n_vars)
-        row[S + i] = 1
-        row[X + i] = -1
-        constraints.append(LinearConstraint(row, -np.inf, 0))
+    # A player can only start if they're actually in the squad
+    for i in range(num_players):
+        constraint_row = np.zeros(num_variables)
+        constraint_row[STARTING_XI_OFFSET + i] = 1
+        constraint_row[SQUAD_OFFSET + i] = -1
+        constraints.append(LinearConstraint(constraint_row, -np.inf, 0))
 
-    # cap <= s
-    for i in range(P):
-        row = np.zeros(n_vars)
-        row[CAP + i] = 1
-        row[S + i] = -1
-        constraints.append(LinearConstraint(row, -np.inf, 0))
+    # A player can only be captain if they're actually starting
+    for i in range(num_players):
+        constraint_row = np.zeros(num_variables)
+        constraint_row[CAPTAIN_OFFSET + i] = 1
+        constraint_row[STARTING_XI_OFFSET + i] = -1
+        constraints.append(LinearConstraint(constraint_row, -np.inf, 0))
 
-    # exactly one captain
-    row = np.zeros(n_vars)
-    row[CAP:CAP + P] = 1
-    constraints.append(LinearConstraint(row, 1, 1))
+    # Exactly one captain, no more, no less
+    constraint_row = np.zeros(num_variables)
+    constraint_row[CAPTAIN_OFFSET:CAPTAIN_OFFSET + num_players] = 1
+    constraints.append(LinearConstraint(constraint_row, 1, 1))
 
-    # Transfer penalty: extra_transfers >= (number sold from current_squad) - free_transfers
-    # number sold = |current_squad| - sum_{p in current_squad} x[p]
+    # Transfer penalty: extra_transfers_count >= (players sold from current
+    # squad) - free_transfers. Players sold = how many of your CURRENT
+    # players are NOT in the new squad.
     if current_squad_ids and not unlimited_transfers:
-        row = np.zeros(n_vars)
-        row[ET] = 1
-        for i, p in enumerate(pool):
-            if p["id"] in current_squad_ids:
-                row[X + i] = 1
-        lo = len(current_squad_ids) - free_transfers
-        constraints.append(LinearConstraint(row, lo, np.inf))
+        constraint_row = np.zeros(num_variables)
+        constraint_row[EXTRA_TRANSFERS_INDEX] = 1
+        for i, player in enumerate(pool):
+            if player["id"] in current_squad_ids:
+                constraint_row[SQUAD_OFFSET + i] = 1
+        min_transfers_required = len(current_squad_ids) - free_transfers
+        constraints.append(LinearConstraint(constraint_row, min_transfers_required, np.inf))
 
-    # Bounds
-    lb = np.zeros(n_vars)
-    ub = np.ones(n_vars)
-    for i, p in enumerate(pool):
-        if p["id"] in locked_ids:
-            lb[X + i] = 1
-    ub[ET] = 15.0  # can swap at most all 15
-    for i, p in enumerate(pool):
-        if p["id"] in blocked_captain_ids:
-            ub[CAP + i] = 0  # can never be selected as captain, regardless of xP
-    bounds = Bounds(lb, ub)
+    # Bounds: every yes/no variable is 0 or 1; extra_transfers_count can be
+    # any number from 0 up to 15 (can't transfer more than a full squad)
+    lower_bounds = np.zeros(num_variables)
+    upper_bounds = np.ones(num_variables)
+    for i, player in enumerate(pool):
+        if player["id"] in locked_ids:
+            lower_bounds[SQUAD_OFFSET + i] = 1  # force this player into the squad
+    upper_bounds[EXTRA_TRANSFERS_INDEX] = 15.0
+    for i, player in enumerate(pool):
+        if player["id"] in blocked_captain_ids:
+            upper_bounds[CAPTAIN_OFFSET + i] = 0  # can never be selected as captain, regardless of xP
+    bounds = Bounds(lower_bounds, upper_bounds)
 
-    integrality = np.ones(n_vars)
-    integrality[ET] = 0  # extra_transfers can be continuous, the solver sets it to an integer anyway
+    is_integer_variable = np.ones(num_variables)
+    is_integer_variable[EXTRA_TRANSFERS_INDEX] = 0  # can be continuous; the solver sets it to a whole number anyway
 
-    # Objective (minimize negative value)
-    c = np.zeros(n_vars)
-    c[X:X + P] = -BENCH_WEIGHT * xp
-    c[S:S + P] = -(1 - BENCH_WEIGHT) * xp
-    c[CAP:CAP + P] = -xp
-    c[ET] = HIT_COST
+    # Objective: scipy.optimize.milp always MINIMIZES, so every coefficient
+    # here is negated -- minimizing negative points is the same as
+    # maximizing points.
+    objective_coefficients = np.zeros(num_variables)
+    objective_coefficients[SQUAD_OFFSET:SQUAD_OFFSET + num_players] = -BENCH_WEIGHT * adjusted_points
+    objective_coefficients[STARTING_XI_OFFSET:STARTING_XI_OFFSET + num_players] = -(1 - BENCH_WEIGHT) * adjusted_points
+    objective_coefficients[CAPTAIN_OFFSET:CAPTAIN_OFFSET + num_players] = -adjusted_points
+    objective_coefficients[EXTRA_TRANSFERS_INDEX] = HIT_COST
 
-    res = milp(c=c, constraints=constraints, integrality=integrality, bounds=bounds)
-    if not res.success:
-        raise RuntimeError(f"MILP failed to solve the problem: {res.message}")
+    solver_result = milp(c=objective_coefficients, constraints=constraints,
+                          integrality=is_integer_variable, bounds=bounds)
+    if not solver_result.success:
+        raise RuntimeError(f"MILP failed to solve the problem: {solver_result.message}")
 
-    x = res.x[X:X + P]
-    s = res.x[S:S + P]
-    cap = res.x[CAP:CAP + P]
-    extra_transfers = res.x[ET]
+    squad_flags = solver_result.x[SQUAD_OFFSET:SQUAD_OFFSET + num_players]
+    starting_xi_flags = solver_result.x[STARTING_XI_OFFSET:STARTING_XI_OFFSET + num_players]
+    captain_flags = solver_result.x[CAPTAIN_OFFSET:CAPTAIN_OFFSET + num_players]
+    extra_transfers_count = solver_result.x[EXTRA_TRANSFERS_INDEX]
 
-    squad_ids = [pool[i]["id"] for i in range(P) if x[i] > 0.5]
-    xi_ids = [pool[i]["id"] for i in range(P) if s[i] > 0.5]
-    captain_id = next(pool[i]["id"] for i in range(P) if cap[i] > 0.5)
+    squad_ids = [pool[i]["id"] for i in range(num_players) if squad_flags[i] > 0.5]
+    xi_ids = [pool[i]["id"] for i in range(num_players) if starting_xi_flags[i] > 0.5]
+    captain_id = next(pool[i]["id"] for i in range(num_players) if captain_flags[i] > 0.5)
 
     transfers_in = sorted(set(squad_ids) - current_squad_ids)
     transfers_out = sorted(current_squad_ids - set(squad_ids))
@@ -255,12 +273,14 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
     hit_taken = 0 if unlimited_transfers else max(0, transfers_made - free_transfers)
     hit_cost = HIT_COST * hit_taken
 
-    pool_by_id = {p["id"]: p for p in pool}
+    pool_by_id = {player["id"]: player for player in pool}
     expected_points = float(
         sum(pool_by_id[i]["xp"] for i in xi_ids)
         + pool_by_id[captain_id]["xp"]  # captain bonus
         - hit_cost
     )
+    squad_value = round(sum(pool_by_id[i]["price"] for i in squad_ids), 1)
+    bank_remaining = round(budget - squad_value, 1)  # what's left of the budget after this squad
 
     return {
         "squad": [pool_by_id[i]["name"] for i in squad_ids],
@@ -276,6 +296,8 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
         "hit_taken": hit_taken,
         "hit_cost": hit_cost,
         "expected_points": round(expected_points, 2),  # nominal xP, NOT risk-adjusted
+        "squad_value": squad_value,  # total price of the 15-man squad
+        "bank_remaining": bank_remaining,  # budget left over after buying this squad
         "risk_adjusted_players": [pool_by_id[pid]["name"] for pid in risk_penalty
                                    if pid in squad_ids and risk_penalty[pid] > 0],
         "blocked_from_captaincy_in_squad": [pool_by_id[pid]["name"] for pid in blocked_captain_ids
