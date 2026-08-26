@@ -24,12 +24,20 @@ import argparse
 import json
 import os
 import sys
+from datetime import datetime
 
 import requests
 
 
+def format_deadline(iso_timestamp: str) -> str:
+    """Turns '2026-08-21T17:30:00Z' into 'Fri 21 Aug, 17:30 UTC'."""
+    dt = datetime.strptime(iso_timestamp, "%Y-%m-%dT%H:%M:%SZ")
+    return dt.strftime("%a %d %b, %H:%M UTC")
+
+
 def format_message(solution: dict, gw: int, critic_summary: str = None,
-                    news_lookup_errors: list = None, news_systematically_blocked: bool = False) -> str:
+                    news_lookup_errors: list = None, news_systematically_blocked: bool = False,
+                    my_team: dict = None, deadline: str = None) -> str:
     lines = [f"*GW{gw} solver recommendation*", ""]
 
     # Transfers -- explicit IN/OUT labels instead of an arrow, since "A <- B"
@@ -44,6 +52,27 @@ def format_message(solution: dict, gw: int, critic_summary: str = None,
             lines.append(f"  _(hit taken: -{solution['hit_cost']} points)_")
     else:
         lines.append("  none")
+    lines.append("")
+
+    # Team status -- squad value/bank/free-transfers/chips in one compact
+    # block, rather than scattered across separate lines. This is context
+    # for the transfers above, so it sits right after them.
+    status_parts = []
+    if solution.get("squad_value") is not None:
+        status_parts.append(f"Squad value: £{solution['squad_value']}m")
+    if solution.get("bank_remaining") is not None:
+        status_parts.append(f"Bank: £{solution['bank_remaining']}m")
+    if my_team is not None:
+        ft_before = my_team.get("free_transfers")
+        ft_used = solution.get("free_transfers_used", 0)
+        if ft_before is not None:
+            status_parts.append(f"Free transfers: had {ft_before}, used {ft_used}")
+    if status_parts:
+        lines.append("*Team status:* " + "  |  ".join(status_parts))
+
+    if my_team is not None:
+        chips = my_team.get("chips_available", [])
+        lines.append(f"*Chips available:* {', '.join(chips) if chips else 'none remaining'}")
     lines.append("")
 
     # Full squad -- starting XI first (captain marked with (C)), bench listed
@@ -84,7 +113,8 @@ def format_message(solution: dict, gw: int, critic_summary: str = None,
             f"(isolated hiccup) -- FPL's own status data was still checked normally for them."
         )
 
-    lines.append("\nReview and make your transfers on fantasy.premierleague.com before the deadline.")
+    deadline_note = f" ({deadline})" if deadline else ""
+    lines.append(f"\nReview and make your transfers on fantasy.premierleague.com before the deadline{deadline_note}.")
     return "\n".join(lines)
 
 
@@ -99,6 +129,10 @@ def main():
     parser.add_argument("--gw", type=int, required=True)
     parser.add_argument("--critic-flags", default=None,
                          help="Path to critic_flags_gw{N}.json, to include the critic's summary")
+    parser.add_argument("--my-team", default="my_team.json",
+                         help="Path to my_team.json, for chips/free-transfers context")
+    parser.add_argument("--events", default="events.json",
+                         help="Path to events.json, to show the real deadline time")
     args = parser.parse_args()
 
     webhook_url = os.environ.get("SLACK_WEBHOOK_URL")
@@ -110,6 +144,22 @@ def main():
     with open(args.solution, encoding="utf-8") as f:
         solution = json.load(f)
 
+    my_team = None
+    if os.path.exists(args.my_team):
+        with open(args.my_team, encoding="utf-8") as f:
+            my_team = json.load(f)
+
+    deadline = None
+    if os.path.exists(args.events):
+        with open(args.events, encoding="utf-8") as f:
+            events = json.load(f)
+        match = next((e for e in events if e["id"] == args.gw), None)
+        if match:
+            try:
+                deadline = format_deadline(match["deadline_time"])
+            except (ValueError, KeyError):
+                pass  # if the timestamp format ever changes, just omit it rather than crash
+
     critic_summary = None
     news_lookup_errors = None
     news_systematically_blocked = False
@@ -120,7 +170,8 @@ def main():
         news_lookup_errors = critic_flags_data.get("news_lookup_errors")
         news_systematically_blocked = critic_flags_data.get("news_systematically_blocked", False)
 
-    message = format_message(solution, args.gw, critic_summary, news_lookup_errors, news_systematically_blocked)
+    message = format_message(solution, args.gw, critic_summary, news_lookup_errors,
+                              news_systematically_blocked, my_team, deadline)
     send_to_slack(message, webhook_url)
     print("Posted to Slack.")
     print("\n--- Message sent ---")
