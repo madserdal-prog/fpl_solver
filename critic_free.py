@@ -253,10 +253,31 @@ def full_pool_solver_inputs(master_data: dict, high_penalty=8.0, medium_penalty=
     chance_of_playing) -- it cannot cover the Google News layer for all
     570 players (too many requests), so that part remains squad-scoped as
     an additional, complementary check layered on top afterward.
+
+    NOTE: this uses each element's own "id" DIRECTLY, not a name lookup --
+    real player pools contain duplicate surnames (verified: 14 duplicate
+    web_names in a real dataset, e.g. "Phillips" appears 3 times), and a
+    name-based lookup would silently risk attributing a flag to the wrong
+    same-named player. Unlike the squad-scoped Google News check (which
+    genuinely has no choice but to work from names, since an LLM/keyword
+    classifier only ever sees player names, not internal IDs), this
+    pool-wide path has the ID sitting right there on every element and
+    should always use it directly instead.
     """
-    flags = [assess_player(e) for e in master_data["elements"]]
-    flags = [f for f in flags if f]
-    return flags_to_solver_inputs(flags, master_data, high_penalty, medium_penalty)
+    risk_penalty = {}
+    blocked_captain_ids = set()
+    for element in master_data["elements"]:
+        flag = assess_player(element)
+        if not flag:
+            continue
+        pid = element["id"]
+        if flag["risk_level"] == "high":
+            risk_penalty[pid] = high_penalty
+            blocked_captain_ids.add(pid)
+        elif flag["risk_level"] == "medium":
+            risk_penalty[pid] = medium_penalty
+            blocked_captain_ids.add(pid)
+    return risk_penalty, blocked_captain_ids, []  # third value kept for API compatibility (no unmatched names possible here)
 
 
 def flags_to_solver_inputs(flags: list, master_data: dict, high_penalty=8.0, medium_penalty=3.0):
