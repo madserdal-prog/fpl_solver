@@ -104,8 +104,23 @@ def main():
         print("(--initial-team set: building from scratch, current_squad ignored for transfer-cost "
               "purposes, no chip consumed)")
 
-    # --- Step 1: raw mathematical solution (no news awareness yet) ---
-    draft_solution = solver.solve(pool, **kwargs)
+    # --- Step 0: full-pool FPL-status baseline (free, no network, applies to
+    # EVERY player, not just whoever ends up in one particular squad) ---
+    # This closes a real gap: checking only the eventual squad misses anyone
+    # who only shows up after a later re-solve (e.g. a flagged/blocked player
+    # gets swapped for a DIFFERENT, equally risky player who was never
+    # checked at all, because they weren't in the squad that got checked).
+    baseline_risk_penalty, baseline_blocked_captain_ids = {}, set()
+    if not args.skip_critic:
+        baseline_risk_penalty, baseline_blocked_captain_ids, _ = critic_free.full_pool_solver_inputs(master)
+        print(f"Full-pool baseline: {len(baseline_blocked_captain_ids)} player(s) blocked from "
+              f"captaincy pool-wide (FPL status/news, no network needed for this part)")
+
+    # --- Step 1: raw mathematical solution, WITH the full-pool baseline
+    # already applied -- so even the very first draft can't put someone
+    # like Coyle/Ajayi in as captain unchecked ---
+    draft_solution = solver.solve(pool, risk_penalty=baseline_risk_penalty,
+                                   blocked_captain_ids=baseline_blocked_captain_ids, **kwargs)
     out_path = f"solver_solution_gw{args.gw}.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(draft_solution, f, ensure_ascii=False, indent=2)
@@ -135,19 +150,28 @@ def main():
         with open(critic_flags_path, encoding="utf-8") as f:
             critic_result = json.load(f)
 
-        risk_penalty = {int(k): v for k, v in critic_result["risk_penalty"].items()}
-        blocked_captain_ids = set(critic_result["blocked_captain_ids"])
+        # Merge the squad-scoped critic's flags (which include the Google
+        # News layer -- richer, but only checked for THIS draft's squad)
+        # with the full-pool baseline computed above, rather than replacing
+        # it. Either source blocking a player is enough to block them.
+        squad_risk_penalty = {int(k): v for k, v in critic_result["risk_penalty"].items()}
+        squad_blocked_captain_ids = set(critic_result["blocked_captain_ids"])
         critic_summary = critic_result["critic_output"].get("summary")
 
+        risk_penalty = dict(baseline_risk_penalty)
+        for pid, penalty in squad_risk_penalty.items():
+            risk_penalty[pid] = max(risk_penalty.get(pid, 0), penalty)
+        blocked_captain_ids = baseline_blocked_captain_ids | squad_blocked_captain_ids
+
         if risk_penalty or blocked_captain_ids:
-            # --- Step 3: re-solve with the critic's risk adjustments ---
-            print("\n=== Re-solving with the critic's risk adjustments ===")
+            # --- Step 3: re-solve with the combined risk adjustments ---
+            print("\n=== Re-solving with the combined risk adjustments ===")
             final_solution = solver.solve(pool, risk_penalty=risk_penalty,
                                            blocked_captain_ids=blocked_captain_ids, **kwargs)
             with open(out_path, "w", encoding="utf-8") as f:
                 json.dump(final_solution, f, ensure_ascii=False, indent=2)
         else:
-            print("\nThe critic found no risk flags requiring a re-run.")
+            print("\nNo risk flags found requiring a re-run.")
 
     print(f"\n=== Final solution for GW{args.gw}{' (chip: ' + args.chip + ')' if args.chip else ''} ===")
     print(json.dumps(final_solution, indent=2, ensure_ascii=False))
