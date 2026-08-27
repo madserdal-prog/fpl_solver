@@ -32,6 +32,7 @@ Usage:
 
 import argparse
 import json
+import time
 import urllib.parse
 import xml.etree.ElementTree as ET
 
@@ -69,7 +70,16 @@ def fetch_google_news_headlines(player_name: str, team_name: str = None, max_ite
     query = f'"{player_name}"' + (f" {team_name}" if team_name else "") + " premier league"
     url = f"{GOOGLE_NEWS_RSS_URL}?q={urllib.parse.quote(query)}&hl=en-GB&gl=GB&ceid=GB:en"
 
-    resp = requests.get(url, timeout=15, headers={"User-Agent": "fpl-auto-pipeline/1.0"})
+    # Google's anti-scraping systems are known to 503-block non-browser User-Agent
+    # strings and/or cloud/datacenter IP ranges (which is exactly what GitHub
+    # Actions runners are). Using a realistic browser UA is a cheap first thing
+    # to try -- if 503s persist even with this, the block is almost certainly
+    # IP-based rather than UA-based, and no header change will fix it.
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                      "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    }
+    resp = requests.get(url, timeout=15, headers=headers)
     resp.raise_for_status()
     root = ET.fromstring(resp.content)
 
@@ -224,9 +234,45 @@ def assess_player(element: dict):
     return None
 
 
+def full_pool_solver_inputs(master_data: dict, high_penalty=8.0, medium_penalty=3.0):
+    """
+    Runs the FREE FPL-status check (assess_player -- no network needed)
+    against EVERY player in master_data, not just whoever happens to be in
+    one particular squad. This is what should be applied to the very FIRST
+    solve, before any squad has even been chosen.
+
+    Why this matters: run_real.py's normal flow only runs the critic
+    against ONE draft squad, then re-solves if something was flagged. But
+    the re-solve can introduce a BRAND NEW player who was never in that
+    draft and therefore never checked at all -- this is exactly what
+    happened in practice (a flagged/blocked defender got swapped for a
+    different, equally-injured defender from the same club, who then won
+    captaincy completely unchecked, since the check never ran against him).
+    Applying this full-pool check to every solve from the start closes that
+    gap for anything the free FPL data itself can catch (status/news/
+    chance_of_playing) -- it cannot cover the Google News layer for all
+    570 players (too many requests), so that part remains squad-scoped as
+    an additional, complementary check layered on top afterward.
+    """
+    flags = [assess_player(e) for e in master_data["elements"]]
+    flags = [f for f in flags if f]
+    return flags_to_solver_inputs(flags, master_data, high_penalty, medium_penalty)
+
+
 def flags_to_solver_inputs(flags: list, master_data: dict, high_penalty=8.0, medium_penalty=3.0):
-    """Same translation logic as critic.py's flags_to_solver_inputs(), kept separate
-    to avoid a dependency between the free and paid critics."""
+    """
+    Translates the critic's qualitative flags into the quantitative inputs
+    solver_general.solve() expects:
+      - risk_level="high"   -> large risk_penalty AND blocked from captaincy
+      - risk_level="medium" -> moderate risk_penalty AND ALSO blocked from
+        captaincy (captaincy doubles the downside of a bad pick, so even a
+        medium-risk flag shouldn't be overridable by a high enough raw
+        projection -- this was a real gap found in practice)
+
+    Name matching is a case-insensitive substring search against
+    master_data's web_name -- works for most cases, but MULTIPLE MATCHES
+    are resolved by taking the lowest id. Double-check manually if in doubt.
+    """
     name_to_id = {e["web_name"]: e["id"] for e in master_data["elements"]}
 
     risk_penalty = {}
@@ -243,6 +289,7 @@ def flags_to_solver_inputs(flags: list, master_data: dict, high_penalty=8.0, med
             blocked_captain_ids.add(pid)
         elif flag["risk_level"] == "medium":
             risk_penalty[pid] = medium_penalty
+            blocked_captain_ids.add(pid)
 
     return risk_penalty, blocked_captain_ids, unmatched
 
@@ -258,7 +305,7 @@ def run_free_critic(solution_path: str, master_data_path: str, out_path: str, us
 
     flags = []
     news_errors = []
-    for name in squad_names:
+    for i, name in enumerate(squad_names):
         element = elements_by_name.get(name)
         if element is None:
             continue
@@ -267,6 +314,10 @@ def run_free_critic(solution_path: str, master_data_path: str, out_path: str, us
 
         news_flag = None
         if use_news:
+            if i > 0:
+                # Space out requests to reduce the chance of Google News rate-limiting
+                # a burst of ~15 rapid requests from GitHub Actions' shared IP ranges.
+                time.sleep(1.0)
             try:
                 headlines = fetch_google_news_headlines(element["web_name"], element.get("team"))
                 news_flag = classify_headlines(element["web_name"], headlines)
@@ -278,6 +329,13 @@ def run_free_critic(solution_path: str, master_data_path: str, out_path: str, us
         merged = merge_flags(fpl_flag, news_flag)
         if merged:
             flags.append(merged)
+
+    # Distinguish "a few isolated lookups failed" from "every single one failed" --
+    # the latter (news_errors == squad_size) points to a systematic block (Google
+    # rejecting GitHub Actions' IP range, or similar), not an isolated network
+    # hiccup, and the person should know that distinction rather than see 15
+    # near-identical warnings and assume it's random flakiness.
+    news_systematically_blocked = use_news and len(news_errors) >= len(squad_names) and len(squad_names) > 0
 
     if flags:
         high = [f["player_name"] for f in flags if f["risk_level"] == "high"]
@@ -302,6 +360,7 @@ def run_free_critic(solution_path: str, master_data_path: str, out_path: str, us
         "blocked_captain_ids": sorted(blocked_captain_ids),
         "unmatched_names": unmatched,
         "news_lookup_errors": news_errors,
+        "news_systematically_blocked": news_systematically_blocked,
     }
 
     with open(out_path, "w", encoding="utf-8") as f:
@@ -313,9 +372,14 @@ def run_free_critic(solution_path: str, master_data_path: str, out_path: str, us
     for flag in flags:
         print(f"  [{flag['risk_level'].upper()}] {flag['player_name']}: {flag['reason']} "
               f"({flag['recommendation']})")
-    if news_errors:
-        print(f"\nNote: Google News lookup failed for {len(news_errors)} player(s) "
-              f"(network hiccup or rate limit) -- FPL status data was still used for them: {news_errors}")
+    if news_systematically_blocked:
+        print(f"\nWARNING: Google News lookup failed for ALL {len(news_errors)} players -- this is "
+              f"not isolated flakiness, it looks like Google is blocking requests from this runner "
+              f"entirely (common for cloud/CI IP ranges). FPL status data was still used normally; "
+              f"only the Google News layer is affected.")
+    elif news_errors:
+        print(f"\nNote: Google News lookup failed for {len(news_errors)} of {len(squad_names)} player(s) "
+              f"(isolated network hiccup) -- FPL status data was still used for them: {news_errors}")
     if not use_news:
         print(f"\nReminder: --no-news is set, so this only catches what FPL's own editors have "
               f"already flagged -- it will miss transfer sagas and rotation risk for a "
