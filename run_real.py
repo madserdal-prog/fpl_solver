@@ -130,48 +130,83 @@ def main():
 
     final_solution = draft_solution
     critic_summary = None
+    # These need to exist regardless of --skip-critic, since the Bench Boost
+    # check below also needs them -- this was itself part of the same
+    # architectural gap (see MAX_CRITIC_PASSES comment): a check further
+    # down the file was using no risk information at all.
+    risk_penalty = dict(baseline_risk_penalty)
+    blocked_captain_ids = set(baseline_blocked_captain_ids)
 
     if args.skip_critic:
         print("\n(--skip-critic set: skipping news check, using the raw proposal directly)")
     else:
-        critic_flags_path = f"critic_flags_gw{args.gw}.json"
+        # Bounded iterative loop: check the CURRENT squad, re-solve if
+        # anything new was flagged, then check the NEW squad again -- up to
+        # MAX_CRITIC_PASSES times. A single check-then-resolve pass isn't
+        # enough: the Google News layer only checks whoever is in the squad
+        # AT THE TIME of that one check, and a re-solve can introduce a
+        # brand new player who was never checked (this is exactly the bug
+        # that let Coyle through -- the FPL-status layer is now fixed
+        # pool-wide via the baseline above, but the News layer is still
+        # necessarily squad-scoped, since running it against the full ~600
+        # player pool would mean hundreds of extra network requests every run).
+        # NOTE for --paid-critic: each pass here is a separate billed API
+        # call -- this can cost up to MAX_CRITIC_PASSES times as much as a
+        # single check, not just once.
+        MAX_CRITIC_PASSES = 2
+        current_solution = draft_solution
 
-        if args.paid_critic:
-            if not os.environ.get("ANTHROPIC_API_KEY"):
-                print("\nWARNING: --paid-critic requires ANTHROPIC_API_KEY, which is not set.")
-                print("Falling back to the free critic instead.")
-                critic_free.run_free_critic(out_path, args.master, critic_flags_path)
-            else:
-                import critic
-                critic.run_critic(out_path, args.master, critic_flags_path)
-        else:
-            critic_free.run_free_critic(out_path, args.master, critic_flags_path)
-
-        with open(critic_flags_path, encoding="utf-8") as f:
-            critic_result = json.load(f)
-
-        # Merge the squad-scoped critic's flags (which include the Google
-        # News layer -- richer, but only checked for THIS draft's squad)
-        # with the full-pool baseline computed above, rather than replacing
-        # it. Either source blocking a player is enough to block them.
-        squad_risk_penalty = {int(k): v for k, v in critic_result["risk_penalty"].items()}
-        squad_blocked_captain_ids = set(critic_result["blocked_captain_ids"])
-        critic_summary = critic_result["critic_output"].get("summary")
-
-        risk_penalty = dict(baseline_risk_penalty)
-        for pid, penalty in squad_risk_penalty.items():
-            risk_penalty[pid] = max(risk_penalty.get(pid, 0), penalty)
-        blocked_captain_ids = baseline_blocked_captain_ids | squad_blocked_captain_ids
-
-        if risk_penalty or blocked_captain_ids:
-            # --- Step 3: re-solve with the combined risk adjustments ---
-            print("\n=== Re-solving with the combined risk adjustments ===")
-            final_solution = solver.solve(pool, risk_penalty=risk_penalty,
-                                           blocked_captain_ids=blocked_captain_ids, **kwargs)
+        for pass_num in range(1, MAX_CRITIC_PASSES + 1):
             with open(out_path, "w", encoding="utf-8") as f:
-                json.dump(final_solution, f, ensure_ascii=False, indent=2)
-        else:
-            print("\nNo risk flags found requiring a re-run.")
+                json.dump(current_solution, f, ensure_ascii=False, indent=2)
+
+            critic_flags_path = f"critic_flags_gw{args.gw}.json"
+            if args.paid_critic:
+                if not os.environ.get("ANTHROPIC_API_KEY"):
+                    print("\nWARNING: --paid-critic requires ANTHROPIC_API_KEY, which is not set.")
+                    print("Falling back to the free critic instead.")
+                    critic_free.run_free_critic(out_path, args.master, critic_flags_path)
+                else:
+                    import critic
+                    critic.run_critic(out_path, args.master, critic_flags_path)
+            else:
+                critic_free.run_free_critic(out_path, args.master, critic_flags_path)
+
+            with open(critic_flags_path, encoding="utf-8") as f:
+                critic_result = json.load(f)
+
+            squad_risk_penalty = {int(k): v for k, v in critic_result["risk_penalty"].items()}
+            squad_blocked_captain_ids = set(critic_result["blocked_captain_ids"])
+            critic_summary = critic_result["critic_output"].get("summary")
+
+            new_risk_penalty = dict(risk_penalty)
+            for pid, penalty in squad_risk_penalty.items():
+                new_risk_penalty[pid] = max(new_risk_penalty.get(pid, 0), penalty)
+            new_blocked_captain_ids = blocked_captain_ids | squad_blocked_captain_ids
+
+            if new_risk_penalty == risk_penalty and new_blocked_captain_ids == blocked_captain_ids:
+                print(f"\nPass {pass_num}: no new risk flags -- converged, stopping.")
+                break
+
+            risk_penalty, blocked_captain_ids = new_risk_penalty, new_blocked_captain_ids
+            print(f"\n=== Pass {pass_num}: re-solving with updated risk adjustments ===")
+            new_solution = solver.solve(pool, risk_penalty=risk_penalty,
+                                         blocked_captain_ids=blocked_captain_ids, **kwargs)
+
+            if set(new_solution["squad_ids"]) == set(current_solution["squad_ids"]):
+                current_solution = new_solution
+                print(f"Pass {pass_num}: squad unchanged despite new flags -- converged, stopping.")
+                break
+
+            current_solution = new_solution
+            if pass_num == MAX_CRITIC_PASSES:
+                print(f"WARNING: reached the {MAX_CRITIC_PASSES}-pass limit without full convergence -- "
+                      f"the squad kept changing each time it was re-checked. Using the latest result, "
+                      f"but a newly-introduced player may not have been news-checked yet.")
+
+        final_solution = current_solution
+        with open(out_path, "w", encoding="utf-8") as f:
+            json.dump(final_solution, f, ensure_ascii=False, indent=2)
 
     print(f"\n=== Final solution for GW{args.gw}{' (chip: ' + args.chip + ')' if args.chip else ''} ===")
     print(json.dumps(final_solution, indent=2, ensure_ascii=False))
@@ -195,7 +230,13 @@ def main():
     if checks.RUN_BENCH_BOOST_ALTERNATIVE and not args.no_bench_boost_check \
             and "bench_boost" in my_team.get("chips_available", []):
         print("\n=== Bench Boost alternative check ===")
-        bb_solution = solver.solve(pool, bench_weight=1.0, **kwargs)
+        # IMPORTANT: this must use the SAME risk_penalty/blocked_captain_ids
+        # as the main solution -- an earlier version of this call passed
+        # none at all, meaning the BB alternative could freely recommend a
+        # squad built around an injured/flagged player with no warning,
+        # completely bypassing every fix made to the main recommendation.
+        bb_solution = solver.solve(pool, bench_weight=1.0, risk_penalty=risk_penalty,
+                                    blocked_captain_ids=blocked_captain_ids, **kwargs)
         bench_boost_note = checks.bench_boost_summary(final_solution, bb_solution)
         print(f"  {bench_boost_note}")
     final_solution["bench_boost_note"] = bench_boost_note
