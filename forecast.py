@@ -151,6 +151,17 @@ FORM_INFLUENCE = 0.35  # minimum weight given to recent actual form, REGARDLESS 
                         # with plenty of minutes gets full "trust" and the small-sample blend
                         # above does nothing to catch a pure recency decline.
 
+# Rough conservative "typical" points-per-match priors, used to shrink the
+# outcome anchor (form/points_per_game) itself when it's based on very few
+# minutes. Without this, a single freak match (e.g. a defender's one 63-minute
+# appearance producing a goal + clean sheet + max bonus = 14 points) gets
+# trusted at FULL face value as if it were a demonstrated ability, not a
+# one-off outlier -- this caused a real bug: a cheap, injury-doubtful
+# defender with a single huge match projected at 9.45 xP, well above what
+# any of his actual underlying stats supported, purely because "form: 14.0"
+# was taken at face value with no regard for the sample size behind it.
+BASELINE_PPG_BY_POSITION = {"GK": 2.5, "DEF": 3.0, "MID": 3.0, "FWD": 3.0}
+
 
 def p_play(element):
     """P(player) -- probability of meaningful playing time this round."""
@@ -177,6 +188,13 @@ def compute_xp_series(element, fixture_lookup, start_gw, horizon):
     picked as captain. Below MINUTES_TRUST_THRESHOLD minutes, the raw
     process-based estimate is blended with FPL's own form figure,
     proportional to how little we should trust the small sample.
+
+    SECOND safeguard (the outcome anchor's own reliability): the raw form/
+    points_per_game figure ITSELF gets shrunk toward a conservative
+    position-average baseline when minutes are low -- not just down-
+    weighted in the blend above. A single-match outlier shouldn't be
+    trusted at face value just because it's the only data point available;
+    it should be treated as noisy, not definitive.
     """
     pos = element["element_type"]
     goal_pts = GOAL_POINTS[pos]
@@ -194,7 +212,9 @@ def compute_xp_series(element, fixture_lookup, start_gw, horizon):
     # look good, but who has a genuine history of NOT converting that
     # process into real points.
     form = element.get("form", 0.0)
-    outcome_anchor = form if form > 0 else element.get("points_per_game", 0.0)
+    raw_outcome_anchor = form if form > 0 else element.get("points_per_game", 0.0)
+    baseline_ppg = BASELINE_PPG_BY_POSITION.get(pos, 3.0)
+    outcome_anchor = trust * raw_outcome_anchor + (1 - trust) * baseline_ppg
 
     series = []
     for i in range(horizon):
