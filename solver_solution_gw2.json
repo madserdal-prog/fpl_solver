@@ -3,44 +3,44 @@
     "Saka",
     "Kelleher",
     "Thiago",
+    "M.Sangaré",
     "De Cuyper",
     "Palmer",
     "João Pedro",
     "Tarkowski",
-    "Coyle",
     "Bijol",
-    "Okafor",
     "Nmecha",
     "O'Reilly",
     "Mbeumo",
     "Gibbs-White",
+    "Senesi",
     "Roefs"
   ],
   "squad_ids": [
     12,
     82,
     106,
+    565,
     115,
     154,
     165,
     229,
-    280,
     327,
-    336,
     347,
     387,
     427,
     480,
+    498,
     529
   ],
   "starting_xi": [
     "Kelleher",
     "Thiago",
+    "M.Sangaré",
     "De Cuyper",
     "Palmer",
     "João Pedro",
     "Tarkowski",
-    "Coyle",
     "Bijol",
     "Nmecha",
     "O'Reilly",
@@ -49,40 +49,44 @@
   "starting_xi_ids": [
     82,
     106,
+    565,
     115,
     154,
     165,
     229,
-    280,
     327,
     347,
     387,
     427
   ],
-  "captain": "Coyle",
-  "captain_id": 280,
+  "captain": "De Cuyper",
+  "captain_id": 115,
   "transfers_in": [
-    "Coyle"
+    "M.Sangaré"
   ],
   "transfers_out": [
-    "Senesi"
+    "Okafor"
   ],
   "transfers_made": 1,
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 13.07,
-  "bench_points": 3.77,
-  "squad_value": 98.2,
-  "bank_remaining": 1.8,
+  "expected_points": 10.13,
+  "bench_points": 3.78,
+  "squad_value": 99.8,
+  "bank_remaining": 0.2,
   "risk_adjusted_players": [
-    "Okafor",
+    "Gibbs-White",
     "Saka",
-    "Gibbs-White"
+    "Senesi"
   ],
-  "blocked_from_captaincy_in_squad": [],
+  "blocked_from_captaincy_in_squad": [
+    "Saka",
+    "Gibbs-White",
+    "Senesi"
+  ],
   "price_momentum_notes": [
-    "Senesi looks likely to FALL in price soon (net -0.34% of managers this GW)"
+    "M.Sangaré looks likely to RISE in price soon (net +3.13% of managers this GW)"
   ],
-  "bench_boost_note": "Boosting THIS week's normal bench: +3.77 pts (total 16.84). Restructuring specifically for Bench Boost instead: 19.23 pts (+2.39 vs. just boosting the normal squad)."
+  "bench_boost_note": "Boosting THIS week's normal bench: +3.78 pts (total 13.91). Restructuring specifically for Bench Boost instead: 13.91 pts (+0.0 vs. just boosting the normal squad)."
 }
