@@ -17,7 +17,7 @@
     229
   ],
   "bank": 0.0,
-  "free_transfers": 2,
+  "free_transfers": 1,
   "chips_available": [
     "wildcard",
     "bench_boost",

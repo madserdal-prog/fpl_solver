@@ -9,17 +9,10 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Coyle",
+        "player_name": "Saka",
         "risk_level": "medium",
-        "reason": "Ankle injury - 75% chance of playing",
-        "source": "FPL API status/chance_of_playing_next_round fields",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Palmer",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Wrexham Linked With A Move for Ipswich Town Goalkeeper Alex Palmer - roundtable.io\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiuwFBVV95cUxORF9Ebmg5R3FGcm0zVmVYSURsWllpOG4xYzVBY2hNSWFDYkZpamVTbnVzLUtKc1VjZF8zdzVkLXd0MWRveFdZeG5MbDZjSGpjNExVQnJldWlfUEh3V3lpUURkdHVPN1BnYXRsX2Q3NC0yRFN2LUszMjFEOWMzejBoRVhhR1BqTVBTb2FKbWhJWXBHRmRFZ0N0elhDQ1Axdk5CcDJRdi1FMkVvY20zOV8ySVl0Rzd0VDJfMEc0?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"The Scout’s FPL Gameweek 2 transfer radar - Premier League\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMijwFBVV95cUxNWGw1VU4yTXhWTkxsUnZwcmhRbEdQNVNjOHQycFJOWExtdTdZWFU4a1M1Y2NBd3JoQ0VTY2U1R1R5SzV5VzZ1SWFZM3pSenRDODR6YlBKQ2tvZ2tiMWwzcHd6QlRzVnJ5Nmd1dWh3S09xY0pzUXM3R0NmanJ6OWVnUU5ZTG50eWo1Rk9kZ0hBcw?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -30,21 +23,36 @@
         "recommendation": "monitor"
       },
       {
+        "player_name": "Senesi",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Marcos Senesi: Tottenham confirm signing of defender after Bournemouth exit - BBC\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTFAzZVV0MXQxMDVKVGtTQWhsdlUxY3o3d1NoMkFnb29fS0trX2NxUmRzUDRMUjR1azlpWmJqZjZyMFBOWWlIaktIMXVBNGQtdTRsc01UamdGbDlrWHpQTU03ejlkUjVnZXBnWFE?oc=5",
+        "recommendation": "monitor"
+      },
+      {
         "player_name": "Gibbs-White",
         "risk_level": "medium",
         "reason": "Knee injury - 75% chance of playing | Also: Headline suggests an active transfer situation: \"Morgan Gibbs-White - Player profile 26/27 - Transfermarkt\"",
         "source": "FPL API status/chance_of_playing_next_round fields",
         "recommendation": "monitor"
+      },
+      {
+        "player_name": "Palmer",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Wrexham Linked With A Move for Ipswich Town Goalkeeper Alex Palmer - roundtable.io\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiuwFBVV95cUxORF9Ebmg5R3FGcm0zVmVYSURsWllpOG4xYzVBY2hNSWFDYkZpamVTbnVzLUtKc1VjZF8zdzVkLXd0MWRveFdZeG5MbDZjSGpjNExVQnJldWlfUEh3V3lpUURkdHVPN1BnYXRsX2Q3NC0yRFN2LUszMjFEOWMzejBoRVhhR1BqTVBTb2FKbWhJWXBHRmRFZ0N0elhDQ1Axdk5CcDJRdi1FMkVvY20zOV8ySVl0Rzd0VDJfMEc0?oc=5",
+        "recommendation": "monitor"
       }
     ],
-    "summary": "Found 5 medium-risk (Ajayi, Coyle, Palmer, Okafor, Gibbs-White) based on FPL data and Google News headlines."
+    "summary": "Found 6 medium-risk (Ajayi, Saka, Okafor, Senesi, Gibbs-White, Palmer) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
     "279": 3.0,
-    "280": 3.0,
-    "301": 3.0,
+    "12": 3.0,
     "336": 3.0,
-    "480": 3.0
+    "498": 3.0,
+    "480": 3.0,
+    "301": 3.0
   },
   "blocked_captain_ids": [],
   "unmatched_names": [],

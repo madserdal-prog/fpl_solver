@@ -11,9 +11,9 @@
     "Ajayi",
     "Bijol",
     "Nmecha",
+    "O'Reilly",
     "Mbeumo",
     "Gibbs-White",
-    "Senesi",
     "Roefs"
   ],
   "squad_ids": [
@@ -28,14 +28,14 @@
     279,
     327,
     347,
+    387,
     427,
     480,
-    498,
     529
   ],
   "starting_xi": [
-    "Saka",
     "Kelleher",
+    "Thiago",
     "De Cuyper",
     "Hinshelwood",
     "Palmer",
@@ -43,12 +43,12 @@
     "Tarkowski",
     "Ajayi",
     "Bijol",
-    "Mbeumo",
-    "Senesi"
+    "O'Reilly",
+    "Mbeumo"
   ],
   "starting_xi_ids": [
-    12,
     82,
+    106,
     115,
     123,
     154,
@@ -56,8 +56,8 @@
     229,
     279,
     327,
-    427,
-    498
+    387,
+    427
   ],
   "captain": "Ajayi",
   "captain_id": 279,
@@ -67,25 +67,26 @@
   ],
   "transfers_out": [
     "Okafor",
-    "O'Reilly"
+    "Senesi"
   ],
   "transfers_made": 2,
-  "free_transfers_used": 2,
-  "hit_taken": 0,
-  "hit_cost": 0,
-  "expected_points": 35.52,
-  "bench_points": 1.91,
-  "squad_value": 97.6,
-  "bank_remaining": 2.4,
+  "free_transfers_used": 1,
+  "hit_taken": 1,
+  "hit_cost": 4,
+  "expected_points": 29.85,
+  "bench_points": 3.41,
+  "squad_value": 98.1,
+  "bank_remaining": 1.9,
   "risk_adjusted_players": [
     "Ajayi",
+    "Saka",
     "Gibbs-White"
   ],
   "blocked_from_captaincy_in_squad": [],
   "price_momentum_notes": [
-    "Hinshelwood looks likely to RISE in price soon (net +1.03% of managers this GW)",
+    "Hinshelwood looks likely to RISE in price soon (net +1.05% of managers this GW)",
     "Ajayi looks likely to RISE in price soon (net +0.35% of managers this GW)",
-    "O'Reilly looks likely to FALL in price soon (net -0.24% of managers this GW)"
+    "Senesi looks likely to FALL in price soon (net -0.32% of managers this GW)"
   ],
-  "bench_boost_note": "Boosting THIS week's normal bench: +1.91 pts (total 37.43). Restructuring specifically for Bench Boost instead: 38.29 pts (+0.86 vs. just boosting the normal squad)."
+  "bench_boost_note": "Boosting THIS week's normal bench: +3.41 pts (total 33.26). Restructuring specifically for Bench Boost instead: 34.74 pts (+1.48 vs. just boosting the normal squad)."
 }
