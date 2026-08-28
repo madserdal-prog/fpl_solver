@@ -11,11 +11,18 @@ brief justification and source. The solver (quantitative) and the critic
 (qualitative) are deliberately kept separate -- see the guide's
 division-of-labor principle.
 
-Requires an Anthropic API key (ANTHROPIC_API_KEY environment variable),
-since this script runs independently of claude.ai and needs its own
-access to web search. This is NOT free -- API calls cost per token,
-separate from any claude.ai/Claude Pro subscription. Check current
-pricing at https://docs.claude.com if you're unsure about cost.
+Requires an xAI (Grok) API key (XAI_API_KEY environment variable), since
+this script runs independently and needs its own access to web search.
+This is NOT free -- API calls cost per token, separate from any X/Grok
+consumer subscription. Check current pricing at console.x.ai if unsure.
+
+Uses xAI's RESPONSES API (POST /v1/responses), not the plain chat
+completions endpoint -- the web_search tool is only available there. Model
+is "grok-4.6": as of writing, xAI's docs consistently show this as the
+model that supports the web_search tool via the Responses API, while some
+other current models (e.g. grok-4.3) are chat-completions-only and do NOT
+accept it. Model names/capabilities change over time -- check
+docs.x.ai/developers/tools/web-search if this ever breaks.
 
 Usage:
   python3 critic.py --solution solver_solution_gw4.json --out critic_flags_gw4.json
@@ -29,8 +36,8 @@ import sys
 
 import requests
 
-ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages"
-MODEL = "claude-sonnet-4-6"  # see product-self-knowledge for the current model name at time of use
+XAI_RESPONSES_API_URL = "https://api.x.ai/v1/responses"
+MODEL = "grok-4.6"  # must support the Responses API's web_search tool -- see module docstring
 
 SYSTEM_PROMPT = """\
 You are a qualitative risk assessor for a Fantasy Premier League squad. You are given a proposed \
@@ -67,12 +74,13 @@ with no news of significance. If you find nothing concerning for a player, do no
 """
 
 
-def call_anthropic_with_search(squad_names: list, api_key: str) -> dict:
+def call_grok_with_search(squad_names: list, api_key: str) -> dict:
     """
-    Calls the Anthropic API with the web_search tool enabled. Handles the
-    fact that the response may consist of multiple content blocks
-    (tool_use, tool_result, text) -- see the anthropic_api_in_artifacts
-    documentation for why this can't assume the answer is in content[0].
+    Calls xAI's Responses API with the web_search tool enabled. The
+    response's "output" is a list of typed items (message, tool calls,
+    etc.) -- similar in spirit to Anthropic's mixed content-block
+    responses -- so extract_text_blocks() below can't assume the answer
+    sits at a fixed position either.
     """
     user_message = (
         "Proposed squad this round: " + ", ".join(squad_names) + ". "
@@ -81,30 +89,35 @@ def call_anthropic_with_search(squad_names: list, api_key: str) -> dict:
 
     payload = {
         "model": MODEL,
-        "max_tokens": 4000,
-        "system": SYSTEM_PROMPT,
-        "messages": [{"role": "user", "content": user_message}],
-        "tools": [{"type": "web_search_20250305", "name": "web_search"}],
+        "instructions": SYSTEM_PROMPT,
+        "input": [{"role": "user", "content": user_message}],
+        "tools": [{"type": "web_search"}],
     }
     headers = {
-        "x-api-key": api_key,
-        "anthropic-version": "2023-06-01",
-        "content-type": "application/json",
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
     }
 
-    resp = requests.post(ANTHROPIC_API_URL, json=payload, headers=headers, timeout=120)
+    resp = requests.post(XAI_RESPONSES_API_URL, json=payload, headers=headers, timeout=120)
     resp.raise_for_status()
     return resp.json()
 
 
 def extract_text_blocks(api_response: dict) -> str:
     """
-    Extracts all text blocks from an Anthropic API response and joins them
-    together. Ignores tool_use/tool_result blocks (the web search's
-    "work"), since we only want the critic's final text answer.
+    Extracts all output_text content from a Responses API result. The
+    "output" array can contain multiple item types (message, tool calls
+    for web_search, etc.) -- this only collects text from "message" items,
+    ignoring the search tool's own call/result items, since we only want
+    the model's final written answer.
     """
-    texts = [block["text"] for block in api_response.get("content", [])
-             if block.get("type") == "text"]
+    texts = []
+    for item in api_response.get("output", []):
+        if item.get("type") != "message":
+            continue
+        for content_block in item.get("content", []):
+            if content_block.get("type") == "output_text":
+                texts.append(content_block.get("text", ""))
     return "\n".join(texts)
 
 
@@ -179,12 +192,12 @@ def flags_to_solver_inputs(critic_output: dict, master_data: dict,
 
 
 def run_critic(solution_path: str, master_data_path: str, out_path: str):
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    api_key = os.environ.get("XAI_API_KEY")
     if not api_key:
-        print("ERROR: the ANTHROPIC_API_KEY environment variable is not set.", file=sys.stderr)
+        print("ERROR: the XAI_API_KEY environment variable is not set.", file=sys.stderr)
         print("Set it with e.g.:", file=sys.stderr)
-        print('  Windows (PowerShell): $env:ANTHROPIC_API_KEY = "your-key"', file=sys.stderr)
-        print("  Mac/Linux:            export ANTHROPIC_API_KEY=your-key", file=sys.stderr)
+        print('  Windows (PowerShell): $env:XAI_API_KEY = "your-key"', file=sys.stderr)
+        print("  Mac/Linux:            export XAI_API_KEY=your-key", file=sys.stderr)
         sys.exit(1)
 
     with open(solution_path, encoding="utf-8") as f:
@@ -195,7 +208,7 @@ def run_critic(solution_path: str, master_data_path: str, out_path: str):
     squad_names = solution["squad"]
     print(f"Sending {len(squad_names)} players to the critic for a news check...")
 
-    api_response = call_anthropic_with_search(squad_names, api_key)
+    api_response = call_grok_with_search(squad_names, api_key)
     raw_text = extract_text_blocks(api_response)
     critic_output = parse_critic_response(raw_text)
 
