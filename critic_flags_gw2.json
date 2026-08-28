@@ -2,40 +2,34 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Roefs",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
-        "recommendation": "monitor"
-      },
-      {
         "player_name": "Gibbs-White",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Morgan Gibbs-White - News | Page 4 - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMigAFBVV95cUxNVk5fWlNvaHRVczMxVjVsamg3aUY3WFYzalRTSGxVbnJVTGJUVU1acjhZc1l3VXgtRFhtbU00NEpRTmh0M1IzcWFtbTVWcUpVaFR3Z3hyT010RDc5UVBUSzA4T1JpWEJxYnhQMXoxWEZrclY3TElyZUgyZjJSUEVPRw?oc=5",
+        "reason": "Twisted ankle and overstretched MCL with knee pain in GW1 vs Leeds; missed midweek EFL Cup. No structural damage but Glasner taking a cautious approach and he is only an option/doubt for this weekend vs Liverpool.",
+        "source": "Oliver Glasner presser / RotoWire / BBC Nottingham, 24-28 Aug 2026",
         "recommendation": "monitor"
       },
       {
-        "player_name": "Nmecha",
+        "player_name": "Thiago",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Wrexham provide Lukas Nmecha transfer twist Leeds United cannot ignore - Yahoo Sports UK\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeXlGcjVzMnlPVTBySVZfUXRzQlQ0QWJTVXFRUHpmV0d4MTJfbE9rMkIxdm5sUWRYcFNHWmZyV0R1YnhqS3JCNUxrVzQ5UmtEYU1pc0FJbzhPWVZ0YlhNUEtLdHpuWng2NmlTUGd1T25jQlpLcnJYOVhqYUtJOUZHWXNDZ2VuOVAzRnZR?oc=5",
+        "reason": "Nottingham Forest lodged a reported £70m bid on 23 Aug with the transfer window still open until 1 Sept; other clubs interested. Risk of sale, distraction or being benched if a deal progresses.",
+        "source": "ESPN / FourFourTwo / Rudy Galetti reports, 23 Aug 2026",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Senesi",
+        "risk_level": "medium",
+        "reason": "Played 90 minutes in GW1 but was rested in the midweek EFL Cup specifically to manage workload. Micky van de Ven is returning, increasing short-term rotation risk at Tottenham.",
+        "source": "RotoWire / Roberto De Zerbi comments, 26 Aug 2026",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 3 medium-risk (Roefs, Gibbs-White, Nmecha) based on FPL data and Google News headlines."
+    "summary": "Gibbs-White is the clearest availability concern after a recent knee/MCL issue, with Forest being cautious ahead of a tough away game. Igor Thiago has an active high-value transfer saga while the window remains open. Senesi was deliberately rotated midweek and now faces extra competition at the back."
   },
   "risk_penalty": {
-    "529": 3.0,
     "480": 3.0,
-    "347": 3.0
+    "106": 3.0,
+    "498": 3.0
   },
-  "blocked_captain_ids": [
-    347,
-    480,
-    529
-  ],
-  "unmatched_names": [],
-  "news_lookup_errors": [],
-  "news_systematically_blocked": false
+  "blocked_captain_ids": [],
+  "unmatched_names": []
 }

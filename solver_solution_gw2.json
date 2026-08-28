@@ -3,6 +3,7 @@
     "Saka",
     "Kelleher",
     "Thiago",
+    "M.Sangaré",
     "De Cuyper",
     "Palmer",
     "João Pedro",
@@ -10,7 +11,6 @@
     "Bijol",
     "Okafor",
     "Nmecha",
-    "Gakpo",
     "O'Reilly",
     "Mbeumo",
     "Senesi",
@@ -20,6 +20,7 @@
     12,
     82,
     106,
+    565,
     115,
     154,
     165,
@@ -27,7 +28,6 @@
     327,
     336,
     347,
-    367,
     387,
     427,
     498,
@@ -36,33 +36,33 @@
   "starting_xi": [
     "Saka",
     "Kelleher",
+    "M.Sangaré",
     "De Cuyper",
     "Palmer",
     "João Pedro",
     "Tarkowski",
     "Bijol",
-    "Okafor",
-    "Gakpo",
+    "Nmecha",
     "O'Reilly",
     "Mbeumo"
   ],
   "starting_xi_ids": [
     12,
     82,
+    565,
     115,
     154,
     165,
     229,
     327,
-    336,
-    367,
+    347,
     387,
     427
   ],
   "captain": "De Cuyper",
   "captain_id": 115,
   "transfers_in": [
-    "Gakpo"
+    "M.Sangaré"
   ],
   "transfers_out": [
     "Gibbs-White"
@@ -71,37 +71,32 @@
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 10.41,
-  "bench_points": 2.06,
-  "squad_value": 99.2,
-  "bank_remaining": 0.8,
+  "expected_points": 10.48,
+  "bench_points": 2.02,
+  "squad_value": 97.8,
+  "bank_remaining": 2.2,
   "risk_adjusted_players": [
-    "Senesi",
-    "Roefs",
-    "Nmecha"
-  ],
-  "blocked_from_captaincy_in_squad": [
-    "Roefs",
-    "Nmecha",
+    "Thiago",
+    "Okafor",
     "Senesi"
   ],
+  "blocked_from_captaincy_in_squad": [],
   "price_momentum_notes": [
-    "Gakpo looks likely to RISE in price soon (net +1.62% of managers this GW)",
-    "Gibbs-White looks likely to FALL in price soon (net -2.55% of managers this GW)"
+    "M.Sangaré looks likely to RISE in price soon (net +3.91% of managers this GW)",
+    "Gibbs-White looks likely to FALL in price soon (net -2.58% of managers this GW)"
   ],
   "fixture_difficulty_notes": [
     "Saka has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.4) -- already reflected in their rotation_value",
     "Palmer has an EASY run of fixtures over the next 5 GWs (avg FDR 2.0) -- already reflected in their rotation_value",
     "João Pedro has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value",
-    "Gakpo has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value",
     "O'Reilly has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.4) -- already reflected in their rotation_value",
     "Mbeumo has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value"
   ],
-  "bench_boost_note": "Boosting THIS week's normal bench: +2.06 pts (total 12.47). Restructuring specifically for Bench Boost instead: 12.47 pts (+0.0 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +2.02 pts (total 12.5). Restructuring specifically for Bench Boost instead: 12.5 pts (+0.0 vs. just boosting the normal squad).",
   "agent_captain_review": {
-    "recommended_captain": "Palmer",
+    "recommended_captain": "M.Sangaré",
     "same_as_solver_top_pick": false,
-    "reasoning": "De Cuyper's xp rests on just 77 minutes this season (a likely small-sample outlier given his 17.0 form/ppg), while the next-highest option is a midfielder without that structural risk.",
+    "reasoning": "De Cuyper's 1.29 xp rests on just 77 minutes with a 17.0 points-per-game rate, indicating a likely one-match outlier rather than a repeatable performance. As a defender without any noted set-piece or penalty duties, he also carries a structurally lower captaincy ceiling than midfield alternatives in the shortlist.",
     "shortlist": [
       {
         "name": "De Cuyper",
@@ -115,6 +110,17 @@
         "chance_of_playing_next_round": null
       },
       {
+        "name": "M.Sangaré",
+        "xp": 1.05,
+        "price": 5.6,
+        "position": "MID",
+        "minutes_this_season": 75,
+        "form": 14.0,
+        "points_per_game": 14.0,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
         "name": "Palmer",
         "xp": 1.04,
         "price": 9.5,
@@ -124,17 +130,6 @@
         "points_per_game": 13.0,
         "status": "a",
         "chance_of_playing_next_round": 100
-      },
-      {
-        "name": "Gakpo",
-        "xp": 1.02,
-        "price": 7.0,
-        "position": "MID",
-        "minutes_this_season": 90,
-        "form": 12.0,
-        "points_per_game": 12.0,
-        "status": "a",
-        "chance_of_playing_next_round": null
       },
       {
         "name": "João Pedro",
