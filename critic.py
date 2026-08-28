@@ -33,6 +33,7 @@ import json
 import os
 import re
 import sys
+import time
 
 import requests
 
@@ -98,9 +99,25 @@ def call_grok_with_search(squad_names: list, api_key: str) -> dict:
         "Content-Type": "application/json",
     }
 
-    resp = requests.post(XAI_RESPONSES_API_URL, json=payload, headers=headers, timeout=120)
-    resp.raise_for_status()
-    return resp.json()
+    # Retry on transient connection failures -- agentic web search can take a
+    # while (the model decides its own search queries and may browse several
+    # pages), and a dropped/reset connection mid-response is a real observed
+    # failure mode, not hypothetical. A clean HTTP error (4xx/5xx) is NOT
+    # retried here -- only low-level connection issues, since a 4xx/5xx is a
+    # real answer from the server that retrying won't fix.
+    last_error = None
+    for attempt in range(1, 4):
+        try:
+            resp = requests.post(XAI_RESPONSES_API_URL, json=payload, headers=headers, timeout=180)
+            resp.raise_for_status()
+            return resp.json()
+        except requests.exceptions.ConnectionError as e:
+            last_error = e
+            if attempt < 3:
+                wait = 5 * attempt
+                print(f"  Connection error on attempt {attempt}/3 ({e}) -- retrying in {wait}s...")
+                time.sleep(wait)
+    raise last_error
 
 
 def extract_text_blocks(api_response: dict) -> str:
