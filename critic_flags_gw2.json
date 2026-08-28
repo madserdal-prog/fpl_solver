@@ -2,13 +2,6 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Thiago",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Brentford transfers, latest news, rumours and gossip: Live updates, goals and highlights - Sky Sports\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi3AFBVV95cUxPM1pRVzYzejBSaTdvM2x4VjkzM0pHck5mQUxKU3dYc2pELVFhVXNwZmdhX3pOejljdllKajFLd3ROWDlpT2pOTndSUWo1cy1CbDh5X1lYSnQxZUZ6bEVlcWoyV3dfdkhDeVlsaGxjRjAzMEhhcTYzcGx2endhdWdkM09VVGRUVXNmYWd4UHBkSXNXazQ0VEh4bmIydV9ZOTFGdXpZSUxpeWdJcnhMRDdYUkNjWUloWWdXWEZzWGlEbktybExJdE9aOTFRVTRaVWVVdnl1Qkxza1U1eGNB?oc=5",
-        "recommendation": "monitor"
-      },
-      {
         "player_name": "Roefs",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
@@ -30,16 +23,14 @@
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 4 medium-risk (Thiago, Roefs, Gibbs-White, Nmecha) based on FPL data and Google News headlines."
+    "summary": "Found 3 medium-risk (Roefs, Gibbs-White, Nmecha) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "106": 3.0,
     "529": 3.0,
     "480": 3.0,
     "347": 3.0
   },
   "blocked_captain_ids": [
-    106,
     347,
     480,
     529

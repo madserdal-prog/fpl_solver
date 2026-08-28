@@ -76,14 +76,12 @@
   "squad_value": 99.2,
   "bank_remaining": 0.8,
   "risk_adjusted_players": [
-    "Thiago",
-    "Roefs",
     "Senesi",
+    "Roefs",
     "Nmecha"
   ],
   "blocked_from_captaincy_in_squad": [
     "Roefs",
-    "Thiago",
     "Nmecha",
     "Senesi"
   ],
@@ -103,7 +101,7 @@
   "agent_captain_review": {
     "recommended_captain": "Palmer",
     "same_as_solver_top_pick": false,
-    "reasoning": "De Cuyper's top xp rests on just 77 minutes this season, indicating a likely non-repeatable rate rather than established form. As a defender he also carries the structural captaincy ceiling risk that mids and forwards avoid. Palmer is the next-highest xp option with comparable minutes and no such sample-size or positional concerns.",
+    "reasoning": "De Cuyper's xp rests on just 77 minutes this season (a likely small-sample outlier given his 17.0 form/ppg), while the next-highest option is a midfielder without that structural risk.",
     "shortlist": [
       {
         "name": "De Cuyper",
