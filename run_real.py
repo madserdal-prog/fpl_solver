@@ -17,7 +17,7 @@ The run happens in up to three steps:
 Step 2 defaults to the FREE critic (critic_free.py) -- zero API cost,
 uses FPL's own status/news fields only (see critic_free.py for exactly
 what that does and doesn't catch). Pass --paid-critic to use critic.py
-instead (Anthropic API + live web search, costs money per run, but catches
+instead (xAI Grok + live web search, costs money per run, but catches
 more -- e.g. transfer sagas, rotation risk for a fit-but-recently-returned
 player). Pass --skip-critic to skip both.
 """
@@ -68,8 +68,8 @@ def main():
     parser.add_argument("--skip-critic", action="store_true",
                          help="Skip the news check entirely (raw mathematical solver only).")
     parser.add_argument("--paid-critic", action="store_true",
-                         help="Use critic.py (Anthropic API + live web search) instead of the "
-                              "free critic. Costs money per run, requires ANTHROPIC_API_KEY. "
+                         help="Use critic.py (xAI Grok + live web search) instead of the "
+                              "free critic. Costs money per run, requires XAI_API_KEY. "
                               "Catches more than the free critic (transfer sagas, rotation risk).")
     parser.add_argument("--initial-team", action="store_true",
                          help="Build the best possible squad from scratch, ignoring my_team.json's "
@@ -168,8 +168,8 @@ def main():
 
             critic_flags_path = f"critic_flags_gw{args.gw}.json"
             if args.paid_critic:
-                if not os.environ.get("ANTHROPIC_API_KEY"):
-                    print("\nWARNING: --paid-critic requires ANTHROPIC_API_KEY, which is not set.")
+                if not os.environ.get("XAI_API_KEY"):
+                    print("\nWARNING: --paid-critic requires XAI_API_KEY, which is not set.")
                     print("Falling back to the free critic instead.")
                     critic_free.run_free_critic(out_path, args.master, critic_flags_path)
                 else:
