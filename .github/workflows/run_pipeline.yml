@@ -14,7 +14,11 @@ on:
         type: boolean
         default: false
       use_paid_critic:
-        description: 'Use paid critic (Anthropic API + web search) instead of the free critic'
+        description: 'Use paid critic (xAI Grok + web search) instead of the free critic'
+        type: boolean
+        default: false
+      use_agent_review:
+        description: 'Run the captain review agent (xAI Grok) -- costs money per run'
         type: boolean
         default: false
 
@@ -58,16 +62,19 @@ jobs:
       - name: Run solver
         env:
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          ARGS="--agent-review"
+          ARGS=""
           if [ "${{ github.event.inputs.initial_team }}" = "true" ]; then
             echo "Running with --initial-team (building from scratch, no transfer penalty)"
             ARGS="$ARGS --initial-team"
           fi
           if [ "${{ github.event.inputs.use_paid_critic }}" = "true" ]; then
-            echo "Running with --paid-critic (Anthropic API + web search)"
+            echo "Running with --paid-critic (xAI Grok + web search)"
             ARGS="$ARGS --paid-critic"
+          fi
+          if [ "${{ github.event.inputs.use_agent_review }}" = "true" ]; then
+            echo "Running with --agent-review (xAI Grok captain review)"
+            ARGS="$ARGS --agent-review"
           fi
           python run_real.py $ARGS
 
