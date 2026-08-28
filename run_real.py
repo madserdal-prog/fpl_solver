@@ -167,16 +167,26 @@ def main():
                 json.dump(current_solution, f, ensure_ascii=False, indent=2)
 
             critic_flags_path = f"critic_flags_gw{args.gw}.json"
-            if args.paid_critic:
-                if not os.environ.get("XAI_API_KEY"):
-                    print("\nWARNING: --paid-critic requires XAI_API_KEY, which is not set.")
-                    print("Falling back to the free critic instead.")
-                    critic_free.run_free_critic(out_path, args.master, critic_flags_path)
+            try:
+                if args.paid_critic:
+                    if not os.environ.get("XAI_API_KEY"):
+                        print("\nWARNING: --paid-critic requires XAI_API_KEY, which is not set.")
+                        print("Falling back to the free critic instead.")
+                        critic_free.run_free_critic(out_path, args.master, critic_flags_path)
+                    else:
+                        import critic
+                        critic.run_critic(out_path, args.master, critic_flags_path)
                 else:
-                    import critic
-                    critic.run_critic(out_path, args.master, critic_flags_path)
-            else:
-                critic_free.run_free_critic(out_path, args.master, critic_flags_path)
+                    critic_free.run_free_critic(out_path, args.master, critic_flags_path)
+            except Exception as e:
+                # A critic failure (e.g. a dropped connection on a slow agentic
+                # web-search call) should NOT throw away an already-good result
+                # from an earlier pass. Stop here and use whatever current_solution
+                # already is -- that's still a fully valid, checked solution, just
+                # not re-verified against this specific attempt's new info.
+                print(f"\nWARNING: critic pass {pass_num} failed ({e}) -- stopping here and using "
+                      f"the result from the previous successful pass instead of crashing the whole run.")
+                break
 
             with open(critic_flags_path, encoding="utf-8") as f:
                 critic_result = json.load(f)
