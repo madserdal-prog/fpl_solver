@@ -78,6 +78,17 @@ def format_message(solution: dict, gw: int, critic_summary: str = None,
     if solution.get("price_momentum_notes"):
         lines.append(":chart_with_upwards_trend: " + " | ".join(solution["price_momentum_notes"]))
 
+    if solution.get("fixture_difficulty_notes"):
+        lines.append(":calendar: " + " | ".join(solution["fixture_difficulty_notes"]))
+
+    if solution.get("agent_captain_review"):
+        review = solution["agent_captain_review"]
+        if review["same_as_solver_top_pick"]:
+            lines.append(f":robot_face: Agent review: agrees with captain pick ({review['reasoning']})")
+        else:
+            lines.append(f":robot_face: Agent review: suggests *{review['recommended_captain']}* "
+                          f"instead ({review['reasoning']})")
+
     # Bench Boost alternative -- only present when checks.RUN_BENCH_BOOST_ALTERNATIVE
     # was on and bench_boost was actually available this run (see run_real.py).
     if solution.get("bench_boost_note"):
