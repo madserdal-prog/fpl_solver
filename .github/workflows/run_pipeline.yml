@@ -13,6 +13,10 @@ on:
         description: 'Build initial squad from scratch (no transfer penalty, e.g. GW1 before deadline)'
         type: boolean
         default: false
+      use_paid_critic:
+        description: 'Use paid critic (Anthropic API + web search) instead of the free critic'
+        type: boolean
+        default: false
 
 jobs:
   run:
@@ -51,14 +55,21 @@ jobs:
             echo "Could not determine last gameweek (events.json missing?) -- skipping refresh."
           fi
 
-      - name: Run solver (free critic, no API cost)
+      - name: Run solver
+        env:
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
+          ARGS="--agent-review"
           if [ "${{ github.event.inputs.initial_team }}" = "true" ]; then
             echo "Running with --initial-team (building from scratch, no transfer penalty)"
-            python run_real.py --initial-team
-          else
-            python run_real.py
+            ARGS="$ARGS --initial-team"
           fi
+          if [ "${{ github.event.inputs.use_paid_critic }}" = "true" ]; then
+            echo "Running with --paid-critic (Anthropic API + web search)"
+            ARGS="$ARGS --paid-critic"
+          fi
+          python run_real.py $ARGS
 
       - name: Post to Slack
         env:
