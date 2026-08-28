@@ -32,6 +32,7 @@ import forecast
 import critic_free
 import collector
 import checks
+import captain_review
 
 
 def resolve_gw(gw_arg, events_path="events.json"):
@@ -80,6 +81,11 @@ def main():
     parser.add_argument("--no-bench-boost-check", action="store_true",
                          help="Skip the full Bench Boost re-optimization check (feature flag -- "
                               "see checks.RUN_BENCH_BOOST_ALTERNATIVE for the same toggle in code).")
+    parser.add_argument("--agent-review", action="store_true",
+                         help="Have an LLM (xAI Grok) review the solver's top-5 captain shortlist "
+                              "and confirm or suggest an alternative from that same list, with "
+                              "reasoning. Opt-in: costs money per run, requires XAI_API_KEY. "
+                              "Recommendation-only -- never changes the actual captain pick.")
     args = parser.parse_args()
     args.gw = resolve_gw(args.gw)
 
@@ -225,6 +231,15 @@ def main():
             print(f"  - {note}")
     final_solution["price_momentum_notes"] = price_notes
 
+    # --- Fixture difficulty transparency (informational only) ---
+    fixture_notes = checks.fixture_difficulty_notes(
+        final_solution["squad"], master, fixtures, args.gw, args.horizon)
+    if fixture_notes:
+        print("\n=== Fixture difficulty notes ===")
+        for note in fixture_notes:
+            print(f"  - {note}")
+    final_solution["fixture_difficulty_notes"] = fixture_notes
+
     # --- Bench Boost alternative (feature-flagged, see checks.py) ---
     bench_boost_note = None
     if checks.RUN_BENCH_BOOST_ALTERNATIVE and not args.no_bench_boost_check \
@@ -240,6 +255,24 @@ def main():
         bench_boost_note = checks.bench_boost_summary(final_solution, bb_solution)
         print(f"  {bench_boost_note}")
     final_solution["bench_boost_note"] = bench_boost_note
+
+    # --- Captain agent review (opt-in, see captain_review.py) ---
+    agent_review = None
+    if args.agent_review:
+        xai_key = os.environ.get("XAI_API_KEY")
+        if not xai_key:
+            print("\nWARNING: --agent-review requires XAI_API_KEY, which is not set. Skipping.")
+        else:
+            print("\n=== Captain agent review (xAI Grok) ===")
+            agent_review = captain_review.review_captain(final_solution, pool, master, xai_key)
+            if "error" in agent_review:
+                print(f"  Review failed: {agent_review['error']}")
+                agent_review = None
+            else:
+                agree = "agrees with" if agent_review["same_as_solver_top_pick"] else "suggests OVERRIDING"
+                print(f"  Agent {agree} solver's pick -> recommends: {agent_review['recommended_captain']}")
+                print(f"  Reasoning: {agent_review['reasoning']}")
+    final_solution["agent_captain_review"] = agent_review
 
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(final_solution, f, ensure_ascii=False, indent=2)
