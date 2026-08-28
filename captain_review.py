@@ -28,8 +28,10 @@ import re
 import requests
 
 XAI_API_URL = "https://api.x.ai/v1/chat/completions"
-DEFAULT_MODEL = "grok-4.1-fast"  # cheaper tier -- this is a reasoning-over-given-data task,
-                                  # not a task needing the flagship model's extra capability
+DEFAULT_MODEL = "grok-4.3"  # xAI's current flagship as of Aug 2026 -- the earlier default,
+                             # "grok-4.1-fast", was deprecated May 15 2026 and fully retired
+                             # Aug 15 2026, causing a 400 Bad Request. Model IDs change over
+                             # time; if this breaks again, check console.x.ai's current catalog.
 SHORTLIST_SIZE = 5
 
 SYSTEM_PROMPT = """\
