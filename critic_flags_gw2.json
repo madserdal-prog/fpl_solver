@@ -2,6 +2,13 @@
   "critic_output": {
     "flags": [
       {
+        "player_name": "Nmecha",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Wrexham provide Lukas Nmecha transfer twist Leeds United cannot ignore - Yahoo Sports UK\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeXlGcjVzMnlPVTBySVZfUXRzQlQ0QWJTVXFRUHpmV0d4MTJfbE9rMkIxdm5sUWRYcFNHWmZyV0R1YnhqS3JCNUxrVzQ5UmtEYU1pc0FJbzhPWVZ0YlhNUEtLdHpuWng2NmlTUGd1T25jQlpLcnJYOVhqYUtJOUZHWXNDZ2VuOVAzRnZR?oc=5",
+        "recommendation": "monitor"
+      },
+      {
         "player_name": "Gibbs-White",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Morgan Gibbs-White - News | Page 4 - Transfermarkt\"",
@@ -14,21 +21,14 @@
         "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
         "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
         "recommendation": "monitor"
-      },
-      {
-        "player_name": "Nmecha",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Wrexham provide Lukas Nmecha transfer twist Leeds United cannot ignore - Yahoo Sports UK\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeXlGcjVzMnlPVTBySVZfUXRzQlQ0QWJTVXFRUHpmV0d4MTJfbE9rMkIxdm5sUWRYcFNHWmZyV0R1YnhqS3JCNUxrVzQ5UmtEYU1pc0FJbzhPWVZ0YlhNUEtLdHpuWng2NmlTUGd1T25jQlpLcnJYOVhqYUtJOUZHWXNDZ2VuOVAzRnZR?oc=5",
-        "recommendation": "monitor"
       }
     ],
-    "summary": "Found 3 medium-risk (Gibbs-White, Roefs, Nmecha) based on FPL data and Google News headlines."
+    "summary": "Found 3 medium-risk (Nmecha, Gibbs-White, Roefs) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
+    "347": 3.0,
     "480": 3.0,
-    "529": 3.0,
-    "347": 3.0
+    "529": 3.0
   },
   "blocked_captain_ids": [
     347,
