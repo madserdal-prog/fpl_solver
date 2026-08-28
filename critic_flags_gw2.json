@@ -14,26 +14,17 @@
         "reason": "Headline suggests an active transfer situation: \"Morgan Gibbs-White - News | Page 4 - Transfermarkt\"",
         "source": "Google News: https://news.google.com/rss/articles/CBMigAFBVV95cUxNVk5fWlNvaHRVczMxVjVsamg3aUY3WFYzalRTSGxVbnJVTGJUVU1acjhZc1l3VXgtRFhtbU00NEpRTmh0M1IzcWFtbTVWcUpVaFR3Z3hyT010RDc5UVBUSzA4T1JpWEJxYnhQMXoxWEZrclY3TElyZUgyZjJSUEVPRw?oc=5",
         "recommendation": "monitor"
-      },
-      {
-        "player_name": "Roefs",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
-        "recommendation": "monitor"
       }
     ],
-    "summary": "Found 3 medium-risk (Nmecha, Gibbs-White, Roefs) based on FPL data and Google News headlines."
+    "summary": "Found 2 medium-risk (Nmecha, Gibbs-White) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
     "347": 3.0,
-    "480": 3.0,
-    "529": 3.0
+    "480": 3.0
   },
   "blocked_captain_ids": [
     347,
-    480,
-    529
+    480
   ],
   "unmatched_names": [],
   "news_lookup_errors": [],
