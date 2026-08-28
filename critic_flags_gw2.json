@@ -4,45 +4,36 @@
       {
         "player_name": "Gibbs-White",
         "risk_level": "medium",
-        "reason": "Knee injury - 75% chance of playing | Also: Headline suggests an active transfer situation: \"Morgan Gibbs-White - Player profile 26/27 - Transfermarkt\"",
-        "source": "FPL API status/chance_of_playing_next_round fields",
+        "reason": "Headline suggests an active transfer situation: \"Morgan Gibbs-White - News | Page 4 - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMigAFBVV95cUxNVk5fWlNvaHRVczMxVjVsamg3aUY3WFYzalRTSGxVbnJVTGJUVU1acjhZc1l3VXgtRFhtbU00NEpRTmh0M1IzcWFtbTVWcUpVaFR3Z3hyT010RDc5UVBUSzA4T1JpWEJxYnhQMXoxWEZrclY3TElyZUgyZjJSUEVPRw?oc=5",
         "recommendation": "monitor"
       },
       {
-        "player_name": "Saka",
+        "player_name": "Roefs",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"The Scout’s FPL Gameweek 2 transfer radar - Premier League\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMijwFBVV95cUxNWGw1VU4yTXhWTkxsUnZwcmhRbEdQNVNjOHQycFJOWExtdTdZWFU4a1M1Y2NBd3JoQ0VTY2U1R1R5SzV5VzZ1SWFZM3pSenRDODR6YlBKQ2tvZ2tiMWwzcHd6QlRzVnJ5Nmd1dWh3S09xY0pzUXM3R0NmanJ6OWVnUU5ZTG50eWo1Rk9kZ0hBcw?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
         "recommendation": "monitor"
       },
       {
-        "player_name": "Senesi",
+        "player_name": "Nmecha",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Marcos Senesi: Tottenham confirm signing of defender after Bournemouth exit - BBC\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTFAzZVV0MXQxMDVKVGtTQWhsdlUxY3o3d1NoMkFnb29fS0trX2NxUmRzUDRMUjR1azlpWmJqZjZyMFBOWWlIaktIMXVBNGQtdTRsc01UamdGbDlrWHpQTU03ejlkUjVnZXBnWFE?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Palmer",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Wrexham Linked With A Move for Ipswich Town Goalkeeper Alex Palmer - roundtable.io\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiuwFBVV95cUxORF9Ebmg5R3FGcm0zVmVYSURsWllpOG4xYzVBY2hNSWFDYkZpamVTbnVzLUtKc1VjZF8zdzVkLXd0MWRveFdZeG5MbDZjSGpjNExVQnJldWlfUEh3V3lpUURkdHVPN1BnYXRsX2Q3NC0yRFN2LUszMjFEOWMzejBoRVhhR1BqTVBTb2FKbWhJWXBHRmRFZ0N0elhDQ1Axdk5CcDJRdi1FMkVvY20zOV8ySVl0Rzd0VDJfMEc0?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Wrexham provide Lukas Nmecha transfer twist Leeds United cannot ignore - Yahoo Sports UK\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeXlGcjVzMnlPVTBySVZfUXRzQlQ0QWJTVXFRUHpmV0d4MTJfbE9rMkIxdm5sUWRYcFNHWmZyV0R1YnhqS3JCNUxrVzQ5UmtEYU1pc0FJbzhPWVZ0YlhNUEtLdHpuWng2NmlTUGd1T25jQlpLcnJYOVhqYUtJOUZHWXNDZ2VuOVAzRnZR?oc=5",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 4 medium-risk (Gibbs-White, Saka, Senesi, Palmer) based on FPL data and Google News headlines."
+    "summary": "Found 3 medium-risk (Gibbs-White, Roefs, Nmecha) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
     "480": 3.0,
-    "12": 3.0,
-    "498": 3.0,
-    "301": 3.0
+    "529": 3.0,
+    "347": 3.0
   },
   "blocked_captain_ids": [
-    12,
-    301,
+    347,
     480,
-    498
+    529
   ],
   "unmatched_names": [],
   "news_lookup_errors": [],
