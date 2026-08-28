@@ -91,3 +91,55 @@ def bench_boost_summary(normal_solution: dict, bb_solution: dict) -> str:
         f"Restructuring specifically for Bench Boost instead: {round(bb_total, 2)} pts "
         f"({'+' if gain >= 0 else ''}{gain} vs. just boosting the normal squad)."
     )
+
+
+# ---------------------------------------------------------------------------
+# Fixture difficulty transparency
+# ---------------------------------------------------------------------------
+# Fixture difficulty (FDR) is ALREADY factored into the solver's numbers --
+# forecast.py applies it to every round of the horizon, and rotation_value
+# (which decides whether a player is worth keeping in the squad at all) is a
+# discounted average across that whole horizon. So a tough run of fixtures
+# already pulls a player's value down mathematically. But that effect is
+# completely invisible in the report -- there's no way to SEE that it
+# happened or by how much. This makes it visible, same pattern as the price
+# momentum note: informational only, never changes the pick itself.
+
+FIXTURE_DIFFICULTY_THRESHOLD = 3.7  # avg FDR (1=easy, 5=hard, 3=neutral) above this = "tough run"
+FIXTURE_EASE_THRESHOLD = 2.3        # avg FDR below this = "easy run" (good news, worth knowing too)
+
+
+def fixture_difficulty_notes(squad_names: list, master_data: dict, fixtures: list,
+                              start_gw: int, horizon: int = 5) -> list:
+    """
+    For each player CURRENTLY in the squad, averages their team's fixture
+    difficulty over the horizon and flags a genuinely tough or easy run.
+    Only checks players already in the squad -- like the other checks
+    here, this explains the existing pick, it doesn't suggest new ones.
+    """
+    import forecast  # local import to avoid a hard dependency for callers that don't need this
+
+    fixture_lookup = forecast.build_fixture_lookup(fixtures)
+    elements_by_name = {e["web_name"]: e for e in master_data["elements"]}
+    notes = []
+
+    for name in squad_names:
+        element = elements_by_name.get(name)
+        if not element:
+            continue
+        team = element["team"]
+        difficulties = []
+        for i in range(horizon):
+            difficulties.extend(fixture_lookup.get((team, start_gw + i), []))
+        if not difficulties:
+            continue
+
+        avg_fdr = sum(difficulties) / len(difficulties)
+        if avg_fdr >= FIXTURE_DIFFICULTY_THRESHOLD:
+            notes.append(f"{name} has a TOUGH run of fixtures over the next {horizon} GWs "
+                         f"(avg FDR {avg_fdr:.1f}) -- already reflected in their rotation_value")
+        elif avg_fdr <= FIXTURE_EASE_THRESHOLD:
+            notes.append(f"{name} has an EASY run of fixtures over the next {horizon} GWs "
+                         f"(avg FDR {avg_fdr:.1f}) -- already reflected in their rotation_value")
+
+    return notes
