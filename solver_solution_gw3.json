@@ -71,13 +71,13 @@
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 12.76,
+  "expected_points": 12.77,
   "bench_points": 1.98,
-  "squad_value": 99.7,
-  "bank_remaining": 2.7,
+  "squad_value": 99.9,
+  "bank_remaining": 2.5,
   "risk_adjusted_players": [
-    "Roefs",
     "Nmecha",
+    "Roefs",
     "Senesi"
   ],
   "blocked_from_captaincy_in_squad": [
@@ -86,7 +86,7 @@
     "Senesi"
   ],
   "price_momentum_notes": [
-    "Cherki looks likely to RISE in price soon (net +1.30% of managers this GW)"
+    "Cherki looks likely to RISE in price soon (net +2.40% of managers this GW)"
   ],
   "fixture_difficulty_notes": [
     "Saka has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.4) -- already reflected in their rotation_value",
@@ -96,6 +96,6 @@
     "Cherki has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.6) -- already reflected in their rotation_value",
     "Mbeumo has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value"
   ],
-  "bench_boost_note": "Boosting THIS week's normal bench: +1.98 pts (total 14.74). Restructuring specifically for Bench Boost instead: 12.56 pts (-2.18 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +1.98 pts (total 14.75). Restructuring specifically for Bench Boost instead: 12.57 pts (-2.18 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }

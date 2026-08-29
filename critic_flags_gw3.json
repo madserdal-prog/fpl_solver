@@ -2,10 +2,10 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Roefs",
+        "player_name": "Palmer",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -16,6 +16,13 @@
         "recommendation": "monitor"
       },
       {
+        "player_name": "Roefs",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
+        "recommendation": "monitor"
+      },
+      {
         "player_name": "Senesi",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Marcos Senesi: Tottenham confirm signing of defender after Bournemouth exit - BBC\"",
@@ -23,14 +30,16 @@
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 3 medium-risk (Roefs, Nmecha, Senesi) based on FPL data and Google News headlines."
+    "summary": "Found 4 medium-risk (Palmer, Nmecha, Roefs, Senesi) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "529": 3.0,
+    "301": 3.0,
     "347": 3.0,
+    "529": 3.0,
     "498": 3.0
   },
   "blocked_captain_ids": [
+    301,
     347,
     498,
     529
