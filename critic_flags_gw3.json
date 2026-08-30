@@ -2,10 +2,10 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Palmer",
+        "player_name": "Senesi",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Tottenham transfers news: Spurs edging close to signing Marcos Senesi and hopeful of move for Andy Robertson - Sky Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi9AFBVV95cUxPa2ZUZkVYRnlJN1h2dW1RMWVuczBtU1R3WUVjc09QaXhaT2F2a2RDWmZqcWRIdnVhdGFEcloxLVc3V19fVW1qdTZMZVBvdHktWVR5RzlvOXlfT2c1WUtKbjVxZC1yaFN3U1lRZ0Y4RlVfY3hYRmQtamIydVFTZVRsd1pVVU9yN015cTBsRXJOZ0dRSVRUWVRhRkJ5ejhUcHB3ODM3VTM1by1yTUkyOXllVmRseGc1ODJ3emFrMTVBc01GLUhQbUxwdG5QQjkzSUZkSzhTcDlCSklMSzhVazVfc0k0QjdPS05ZMWE0clowRGJIN1lj?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -16,33 +16,42 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Roefs",
+        "player_name": "Saka",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"The Scout’s FPL Gameweek 2 transfer radar - Premier League\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMijwFBVV95cUxNWGw1VU4yTXhWTkxsUnZwcmhRbEdQNVNjOHQycFJOWExtdTdZWFU4a1M1Y2NBd3JoQ0VTY2U1R1R5SzV5VzZ1SWFZM3pSenRDODR6YlBKQ2tvZ2tiMWwzcHd6QlRzVnJ5Nmd1dWh3S09xY0pzUXM3R0NmanJ6OWVnUU5ZTG50eWo1Rk9kZ0hBcw?oc=5",
         "recommendation": "monitor"
       },
       {
-        "player_name": "Senesi",
+        "player_name": "Palmer",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Marcos Senesi: Tottenham confirm signing of defender after Bournemouth exit - BBC\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTFAzZVV0MXQxMDVKVGtTQWhsdlUxY3o3d1NoMkFnb29fS0trX2NxUmRzUDRMUjR1azlpWmJqZjZyMFBOWWlIaktIMXVBNGQtdTRsc01UamdGbDlrWHpQTU03ejlkUjVnZXBnWFE?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "M.Sangaré",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 4 medium-risk (Palmer, Nmecha, Roefs, Senesi) based on FPL data and Google News headlines."
+    "summary": "Found 5 medium-risk (Senesi, Nmecha, Saka, Palmer, M.Sangaré) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "301": 3.0,
+    "498": 3.0,
     "347": 3.0,
-    "529": 3.0,
-    "498": 3.0
+    "12": 3.0,
+    "301": 3.0,
+    "565": 3.0
   },
   "blocked_captain_ids": [
+    12,
     301,
     347,
     498,
-    529
+    565
   ],
   "unmatched_names": [],
   "news_lookup_errors": [],
