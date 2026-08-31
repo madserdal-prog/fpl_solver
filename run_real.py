@@ -103,7 +103,19 @@ def main():
     pool = solver.load_pool_from_forecast(forecast_path, args.master, horizon_gw=0)
 
     my_team = my_team_module.load_my_team(args.my_team)
-    kwargs = my_team_module.to_solver_kwargs(my_team, active_chip=args.chip)
+
+    # IMPORTANT: budget must reflect your ACTUAL current squad's market value
+    # + bank, not a fixed 100.0. A hardcoded 100.0 is only correct at the very
+    # start of a season, before any player's price has moved -- once prices
+    # drift (which happens constantly), it silently over- or under-states what
+    # you actually have to spend. This was causing real transfer suggestions
+    # that turned out infeasible by the exact size of the accumulated drift.
+    pool_by_id = {p["id"]: p for p in pool}
+    real_squad_value = round(sum(pool_by_id[i]["price"] for i in my_team["current_squad"]
+                                  if i in pool_by_id), 1)
+    print(f"Real current squad value (from actual prices, not a fixed 100.0): £{real_squad_value}m")
+
+    kwargs = my_team_module.to_solver_kwargs(my_team, active_chip=args.chip, base_budget=real_squad_value)
 
     if args.initial_team:
         kwargs["unlimited_transfers"] = True
