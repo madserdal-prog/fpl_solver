@@ -1,27 +1,59 @@
 {
   "critic_output": {
-    "flags": [],
-    "summary": "No flags found for this squad."
+    "flags": [
+      {
+        "player_name": "Palmer",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Tzolakis",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Hull City transfers, latest news, rumours and gossip: Live updates, goals and highlights - Sky Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi3AFBVV95cUxQTE9iLTY4VTBwQm94cWNpQUNIdTVHa29TTy1ScXg2M1RJSDBrZzFuWWwxQ0d6WUpBZWp0bHJtZUMtRVFyYW4wSG1odFU5b2RzTEtualpPN01WV0FkOVkxQVJ3cUNMMGdoNVFhbVFMdUtGVk5UUGlzOUQ4QVljNHZDVm0wTVg4cmdfbVFqVXBqZGtWNXQ0S0lhdzhxaXVMUDhfVk9fVGZFRVBvVUwwRHdZUFNVNUtVZklRU2E3bUlLOGcyV1ZyOGxCVzRuWVk0bjBBbzVYTnNOQmZPMHRJ?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Nmecha",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Wrexham provide Lukas Nmecha transfer twist Leeds United cannot ignore - Yahoo Sports UK\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeXlGcjVzMnlPVTBySVZfUXRzQlQ0QWJTVXFRUHpmV0d4MTJfbE9rMkIxdm5sUWRYcFNHWmZyV0R1YnhqS3JCNUxrVzQ5UmtEYU1pc0FJbzhPWVZ0YlhNUEtLdHpuWng2NmlTUGd1T25jQlpLcnJYOVhqYUtJOUZHWXNDZ2VuOVAzRnZR?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "M.Sangaré",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Senesi",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Tottenham transfers news: Spurs edging close to signing Marcos Senesi and hopeful of move for Andy Robertson - Sky Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi9AFBVV95cUxPa2ZUZkVYRnlJN1h2dW1RMWVuczBtU1R3WUVjc09QaXhaT2F2a2RDWmZqcWRIdnVhdGFEcloxLVc3V19fVW1qdTZMZVBvdHktWVR5RzlvOXlfT2c1WUtKbjVxZC1yaFN3U1lRZ0Y4RlVfY3hYRmQtamIydVFTZVRsd1pVVU9yN015cTBsRXJOZ0dRSVRUWVRhRkJ5ejhUcHB3ODM3VTM1by1yTUkyOXllVmRseGc1ODJ3emFrMTVBc01GLUhQbUxwdG5QQjkzSUZkSzhTcDlCSklMSzhVazVfc0k0QjdPS05ZMWE0clowRGJIN1lj?oc=5",
+        "recommendation": "monitor"
+      }
+    ],
+    "summary": "Found 5 medium-risk (Palmer, Tzolakis, Nmecha, M.Sangaré, Senesi) based on FPL data and Google News headlines."
   },
-  "risk_penalty": {},
-  "blocked_captain_ids": [],
-  "unmatched_names": [],
-  "news_lookup_errors": [
-    "O'Reilly: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22O%27Reilly%22%20Man%20City%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
-    "Kelleher: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Kelleher%22%20Brentford%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
-    "Bijol: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Bijol%22%20Leeds%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
-    "João Pedro: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Jo%C3%A3o%20Pedro%22%20Chelsea%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
-    "Senesi: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Senesi%22%20Spurs%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
-    "B.Fernandes: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22B.Fernandes%22%20Man%20Utd%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
-    "Roefs: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Roefs%22%20Sunderland%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
-    "De Cuyper: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22De%20Cuyper%22%20Brighton%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
-    "M.Sangaré: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22M.Sangar%C3%A9%22%20Brentford%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
-    "Nmecha: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Nmecha%22%20Leeds%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
-    "Palmer: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Palmer%22%20Ipswich%20Town%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
-    "Okafor: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Okafor%22%20Leeds%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
-    "Mbeumo: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Mbeumo%22%20Man%20Utd%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
-    "Thiago: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Thiago%22%20Brentford%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en",
-    "Tarkowski: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%22Tarkowski%22%20Everton%20premier%20league&hl=en-GB&gl=GB&ceid=GB:en"
+  "risk_penalty": {
+    "301": 3.0,
+    "572": 3.0,
+    "347": 3.0,
+    "565": 3.0,
+    "498": 3.0
+  },
+  "blocked_captain_ids": [
+    301,
+    347,
+    498,
+    565,
+    572
   ],
-  "news_systematically_blocked": true
+  "unmatched_names": [],
+  "news_lookup_errors": [],
+  "news_systematically_blocked": false
 }
