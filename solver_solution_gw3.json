@@ -36,7 +36,6 @@
   "starting_xi": [
     "Saka",
     "Kelleher",
-    "Thiago",
     "M.Sangaré",
     "De Cuyper",
     "Palmer",
@@ -44,12 +43,12 @@
     "Tarkowski",
     "Ajayi",
     "Bijol",
+    "Okafor",
     "Mbeumo"
   ],
   "starting_xi_ids": [
     12,
     82,
-    106,
     565,
     115,
     154,
@@ -57,6 +56,7 @@
     229,
     279,
     327,
+    336,
     427
   ],
   "captain": "João Pedro",
@@ -71,21 +71,21 @@
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 32.89,
-  "bench_points": 4.84,
-  "squad_value": 96.0,
-  "bank_remaining": 4.3,
+  "expected_points": 33.38,
+  "bench_points": 4.99,
+  "squad_value": 96.2,
+  "bank_remaining": 4.2,
   "risk_adjusted_players": [
-    "Roefs",
-    "Nmecha"
+    "Thiago",
+    "Roefs"
   ],
   "blocked_from_captaincy_in_squad": [
     "Roefs",
-    "Nmecha"
+    "Thiago"
   ],
   "price_momentum_notes": [
-    "Ajayi looks likely to RISE in price soon (net +2.96% of managers this GW)",
-    "Senesi looks likely to FALL in price soon (net -0.91% of managers this GW)"
+    "Ajayi looks likely to RISE in price soon (net +3.66% of managers this GW)",
+    "Senesi looks likely to FALL in price soon (net -1.16% of managers this GW)"
   ],
   "fixture_difficulty_notes": [
     "Saka has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.4) -- already reflected in their rotation_value",
@@ -95,6 +95,6 @@
     "O'Reilly has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.6) -- already reflected in their rotation_value",
     "Mbeumo has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value"
   ],
-  "bench_boost_note": "Boosting THIS week's normal bench: +4.84 pts (total 37.73). Restructuring specifically for Bench Boost instead: 32.89 pts (-4.84 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +4.99 pts (total 38.37). Restructuring specifically for Bench Boost instead: 35.71 pts (-2.66 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }
