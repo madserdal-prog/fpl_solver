@@ -2,10 +2,24 @@
   "critic_output": {
     "flags": [
       {
+        "player_name": "M.Sangaré",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
+        "recommendation": "monitor"
+      },
+      {
         "player_name": "Senesi",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Tottenham transfers news: Spurs edging close to signing Marcos Senesi and hopeful of move for Andy Robertson - skysports.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi9AFBVV95cUxPa2ZUZkVYRnlJN1h2dW1RMWVuczBtU1R3WUVjc09QaXhaT2F2a2RDWmZqcWRIdnVhdGFEcloxLVc3V19fVW1qdTZMZVBvdHktWVR5RzlvOXlfT2c1WUtKbjVxZC1yaFN3U1lRZ0Y4RlVfY3hYRmQtamIydVFTZVRsd1pVVU9yN015cTBsRXJOZ0dRSVRUWVRhRkJ5ejhUcHB3ODM3VTM1by1yTUkyOXllVmRseGc1ODJ3emFrMTVBc01GLUhQbUxwdG5QQjkzSUZkSzhTcDlCSklMSzhVazVfc0k0QjdPS05ZMWE0clowRGJIN1lj?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Spurs snap up Senesi, Leeds land Wilson: The Premier League’s best bargain transfers this summer - LiveScore\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi-gFBVV95cUxNOGhaN1ZwUG1WdUZ4bFRsMVJSOTdkcVB6ZWJGMV9sMVZKU3l4dVluOS1LUkJQbGhiaFk3eHVKRnhGU3R4bWFjUXpGZV9tQ0c5RnFXY1FhdUR6Q2ZBTzRpWWk5cHcwdlRRVWtEQ2lRLXBkdllaMnhPbkhDLWRTYUNQSmRkWWxVX29GbXV0b3dsanE2N2tEdHN6S3lDNVE3cGZ6c1pldWtEclMwUk1iY0tTbVowd25pNnBrRXZJN0N3RWphODFMbTl2dVRSNGpxcUxPVmFzbnc2OEFMVW1tNExGbXkwRHVHVVkyUnBzcldtdFNaU1VySGhvTlhn?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Bijol",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1SLWpMSmwyakJlQzV3bWM0MnpEZWFIUjBIU1VXMWE3ZVBWbFcxQ3F0d1NsZ2l5ZWFieXJMZlpwZlBxb0x0T19FTEZNYzZqM1N1WU5JTHY3a3B6d0hEVHFYb2VWUFRZZDkyOHc?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -14,26 +28,21 @@
         "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
         "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
         "recommendation": "monitor"
-      },
-      {
-        "player_name": "Thiago",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Transfer rumors, news: Nottingham Forest bid £70M for Igor Thiago - ESPN\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMirwFBVV95cUxOZTFzMGRRX2JzYWtXMkQtM0N0RnNMcUplQ2M0VmlEZWE3Y3BKelYwM2FiYndlUUtVcWZiOEk5aUJqUG9yTVBhUWlMNlQyYXk5R1J5UldwSGpEQzhzSWV2NHpzdzdUY3JKMmhIZnE3aEoyWXJfM3FBN2gzMVdhdDVMSm5xMUdscEp6Y3pmUUZuQVJXRWxINGV0R29ocXl1b3ZCYk1SZHg0eUJzOHBXNFZB?oc=5",
-        "recommendation": "monitor"
       }
     ],
-    "summary": "Found 3 medium-risk (Senesi, Palmer, Thiago) based on FPL data and Google News headlines."
+    "summary": "Found 4 medium-risk (M.Sangaré, Senesi, Bijol, Palmer) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
+    "565": 3.0,
     "498": 3.0,
-    "301": 3.0,
-    "106": 3.0
+    "327": 3.0,
+    "301": 3.0
   },
   "blocked_captain_ids": [
-    106,
     301,
-    498
+    327,
+    498,
+    565
   ],
   "unmatched_names": [],
   "news_lookup_errors": [],

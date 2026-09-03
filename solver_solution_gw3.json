@@ -36,27 +36,27 @@
   "starting_xi": [
     "Saka",
     "Kelleher",
-    "M.Sangaré",
+    "Thiago",
     "De Cuyper",
     "Palmer",
     "João Pedro",
     "Tarkowski",
     "Ajayi",
-    "Bijol",
-    "Okafor",
+    "Nmecha",
+    "O'Reilly",
     "Mbeumo"
   ],
   "starting_xi_ids": [
     12,
     82,
-    565,
+    106,
     115,
     154,
     165,
     229,
     279,
-    327,
-    336,
+    347,
+    387,
     427
   ],
   "captain": "João Pedro",
@@ -71,21 +71,23 @@
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 33.38,
-  "bench_points": 4.99,
+  "expected_points": 30.41,
+  "bench_points": 7.96,
   "squad_value": 96.2,
   "bank_remaining": 4.2,
   "risk_adjusted_players": [
-    "Thiago",
-    "Roefs"
+    "M.Sangaré",
+    "Bijol",
+    "Okafor"
   ],
   "blocked_from_captaincy_in_squad": [
-    "Roefs",
-    "Thiago"
+    "M.Sangaré",
+    "Bijol",
+    "Okafor"
   ],
   "price_momentum_notes": [
-    "Ajayi looks likely to RISE in price soon (net +3.66% of managers this GW)",
-    "Senesi looks likely to FALL in price soon (net -1.16% of managers this GW)"
+    "Ajayi looks likely to RISE in price soon (net +4.09% of managers this GW)",
+    "Senesi looks likely to FALL in price soon (net -1.30% of managers this GW)"
   ],
   "fixture_difficulty_notes": [
     "Saka has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.4) -- already reflected in their rotation_value",
@@ -95,6 +97,6 @@
     "O'Reilly has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.6) -- already reflected in their rotation_value",
     "Mbeumo has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value"
   ],
-  "bench_boost_note": "Boosting THIS week's normal bench: +4.99 pts (total 38.37). Restructuring specifically for Bench Boost instead: 35.71 pts (-2.66 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +7.96 pts (total 38.37). Restructuring specifically for Bench Boost instead: 35.85 pts (-2.52 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }
