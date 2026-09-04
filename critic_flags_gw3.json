@@ -2,26 +2,58 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Cherki",
+        "player_name": "O'Reilly",
         "risk_level": "medium",
-        "reason": "Came off the bench vs Bournemouth (Aug 23) before starting and scoring twice vs Crystal Palace; articles noted he is yet to become a regular starter and patience could be running out under the new manager.",
-        "source": "BBC Sport 27 Aug 2026; The Athletic 28 Aug 2026",
+        "reason": "Headline suggests an active transfer situation: \"Man City transfer news: New midfield but major Haaland gamble - BBC\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE90dU5lbGJUcDl5NHVkb0NaWUtvZTJ6NEU0dF8xTmlCUThsbFJuT0ZnVlNNOGc5UDk0cGR2YkJqLWZzTUFKYk5ZMEt6c2tYMmU1OEl6Q0VMR0QteVR6aV9SRzhEU1J2ZFk?oc=5",
         "recommendation": "monitor"
       },
       {
-        "player_name": "Nmecha",
+        "player_name": "M.Sangaré",
         "risk_level": "medium",
-        "reason": "Started on the bench in Leeds' most recent Premier League match (vs Brentford, 30 Aug); competes for minutes with Dominic Calvert-Lewin in a similar profile.",
-        "source": "Brentford FC confirmed team news 30 Aug 2026; Daniel Farke comments late Aug",
+        "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Bijol",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1SLWpMSmwyakJlQzV3bWM0MnpEZWFIUjBIU1VXMWE3ZVBWbFcxQ3F0d1NsZ2l5ZWFieXJMZlpwZlBxb0x0T19FTEZNYzZqM1N1WU5JTHY3a3B6d0hEVHFYb2VWUFRZZDkyOHc?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Senesi",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Tottenham transfers news: Spurs edging close to signing Marcos Senesi and hopeful of move for Andy Robertson - Sky Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi9AFBVV95cUxPa2ZUZkVYRnlJN1h2dW1RMWVuczBtU1R3WUVjc09QaXhaT2F2a2RDWmZqcWRIdnVhdGFEcloxLVc3V19fVW1qdTZMZVBvdHktWVR5RzlvOXlfT2c1WUtKbjVxZC1yaFN3U1lRZ0Y4RlVfY3hYRmQtamIydVFTZVRsd1pVVU9yN015cTBsRXJOZ0dRSVRUWVRhRkJ5ejhUcHB3ODM3VTM1by1yTUkyOXllVmRseGc1ODJ3emFrMTVBc01GLUhQbUxwdG5QQjkzSUZkSzhTcDlCSklMSzhVazVfc0k0QjdPS05ZMWE0clowRGJIN1lj?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Kelleher",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Do Liverpool have Caoimhin Kelleher buy-back clause? £18m Brentford transfer explained - The Mirror\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxNYVVhaWxYZ1dzTGdya2didm9Va0V4dk5mQkpmXzBlZ3NDQkcyTnlSdmRvczRabGk3T0p4dkkycVhvamtqSnFCT2IydURvcWd0b1Q3M25lYXI5MzM3bHc5a2d1VC1LaGJHZzk4WUZKYnViZEkzWE5SUDFKWVBoOG84cFBvZ1lqcHl4ekhPdm0wdHY1aWlrdmowYjdsSTZuczdzWmfSAacBQVVfeXFMUEdRakVpSEdsMF9yX2NyZzc5dG93aWZxQXdkUEdBQnRnYTF2bjdtUjd0aEV3WHhLSkwzUy1GV2hKdkVYcVo5cDVqdzdsSGJ3eFM2V01tN1huRzQwMnI4Ym5qVGtVRFpDVGQyVzl6cXBmNlpzLXhEVFlGaHhTa2RTNmpHYV9kWnhLN2JVX0F6SHAxVF8tS21ZLTN2RlVyZGR0bm5qa2kzMFk?oc=5",
         "recommendation": "monitor"
       }
     ],
-    "summary": "The squad is largely free of fresh injury, suspension or transfer-saga issues in the last 1-2 weeks, with Saka, Palmer, João Pedro, Mbeumo, Thiago and others starting and contributing. The main watch-points are minutes/rotation at Manchester City (Cherki) and Leeds (Nmecha). Keepers and most defenders appear nailed and available."
+    "summary": "Found 5 medium-risk (O'Reilly, M.Sangaré, Bijol, Senesi, Kelleher) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "399": 3.0,
-    "347": 3.0
+    "387": 3.0,
+    "565": 3.0,
+    "327": 3.0,
+    "498": 3.0,
+    "82": 3.0
   },
-  "blocked_captain_ids": [],
-  "unmatched_names": []
+  "blocked_captain_ids": [
+    82,
+    327,
+    387,
+    498,
+    565
+  ],
+  "unmatched_names": [],
+  "news_lookup_errors": [],
+  "news_systematically_blocked": false
 }
