@@ -1,5 +1,6 @@
 {
   "squad": [
+    "Calafiori",
     "Saka",
     "Kelleher",
     "Thiago",
@@ -8,15 +9,15 @@
     "Palmer",
     "João Pedro",
     "Tarkowski",
-    "Ajayi",
-    "Tzolakis",
     "Bijol",
     "Okafor",
     "Nmecha",
-    "O'Reilly",
-    "Mbeumo"
+    "Mbeumo",
+    "Senesi",
+    "Roefs"
   ],
   "squad_ids": [
+    8,
     12,
     82,
     106,
@@ -25,85 +26,131 @@
     154,
     165,
     229,
-    279,
-    572,
     327,
     336,
     347,
-    387,
-    427
+    427,
+    498,
+    529
   ],
   "starting_xi": [
+    "Calafiori",
     "Saka",
+    "Kelleher",
     "Thiago",
     "De Cuyper",
     "Palmer",
     "João Pedro",
     "Tarkowski",
-    "Ajayi",
-    "Tzolakis",
+    "Bijol",
     "Okafor",
-    "Nmecha",
     "Mbeumo"
   ],
   "starting_xi_ids": [
+    8,
     12,
+    82,
     106,
     115,
     154,
     165,
     229,
-    279,
-    572,
+    327,
     336,
-    347,
     427
   ],
   "captain": "João Pedro",
   "captain_id": 165,
   "transfers_in": [
-    "Ajayi",
-    "Tzolakis"
+    "Calafiori"
   ],
   "transfers_out": [
-    "Senesi",
-    "Roefs"
-  ],
-  "transfers_made": 2,
-  "free_transfers_used": 1,
-  "hit_taken": 1,
-  "hit_cost": 4,
-  "expected_points": 27.83,
-  "bench_points": 7.88,
-  "squad_value": 95.8,
-  "bank_remaining": 4.6,
-  "risk_adjusted_players": [
-    "O'Reilly",
-    "M.Sangaré",
-    "Bijol",
-    "Kelleher"
-  ],
-  "blocked_from_captaincy_in_squad": [
-    "M.Sangaré",
-    "Kelleher",
-    "Bijol",
     "O'Reilly"
   ],
+  "transfers_made": 1,
+  "free_transfers_used": 1,
+  "hit_taken": 0,
+  "hit_cost": 0,
+  "expected_points": 31.83,
+  "bench_points": 5.52,
+  "squad_value": 97.2,
+  "bank_remaining": 3.2,
+  "risk_adjusted_players": [
+    "M.Sangaré"
+  ],
+  "blocked_from_captaincy_in_squad": [],
   "price_momentum_notes": [
-    "Ajayi looks likely to RISE in price soon (net +4.65% of managers this GW)",
-    "Tzolakis looks likely to RISE in price soon (net +2.61% of managers this GW)",
-    "Senesi looks likely to FALL in price soon (net -1.50% of managers this GW)",
-    "Roefs looks likely to FALL in price soon (net -0.30% of managers this GW)"
+    "Calafiori looks likely to RISE in price soon (net +3.30% of managers this GW)",
+    "O'Reilly looks likely to FALL in price soon (net -1.65% of managers this GW)"
   ],
   "fixture_difficulty_notes": [
+    "Calafiori has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.4) -- already reflected in their rotation_value",
     "Saka has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.4) -- already reflected in their rotation_value",
     "Palmer has an EASY run of fixtures over the next 5 GWs (avg FDR 2.0) -- already reflected in their rotation_value",
     "João Pedro has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value",
-    "Ajayi has an EASY run of fixtures over the next 5 GWs (avg FDR 2.0) -- already reflected in their rotation_value",
-    "Tzolakis has an EASY run of fixtures over the next 5 GWs (avg FDR 2.0) -- already reflected in their rotation_value",
-    "O'Reilly has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.6) -- already reflected in their rotation_value",
     "Mbeumo has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value"
   ],
-  "bench_boost_note": "Boosting THIS week's normal bench: +7.88 pts (total 35.71). Restructuring specifically for Bench Boost instead: 31.55 pts (-4.16 vs. just boosting the normal squad).",
-  "agent_captain_review": null
+  "bench_boost_note": "Boosting THIS week's normal bench: +5.52 pts (total 37.35). Restructuring specifically for Bench Boost instead: 37.35 pts (+0.0 vs. just boosting the normal squad).",
+  "agent_captain_review": {
+    "recommended_captain": "João Pedro",
+    "same_as_solver_top_pick": true,
+    "reasoning": "João Pedro is the solver's highest-xp pick and a forward, carrying no structural ceiling issues like the defender De Cuyper. All candidates have comparable early-season minutes with no evident fluke sample sizes. No clear qualitative reason exists to override the top-ranked candidate.",
+    "shortlist": [
+      {
+        "name": "João Pedro",
+        "xp": 3.41,
+        "price": 7.7,
+        "position": "FWD",
+        "minutes_this_season": 180,
+        "form": 10.0,
+        "points_per_game": 10.0,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Palmer",
+        "xp": 3.26,
+        "price": 9.6,
+        "position": "MID",
+        "minutes_this_season": 172,
+        "form": 10.0,
+        "points_per_game": 10.0,
+        "status": "a",
+        "chance_of_playing_next_round": 100
+      },
+      {
+        "name": "De Cuyper",
+        "xp": 3.23,
+        "price": 4.7,
+        "position": "DEF",
+        "minutes_this_season": 167,
+        "form": 8.5,
+        "points_per_game": 8.5,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Saka",
+        "xp": 3.11,
+        "price": 9.5,
+        "position": "MID",
+        "minutes_this_season": 157,
+        "form": 10.0,
+        "points_per_game": 10.0,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Mbeumo",
+        "xp": 3.01,
+        "price": 8.0,
+        "position": "MID",
+        "minutes_this_season": 180,
+        "form": 6.5,
+        "points_per_game": 6.5,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      }
+    ]
+  }
 }
