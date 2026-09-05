@@ -1,0 +1,113 @@
+{
+  "squad": [
+    "Calafiori",
+    "Saka",
+    "Kelleher",
+    "Thiago",
+    "M.Sangaré",
+    "De Cuyper",
+    "Palmer",
+    "João Pedro",
+    "Tarkowski",
+    "Ajayi",
+    "Bijol",
+    "Okafor",
+    "Isak",
+    "Mbeumo",
+    "Roefs"
+  ],
+  "squad_ids": [
+    8,
+    12,
+    82,
+    106,
+    565,
+    115,
+    154,
+    165,
+    229,
+    279,
+    327,
+    336,
+    379,
+    427,
+    529
+  ],
+  "starting_xi": [
+    "Calafiori",
+    "Saka",
+    "Kelleher",
+    "De Cuyper",
+    "Palmer",
+    "João Pedro",
+    "Tarkowski",
+    "Ajayi",
+    "Okafor",
+    "Isak",
+    "Mbeumo"
+  ],
+  "starting_xi_ids": [
+    8,
+    12,
+    82,
+    115,
+    154,
+    165,
+    229,
+    279,
+    336,
+    379,
+    427
+  ],
+  "captain": "Isak",
+  "captain_id": 379,
+  "transfers_in": [
+    "Ajayi",
+    "Isak"
+  ],
+  "transfers_out": [
+    "Nmecha",
+    "Senesi"
+  ],
+  "transfers_made": 2,
+  "free_transfers_used": 1,
+  "hit_taken": 1,
+  "hit_cost": 4,
+  "expected_points": 25.38,
+  "bench_points": 6.69,
+  "squad_value": 98.8,
+  "bank_remaining": 1.5,
+  "risk_adjusted_players": [
+    "M.Sangaré",
+    "Kelleher",
+    "João Pedro",
+    "Bijol",
+    "Roefs",
+    "Mbeumo",
+    "Thiago"
+  ],
+  "blocked_from_captaincy_in_squad": [
+    "Roefs",
+    "M.Sangaré",
+    "Kelleher",
+    "Thiago",
+    "João Pedro",
+    "Bijol",
+    "Mbeumo"
+  ],
+  "price_momentum_notes": [
+    "Ajayi looks likely to RISE in price soon (net +0.13% of managers this GW)",
+    "Isak looks likely to RISE in price soon (net +0.32% of managers this GW)"
+  ],
+  "fixture_difficulty_notes": [
+    "Calafiori has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.4) -- already reflected in their rotation_value",
+    "Saka has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.4) -- already reflected in their rotation_value",
+    "Palmer has an EASY run of fixtures over the next 5 GWs (avg FDR 2.0) -- already reflected in their rotation_value",
+    "João Pedro has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value",
+    "Ajayi has an EASY run of fixtures over the next 5 GWs (avg FDR 2.0) -- already reflected in their rotation_value",
+    "Isak has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value",
+    "Mbeumo has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value"
+  ],
+  "bench_boost_note": "Boosting THIS week's normal bench: +6.69 pts (total 32.07). Restructuring specifically for Bench Boost instead: 32.07 pts (+0.0 vs. just boosting the normal squad).",
+  "agent_captain_review": null
+}

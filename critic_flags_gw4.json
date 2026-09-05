@@ -1,0 +1,86 @@
+{
+  "critic_output": {
+    "flags": [
+      {
+        "player_name": "Palmer",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "M.Sangaré",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Kelleher",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Do Liverpool have Caoimhin Kelleher buy-back clause? £18m Brentford transfer explained - The Mirror\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxNYVVhaWxYZ1dzTGdya2didm9Va0V4dk5mQkpmXzBlZ3NDQkcyTnlSdmRvczRabGk3T0p4dkkycVhvamtqSnFCT2IydURvcWd0b1Q3M25lYXI5MzM3bHc5a2d1VC1LaGJHZzk4WUZKYnViZEkzWE5SUDFKWVBoOG84cFBvZ1lqcHl4ekhPdm0wdHY1aWlrdmowYjdsSTZuczdzWmfSAacBQVVfeXFMUEdRakVpSEdsMF9yX2NyZzc5dG93aWZxQXdkUEdBQnRnYTF2bjdtUjd0aEV3WHhLSkwzUy1GV2hKdkVYcVo5cDVqdzdsSGJ3eFM2V01tN1huRzQwMnI4Ym5qVGtVRFpDVGQyVzl6cXBmNlpzLXhEVFlGaHhTa2RTNmpHYV9kWnhLN2JVX0F6SHAxVF8tS21ZLTN2RlVyZGR0bm5qa2kzMFk?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "João Pedro",
+        "risk_level": "medium",
+        "reason": "Headline mentions injury-related terms: \"Chelsea XI vs Arsenal: Confirmed team news, predicted lineup and injury update for Premier League - London Evening Standard\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi3wFBVV95cUxPa0ZDUDFjZVdsbjdYRGVtMHY2LUZMYmgtUERKeUh4aE5uR2JjUTJ6QUJac09XZGlpZEtvTktFTGNHYldnNTEybElzOEttT29xckUxVVBlUndzZ1hVM3pfM2FLa3ZhUVNwbF9Lclllc3lZQ0Z5NWJhS3pBSGc4czVXaGJscU9rYVhtNUF3bkpoNEdvaVFnZi16MEhxUEZOTDdlekttT0xXcnBPZXNjOUotSjhOT1JOQmgzNGFXWXFGTV8tWVBGRFdwdkhwTGlJUWtqN3lLa3d0SWZqY0pJSGVF?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Bijol",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5MaGdXTzV6dEZQNkVDajRsenJ3TXRZUm96RkFuYXRCRG1zVW96b0Y5dDRVSDFFWlB5a1IwZE9nSkxNWXF2LWgwTy10bUZuNU9fTHR1em95UFltbVVGZ3kyQWhCcy1iMDg?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Roefs",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Mbeumo",
+        "risk_level": "medium",
+        "reason": "Headline mentions injury-related terms: \"Man Utd XI vs Everton: Confirmed team news, predicted lineup and injury latest for Premier League - London Evening Standard\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi2wFBVV95cUxOOTBld2VwSzBkTENGbzZqeE1ib3JqNEs3dzM4bHl3U1p1ZVoyMUgwazlaQTh0aGlTRGFzVVJRTDliUjE0bEk4Z05OSTI4ZDlMYXk3aERwR0tyOXFuV1dTX1J0UmUwTXdCX1owLVNyNHFNbWRuUm85TWtfVlN4Mmh5YjRLM1F1NVh1Y004Y0pSd0ZiaW1EN3lwa1FoQm1RcVBnYy16N21HX19Kc1lzVDIwYlB2dUVTbm0xdnJhWG5ucWtQRzBzVDlmbThMajZYOFhkaElaYjAybS05cTA?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Thiago",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Brentford transfers, latest news, rumours and gossip: Live updates, goals and highlights - Sky Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi3AFBVV95cUxNMTZRRGpSbDRBLWFLTHNFalF4ZVJId2lLS1p5VThJQlNmZW1iSXhaenA2ODdWVmlZR3MtUzFMa19hTHZ1cWhISUEwaTdobHNBNGc1dmhzMUpScVJMUDIxeGFmbDItN1QxWlY3SkN2MC1mZlctbHdaOE5VUVJsWDIzbEZaNkdRWWpXRVF5YWE3RmdUR1JvTm5rNWtaOUFlb2V6T0VSUi1ncTA4YXRodGtnNXZZSFZBaUhTRV9ncjBySjZ2MDlxUHh2eFZxRklhdUhCc1lNQXQtdjVNVWZw?oc=5",
+        "recommendation": "monitor"
+      }
+    ],
+    "summary": "Found 8 medium-risk (Palmer, M.Sangaré, Kelleher, João Pedro, Bijol, Roefs, Mbeumo, Thiago) based on FPL data and Google News headlines."
+  },
+  "risk_penalty": {
+    "301": 3.0,
+    "565": 3.0,
+    "82": 3.0,
+    "165": 3.0,
+    "327": 3.0,
+    "529": 3.0,
+    "427": 3.0,
+    "106": 3.0
+  },
+  "blocked_captain_ids": [
+    82,
+    106,
+    165,
+    301,
+    327,
+    427,
+    529,
+    565
+  ],
+  "unmatched_names": [],
+  "news_lookup_errors": [],
+  "news_systematically_blocked": false
+}
