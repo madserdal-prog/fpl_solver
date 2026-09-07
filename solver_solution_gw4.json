@@ -1,6 +1,7 @@
 {
   "squad": [
     "Calafiori",
+    "Saka",
     "Kelleher",
     "Thiago",
     "M.Sangaré",
@@ -12,12 +13,12 @@
     "Tzolakis",
     "Bijol",
     "Okafor",
-    "Nmecha",
-    "Gakpo",
+    "Isak",
     "Mbeumo"
   ],
   "squad_ids": [
     8,
+    12,
     82,
     106,
     565,
@@ -29,12 +30,12 @@
     572,
     327,
     336,
-    347,
-    367,
+    379,
     427
   ],
   "starting_xi": [
-    "Calafiori",
+    "Saka",
+    "Thiago",
     "De Cuyper",
     "Palmer",
     "João Pedro",
@@ -42,12 +43,12 @@
     "Ajayi",
     "Tzolakis",
     "Okafor",
-    "Nmecha",
-    "Gakpo",
+    "Isak",
     "Mbeumo"
   ],
   "starting_xi_ids": [
-    8,
+    12,
+    106,
     115,
     154,
     165,
@@ -55,19 +56,18 @@
     279,
     572,
     336,
-    347,
-    367,
+    379,
     427
   ],
-  "captain": "De Cuyper",
-  "captain_id": 115,
+  "captain": "Mbeumo",
+  "captain_id": 427,
   "transfers_in": [
     "Ajayi",
-    "Gakpo",
+    "Isak",
     "Tzolakis"
   ],
   "transfers_out": [
-    "Saka",
+    "Nmecha",
     "Senesi",
     "Roefs"
   ],
@@ -75,38 +75,39 @@
   "free_transfers_used": 1,
   "hit_taken": 2,
   "hit_cost": 8,
-  "expected_points": 22.04,
-  "bench_points": 7.58,
-  "squad_value": 92.5,
-  "bank_remaining": 7.8,
+  "expected_points": 25.99,
+  "bench_points": 8.26,
+  "squad_value": 98.3,
+  "bank_remaining": 1.8,
   "risk_adjusted_players": [
-    "Thiago",
     "Bijol",
+    "Calafiori",
     "Kelleher",
     "M.Sangaré"
   ],
   "blocked_from_captaincy_in_squad": [
+    "Calafiori",
     "M.Sangaré",
     "Kelleher",
-    "Thiago",
     "Bijol"
   ],
   "price_momentum_notes": [
-    "Ajayi looks likely to RISE in price soon (net +0.42% of managers this GW)",
-    "Gakpo looks likely to RISE in price soon (net +1.57% of managers this GW)",
-    "Tzolakis looks likely to RISE in price soon (net +0.29% of managers this GW)",
-    "Senesi looks likely to FALL in price soon (net -0.18% of managers this GW)",
-    "Roefs looks likely to FALL in price soon (net -0.07% of managers this GW)"
+    "Ajayi looks likely to RISE in price soon (net +0.91% of managers this GW)",
+    "Isak looks likely to RISE in price soon (net +2.07% of managers this GW)",
+    "Tzolakis looks likely to RISE in price soon (net +0.69% of managers this GW)",
+    "Senesi looks likely to FALL in price soon (net -0.38% of managers this GW)",
+    "Roefs looks likely to FALL in price soon (net -0.14% of managers this GW)"
   ],
   "fixture_difficulty_notes": [
     "Calafiori has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.4) -- already reflected in their rotation_value",
+    "Saka has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.4) -- already reflected in their rotation_value",
     "Palmer has an EASY run of fixtures over the next 5 GWs (avg FDR 2.0) -- already reflected in their rotation_value",
     "João Pedro has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value",
     "Ajayi has an EASY run of fixtures over the next 5 GWs (avg FDR 2.0) -- already reflected in their rotation_value",
     "Tzolakis has an EASY run of fixtures over the next 5 GWs (avg FDR 2.0) -- already reflected in their rotation_value",
-    "Gakpo has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value",
+    "Isak has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value",
     "Mbeumo has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value"
   ],
-  "bench_boost_note": "Boosting THIS week's normal bench: +7.58 pts (total 29.62). Restructuring specifically for Bench Boost instead: 24.29 pts (-5.33 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +8.26 pts (total 34.25). Restructuring specifically for Bench Boost instead: 28.61 pts (-5.64 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }
