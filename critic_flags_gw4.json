@@ -2,13 +2,6 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Palmer",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
-        "recommendation": "monitor"
-      },
-      {
         "player_name": "Senesi",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Tottenham transfers news: Spurs edging close to signing Marcos Senesi and hopeful of move for Andy Robertson - Sky Sports\"",
@@ -16,17 +9,24 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Bijol",
+        "player_name": "M.Sangaré",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5MaGdXTzV6dEZQNkVDajRsenJ3TXRZUm96RkFuYXRCRG1zVW96b0Y5dDRVSDFFWlB5a1IwZE9nSkxNWXF2LWgwTy10bUZuNU9fTHR1em95UFltbVVGZ3kyQWhCcy1iMDg?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
         "recommendation": "monitor"
       },
       {
-        "player_name": "Calafiori",
+        "player_name": "Palmer",
         "risk_level": "medium",
-        "reason": "Headline mentions injury-related terms: \"Why Riccardo Calafiori Arsenal goal was ruled out vs Chelsea as VAR statement released - Football London\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMilgFBVV95cUxOV1l6ZzB1TUtrUWZsQlliYUxXdDBYaVVpcWoxZUUyMGh6SmFWeDlScjZvT05qUndrbE9uc0hTUmZiLXJjQjRjOVd5UnVrZFpkMHl3d2N0UFFtQmt4S1l1QnVBdk9tRThOZjl0cVQ0VnBwVjNVYjhxODdacmRPQWxPc3QwaGgwSXNHVGE2MW5pVC1odnViWnfSAZsBQVVfeXFMUGJPSWZZNEIzQWJuWjQ5OExNZjVZZExjWGxqcFZQS1V0NlJHekN3bld2eGdqUDdlRnJFOEdFWVZrTTRVemlfR0xmSGltVUI1MlJFX3d0bTZjbUxpM2NzMFA5QWJpV3VmR1lmTTByTS14ZGZFLTZWTDZWTzJ2SW1CUm9IUVA4eDVXa083VXhhTHVWMmNFTnF2X0JjNVU?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "João Pedro",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Unseen moment between Andrea Berta and Chelsea star in tunnel sparks Arsenal transfer frenzy - The Mirror\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMimgFBVV95cUxQQWJfdDAxVDhCdmdBQXQ1U01wRmJ6WHhLX0IyMGQ5c01xM1hOVGJIYmpMZTYteEdIRmxsSnQxNEItaEdrcl9vT0xGT3hoemRXUUlwN2NzcXpCd1hwLWU1OVRPa2lzRnFkSHZJM0hHZklyZkpibENPQXZxUWpfRlJRODdCM3R2WHphS1JlejI5ZVhZRzRQMkQ5RUFB0gGfAUFVX3lxTE5IWmVEYUxqX2hsSHYtLU1BbTRTdVBQdGlWQllRaVVQd0g0VGJORFhCalJacHoxOV92R2p3RUtOemVCR25nOTRPc0dONmcyVnJJOXVJX0lDWElqS1BENlRQbmRPcURES1h6NThKY3JwTGkydm95NzdiSXkxamlxdTZpY0NkdGNjeGN5RVFSNXJQT1p1Qm5hbFBCdm44cE1LMA?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -37,28 +37,37 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "M.Sangaré",
+        "player_name": "Bijol",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5MaGdXTzV6dEZQNkVDajRsenJ3TXRZUm96RkFuYXRCRG1zVW96b0Y5dDRVSDFFWlB5a1IwZE9nSkxNWXF2LWgwTy10bUZuNU9fTHR1em95UFltbVVGZ3kyQWhCcy1iMDg?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Nmecha",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"How Lukas Nmecha has come out on top as Leeds United's transfer window winners and losers analysed - Yahoo Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiggFBVV95cUxQbl9ncXNXdlRqRHJjY3ZkMk9qd3hRRGJMdkl3empjSV84N1paZmdfNEJueV9BYy0zcG4xQjlKZE80Wnl2SzdTQnpqV1lyclJ2T2RYOTBDczFldzBLOFctYS13cFNqbzg2Tks2YV9UQXI2ZDZGWUhpX2YwNDZKa1lycHN3?oc=5",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 6 medium-risk (Palmer, Senesi, Bijol, Calafiori, Kelleher, M.Sangaré) based on FPL data and Google News headlines."
+    "summary": "Found 7 medium-risk (Senesi, M.Sangaré, Palmer, João Pedro, Kelleher, Bijol, Nmecha) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "301": 3.0,
     "498": 3.0,
-    "327": 3.0,
-    "8": 3.0,
+    "565": 3.0,
+    "301": 3.0,
+    "165": 3.0,
     "82": 3.0,
-    "565": 3.0
+    "327": 3.0,
+    "347": 3.0
   },
   "blocked_captain_ids": [
-    8,
     82,
+    165,
     301,
     327,
+    347,
     498,
     565
   ],
