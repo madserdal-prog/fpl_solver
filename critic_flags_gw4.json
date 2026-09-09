@@ -2,10 +2,10 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Senesi",
+        "player_name": "João Pedro",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Tottenham transfers news: Spurs edging close to signing Marcos Senesi and hopeful of move for Andy Robertson - Sky Sports\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi9AFBVV95cUxPa2ZUZkVYRnlJN1h2dW1RMWVuczBtU1R3WUVjc09QaXhaT2F2a2RDWmZqcWRIdnVhdGFEcloxLVc3V19fVW1qdTZMZVBvdHktWVR5RzlvOXlfT2c1WUtKbjVxZC1yaFN3U1lRZ0Y4RlVfY3hYRmQtamIydVFTZVRsd1pVVU9yN015cTBsRXJOZ0dRSVRUWVRhRkJ5ejhUcHB3ODM3VTM1by1yTUkyOXllVmRseGc1ODJ3emFrMTVBc01GLUhQbUxwdG5QQjkzSUZkSzhTcDlCSklMSzhVazVfc0k0QjdPS05ZMWE0clowRGJIN1lj?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Unseen moment between Andrea Berta and Chelsea star in tunnel sparks Arsenal transfer frenzy - Daily Mirror\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMimgFBVV95cUxQQWJfdDAxVDhCdmdBQXQ1U01wRmJ6WHhLX0IyMGQ5c01xM1hOVGJIYmpMZTYteEdIRmxsSnQxNEItaEdrcl9vT0xGT3hoemRXUUlwN2NzcXpCd1hwLWU1OVRPa2lzRnFkSHZJM0hHZklyZkpibENPQXZxUWpfRlJRODdCM3R2WHphS1JlejI5ZVhZRzRQMkQ5RUFB0gGfAUFVX3lxTE5IWmVEYUxqX2hsSHYtLU1BbTRTdVBQdGlWQllRaVVQd0g0VGJORFhCalJacHoxOV92R2p3RUtOemVCR25nOTRPc0dONmcyVnJJOXVJX0lDWElqS1BENlRQbmRPcURES1h6NThKY3JwTGkydm95NzdiSXkxamlxdTZpY0NkdGNjeGN5RVFSNXJQT1p1Qm5hbFBCdm44cE1LMA?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -23,20 +23,6 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "João Pedro",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Unseen moment between Andrea Berta and Chelsea star in tunnel sparks Arsenal transfer frenzy - The Mirror\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMimgFBVV95cUxQQWJfdDAxVDhCdmdBQXQ1U01wRmJ6WHhLX0IyMGQ5c01xM1hOVGJIYmpMZTYteEdIRmxsSnQxNEItaEdrcl9vT0xGT3hoemRXUUlwN2NzcXpCd1hwLWU1OVRPa2lzRnFkSHZJM0hHZklyZkpibENPQXZxUWpfRlJRODdCM3R2WHphS1JlejI5ZVhZRzRQMkQ5RUFB0gGfAUFVX3lxTE5IWmVEYUxqX2hsSHYtLU1BbTRTdVBQdGlWQllRaVVQd0g0VGJORFhCalJacHoxOV92R2p3RUtOemVCR25nOTRPc0dONmcyVnJJOXVJX0lDWElqS1BENlRQbmRPcURES1h6NThKY3JwTGkydm95NzdiSXkxamlxdTZpY0NkdGNjeGN5RVFSNXJQT1p1Qm5hbFBCdm44cE1LMA?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Kelleher",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Do Liverpool have Caoimhin Kelleher buy-back clause? £18m Brentford transfer explained - The Mirror\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxNYVVhaWxYZ1dzTGdya2didm9Va0V4dk5mQkpmXzBlZ3NDQkcyTnlSdmRvczRabGk3T0p4dkkycVhvamtqSnFCT2IydURvcWd0b1Q3M25lYXI5MzM3bHc5a2d1VC1LaGJHZzk4WUZKYnViZEkzWE5SUDFKWVBoOG84cFBvZ1lqcHl4ekhPdm0wdHY1aWlrdmowYjdsSTZuczdzWmfSAacBQVVfeXFMUEdRakVpSEdsMF9yX2NyZzc5dG93aWZxQXdkUEdBQnRnYTF2bjdtUjd0aEV3WHhLSkwzUy1GV2hKdkVYcVo5cDVqdzdsSGJ3eFM2V01tN1huRzQwMnI4Ym5qVGtVRFpDVGQyVzl6cXBmNlpzLXhEVFlGaHhTa2RTNmpHYV9kWnhLN2JVX0F6SHAxVF8tS21ZLTN2RlVyZGR0bm5qa2kzMFk?oc=5",
-        "recommendation": "monitor"
-      },
-      {
         "player_name": "Bijol",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
@@ -44,31 +30,36 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Nmecha",
+        "player_name": "Senesi",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"How Lukas Nmecha has come out on top as Leeds United's transfer window winners and losers analysed - Yahoo Sports\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiggFBVV95cUxQbl9ncXNXdlRqRHJjY3ZkMk9qd3hRRGJMdkl3empjSV84N1paZmdfNEJueV9BYy0zcG4xQjlKZE80Wnl2SzdTQnpqV1lyclJ2T2RYOTBDczFldzBLOFctYS13cFNqbzg2Tks2YV9UQXI2ZDZGWUhpX2YwNDZKa1lycHN3?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Tottenham transfers news: Spurs edging close to signing Marcos Senesi and hopeful of move for Andy Robertson - Sky Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi9AFBVV95cUxPa2ZUZkVYRnlJN1h2dW1RMWVuczBtU1R3WUVjc09QaXhaT2F2a2RDWmZqcWRIdnVhdGFEcloxLVc3V19fVW1qdTZMZVBvdHktWVR5RzlvOXlfT2c1WUtKbjVxZC1yaFN3U1lRZ0Y4RlVfY3hYRmQtamIydVFTZVRsd1pVVU9yN015cTBsRXJOZ0dRSVRUWVRhRkJ5ejhUcHB3ODM3VTM1by1yTUkyOXllVmRseGc1ODJ3emFrMTVBc01GLUhQbUxwdG5QQjkzSUZkSzhTcDlCSklMSzhVazVfc0k0QjdPS05ZMWE0clowRGJIN1lj?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Roefs",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 7 medium-risk (Senesi, M.Sangaré, Palmer, João Pedro, Kelleher, Bijol, Nmecha) based on FPL data and Google News headlines."
+    "summary": "Found 6 medium-risk (João Pedro, M.Sangaré, Palmer, Bijol, Senesi, Roefs) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "498": 3.0,
+    "165": 3.0,
     "565": 3.0,
     "301": 3.0,
-    "165": 3.0,
-    "82": 3.0,
     "327": 3.0,
-    "347": 3.0
+    "498": 3.0,
+    "529": 3.0
   },
   "blocked_captain_ids": [
-    82,
     165,
     301,
     327,
-    347,
     498,
+    529,
     565
   ],
   "unmatched_names": [],
