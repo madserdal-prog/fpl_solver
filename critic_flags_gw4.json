@@ -2,17 +2,31 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "João Pedro",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Unseen moment between Andrea Berta and Chelsea star in tunnel sparks Arsenal transfer frenzy - Daily Mirror\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMimgFBVV95cUxQQWJfdDAxVDhCdmdBQXQ1U01wRmJ6WHhLX0IyMGQ5c01xM1hOVGJIYmpMZTYteEdIRmxsSnQxNEItaEdrcl9vT0xGT3hoemRXUUlwN2NzcXpCd1hwLWU1OVRPa2lzRnFkSHZJM0hHZklyZkpibENPQXZxUWpfRlJRODdCM3R2WHphS1JlejI5ZVhZRzRQMkQ5RUFB0gGfAUFVX3lxTE5IWmVEYUxqX2hsSHYtLU1BbTRTdVBQdGlWQllRaVVQd0g0VGJORFhCalJacHoxOV92R2p3RUtOemVCR25nOTRPc0dONmcyVnJJOXVJX0lDWElqS1BENlRQbmRPcURES1h6NThKY3JwTGkydm95NzdiSXkxamlxdTZpY0NkdGNjeGN5RVFSNXJQT1p1Qm5hbFBCdm44cE1LMA?oc=5",
-        "recommendation": "monitor"
-      },
-      {
         "player_name": "M.Sangaré",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
         "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Bijol",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1SLWpMSmwyakJlQzV3bWM0MnpEZWFIUjBIU1VXMWE3ZVBWbFcxQ3F0d1NsZ2l5ZWFieXJMZlpwZlBxb0x0T19FTEZNYzZqM1N1WU5JTHY3a3B6d0hEVHFYb2VWUFRZZDkyOHc?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Senesi",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Spurs snap up Senesi, Leeds land Wilson: The Premier League’s best bargain transfers this summer - LiveScore\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi-gFBVV95cUxNOGhaN1ZwUG1WdUZ4bFRsMVJSOTdkcVB6ZWJGMV9sMVZKU3l4dVluOS1LUkJQbGhiaFk3eHVKRnhGU3R4bWFjUXpGZV9tQ0c5RnFXY1FhdUR6Q2ZBTzRpWWk5cHcwdlRRVWtEQ2lRLXBkdllaMnhPbkhDLWRTYUNQSmRkWWxVX29GbXV0b3dsanE2N2tEdHN6S3lDNVE3cGZ6c1pldWtEclMwUk1iY0tTbVowd25pNnBrRXZJN0N3RWphODFMbTl2dVRSNGpxcUxPVmFzbnc2OEFMVW1tNExGbXkwRHVHVVkyUnBzcldtdFNaU1VySGhvTlhn?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Roefs",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - thenorthernecho.co.uk\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -21,41 +35,18 @@
         "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
         "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
         "recommendation": "monitor"
-      },
-      {
-        "player_name": "Bijol",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5MaGdXTzV6dEZQNkVDajRsenJ3TXRZUm96RkFuYXRCRG1zVW96b0Y5dDRVSDFFWlB5a1IwZE9nSkxNWXF2LWgwTy10bUZuNU9fTHR1em95UFltbVVGZ3kyQWhCcy1iMDg?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Senesi",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Tottenham transfers news: Spurs edging close to signing Marcos Senesi and hopeful of move for Andy Robertson - Sky Sports\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi9AFBVV95cUxPa2ZUZkVYRnlJN1h2dW1RMWVuczBtU1R3WUVjc09QaXhaT2F2a2RDWmZqcWRIdnVhdGFEcloxLVc3V19fVW1qdTZMZVBvdHktWVR5RzlvOXlfT2c1WUtKbjVxZC1yaFN3U1lRZ0Y4RlVfY3hYRmQtamIydVFTZVRsd1pVVU9yN015cTBsRXJOZ0dRSVRUWVRhRkJ5ejhUcHB3ODM3VTM1by1yTUkyOXllVmRseGc1ODJ3emFrMTVBc01GLUhQbUxwdG5QQjkzSUZkSzhTcDlCSklMSzhVazVfc0k0QjdPS05ZMWE0clowRGJIN1lj?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Roefs",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
-        "recommendation": "monitor"
       }
     ],
-    "summary": "Found 6 medium-risk (João Pedro, M.Sangaré, Palmer, Bijol, Senesi, Roefs) based on FPL data and Google News headlines."
+    "summary": "Found 5 medium-risk (M.Sangaré, Bijol, Senesi, Roefs, Palmer) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "165": 3.0,
     "565": 3.0,
-    "301": 3.0,
     "327": 3.0,
     "498": 3.0,
-    "529": 3.0
+    "529": 3.0,
+    "301": 3.0
   },
   "blocked_captain_ids": [
-    165,
     301,
     327,
     498,
