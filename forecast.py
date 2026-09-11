@@ -200,7 +200,23 @@ def compute_xp_series(element, fixture_lookup, start_gw, horizon):
     goal_pts = GOAL_POINTS[pos]
     play_prob = p_play(element)
     minutes = element.get("minutes", MINUTES_TRUST_THRESHOLD)  # assume trustworthy if absent (synthetic data)
-    trust = min(1.0, minutes / MINUTES_TRUST_THRESHOLD) if minutes else 0.0
+
+    # IMPORTANT FIX: trust used to be minutes/300 -- a FIXED absolute
+    # threshold calibrated for a mature season. Early in a season, almost
+    # no player can reach 300 minutes yet, even one who's started every
+    # single available match -- this was crushing confidence for genuinely
+    # nailed-on players purely because the season was young (verified
+    # directly: Palmer at 82 minutes got trust=0.27, indistinguishable from
+    # someone who'd genuinely missed most of a mature season). Normalize by
+    # games_played_so_far instead (embedded per-element by collector.py, so
+    # it's already available here) -- falls back to the old fixed threshold
+    # only when that field is missing (older data, or synthetic test data).
+    games_played_so_far = element.get("games_played_so_far")
+    if games_played_so_far:
+        possible_minutes = games_played_so_far * 90
+        trust = min(1.0, minutes / possible_minutes) if possible_minutes else 0.0
+    else:
+        trust = min(1.0, minutes / MINUTES_TRUST_THRESHOLD) if minutes else 0.0
 
     # Use whichever real outcome-signal is actually informative: "form" resets
     # to 0 for everyone at the start of a new season (no games played yet this
