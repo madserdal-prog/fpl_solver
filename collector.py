@@ -65,21 +65,41 @@ def fetch_fixtures() -> list:
 # Normalization -- raw FPL API format -> format forecast.py expects
 # ---------------------------------------------------------------------------
 
-def estimate_start_probability(element: dict) -> float:
+def count_games_played_so_far(raw_bootstrap: dict) -> int:
+    """Number of gameweeks FPL has marked as finished so far this season."""
+    return sum(1 for e in raw_bootstrap.get("events", []) if e.get("finished"))
+
+
+def estimate_start_probability(minutes: int, games_played_so_far: int) -> float:
     """
     Heuristic probability of meaningful playing time, used as the
     'start_probability' fallback in forecast.py's p_play(). FPL's API
-    doesn't provide this directly -- it's derived here from minutes played
-    so far this season. Naturally improved in v2 with an actual minutes
-    pattern (last 5 matches) instead of the season total.
+    doesn't provide this directly.
+
+    IMPORTANT FIX: this used to bucket on ABSOLUTE cumulative minutes
+    (>450, >90, else) -- calibrated for a mature, fully-progressed season.
+    Early in a season, almost NO player can reach 450 minutes yet, even a
+    completely nailed-on starter who's played every single available
+    match -- verified directly against real players in this pipeline
+    (Palmer, Gibbs-White, De Cuyper all landed in the worst 0.2 bucket
+    purely because the season was young, not because they were actually
+    doubtful). The fix: normalize by the FRACTION of available minutes
+    actually played (minutes / (games_played_so_far * 90)), which gives a
+    fair "how nailed is this player" signal regardless of how far into
+    the season it currently is.
     """
-    minutes = int(element.get("minutes", 0) or 0)
-    if minutes > 450:
-        return 0.85
-    elif minutes > 90:
-        return 0.55
+    if games_played_so_far <= 0:
+        return 0.75  # true preseason, no real data yet -- neutral default, unchanged from before
+    possible_minutes = games_played_so_far * 90
+    fraction_played = min(1.0, minutes / possible_minutes)
+    if fraction_played >= 0.75:
+        return 0.90  # played the large majority of available minutes -- a nailed starter
+    elif fraction_played >= 0.4:
+        return 0.60  # partial/rotation-risk starter
+    elif fraction_played >= 0.1:
+        return 0.35  # fringe player, occasional appearances
     else:
-        return 0.20
+        return 0.15  # barely featured so far
 
 
 def normalize_master(raw_bootstrap: dict) -> dict:
@@ -103,6 +123,7 @@ def normalize_master(raw_bootstrap: dict) -> dict:
     despite genuinely being a risky, low-minutes option.
     """
     team_id_to_name = {t["id"]: t["name"] for t in raw_bootstrap["teams"]}
+    games_played_so_far = count_games_played_so_far(raw_bootstrap)
 
     elements = []
     for e in raw_bootstrap["elements"]:
@@ -156,7 +177,13 @@ def normalize_master(raw_bootstrap: dict) -> dict:
                                   # that team value should never be chased at the cost of points.
             "news": e.get("news", ""),  # FREE human-written injury/doubt text from FPL's own editors
             "news_added": e.get("news_added"),  # ISO timestamp of when the news text was last updated
-            "start_probability": estimate_start_probability(e),
+            "start_probability": estimate_start_probability(minutes, games_played_so_far),
+            "games_played_so_far": games_played_so_far,  # embedded per-element (same value for
+                                                           # everyone) so forecast.py's trust
+                                                           # calculation can use the SAME season-
+                                                           # relative normalization, without needing
+                                                           # a separate parameter threaded through
+                                                           # every function call.
         })
 
     return {
