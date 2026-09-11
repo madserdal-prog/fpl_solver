@@ -2,6 +2,7 @@
   "squad": [
     "Calafiori",
     "Saka",
+    "Tavernier",
     "Kelleher",
     "Thiago",
     "M.Sangaré",
@@ -9,9 +10,8 @@
     "Palmer",
     "João Pedro",
     "Tarkowski",
-    "Ajayi",
-    "Okafor",
-    "Isak",
+    "Bijol",
+    "Nmecha",
     "Mbeumo",
     "Senesi",
     "Roefs"
@@ -19,6 +19,7 @@
   "squad_ids": [
     8,
     12,
+    68,
     82,
     106,
     565,
@@ -26,15 +27,16 @@
     154,
     165,
     229,
-    279,
-    336,
-    379,
+    327,
+    347,
     427,
     498,
     529
   ],
   "starting_xi": [
+    "Calafiori",
     "Saka",
+    "Tavernier",
     "Kelleher",
     "Thiago",
     "M.Sangaré",
@@ -42,12 +44,12 @@
     "Palmer",
     "João Pedro",
     "Tarkowski",
-    "Ajayi",
-    "Isak",
     "Mbeumo"
   ],
   "starting_xi_ids": [
+    8,
     12,
+    68,
     82,
     106,
     565,
@@ -55,108 +57,36 @@
     154,
     165,
     229,
-    279,
-    379,
     427
   ],
   "captain": "Mbeumo",
   "captain_id": 427,
   "transfers_in": [
-    "Ajayi",
-    "Isak"
+    "Tavernier"
   ],
   "transfers_out": [
-    "Bijol",
-    "Nmecha"
-  ],
-  "transfers_made": 2,
-  "free_transfers_used": 1,
-  "hit_taken": 1,
-  "hit_cost": 4,
-  "expected_points": 30.5,
-  "bench_points": 5.87,
-  "squad_value": 100.0,
-  "bank_remaining": 0.4,
-  "risk_adjusted_players": [
-    "Calafiori",
     "Okafor"
   ],
+  "transfers_made": 1,
+  "free_transfers_used": 1,
+  "hit_taken": 0,
+  "hit_cost": 0,
+  "expected_points": 56.44,
+  "bench_points": 5.84,
+  "squad_value": 97.3,
+  "bank_remaining": 3.1,
+  "risk_adjusted_players": [],
   "blocked_from_captaincy_in_squad": [],
   "price_momentum_notes": [
-    "Ajayi looks likely to RISE in price soon (net +2.07% of managers this GW)",
-    "Isak looks likely to RISE in price soon (net +4.60% of managers this GW)",
-    "Bijol looks likely to FALL in price soon (net -0.08% of managers this GW)"
+    "Tavernier looks likely to RISE in price soon (net +0.90% of managers this GW)"
   ],
   "fixture_difficulty_notes": [
     "Calafiori has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.4) -- already reflected in their rotation_value",
     "Saka has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.4) -- already reflected in their rotation_value",
     "Palmer has an EASY run of fixtures over the next 5 GWs (avg FDR 2.0) -- already reflected in their rotation_value",
     "João Pedro has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value",
-    "Ajayi has an EASY run of fixtures over the next 5 GWs (avg FDR 2.0) -- already reflected in their rotation_value",
-    "Isak has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value",
     "Mbeumo has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value"
   ],
-  "bench_boost_note": "Boosting THIS week's normal bench: +5.87 pts (total 36.37). Restructuring specifically for Bench Boost instead: 34.29 pts (-2.08 vs. just boosting the normal squad).",
-  "agent_captain_review": {
-    "recommended_captain": "Mbeumo",
-    "same_as_solver_top_pick": true,
-    "reasoning": "No clear qualitative objection to the solver's top pick. Mbeumo is a midfielder with full-season minutes and no structural ceiling issues like a defender, while the next option (De Cuyper) carries the typical low-upside defender risk for captaincy.",
-    "shortlist": [
-      {
-        "name": "Mbeumo",
-        "xp": 3.57,
-        "price": 7.9,
-        "position": "MID",
-        "minutes_this_season": 270,
-        "form": 7.0,
-        "points_per_game": 7.0,
-        "status": "a",
-        "chance_of_playing_next_round": null
-      },
-      {
-        "name": "De Cuyper",
-        "xp": 3.46,
-        "price": 4.8,
-        "position": "DEF",
-        "minutes_this_season": 243,
-        "form": 7.0,
-        "points_per_game": 7.0,
-        "status": "a",
-        "chance_of_playing_next_round": null
-      },
-      {
-        "name": "Isak",
-        "xp": 3.32,
-        "price": 9.1,
-        "position": "FWD",
-        "minutes_this_season": 243,
-        "form": 7.7,
-        "points_per_game": 7.7,
-        "status": "a",
-        "chance_of_playing_next_round": null
-      },
-      {
-        "name": "Saka",
-        "xp": 3.19,
-        "price": 9.5,
-        "position": "MID",
-        "minutes_this_season": 246,
-        "form": 7.3,
-        "points_per_game": 7.3,
-        "status": "a",
-        "chance_of_playing_next_round": null
-      },
-      {
-        "name": "João Pedro",
-        "xp": 3.07,
-        "price": 7.7,
-        "position": "FWD",
-        "minutes_this_season": 270,
-        "form": 7.0,
-        "points_per_game": 7.0,
-        "status": "a",
-        "chance_of_playing_next_round": null
-      }
-    ]
-  }
+  "bench_boost_note": "Boosting THIS week's normal bench: +5.84 pts (total 62.28). Restructuring specifically for Bench Boost instead: 62.95 pts (+0.67 vs. just boosting the normal squad).",
+  "agent_captain_review": null
 }
