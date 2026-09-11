@@ -2,76 +2,16 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Palmer",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "B.Fernandes",
-        "risk_level": "medium",
-        "reason": "Headline mentions injury-related terms: \"VIDEO: Man Utd injury blow! Bruno Fernandes spotted limping after Champions League win ahead of crucial Manchester derby against City - Goal.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMixwFBVV95cUxOQ3NPUDhoZkJPcWFxV1J3OTd0X2Y1TmVPWXJPd0NJanREVDZhWVY5enJkdkZXaVFocU9sMGhpemZSUU5iUEZYUHE5SWVPbTJWd3RuR2hxWW1LQXh0RTZEOXBkYlF3Q1hOYkJJc0ZBR1gyTDZ1d3Zja3IwTHN5TkdpdEZlT1JPb1NfdzFYZE52eUlBRERsaGFtcExLXzNaTVFtWElBbEVUTmNlbW55TW0wblBnd0Z0LWxwSG8zaldidVFFZjAzdnRr?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "M.Sangaré",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Bijol",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5MaGdXTzV6dEZQNkVDajRsenJ3TXRZUm96RkFuYXRCRG1zVW96b0Y5dDRVSDFFWlB5a1IwZE9nSkxNWXF2LWgwTy10bUZuNU9fTHR1em95UFltbVVGZ3kyQWhCcy1iMDg?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Roefs",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Senesi",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Spurs snap up Senesi, Leeds land Wilson: The Premier League’s best bargain transfers this summer - LiveScore\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi-gFBVV95cUxNOGhaN1ZwUG1WdUZ4bFRsMVJSOTdkcVB6ZWJGMV9sMVZKU3l4dVluOS1LUkJQbGhiaFk3eHVKRnhGU3R4bWFjUXpGZV9tQ0c5RnFXY1FhdUR6Q2ZBTzRpWWk5cHcwdlRRVWtEQ2lRLXBkdllaMnhPbkhDLWRTYUNQSmRkWWxVX29GbXV0b3dsanE2N2tEdHN6S3lDNVE3cGZ6c1pldWtEclMwUk1iY0tTbVowd25pNnBrRXZJN0N3RWphODFMbTl2dVRSNGpxcUxPVmFzbnc2OEFMVW1tNExGbXkwRHVHVVkyUnBzcldtdFNaU1VySGhvTlhn?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Thiago",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Brentford transfers, latest news, rumours and gossip: Live updates, goals and highlights - Sky Sports\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi3AFBVV95cUxPM1pRVzYzejBSaTdvM2x4VjkzM0pHck5mQUxKU3dYc2pELVFhVXNwZmdhX3pOejljdllKajFLd3ROWDlpT2pOTndSUWo1cy1CbDh5X1lYSnQxZUZ6bEVlcWoyV3dfdkhDeVlsaGxjRjAzMEhhcTYzcGx2endhdWdkM09VVGRUVXNmYWd4UHBkSXNXazQ0VEh4bmIydV9ZOTFGdXpZSUxpeWdJcnhMRDdYUkNjWUloWWdXWEZzWGlEbktybExJdE9aOTFRVTRaVWVVdnl1Qkxza1U1eGNB?oc=5",
+        "player_name": "Calafiori",
+        "risk_level": "low",
+        "reason": "Rested in midweek Champions League vs Napoli (one of four changes by Arteta); predicted to return and start at left-back vs Sunderland this weekend with no injury reported.",
+        "source": "Fantasy Football Scout FPL notes (10 Sep 2026); predicted lineups 11 Sep 2026",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 7 medium-risk (Palmer, B.Fernandes, M.Sangaré, Bijol, Roefs, Senesi, Thiago) based on FPL data and Google News headlines."
+    "summary": "The proposed squad has almost no injury, suspension or transfer-related concerns for this round. Calafiori was given a midweek rest but is widely expected to start against Sunderland. All other named players appear fully available with no recent red-flag reports of managed minutes, rotation or fitness doubts."
   },
-  "risk_penalty": {
-    "301": 3.0,
-    "426": 3.0,
-    "565": 3.0,
-    "327": 3.0,
-    "529": 3.0,
-    "498": 3.0,
-    "106": 3.0
-  },
-  "blocked_captain_ids": [
-    106,
-    301,
-    327,
-    426,
-    498,
-    529,
-    565
-  ],
-  "unmatched_names": [],
-  "news_lookup_errors": [],
-  "news_systematically_blocked": false
+  "risk_penalty": {},
+  "blocked_captain_ids": [],
+  "unmatched_names": []
 }
