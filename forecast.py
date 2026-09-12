@@ -51,6 +51,21 @@ FDR_WEIGHT = 0.5          # how much opponent difficulty pulls xP down/up -- a G
 # moves a defender's projection, which is exactly the gap this addresses.
 CLEAN_SHEET_POINTS = {"GK": 4, "DEF": 4, "MID": 1, "FWD": 0}
 
+# Penalty duty is FPL's own PUBLISHED, STABLE designation (penalties_order:
+# 1 = first choice, 2 = second, null = not on the list) -- unlike a raw
+# per-90 rate stat, this doesn't need shrinking toward a baseline for small
+# samples, since it's a durable structural fact, not noisy observed output.
+# Rough estimate: a Premier League team wins roughly 0.1 penalties per game
+# on average, converted at ~78%. For the nailed first-choice taker, that's
+# worth about goal_points * 0.1 * 0.78 per game -- a modest but real and
+# STABLE bump, applied in full regardless of how little the player has
+# actually played this season (unlike everything else in this model).
+# Second choice gets a fraction of that, reflecting they'd only convert if
+# the first choice is unavailable/off the pitch when one is won.
+PENALTY_AWARD_RATE_PER_GAME = 0.1
+PENALTY_CONVERSION_RATE = 0.78
+PENALTY_ORDER_SHARE = {1: 1.0, 2: 0.25}  # fraction of the expected penalty value credited
+
 
 def estimate_clean_sheet_probability(avg_fdr: float) -> float:
     """
@@ -62,6 +77,15 @@ def estimate_clean_sheet_probability(avg_fdr: float) -> float:
     exists to check it against.
     """
     return max(0.05, min(0.50, 0.28 - (avg_fdr - 3.0) * 0.09))
+
+
+def estimate_penalty_bonus_per_game(element: dict, goal_pts: float) -> float:
+    """Structural (NOT shrunk) bonus for a player on FPL's published penalty pecking order."""
+    order = element.get("penalties_order")
+    share = PENALTY_ORDER_SHARE.get(order, 0.0)
+    if share == 0.0:
+        return 0.0
+    return goal_pts * PENALTY_AWARD_RATE_PER_GAME * PENALTY_CONVERSION_RATE * share
 
 
 # ---------------------------------------------------------------------------
@@ -307,6 +331,16 @@ def compute_xp_series(element, fixture_lookup, start_gw, horizon):
         # sample_blend above trusts the process estimate completely once
         # minutes are high, no matter how badly the outcome-anchor disagrees.
         xp = (1 - FORM_INFLUENCE) * sample_blend + FORM_INFLUENCE * outcome_based_xp
+
+        # Penalty duty bonus -- applied AFTER all the shrinkage/blending
+        # above, deliberately NOT subject to it. Being FPL's published
+        # first/second-choice penalty taker is a stable structural fact,
+        # not a noisy stat that should be distrusted for a small sample --
+        # a player with only 1 match played who is nonetheless the
+        # official penalty taker should get full credit for that duty,
+        # unlike everything else in this model.
+        penalty_bonus = estimate_penalty_bonus_per_game(element, goal_pts) * play_prob * game_factor
+        xp += penalty_bonus
 
         series.append(round(max(0.0, xp), 2))
 
