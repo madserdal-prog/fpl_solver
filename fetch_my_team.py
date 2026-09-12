@@ -177,6 +177,21 @@ def main():
         with open(args.out, encoding="utf-8") as f:
             existing = json.load(f)
 
+    # IMPORTANT FIX: without this check, every single run (including the
+    # daily scheduled one) unconditionally overwrote current_squad AND
+    # free_transfers with FPL's last-LOCKED state -- silently reverting any
+    # manual transfer recorded via record_transfer.py for the upcoming
+    # (not-yet-locked) gameweek. Confirmed in practice: a manually recorded
+    # transfer got wiped out by the next day's automatic sync. Only
+    # actually re-sync from FPL once per NEWLY locked gameweek -- if we've
+    # already synced for this exact gw before, leave the file untouched,
+    # since anything since then (a manual record_transfer.py edit) is more
+    # current than FPL's own locked record until the NEXT gameweek locks.
+    if not args.self_test and existing and existing.get("last_synced_gw") == args.gw:
+        print(f"Already synced for GW{args.gw} -- leaving {args.out} unchanged "
+              f"(preserving any manual record_transfer.py edits since then).")
+        return
+
     if args.self_test:
         entry_data = _self_test_entry_data()
         computed_ft = compute_free_transfers(_self_test_history_data(), upcoming_gw=args.gw + 1)
@@ -200,6 +215,8 @@ def main():
                   f"falling back to carried-over/default value.")
 
     my_team = build_my_team_from_entry(entry_data, existing=existing, computed_free_transfers=computed_ft)
+    my_team["last_synced_gw"] = args.gw  # marks this sync so future runs for the SAME gw skip
+                                          # re-overwriting (see the check above)
 
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(my_team, f, ensure_ascii=False, indent=2)
