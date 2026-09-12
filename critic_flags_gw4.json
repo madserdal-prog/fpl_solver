@@ -4,31 +4,15 @@
       {
         "player_name": "Calafiori",
         "risk_level": "medium",
-        "reason": "Rested by Arteta for midweek Champions League (rotated out as one of four changes); first-choice in PL but managed minutes/rotation after European fixture is a noted pattern.",
-        "source": "Fantasy Football Scout, 10 Sep 2026",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "João Pedro",
-        "risk_level": "medium",
-        "reason": "Explicitly rested ('wrapped in cotton wool') for midweek EFL Cup; Alonso rotated attacking options after heavy fixture load.",
-        "source": "Fantasy Football Scout, 10 Sep 2026",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "M.Sangaré",
-        "risk_level": "medium",
-        "reason": "Substituted at half-time in most recent league match (booked, appeared frustrated and struggled in midfield battle); minutes not fully nailed.",
-        "source": "Fantasy Football Scout, 6 Sep 2026",
+        "reason": "Rested by Arteta in midweek Champions League win at Napoli (Hincapie started instead as part of four changes); history of being rotated and injury-prone, so possible rest or managed minutes vs Sunderland this weekend.",
+        "source": "Fantasy Football Scout (10 Sep 2026); Athletic analysis (9 Sep 2026)",
         "recommendation": "monitor"
       }
     ],
-    "summary": "No current injuries, suspensions or active transfer issues across the squad for this round. The main qualitative risks are midweek rotation/rest for Calafiori (Arsenal CL) and João Pedro (Chelsea cup), plus Sangaré's recent early substitution. Remaining players including Saka, Palmer, Kelleher, Thiago, De Cuyper, Tarkowski, Mbeumo and Roefs have no significant fresh concerns and appear available as expected."
+    "summary": "Calafiori is the clearest rotation/rest risk after being benched midweek. The rest of the squad (including Saka, Palmer, João Pedro, Kelleher, Thiago, Sangaré, De Cuyper, Tarkowski, Ajayi, Mbeumo and Roefs) have no fresh injury, suspension, transfer or explicit rest news in the last 1-2 weeks and appear available as expected."
   },
   "risk_penalty": {
-    "8": 3.0,
-    "165": 3.0,
-    "565": 3.0
+    "8": 3.0
   },
   "blocked_captain_ids": [],
   "unmatched_names": []
