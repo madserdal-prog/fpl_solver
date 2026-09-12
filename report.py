@@ -43,13 +43,27 @@ def format_message(solution: dict, gw: int, critic_summary: str = None,
     # Transfers -- explicit IN/OUT labels instead of an arrow, since "A <- B"
     # reads ambiguously (which one are you actually buying?). One bullet per
     # swap is also easier to scan than a single long comma-separated line,
-    # especially with 5+ transfers on an initial-team build.
+    # especially with 5+ transfers on an initial-team build. Each line also
+    # shows the estimated point gain from that swap over the NEXT 5
+    # FIXTURES (transfer_point_gains, a plain sum over the forecast
+    # horizon) -- not just this single gameweek -- since a transfer is a
+    # squad decision you'll hold for multiple weeks, not a one-off bet.
     lines.append("*Transfers:*")
     if solution.get("transfers_in"):
-        for player_in, player_out in zip(solution["transfers_in"], solution["transfers_out"]):
-            lines.append(f"  • IN: *{player_in}*   OUT: {player_out}")
+        gains = solution.get("transfer_point_gains", [])
+        pairs = zip(solution["transfers_in"], solution["transfers_out"], gains or [None] * len(solution["transfers_in"]))
+        for player_in, player_out, gain in pairs:
+            gain_note = f"  ({'+' if gain >= 0 else ''}{gain} pts over next 5 fixtures)" if gain is not None else ""
+            lines.append(f"  • IN: *{player_in}*   OUT: {player_out}{gain_note}")
         if solution.get("hit_cost"):
-            lines.append(f"  _(hit taken: -{solution['hit_cost']} points)_")
+            total_gain = round(sum(gains), 2) if gains else None
+            if total_gain is not None:
+                net = round(total_gain - solution["hit_cost"], 2)
+                lines.append(f"  _(hit taken: -{solution['hit_cost']} points this week; "
+                              f"combined 5-fixture gain {'+' if total_gain >= 0 else ''}{total_gain}, "
+                              f"net {'+' if net >= 0 else ''}{net})_")
+            else:
+                lines.append(f"  _(hit taken: -{solution['hit_cost']} points)_")
     else:
         lines.append("  none")
     lines.append("")
