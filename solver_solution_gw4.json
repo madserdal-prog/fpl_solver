@@ -2,93 +2,88 @@
   "squad": [
     "Calafiori",
     "Saka",
-    "Tavernier",
     "Kelleher",
     "Thiago",
+    "M.Sangaré",
     "De Cuyper",
     "Palmer",
     "João Pedro",
     "Tarkowski",
-    "Barry",
     "Ajayi",
+    "Bijol",
     "Okafor",
+    "Nmecha",
     "Mbeumo",
-    "Senesi",
     "Roefs"
   ],
   "squad_ids": [
     8,
     12,
-    68,
     82,
     106,
+    565,
     115,
     154,
     165,
     229,
-    249,
     279,
+    327,
     336,
+    347,
     427,
-    498,
     529
   ],
   "starting_xi": [
+    "Calafiori",
     "Saka",
-    "Tavernier",
     "Kelleher",
     "Thiago",
     "De Cuyper",
     "Palmer",
     "João Pedro",
     "Tarkowski",
-    "Barry",
     "Ajayi",
+    "Bijol",
     "Mbeumo"
   ],
   "starting_xi_ids": [
+    8,
     12,
-    68,
     82,
     106,
     115,
     154,
     165,
     229,
-    249,
     279,
+    327,
     427
   ],
   "captain": "De Cuyper",
   "captain_id": 115,
   "transfers_in": [
-    "Tavernier",
-    "Barry",
     "Ajayi"
   ],
   "transfers_out": [
-    "Bijol",
-    "Nmecha",
-    "M.Sangaré"
+    "Senesi"
   ],
-  "transfers_made": 3,
+  "transfers_made": 1,
   "free_transfers_used": 1,
-  "hit_taken": 2,
-  "hit_cost": 8,
-  "expected_points": 53.4,
-  "bench_points": 10.02,
-  "squad_value": 96.9,
-  "bank_remaining": 3.5,
+  "hit_taken": 0,
+  "hit_cost": 0,
+  "expected_points": 58.29,
+  "bench_points": 9.42,
+  "squad_value": 95.5,
+  "bank_remaining": 4.9,
   "risk_adjusted_players": [
-    "Calafiori"
+    "Calafiori",
+    "João Pedro",
+    "M.Sangaré"
   ],
   "blocked_from_captaincy_in_squad": [],
   "price_momentum_notes": [
-    "Tavernier looks likely to RISE in price soon (net +0.99% of managers this GW)",
-    "Barry looks likely to RISE in price soon (net +1.24% of managers this GW)",
     "Ajayi looks likely to RISE in price soon (net +2.25% of managers this GW)",
-    "Bijol looks likely to FALL in price soon (net -0.08% of managers this GW)",
-    "M.Sangaré looks likely to FALL in price soon (net -1.63% of managers this GW)"
+    "Senesi looks likely to FALL in price soon (net -0.85% of managers this GW)"
   ],
   "fixture_difficulty_notes": [
     "Calafiori has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.4) -- already reflected in their rotation_value",
@@ -98,11 +93,11 @@
     "Ajayi has an EASY run of fixtures over the next 5 GWs (avg FDR 2.0) -- already reflected in their rotation_value",
     "Mbeumo has a TOUGH run of fixtures over the next 5 GWs (avg FDR 4.0) -- already reflected in their rotation_value"
   ],
-  "bench_boost_note": "Boosting THIS week's normal bench: +10.02 pts (total 63.42). Restructuring specifically for Bench Boost instead: 61.95 pts (-1.47 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +9.42 pts (total 67.71). Restructuring specifically for Bench Boost instead: 67.71 pts (+0.0 vs. just boosting the normal squad).",
   "agent_captain_review": {
     "recommended_captain": "Mbeumo",
     "same_as_solver_top_pick": false,
-    "reasoning": "De Cuyper is a defender, carrying the structurally low captaincy ceiling typical of the position. Mbeumo is a midfielder with comparable xp (6.06) and no such positional constraint.",
+    "reasoning": "De Cuyper is a defender whose xp rests on a modest minutes sample and carries the structurally low captaincy ceiling typical of the position. Mbeumo is the next-highest xp option in the shortlist and, as a midfielder, avoids that positional risk.",
     "shortlist": [
       {
         "name": "De Cuyper",
@@ -138,17 +133,6 @@
         "chance_of_playing_next_round": 100
       },
       {
-        "name": "Tavernier",
-        "xp": 5.61,
-        "price": 6.0,
-        "position": "MID",
-        "minutes_this_season": 268,
-        "form": 7.0,
-        "points_per_game": 7.0,
-        "status": "a",
-        "chance_of_playing_next_round": null
-      },
-      {
         "name": "Saka",
         "xp": 5.39,
         "price": 9.5,
@@ -156,6 +140,17 @@
         "minutes_this_season": 246,
         "form": 7.3,
         "points_per_game": 7.3,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "João Pedro",
+        "xp": 5.05,
+        "price": 7.7,
+        "position": "FWD",
+        "minutes_this_season": 270,
+        "form": 7.0,
+        "points_per_game": 7.0,
         "status": "a",
         "chance_of_playing_next_round": null
       }

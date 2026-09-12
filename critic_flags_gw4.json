@@ -4,23 +4,31 @@
       {
         "player_name": "Calafiori",
         "risk_level": "medium",
-        "reason": "Rested by Arteta for midweek Champions League match vs Napoli (one of four changes, Hincapie started); Arsenal's European schedule creates ongoing rotation risk even when available.",
+        "reason": "Rested by Arteta for midweek Champions League (rotated out as one of four changes); first-choice in PL but managed minutes/rotation after European fixture is a noted pattern.",
         "source": "Fantasy Football Scout, 10 Sep 2026",
         "recommendation": "monitor"
       },
       {
-        "player_name": "Isak",
+        "player_name": "João Pedro",
         "risk_level": "medium",
-        "reason": "Coming off a long-term injury-hit 2025/26 (ankle/fibula fracture that limited him heavily); although starting and scoring this season, recent player/manager comments emphasise building rhythm and physical condition rather than being fully established.",
-        "source": "LiverpoolFC.com / Iraola comments, 11 Sep 2026",
+        "reason": "Explicitly rested ('wrapped in cotton wool') for midweek EFL Cup; Alonso rotated attacking options after heavy fixture load.",
+        "source": "Fantasy Football Scout, 10 Sep 2026",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "M.Sangaré",
+        "risk_level": "medium",
+        "reason": "Substituted at half-time in most recent league match (booked, appeared frustrated and struggled in midfield battle); minutes not fully nailed.",
+        "source": "Fantasy Football Scout, 6 Sep 2026",
         "recommendation": "monitor"
       }
     ],
-    "summary": "The proposed squad has no acute new injuries, suspensions or active transfer sagas in the last 1-2 weeks, with most players starting regularly. The two watchpoints are Calafiori's midweek rest (typical Arteta rotation with Europe) and Isak still bedding in after last season's lengthy absence. Remaining players such as Saka, Palmer, João Pedro, Thiago, De Cuyper, Tarkowski, Ajayi, Mbeumo, Tavernier, Kelleher, Senesi, Okafor and Roefs have neutral-to-positive availability updates."
+    "summary": "No current injuries, suspensions or active transfer issues across the squad for this round. The main qualitative risks are midweek rotation/rest for Calafiori (Arsenal CL) and João Pedro (Chelsea cup), plus Sangaré's recent early substitution. Remaining players including Saka, Palmer, Kelleher, Thiago, De Cuyper, Tarkowski, Mbeumo and Roefs have no significant fresh concerns and appear available as expected."
   },
   "risk_penalty": {
     "8": 3.0,
-    "379": 3.0
+    "165": 3.0,
+    "565": 3.0
   },
   "blocked_captain_ids": [],
   "unmatched_names": []
