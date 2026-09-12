@@ -76,6 +76,9 @@ def make_synthetic_pool(seed: int = 42, n_teams: int = 10):
                                         # defaults to the same as xp so old tests still behave
                                         # identically; see the dedicated rotation-value test
                                         # for a scenario where the two genuinely diverge.
+                "xp_horizon_sum": xp * 5,  # same simplification -- treats each of the 5 weeks
+                                            # as identical to this one, since this demo has no
+                                            # real per-week horizon data to sum.
             })
             pid += 1
     return pool
@@ -93,7 +96,7 @@ def load_pool_from_forecast(forecast_path: str, master_data_path: str, horizon_g
     the 5-round horizon (`horizon_gw`=0 -> this round, 1 -> next, etc.).
     master_data (from the bootstrap-static dump) gives position/price/team.
 
-    Two separate values are produced per player:
+    Three separate values are produced per player:
       "xp"             -- THIS round's estimate only. Used to decide who
                            starts and who's captain, since that's a
                            decision about one specific set of fixtures.
@@ -105,6 +108,12 @@ def load_pool_from_forecast(forecast_path: str, master_data_path: str, horizon_g
                            a double gameweek coming up) should still be
                            attractive to hold on the bench now, not just
                            judged on this week's number alone.
+      "xp_horizon_sum" -- a plain, UNDISCOUNTED sum of xP across the whole
+                           horizon (not an average, not decision-weighted).
+                           This is purely for human-readable reporting --
+                           e.g. "how many points do I expect this player to
+                           produce over the next 5 fixtures" -- and isn't
+                           used anywhere in the optimization itself.
     """
     with open(forecast_path, encoding="utf-8") as f:
         forecast = json.load(f)
@@ -125,6 +134,7 @@ def load_pool_from_forecast(forecast_path: str, master_data_path: str, horizon_g
             "price": master_player["now_cost"] / 10.0,
             "xp": float(xp_series[horizon_gw]),
             "rotation_value": round(rotation_value, 3),
+            "xp_horizon_sum": round(sum(xp_series), 3),
         })
     return pool
 
@@ -373,6 +383,22 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
     squad_value = round(sum(sell_values.get(i, pool_by_id[i]["price"]) for i in squad_ids), 1)
     bank_remaining = round(budget - squad_value, 1)  # what's left of the budget after this squad
 
+    # Per-transfer expected-points gain: pairs transfers_in[i] with
+    # transfers_out[i] in the SAME order report.py already displays them
+    # (both lists are independently sorted, so this pairing is a display
+    # convention, not a claim that player i specifically "replaces" player
+    # i -- the solver optimizes the whole squad jointly, not as discrete
+    # 1-for-1 swaps). Each value is (incoming player's xp_horizon_sum -
+    # outgoing player's xp_horizon_sum) -- the plain, undiscounted sum
+    # across the whole forecast horizon (typically 5 fixtures), not just
+    # this single round. Falls back to "xp" (this round only) if
+    # xp_horizon_sum isn't present, for older/synthetic pool data.
+    transfer_point_gains = [
+        round(pool_by_id[in_id].get("xp_horizon_sum", pool_by_id[in_id]["xp"])
+              - pool_by_id[out_id].get("xp_horizon_sum", pool_by_id[out_id]["xp"]), 2)
+        for in_id, out_id in zip(transfers_in, transfers_out)
+    ]
+
     return {
         "squad": [pool_by_id[i]["name"] for i in squad_ids],
         "squad_ids": squad_ids,  # actual FPL player IDs -- copy these straight into my_team.json
@@ -382,6 +408,7 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
         "captain_id": captain_id,
         "transfers_in": [pool_by_id[i]["name"] for i in transfers_in],
         "transfers_out": [pool_by_id[i]["name"] for i in transfers_out],
+        "transfer_point_gains": transfer_point_gains,  # this week's xp gain per IN/OUT pair, before hit cost
         "transfers_made": transfers_made,
         "free_transfers_used": min(transfers_made, free_transfers),
         "hit_taken": hit_taken,
