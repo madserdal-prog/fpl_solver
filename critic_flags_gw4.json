@@ -2,25 +2,67 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Calafiori",
+        "player_name": "M.Sangaré",
         "risk_level": "medium",
-        "reason": "Unused substitute after being rested in midweek Champions League vs Napoli; Arteta rotated several starters and has historically managed his minutes due to fitness concerns.",
-        "source": "Fantasy Football Scout, 10 Sep 2026",
+        "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
         "recommendation": "monitor"
       },
       {
-        "player_name": "João Pedro",
-        "risk_level": "low",
-        "reason": "Explicitly rested ('wrapped in cotton wool') as unused in midweek EFL Cup vs Leeds; expected to start vs Hull but rotation pattern noted.",
-        "source": "Fantasy Football Scout, 10 Sep 2026",
+        "player_name": "Thiago",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Brentford transfers, latest news, rumours and gossip: Live updates, goals and highlights - Sky Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi3AFBVV95cUxPM1pRVzYzejBSaTdvM2x4VjkzM0pHck5mQUxKU3dYc2pELVFhVXNwZmdhX3pOejljdllKajFLd3ROWDlpT2pOTndSUWo1cy1CbDh5X1lYSnQxZUZ6bEVlcWoyV3dfdkhDeVlsaGxjRjAzMEhhcTYzcGx2endhdWdkM09VVGRUVXNmYWd4UHBkSXNXazQ0VEh4bmIydV9ZOTFGdXpZSUxpeWdJcnhMRDdYUkNjWUloWWdXWEZzWGlEbktybExJdE9aOTFRVTRaVWVVdnl1Qkxza1U1eGNB?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Palmer",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Bijol",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1SLWpMSmwyakJlQzV3bWM0MnpEZWFIUjBIU1VXMWE3ZVBWbFcxQ3F0d1NsZ2l5ZWFieXJMZlpwZlBxb0x0T19FTEZNYzZqM1N1WU5JTHY3a3B6d0hEVHFYb2VWUFRZZDkyOHc?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "B.Fernandes",
+        "risk_level": "medium",
+        "reason": "Headline mentions injury-related terms: \"VIDEO: Man Utd injury blow! Bruno Fernandes spotted limping after Champions League win ahead of crucial Manchester derby against City - Goal.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiwwFBVV95cUxNWktlek9iVm5oQ3BwTzJlalNNZlVBSFV5OWNHcTk2ckZoYnB2TkxaSUQxV1Z2ZjBWTGRReHV3VElNdHlOLUhqYnRxZE1NN0UtTHhrUTA5b2FBVjBCREp2S2pLWjJtOFF1ZXVGeTJQTzU0UGs0T2VxdGlNS1E3dVlfVU1PTTcwRDV2MU1Fbk5CVzVOekdxaWx2RXJhMHFtTk53VndwRFdyVTJ4dDVhcXRERlQ5NHQwejNlQnQ3ZEJzWXRJU1E?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Roefs",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
         "recommendation": "monitor"
       }
     ],
-    "summary": "The main qualitative risk is Calafiori's midweek rest and Arsenal's rotation, which could limit his minutes or starting status at Sunderland. João Pedro was similarly protected in the cup but remains the likely starter. No injuries, suspensions, active transfer sagas or other availability issues were found for the rest of the squad in the last 1-2 weeks."
+    "summary": "Found 6 medium-risk (M.Sangaré, Thiago, Palmer, Bijol, B.Fernandes, Roefs) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "8": 3.0
+    "565": 3.0,
+    "106": 3.0,
+    "301": 3.0,
+    "327": 3.0,
+    "426": 3.0,
+    "529": 3.0
   },
-  "blocked_captain_ids": [],
-  "unmatched_names": []
+  "blocked_captain_ids": [
+    106,
+    301,
+    327,
+    426,
+    529,
+    565
+  ],
+  "unmatched_names": [],
+  "news_lookup_errors": [],
+  "news_systematically_blocked": false
 }
