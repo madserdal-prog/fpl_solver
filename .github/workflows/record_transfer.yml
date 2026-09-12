@@ -1,0 +1,42 @@
+name: Record a transfer
+
+on:
+  workflow_dispatch:
+    inputs:
+      player_in:
+        description: 'Player(s) coming IN (comma-separated if more than one)'
+        required: true
+        type: string
+      player_out:
+        description: 'Player(s) going OUT (same order as player_in, comma-separated)'
+        required: true
+        type: string
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      # No pip install needed -- record_transfer.py and my_team.py only use
+      # the Python standard library, no external API calls, no secrets.
+
+      - name: Record transfer(s)
+        run: |
+          IFS=',' read -ra IN_NAMES <<< "${{ github.event.inputs.player_in }}"
+          IFS=',' read -ra OUT_NAMES <<< "${{ github.event.inputs.player_out }}"
+          TRIMMED_IN=(); for n in "${IN_NAMES[@]}"; do TRIMMED_IN+=("$(echo "$n" | xargs)"); done
+          TRIMMED_OUT=(); for n in "${OUT_NAMES[@]}"; do TRIMMED_OUT+=("$(echo "$n" | xargs)"); done
+          python record_transfer.py --in "${TRIMMED_IN[@]}" --out "${TRIMMED_OUT[@]}"
+
+      - name: Commit updated my_team.json
+        run: |
+          git config user.name "fpl-auto-pipeline-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add my_team.json
+          git diff --staged --quiet || git commit -m "Record transfer: ${{ github.event.inputs.player_in }} in, ${{ github.event.inputs.player_out }} out"
+          git pull --rebase --autostash origin main
+          git push
