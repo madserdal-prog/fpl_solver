@@ -182,12 +182,25 @@ def build_fixture_lookup(fixtures):
     """
     Returns dict[(team, gameweek)] -> list of FDR values the team faces in
     that round (empty list = blank, two values = double gameweek).
+
+    BUG FIX: this used to swap team_h_difficulty and team_a_difficulty --
+    FPL's own convention is that each field is the difficulty FROM THAT
+    TEAM'S OWN PERSPECTIVE (team_h_difficulty = how hard this fixture is
+    for the home side), not a rating of the other team's strength. The
+    swap caused every player's fixture-difficulty signal to silently use
+    their OPPONENT's difficulty rating instead of their own -- verified
+    directly against real data: Man Utd's actual GW4-8 own-difficulty
+    sequence is [4, 3, 3, 3, 3], but the swapped version returned a flat
+    [4, 4, 4, 4, 4], which was masking all fixture variation for the
+    entire rest of that team's horizon (a coincidence that GW4 specifically
+    had both fields equal to 4 made the bug invisible until compared
+    against the raw fixture list directly).
     """
     lookup = {}
     for fx in fixtures:
         gw = fx["event"]
-        lookup.setdefault((fx["team_h"], gw), []).append(fx["team_a_difficulty"])
-        lookup.setdefault((fx["team_a"], gw), []).append(fx["team_h_difficulty"])
+        lookup.setdefault((fx["team_h"], gw), []).append(fx["team_h_difficulty"])
+        lookup.setdefault((fx["team_a"], gw), []).append(fx["team_a_difficulty"])
     return lookup
 
 
