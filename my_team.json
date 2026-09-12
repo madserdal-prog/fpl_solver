@@ -1,23 +1,23 @@
 {
   "current_squad": [
-    82,
-    327,
     8,
-    115,
-    229,
-    427,
     12,
-    154,
-    336,
+    82,
     106,
+    115,
+    154,
     165,
-    529,
-    498,
+    229,
+    279,
+    327,
+    336,
     347,
+    427,
+    529,
     565
   ],
-  "bank": 3.2,
-  "free_transfers": 1,
+  "bank": 4.9,
+  "free_transfers": 0,
   "chips_available": [
     "wildcard",
     "bench_boost",
@@ -25,6 +25,9 @@
     "triple_captain"
   ],
   "locked_players": [],
-  "notes": "current_squad/bank auto-refreshed from FPL. free_transfers computed from your real FPL transfer history (see compute_free_transfers()). chips_available/locked_players carried over from the previous file -- edit them manually if they need correcting.",
-  "last_synced_gw": 3
+  "notes": "current_squad/bank auto-refreshed from FPL. free_transfers computed from your real FPL transfer history (see compute_free_transfers()). chips_available/locked_players carried over from the previous file -- edit them manually if they need correcting. | Manually recorded transfer(s) via record_transfer.py, ahead of fetch_my_team.py seeing them.",
+  "last_synced_gw": 3,
+  "purchase_prices": {
+    "279": 4.2
+  }
 }
