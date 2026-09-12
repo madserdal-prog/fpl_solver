@@ -3,17 +3,15 @@
     "flags": [
       {
         "player_name": "Calafiori",
-        "risk_level": "medium",
-        "reason": "Rested by Arteta in midweek Champions League win at Napoli (Hincapie started instead as part of four changes); history of being rotated and injury-prone, so possible rest or managed minutes vs Sunderland this weekend.",
-        "source": "Fantasy Football Scout (10 Sep 2026); Athletic analysis (9 Sep 2026)",
+        "risk_level": "low",
+        "reason": "Rested for midweek Champions League trip to Napoli (Hincapie started) as part of Arteta's rotation; predicted to return at left-back for Saturday's Premier League match at Sunderland.",
+        "source": "Fantasy Football Scout (10 Sep 2026); predicted XIs 11 Sep 2026",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Calafiori is the clearest rotation/rest risk after being benched midweek. The rest of the squad (including Saka, Palmer, João Pedro, Kelleher, Thiago, Sangaré, De Cuyper, Tarkowski, Ajayi, Mbeumo and Roefs) have no fresh injury, suspension, transfer or explicit rest news in the last 1-2 weeks and appear available as expected."
+    "summary": "The squad is largely clear of injuries, suspensions or active transfer issues in the last 1-2 weeks. Calafiori is the only notable rotation case after being left out midweek, though he is widely expected to start this round. Chelsea's Palmer, Rogers and João Pedro, Arsenal's Saka, and the remaining defenders and keepers show no fresh availability concerns."
   },
-  "risk_penalty": {
-    "8": 3.0
-  },
+  "risk_penalty": {},
   "blocked_captain_ids": [],
   "unmatched_names": []
 }
