@@ -2,25 +2,25 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "M.Sangaré",
+        "player_name": "Calafiori",
         "risk_level": "medium",
-        "reason": "Returned this week from a calf injury that ruled him out of Forest's last two Premier League matches; available vs Aston Villa but Glasner has a selection call with Schlager having impressed in his absence, so start/minutes not guaranteed.",
-        "source": "Nottingham Post 12 Sep 2026; Rotowire 10 Sep 2026",
+        "reason": "Rested for midweek Champions League vs Napoli (Hincapie started) as Arteta manages workload given Calafiori's extensive injury history (multiple knee/muscle issues); available and likely to start vs Sunderland but minutes could be managed.",
+        "source": "Fantasy Football Scout 10 Sep 2026; The Standard 9 Sep 2026",
         "recommendation": "monitor"
       },
       {
-        "player_name": "Bijol",
+        "player_name": "M.Sangaré",
         "risk_level": "medium",
-        "reason": "Leeds manager Farke rotates his back three heavily; Bijol was benched vs Brighton and played only 29 minutes in the most recent Premier League outing, creating start risk this round.",
-        "source": "Leeds Live 9 Sep 2026; FootballCritic match data",
+        "reason": "Started but substituted at half-time vs Sunderland after a yellow card, appearing frustrated and struggling against a physical midfield; possible minutes or rotation risk as a relatively new signing.",
+        "source": "Fantasy Football Scout 6 Sep 2026",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Ibrahim Sangaré is the clearest availability concern after missing two games with a calf issue and now competing for a starting berth on his return. Jaka Bijol faces an ongoing rotational role at Leeds under Farke. No other squad members had fresh injury, suspension, transfer-window or rest news that meaningfully threatens expected minutes this round."
+    "summary": "The squad is largely available with no major injuries, suspensions or active transfer sagas impacting this round. The main qualitative concerns are minutes management for Calafiori after being rested midweek and Sangaré's recent half-time withdrawal, which could affect expected playing time."
   },
   "risk_penalty": {
-    "565": 3.0,
-    "327": 3.0
+    "8": 3.0,
+    "565": 3.0
   },
   "blocked_captain_ids": [],
   "unmatched_names": []

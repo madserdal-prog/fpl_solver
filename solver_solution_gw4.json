@@ -9,9 +9,9 @@
     "Palmer",
     "João Pedro",
     "Tarkowski",
-    "Bogle",
+    "Barry",
+    "Bijol",
     "Okafor",
-    "Nmecha",
     "Mbeumo",
     "Senesi",
     "Roefs"
@@ -26,9 +26,9 @@
     154,
     165,
     229,
-    330,
+    249,
+    327,
     336,
-    347,
     427,
     498,
     529
@@ -42,7 +42,7 @@
     "Palmer",
     "João Pedro",
     "Tarkowski",
-    "Bogle",
+    "Barry",
     "Okafor",
     "Mbeumo"
   ],
@@ -55,46 +55,45 @@
     154,
     165,
     229,
-    330,
+    249,
     336,
     427
   ],
   "captain": "De Cuyper",
   "captain_id": 115,
   "transfers_in": [
-    "Bogle"
+    "Barry"
   ],
   "transfers_out": [
-    "Bijol"
+    "Nmecha"
   ],
   "transfer_point_gains": [
-    14.93
+    18.15
   ],
   "transfers_made": 1,
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 60.8,
-  "bench_points": 8.31,
-  "squad_value": 96.7,
-  "bank_remaining": 3.7,
+  "expected_points": 59.87,
+  "bench_points": 9.64,
+  "squad_value": 97.4,
+  "bank_remaining": 3.0,
   "risk_adjusted_players": [
     "Calafiori",
     "João Pedro",
-    "Nmecha",
+    "Bijol",
     "M.Sangaré"
   ],
   "blocked_from_captaincy_in_squad": [],
   "price_momentum_notes": [
-    "Bogle looks likely to RISE in price soon (net +0.79% of managers this GW)",
-    "Bijol looks likely to FALL in price soon (net -0.09% of managers this GW)"
+    "Barry looks likely to RISE in price soon (net +1.26% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +8.31 pts (total 69.11). Restructuring specifically for Bench Boost instead: 69.51 pts (+0.4 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +9.64 pts (total 69.51). Restructuring specifically for Bench Boost instead: 69.51 pts (+0.0 vs. just boosting the normal squad).",
   "agent_captain_review": {
     "recommended_captain": "Mbeumo",
     "same_as_solver_top_pick": false,
-    "reasoning": "De Cuyper is a defender whose xp rests on a structurally low captaincy ceiling (rare goal+assist+CS combo) with no set-piece duties noted. Mbeumo is the next-highest xp option and a midfielder, avoiding that positional risk while remaining comparably ranked.",
+    "reasoning": "De Cuyper is a defender with no known set-piece or penalty duties, giving him a structurally low captaincy ceiling compared to midfielders or forwards. Mbeumo is the next-highest xp option in the shortlist and does not carry this positional risk.",
     "shortlist": [
       {
         "name": "De Cuyper",
