@@ -4,23 +4,22 @@
       {
         "player_name": "Calafiori",
         "risk_level": "medium",
-        "reason": "Rested for midweek Champions League vs Napoli (Hincapie started) as Arteta manages workload given Calafiori's extensive injury history (multiple knee/muscle issues); available and likely to start vs Sunderland but minutes could be managed.",
-        "source": "Fantasy Football Scout 10 Sep 2026; The Standard 9 Sep 2026",
+        "reason": "Unused substitute after being rested in midweek Champions League vs Napoli; Arteta rotated several starters and has historically managed his minutes due to fitness concerns.",
+        "source": "Fantasy Football Scout, 10 Sep 2026",
         "recommendation": "monitor"
       },
       {
-        "player_name": "M.Sangaré",
-        "risk_level": "medium",
-        "reason": "Started but substituted at half-time vs Sunderland after a yellow card, appearing frustrated and struggling against a physical midfield; possible minutes or rotation risk as a relatively new signing.",
-        "source": "Fantasy Football Scout 6 Sep 2026",
+        "player_name": "João Pedro",
+        "risk_level": "low",
+        "reason": "Explicitly rested ('wrapped in cotton wool') as unused in midweek EFL Cup vs Leeds; expected to start vs Hull but rotation pattern noted.",
+        "source": "Fantasy Football Scout, 10 Sep 2026",
         "recommendation": "monitor"
       }
     ],
-    "summary": "The squad is largely available with no major injuries, suspensions or active transfer sagas impacting this round. The main qualitative concerns are minutes management for Calafiori after being rested midweek and Sangaré's recent half-time withdrawal, which could affect expected playing time."
+    "summary": "The main qualitative risk is Calafiori's midweek rest and Arsenal's rotation, which could limit his minutes or starting status at Sunderland. João Pedro was similarly protected in the cup but remains the likely starter. No injuries, suspensions, active transfer sagas or other availability issues were found for the rest of the squad in the last 1-2 weeks."
   },
   "risk_penalty": {
-    "8": 3.0,
-    "565": 3.0
+    "8": 3.0
   },
   "blocked_captain_ids": [],
   "unmatched_names": []
