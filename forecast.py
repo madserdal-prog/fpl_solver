@@ -36,7 +36,32 @@ GOAL_POINTS = {"GK": 6, "DEF": 6, "MID": 5, "FWD": 4}
 ASSIST_POINTS = 3
 APPEARANCE_POINTS = 2.0   # baseline_points(position) -- simplified as equal across positions
 BONUS_SCALE = 1.2         # scales the ICT index into expected bonus points
-FDR_WEIGHT = 0.5          # how much opponent difficulty pulls xP down/up
+FDR_WEIGHT = 0.5          # how much opponent difficulty pulls xP down/up -- a GENERIC nudge,
+                          # applied identically regardless of position. This alone understates
+                          # how fixture-sensitive defenders/goalkeepers actually are, since it
+                          # has no explicit model of clean sheet probability -- see
+                          # CLEAN_SHEET_POINTS and estimate_clean_sheet_probability() below.
+
+# Clean sheets are the single biggest swing factor in a defender's or
+# goalkeeper's real FPL points (worth 4), and their probability is FAR
+# more fixture-sensitive than a flat linear adjustment captures -- a top
+# team at home against a weak attack might have a ~45% clean sheet
+# chance, while an average side away at a title contender might be under
+# 10%. Without an explicit term for this, "tough fixtures ahead" barely
+# moves a defender's projection, which is exactly the gap this addresses.
+CLEAN_SHEET_POINTS = {"GK": 4, "DEF": 4, "MID": 1, "FWD": 0}
+
+
+def estimate_clean_sheet_probability(avg_fdr: float) -> float:
+    """
+    Rough calibration, not empirically fitted: ~28% clean sheet chance at
+    a neutral fixture (FDR 3), rising toward ~46% for the easiest possible
+    fixture (FDR 1) and falling toward ~10% for the hardest (FDR 5).
+    These are plausible orders of magnitude, not a precise model -- worth
+    recalibrating against real clean-sheet outcomes once a season of data
+    exists to check it against.
+    """
+    return max(0.05, min(0.50, 0.28 - (avg_fdr - 3.0) * 0.09))
 
 
 # ---------------------------------------------------------------------------
@@ -251,10 +276,18 @@ def compute_xp_series(element, fixture_lookup, start_gw, horizon):
         )
         expected_bonus = (element["ict_index_per_90"] / 10.0) * BONUS_SCALE * game_factor
 
+        # Explicit clean-sheet contribution -- see CLEAN_SHEET_POINTS/
+        # estimate_clean_sheet_probability() above. Zero for forwards
+        # (CLEAN_SHEET_POINTS["FWD"] = 0), small for midfielders, and the
+        # main fixture-sensitive term for defenders/goalkeepers.
+        clean_sheet_probability = estimate_clean_sheet_probability(avg_fdr)
+        clean_sheet_contribution = CLEAN_SHEET_POINTS.get(pos, 0) * clean_sheet_probability * game_factor
+
         process_based_xp = play_prob * (
             attack_value
             + APPEARANCE_POINTS * game_factor
             + expected_bonus
+            + clean_sheet_contribution
             - fdr_adjustment * game_factor
         )
 
