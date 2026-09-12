@@ -3,15 +3,25 @@
     "flags": [
       {
         "player_name": "Calafiori",
-        "risk_level": "low",
-        "reason": "Rested in midweek Champions League vs Napoli (one of four changes by Arteta); predicted to return and start at left-back vs Sunderland this weekend with no injury reported.",
-        "source": "Fantasy Football Scout FPL notes (10 Sep 2026); predicted lineups 11 Sep 2026",
+        "risk_level": "medium",
+        "reason": "Rested by Arteta for midweek Champions League match vs Napoli (one of four changes, Hincapie started); Arsenal's European schedule creates ongoing rotation risk even when available.",
+        "source": "Fantasy Football Scout, 10 Sep 2026",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Isak",
+        "risk_level": "medium",
+        "reason": "Coming off a long-term injury-hit 2025/26 (ankle/fibula fracture that limited him heavily); although starting and scoring this season, recent player/manager comments emphasise building rhythm and physical condition rather than being fully established.",
+        "source": "LiverpoolFC.com / Iraola comments, 11 Sep 2026",
         "recommendation": "monitor"
       }
     ],
-    "summary": "The proposed squad has almost no injury, suspension or transfer-related concerns for this round. Calafiori was given a midweek rest but is widely expected to start against Sunderland. All other named players appear fully available with no recent red-flag reports of managed minutes, rotation or fitness doubts."
+    "summary": "The proposed squad has no acute new injuries, suspensions or active transfer sagas in the last 1-2 weeks, with most players starting regularly. The two watchpoints are Calafiori's midweek rest (typical Arteta rotation with Europe) and Isak still bedding in after last season's lengthy absence. Remaining players such as Saka, Palmer, João Pedro, Thiago, De Cuyper, Tarkowski, Ajayi, Mbeumo, Tavernier, Kelleher, Senesi, Okafor and Roefs have neutral-to-positive availability updates."
   },
-  "risk_penalty": {},
+  "risk_penalty": {
+    "8": 3.0,
+    "379": 3.0
+  },
   "blocked_captain_ids": [],
   "unmatched_names": []
 }
