@@ -177,6 +177,13 @@ def normalize_master(raw_bootstrap: dict) -> dict:
                                   # that team value should never be chased at the cost of points.
             "news": e.get("news", ""),  # FREE human-written injury/doubt text from FPL's own editors
             "news_added": e.get("news_added"),  # ISO timestamp of when the news text was last updated
+            "penalties_order": e.get("penalties_order"),  # FREE, FPL's own published pecking order --
+                                  # 1 = first-choice penalty taker, 2 = second choice, null = not on
+                                  # the list. This is a STABLE, durable designation, unlike a noisy
+                                  # small-sample stat -- forecast.py uses it as a structural bonus
+                                  # that ISN'T subject to the small-sample shrinkage the rest of the
+                                  # model applies, since being FPL's officially published taker is a
+                                  # fact independent of how few minutes a player has racked up.
             "start_probability": estimate_start_probability(minutes, games_played_so_far),
             "games_played_so_far": games_played_so_far,  # embedded per-element (same value for
                                                            # everyone) so forecast.py's trust
@@ -365,6 +372,7 @@ def _self_test_sample_data():
                 "expected_goals": "4.21", "expected_assists": "3.10",
                 "ict_index": "112.4", "chance_of_playing_next_round": None,
                 "status": "a", "transfers_in_event": 180000, "transfers_out_event": 3000,  # clearly rising
+                "penalties_order": 1,  # first-choice penalty taker -- tests the new structural bonus
             },
             {
                 "id": 202, "web_name": "Salah", "team": 2, "element_type": 3,
