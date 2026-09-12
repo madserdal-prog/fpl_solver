@@ -35,28 +35,28 @@
   ],
   "starting_xi": [
     "Calafiori",
+    "Saka",
     "Kelleher",
+    "Thiago",
     "M.Sangaré",
     "De Cuyper",
     "Palmer",
     "João Pedro",
     "Tarkowski",
     "Ajayi",
-    "Okafor",
-    "Nmecha",
     "Mbeumo"
   ],
   "starting_xi_ids": [
     8,
+    12,
     82,
+    106,
     565,
     115,
     154,
     165,
     229,
     279,
-    336,
-    347,
     427
   ],
   "captain": "De Cuyper",
@@ -68,26 +68,77 @@
   "free_transfers_used": 0,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 55.26,
-  "bench_points": 14.49,
+  "expected_points": 62.39,
+  "bench_points": 7.36,
   "squad_value": 95.5,
   "bank_remaining": 4.9,
   "risk_adjusted_players": [
-    "M.Sangaré",
-    "Saka",
-    "Thiago",
-    "Bijol",
-    "Roefs"
+    "Okafor"
   ],
-  "blocked_from_captaincy_in_squad": [
-    "Saka",
-    "Roefs",
-    "M.Sangaré",
-    "Thiago",
-    "Bijol"
-  ],
+  "blocked_from_captaincy_in_squad": [],
   "price_momentum_notes": [],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +14.49 pts (total 69.75). Restructuring specifically for Bench Boost instead: 69.75 pts (+0.0 vs. just boosting the normal squad).",
-  "agent_captain_review": null
+  "bench_boost_note": "Boosting THIS week's normal bench: +7.36 pts (total 69.75). Restructuring specifically for Bench Boost instead: 69.75 pts (+0.0 vs. just boosting the normal squad).",
+  "agent_captain_review": {
+    "recommended_captain": "De Cuyper",
+    "same_as_solver_top_pick": true,
+    "reasoning": "De Cuyper has the highest xp in the shortlist with no indication of a small-sample fluke or other structural risk that would warrant overriding the solver ranking.",
+    "shortlist": [
+      {
+        "name": "De Cuyper",
+        "xp": 6.57,
+        "price": 4.8,
+        "position": "DEF",
+        "minutes_this_season": 243,
+        "form": 7.0,
+        "points_per_game": 7.0,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Mbeumo",
+        "xp": 6.15,
+        "price": 7.9,
+        "position": "MID",
+        "minutes_this_season": 270,
+        "form": 7.0,
+        "points_per_game": 7.0,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Saka",
+        "xp": 6.05,
+        "price": 9.5,
+        "position": "MID",
+        "minutes_this_season": 246,
+        "form": 7.3,
+        "points_per_game": 7.3,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Palmer",
+        "xp": 5.97,
+        "price": 9.7,
+        "position": "MID",
+        "minutes_this_season": 262,
+        "form": 7.0,
+        "points_per_game": 7.0,
+        "status": "a",
+        "chance_of_playing_next_round": 100
+      },
+      {
+        "name": "João Pedro",
+        "xp": 5.63,
+        "price": 7.7,
+        "position": "FWD",
+        "minutes_this_season": 270,
+        "form": 7.0,
+        "points_per_game": 7.0,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      }
+    ]
+  }
 }
