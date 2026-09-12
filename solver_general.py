@@ -29,7 +29,17 @@ SQUAD_REQ = {"GK": 2, "DEF": 5, "MID": 5, "FWD": 3}
 XI_MIN_MAX = {"GK": (1, 1), "DEF": (3, 5), "MID": (2, 5), "FWD": (1, 3)}
 MAX_PER_CLUB = 3
 BUDGET_DEFAULT = 100.0
-HIT_COST = 4  # points per transfer beyond free transfers
+HIT_COST = 4  # TRUE points per transfer beyond free transfers -- what FPL actually charges,
+              # used for REPORTING (hit_cost, expected_points), never inflated.
+HIT_SAFETY_MARGIN = 4  # extra buffer used ONLY inside the optimization's decision-making, not
+                        # in what gets reported/charged. A plain linear optimizer has no concept
+                        # of caution -- it takes a hit for a net gain of +0.01 exactly as readily
+                        # as +20, both being "optimal" given the exact numbers it's fed. Real FPL
+                        # practice is explicit that a hit should only be taken for a CLEAR margin,
+                        # not a marginal one, precisely because projections carry real uncertainty.
+                        # This makes the solver require the combined gain from a hit-taking swap
+                        # to exceed HIT_COST + HIT_SAFETY_MARGIN (default: 8, not 4) before it's
+                        # recommended, while still reporting/charging the true 4-per-hit cost.
 BENCH_WEIGHT = 0.5  # value of bench players relative to starters (per the guide)
 
 
@@ -125,9 +135,16 @@ def load_pool_from_forecast(forecast_path: str, master_data_path: str, horizon_g
 
 def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
           locked_ids=None, unlimited_transfers=False, risk_penalty=None,
-          blocked_captain_ids=None, bench_weight=None):
+          blocked_captain_ids=None, bench_weight=None, sell_values=None,
+          hit_safety_margin=None):
     """
     Solves the MILP for the best legal squad given the forecasts.
+
+    hit_safety_margin: overrides the module-level HIT_SAFETY_MARGIN when
+      given. This is added to HIT_COST ONLY inside the optimization's
+      objective (requiring a clearer margin before a hit-taking transfer
+      gets recommended) -- the REPORTED hit_cost/expected_points always
+      use the true HIT_COST, since that's what FPL actually charges.
 
     bench_weight: overrides the module-level BENCH_WEIGHT constant when
       given. Used to answer "what's the best squad if bench points count
@@ -186,6 +203,8 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
     risk_penalty = risk_penalty or {}
     blocked_captain_ids = set(blocked_captain_ids or [])
     bench_weight = BENCH_WEIGHT if bench_weight is None else bench_weight
+    hit_safety_margin = HIT_SAFETY_MARGIN if hit_safety_margin is None else hit_safety_margin
+    effective_hit_cost = HIT_COST + hit_safety_margin  # used ONLY in the objective below
     num_players = len(pool)
     # Squad membership is valued by rotation_value (horizon-aware -- "is this
     # player worth HOLDING at all, given where their fixtures/role are
@@ -215,10 +234,17 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
                 constraint_row[SQUAD_OFFSET + i] = 1
         constraints.append(LinearConstraint(constraint_row, required_count, required_count))
 
-    # Budget: total price of the 15-man squad must not exceed what's available
+    # Budget: total cost of the 15-man squad must not exceed what's available.
+    # For players ALREADY in current_squad_ids, use their real sell value
+    # (purchase price + 50% of profit, rounded down) if known -- not their
+    # current market price, since that's what you'd actually get back for
+    # them (whether kept or sold, mathematically -- see my_team.py's
+    # compute_squad_sell_values() docstring for the derivation). For anyone
+    # else (a genuinely new buy), the current market price is correct as-is.
+    sell_values = sell_values or {}
     constraint_row = np.zeros(num_variables)
     for i, player in enumerate(pool):
-        constraint_row[SQUAD_OFFSET + i] = player["price"]
+        constraint_row[SQUAD_OFFSET + i] = sell_values.get(player["id"], player["price"])
     constraints.append(LinearConstraint(constraint_row, -np.inf, budget))
 
     # Max 3 players from any one club
@@ -309,7 +335,8 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
     objective_coefficients[STARTING_XI_OFFSET:STARTING_XI_OFFSET + num_players] = \
         -(adjusted_points - bench_weight * adjusted_rotation_value)
     objective_coefficients[CAPTAIN_OFFSET:CAPTAIN_OFFSET + num_players] = -adjusted_points
-    objective_coefficients[EXTRA_TRANSFERS_INDEX] = HIT_COST
+    objective_coefficients[EXTRA_TRANSFERS_INDEX] = effective_hit_cost  # inflated for caution --
+                                                                          # see hit_safety_margin above
 
     solver_result = milp(c=objective_coefficients, constraints=constraints,
                           integrality=is_integer_variable, bounds=bounds)
@@ -339,7 +366,11 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
         + pool_by_id[captain_id]["xp"]  # captain bonus
         - hit_cost
     )
-    squad_value = round(sum(pool_by_id[i]["price"] for i in squad_ids), 1)
+    # "Squad value" on FPL's own site is the sum of SELL values, not raw
+    # market prices -- match that convention here for consistency, since
+    # otherwise our reported figure would systematically differ from what
+    # you see on fantasy.premierleague.com.
+    squad_value = round(sum(sell_values.get(i, pool_by_id[i]["price"]) for i in squad_ids), 1)
     bank_remaining = round(budget - squad_value, 1)  # what's left of the budget after this squad
 
     return {
