@@ -2,16 +2,26 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Calafiori",
-        "risk_level": "low",
-        "reason": "Rested for midweek Champions League trip to Napoli (Hincapie started) as part of Arteta's rotation; predicted to return at left-back for Saturday's Premier League match at Sunderland.",
-        "source": "Fantasy Football Scout (10 Sep 2026); predicted XIs 11 Sep 2026",
+        "player_name": "M.Sangaré",
+        "risk_level": "medium",
+        "reason": "Returned this week from a calf injury that ruled him out of Forest's last two Premier League matches; available vs Aston Villa but Glasner has a selection call with Schlager having impressed in his absence, so start/minutes not guaranteed.",
+        "source": "Nottingham Post 12 Sep 2026; Rotowire 10 Sep 2026",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Bijol",
+        "risk_level": "medium",
+        "reason": "Leeds manager Farke rotates his back three heavily; Bijol was benched vs Brighton and played only 29 minutes in the most recent Premier League outing, creating start risk this round.",
+        "source": "Leeds Live 9 Sep 2026; FootballCritic match data",
         "recommendation": "monitor"
       }
     ],
-    "summary": "The squad is largely clear of injuries, suspensions or active transfer issues in the last 1-2 weeks. Calafiori is the only notable rotation case after being left out midweek, though he is widely expected to start this round. Chelsea's Palmer, Rogers and João Pedro, Arsenal's Saka, and the remaining defenders and keepers show no fresh availability concerns."
+    "summary": "Ibrahim Sangaré is the clearest availability concern after missing two games with a calf issue and now competing for a starting berth on his return. Jaka Bijol faces an ongoing rotational role at Leeds under Farke. No other squad members had fresh injury, suspension, transfer-window or rest news that meaningfully threatens expected minutes this round."
   },
-  "risk_penalty": {},
+  "risk_penalty": {
+    "565": 3.0,
+    "327": 3.0
+  },
   "blocked_captain_ids": [],
   "unmatched_names": []
 }
