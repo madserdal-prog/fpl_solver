@@ -74,13 +74,13 @@
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 62.32,
+  "expected_points": 63.27,
   "bench_points": 8.83,
   "squad_value": 99.2,
   "bank_remaining": 1.2,
   "risk_adjusted_players": [
-    "M.Sangaré",
     "Roefs",
+    "M.Sangaré",
     "Bijol"
   ],
   "blocked_from_captaincy_in_squad": [
@@ -92,6 +92,6 @@
   "fixture_difficulty_notes": [
     "De Cuyper has a TOUGH run of fixtures over the next 5 GWs (avg FDR 3.8) -- already reflected in their rotation_value"
   ],
-  "bench_boost_note": "Boosting THIS week's normal bench: +8.83 pts (total 71.15). Restructuring specifically for Bench Boost instead: 71.15 pts (+0.0 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +8.83 pts (total 72.1). Restructuring specifically for Bench Boost instead: 72.1 pts (+-0.0 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }
