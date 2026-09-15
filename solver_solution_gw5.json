@@ -10,9 +10,9 @@
     "João Pedro",
     "Tarkowski",
     "Ajayi",
-    "Bijol",
+    "Bogle",
     "Okafor",
-    "Isak",
+    "Nmecha",
     "Mbeumo",
     "Roefs"
   ],
@@ -27,9 +27,9 @@
     165,
     229,
     279,
-    327,
+    330,
     336,
-    379,
+    347,
     427,
     529
   ],
@@ -41,9 +41,9 @@
     "De Cuyper",
     "Palmer",
     "João Pedro",
-    "Tarkowski",
     "Ajayi",
-    "Isak",
+    "Bogle",
+    "Okafor",
     "Mbeumo"
   ],
   "starting_xi_ids": [
@@ -54,44 +54,48 @@
     115,
     154,
     165,
-    229,
     279,
-    379,
+    330,
+    336,
     427
   ],
   "captain": "Saka",
   "captain_id": 12,
   "transfers_in": [
-    "Isak"
+    "Bogle"
   ],
   "transfers_out": [
-    "Nmecha"
+    "Bijol"
   ],
   "transfer_point_gains": [
-    22.5
+    21.4
   ],
   "transfers_made": 1,
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 63.27,
-  "bench_points": 8.83,
-  "squad_value": 99.2,
-  "bank_remaining": 1.2,
+  "expected_points": 62.06,
+  "bench_points": 11.46,
+  "squad_value": 95.0,
+  "bank_remaining": 5.4,
   "risk_adjusted_players": [
-    "Roefs",
     "M.Sangaré",
-    "Bijol"
+    "Nmecha",
+    "Roefs",
+    "Tarkowski"
   ],
   "blocked_from_captaincy_in_squad": [
     "Roefs",
     "M.Sangaré",
-    "Bijol"
+    "Tarkowski",
+    "Nmecha"
   ],
-  "price_momentum_notes": [],
+  "price_momentum_notes": [
+    "Bogle looks likely to RISE in price soon (net +0.47% of managers this GW)"
+  ],
   "fixture_difficulty_notes": [
     "De Cuyper has a TOUGH run of fixtures over the next 5 GWs (avg FDR 3.8) -- already reflected in their rotation_value"
   ],
-  "bench_boost_note": "Boosting THIS week's normal bench: +8.83 pts (total 72.1). Restructuring specifically for Bench Boost instead: 72.1 pts (+-0.0 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +11.46 pts (total 73.52). Restructuring specifically for Bench Boost instead: 73.62 pts (+0.1 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }

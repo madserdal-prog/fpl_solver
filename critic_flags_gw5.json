@@ -2,17 +2,17 @@
   "critic_output": {
     "flags": [
       {
+        "player_name": "M.Sangaré",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
+        "recommendation": "monitor"
+      },
+      {
         "player_name": "Roefs",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
         "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "M.Sangaré",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - goal.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -23,22 +23,31 @@
         "recommendation": "monitor"
       },
       {
+        "player_name": "Tarkowski",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Tarkowski responds to Everton ‘noise’ after turbulent transfer window - Read Everton\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiekFVX3lxTE03cDhQeVhvdk4xVENVNjRITUFaVjg4TDJQTU8zU1ZuQWdLc1hXVWdyWWN0SzJINWJPR0dkbXA2cEZ3WEx2Zmg2WlRVeTlrSWc3REVZNGVXVnpTaHBnRE1XdWpnZVByTlNNSEpubEVWazAzZ1pWbUtVaWVn?oc=5",
+        "recommendation": "monitor"
+      },
+      {
         "player_name": "Bijol",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1SLWpMSmwyakJlQzV3bWM0MnpEZWFIUjBIU1VXMWE3ZVBWbFcxQ3F0d1NsZ2l5ZWFieXJMZlpwZlBxb0x0T19FTEZNYzZqM1N1WU5JTHY3a3B6d0hEVHFYb2VWUFRZZDkyOHc?oc=5",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5MaGdXTzV6dEZQNkVDajRsenJ3TXRZUm96RkFuYXRCRG1zVW96b0Y5dDRVSDFFWlB5a1IwZE9nSkxNWXF2LWgwTy10bUZuNU9fTHR1em95UFltbVVGZ3kyQWhCcy1iMDg?oc=5",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 4 medium-risk (Roefs, M.Sangaré, Palmer, Bijol) based on FPL data and Google News headlines."
+    "summary": "Found 5 medium-risk (M.Sangaré, Roefs, Palmer, Tarkowski, Bijol) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "529": 3.0,
     "565": 3.0,
+    "529": 3.0,
     "301": 3.0,
+    "229": 3.0,
     "327": 3.0
   },
   "blocked_captain_ids": [
+    229,
     301,
     327,
     529,
