@@ -2,27 +2,6 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "M.Sangaré",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Roefs",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Palmer",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
-        "recommendation": "monitor"
-      },
-      {
         "player_name": "Tarkowski",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Tarkowski responds to Everton ‘noise’ after turbulent transfer window - Read Everton\"",
@@ -33,24 +12,63 @@
         "player_name": "Bijol",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5MaGdXTzV6dEZQNkVDajRsenJ3TXRZUm96RkFuYXRCRG1zVW96b0Y5dDRVSDFFWlB5a1IwZE9nSkxNWXF2LWgwTy10bUZuNU9fTHR1em95UFltbVVGZ3kyQWhCcy1iMDg?oc=5",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1SLWpMSmwyakJlQzV3bWM0MnpEZWFIUjBIU1VXMWE3ZVBWbFcxQ3F0d1NsZ2l5ZWFieXJMZlpwZlBxb0x0T19FTEZNYzZqM1N1WU5JTHY3a3B6d0hEVHFYb2VWUFRZZDkyOHc?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Kelleher",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Do Liverpool have Caoimhin Kelleher buy-back clause? £18m Brentford transfer explained - The Mirror\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxNYVVhaWxYZ1dzTGdya2didm9Va0V4dk5mQkpmXzBlZ3NDQkcyTnlSdmRvczRabGk3T0p4dkkycVhvamtqSnFCT2IydURvcWd0b1Q3M25lYXI5MzM3bHc5a2d1VC1LaGJHZzk4WUZKYnViZEkzWE5SUDFKWVBoOG84cFBvZ1lqcHl4ekhPdm0wdHY1aWlrdmowYjdsSTZuczdzWmfSAacBQVVfeXFMUEdRakVpSEdsMF9yX2NyZzc5dG93aWZxQXdkUEdBQnRnYTF2bjdtUjd0aEV3WHhLSkwzUy1GV2hKdkVYcVo5cDVqdzdsSGJ3eFM2V01tN1huRzQwMnI4Ym5qVGtVRFpDVGQyVzl6cXBmNlpzLXhEVFlGaHhTa2RTNmpHYV9kWnhLN2JVX0F6SHAxVF8tS21ZLTN2RlVyZGR0bm5qa2kzMFk?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "João Pedro",
+        "risk_level": "medium",
+        "reason": "Headline mentions injury-related terms: \"Joao Pedro and two Chelsea stars miss training in injury worry for Brentford clash - Metro.co.uk\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMisgFBVV95cUxOSzlobXJSeG5ncUdzenpJbXNjQy0yNS1HSkdfbnJwOXdudjcweFp1dl9CNkFfWnpJUjBOcXpmNUtvRjRFTGk2dnBMeURxM1czNVluNVBwRHI4VEg5Y0t4OXA1ZUFWUThPYldkS2lEcDRxcW96azhBZW1yc2t3by0wVVgxSC0wbnF3QVNJX1I3M0tOc3hKakVQYjY0M3lGZ2xVM2ZDeVIwel9MU3MwSGVRcHh30gG3AUFVX3lxTE5TcHk2UHR3Y1lhR1lDMGk4WWpPdUUxeVRhcXpWaXZwdFlMM0dtaEdpbm5fMlVONHNMT2pJTFQ3VURFTG02dlJqemVlblNNQWI4Y2FhR0xJbWZFS1pfdGppZ1hLa0xZd0tKRjJDTTFOOTZ2M043WVZsa21yVkRIT1MwQndMY1BsUWZhSTUwV3BrTTNhTmctUUxWdG4xX3NxUnY2UGhQbkZEd0NrVzgyYV9xVVpMdWtFQQ?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Saka",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Bukayo Saka earns Arsenal win at Aston Villa. Will this game impact the teams’ transfer plans? - The New York Times\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMikgFBVV95cUxOUGdSZEFrZmFJOFBFaDZsUEpNb0tUaHF4cVZ0SDhPWVVjcHJFUnF3SEZqQmxUNEtGemtuQW53VVE4ek1zeGhWaEdMQTd1UWxGUlFLRlViQTlzdTJ2cWUyMWlCdTg3dzBPN29SZk1tMjVFVE1fSVlXb0N5NE9LMFlGVlJOclkxX0xfbWVJTDNSZTZpdw?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Palmer",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "M.Sangaré",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 5 medium-risk (M.Sangaré, Roefs, Palmer, Tarkowski, Bijol) based on FPL data and Google News headlines."
+    "summary": "Found 7 medium-risk (Tarkowski, Bijol, Kelleher, João Pedro, Saka, Palmer, M.Sangaré) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "565": 3.0,
-    "529": 3.0,
-    "301": 3.0,
     "229": 3.0,
-    "327": 3.0
+    "327": 3.0,
+    "82": 3.0,
+    "165": 3.0,
+    "12": 3.0,
+    "301": 3.0,
+    "565": 3.0
   },
   "blocked_captain_ids": [
+    12,
+    82,
+    165,
     229,
     301,
     327,
-    529,
     565
   ],
   "unmatched_names": [],
