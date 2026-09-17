@@ -36,28 +36,28 @@
   "starting_xi": [
     "Calafiori",
     "Saka",
+    "Kelleher",
     "Thiago",
     "De Cuyper",
     "Palmer",
-    "João Pedro",
     "Tarkowski",
     "Ajayi",
     "Bogle",
-    "Mbeumo",
-    "Roefs"
+    "Okafor",
+    "Mbeumo"
   ],
   "starting_xi_ids": [
     8,
     12,
+    82,
     106,
     115,
     154,
-    165,
     229,
     279,
     330,
-    427,
-    529
+    336,
+    427
   ],
   "captain": "Bogle",
   "captain_id": 330,
@@ -74,32 +74,28 @@
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 63.62,
-  "bench_points": 9.44,
-  "squad_value": 95.0,
+  "expected_points": 60.71,
+  "bench_points": 11.4,
+  "squad_value": 95.1,
   "bank_remaining": 5.4,
   "risk_adjusted_players": [
-    "Tarkowski",
-    "Kelleher",
-    "Nmecha",
     "João Pedro",
     "Saka",
+    "Nmecha",
     "M.Sangaré"
   ],
   "blocked_from_captaincy_in_squad": [
     "Saka",
     "M.Sangaré",
-    "Kelleher",
     "João Pedro",
-    "Tarkowski",
     "Nmecha"
   ],
   "price_momentum_notes": [
-    "Bogle looks likely to RISE in price soon (net +1.09% of managers this GW)"
+    "Bogle looks likely to RISE in price soon (net +1.54% of managers this GW)"
   ],
   "fixture_difficulty_notes": [
     "De Cuyper has a TOUGH run of fixtures over the next 5 GWs (avg FDR 3.8) -- already reflected in their rotation_value"
   ],
-  "bench_boost_note": "Boosting THIS week's normal bench: +9.44 pts (total 73.06). Restructuring specifically for Bench Boost instead: 73.06 pts (+0.0 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +11.4 pts (total 72.11). Restructuring specifically for Bench Boost instead: 72.11 pts (+0.0 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }
