@@ -7,12 +7,12 @@
     "M.Sangaré",
     "De Cuyper",
     "Palmer",
-    "João Pedro",
     "Tarkowski",
     "Ajayi",
-    "Bogle",
+    "Bijol",
     "Okafor",
     "Nmecha",
+    "Isak",
     "Mbeumo",
     "Roefs"
   ],
@@ -24,12 +24,12 @@
     565,
     115,
     154,
-    165,
     229,
     279,
-    330,
+    327,
     336,
     347,
+    379,
     427,
     529
   ],
@@ -37,68 +37,119 @@
     "Calafiori",
     "Saka",
     "Kelleher",
+    "Thiago",
     "De Cuyper",
     "Palmer",
-    "João Pedro",
     "Tarkowski",
     "Ajayi",
-    "Bogle",
     "Okafor",
+    "Isak",
     "Mbeumo"
   ],
   "starting_xi_ids": [
     8,
     12,
     82,
+    106,
     115,
     154,
-    165,
     229,
     279,
-    330,
     336,
+    379,
     427
   ],
   "captain": "Saka",
   "captain_id": 12,
   "transfers_in": [
-    "Bogle"
+    "Isak"
   ],
   "transfers_out": [
-    "Bijol"
+    "João Pedro"
   ],
   "transfer_point_gains": [
-    22.29
+    3.58
   ],
   "transfers_made": 1,
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 62.88,
-  "bench_points": 9.9,
-  "squad_value": 95.1,
-  "bank_remaining": 5.3,
+  "expected_points": 60.39,
+  "bench_points": 8.49,
+  "squad_value": 96.8,
+  "bank_remaining": 3.6,
   "risk_adjusted_players": [
-    "João Pedro",
-    "Mbeumo",
-    "Thiago",
-    "M.Sangaré",
-    "Nmecha"
+    "Calafiori",
+    "M.Sangaré"
   ],
-  "blocked_from_captaincy_in_squad": [
-    "M.Sangaré",
-    "Thiago",
-    "João Pedro",
-    "Nmecha",
-    "Mbeumo"
-  ],
+  "blocked_from_captaincy_in_squad": [],
   "price_momentum_notes": [
-    "Bogle looks likely to RISE in price soon (net +2.26% of managers this GW)",
-    "Bijol looks likely to FALL in price soon (net -0.07% of managers this GW)"
+    "João Pedro looks likely to FALL in price soon (net -1.21% of managers this GW)"
   ],
   "fixture_difficulty_notes": [
     "De Cuyper has a TOUGH run of fixtures over the next 5 GWs (avg FDR 3.8) -- already reflected in their rotation_value"
   ],
-  "bench_boost_note": "Boosting THIS week's normal bench: +9.9 pts (total 72.78). Restructuring specifically for Bench Boost instead: 72.78 pts (+0.0 vs. just boosting the normal squad).",
-  "agent_captain_review": null
+  "bench_boost_note": "Boosting THIS week's normal bench: +8.49 pts (total 68.88). Restructuring specifically for Bench Boost instead: 68.88 pts (+0.0 vs. just boosting the normal squad).",
+  "agent_captain_review": {
+    "recommended_captain": "Saka",
+    "same_as_solver_top_pick": true,
+    "reasoning": "Saka has the highest xp by a clear margin and no qualitative flags such as limited minutes or defender position apply. All other shortlist options have lower xp and carry no offsetting advantages that would justify overriding the solver ranking.",
+    "shortlist": [
+      {
+        "name": "Saka",
+        "xp": 7.18,
+        "price": 9.5,
+        "position": "MID",
+        "minutes_this_season": 336,
+        "form": 7.5,
+        "points_per_game": 7.5,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Mbeumo",
+        "xp": 6.15,
+        "price": 7.9,
+        "position": "MID",
+        "minutes_this_season": 360,
+        "form": 5.8,
+        "points_per_game": 5.8,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "De Cuyper",
+        "xp": 6.0,
+        "price": 4.9,
+        "position": "DEF",
+        "minutes_this_season": 333,
+        "form": 8.0,
+        "points_per_game": 8.0,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Palmer",
+        "xp": 5.55,
+        "price": 9.7,
+        "position": "MID",
+        "minutes_this_season": 352,
+        "form": 6.5,
+        "points_per_game": 6.5,
+        "status": "a",
+        "chance_of_playing_next_round": 100
+      },
+      {
+        "name": "Isak",
+        "xp": 5.52,
+        "price": 9.1,
+        "position": "FWD",
+        "minutes_this_season": 333,
+        "form": 6.2,
+        "points_per_game": 6.2,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      }
+    ]
+  }
 }

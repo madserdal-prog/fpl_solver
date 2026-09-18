@@ -2,76 +2,26 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Mbeumo",
+        "player_name": "Calafiori",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"The Scout’s FPL Gameweek 5 transfer radar - premierleague.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMijwFBVV95cUxPY05aSHlreTA3TUJreTJ3NVZuOS1XQlc1SVBhZ2JqRTF0bjU5ZmJZX0RxclZjRldmcDE3UnNKTFFVVEdPTzc5bl90U3R6V1Y4akROcEZXSEhpU2RicFcwZDNXQUw5Zmdyc01OeGFXdmpGVFdKaDUydEdRNkl5amZTdE82aUU2UXI0eTRpQUFmSQ?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Bijol",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1SLWpMSmwyakJlQzV3bWM0MnpEZWFIUjBIU1VXMWE3ZVBWbFcxQ3F0d1NsZ2l5ZWFieXJMZlpwZlBxb0x0T19FTEZNYzZqM1N1WU5JTHY3a3B6d0hEVHFYb2VWUFRZZDkyOHc?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Thiago",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Brentford transfers, latest news, rumours and gossip: Live updates, goals and highlights - skysports.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi3AFBVV95cUxQdXM0Vk5lc0pyd2s0OGhoSnlITkZrcHU1TmF2Um5vbnRFZllfWENGNDZWbzJWaEE3bEFYdWZ2MlNjNU5QOU0wcXBWbW13Tmtwb1RDZGZVbW1yY1phMWVrQTVjYmZ1U2Y3Qmk5TTNQVnlXcm9ZTWRqSDVnTWI4QW1OMGI0bk0yUkVrNHprOGloU2tEcHRJTks3Y0xQTlFCYzVveFFHQ3hzSlRGMnVOcXFoVU5yRlo4bUJJMzVwczV5b3ZnS3lMNVZoRklCWjF4VF9Tb3pJOWMydTl3OXhJ?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "João Pedro",
-        "risk_level": "medium",
-        "reason": "Unspecified injury - 75% chance of playing | Also: Headline mentions injury-related terms: \"Chelsea boss Xabi Alonso gives cryptic update on Joao Pedro injury - talkSPORT\"",
-        "source": "FPL API status/chance_of_playing_next_round fields",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Palmer",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
+        "reason": "Arteta has recently rested him in midweek games as part of defensive rotation; several other defenders (Timber, White, Hincapie, Mosquera) are returning from issues and Arteta said they are willing to be involved vs Brighton, creating minutes/start uncertainty even if currently available.",
+        "source": "Arteta press conference 18 Sep 2026; FPL Scout notes 10-16 Sep",
         "recommendation": "monitor"
       },
       {
         "player_name": "M.Sangaré",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Isak",
-        "risk_level": "medium",
-        "reason": "Headline mentions injury-related terms: \"‘An easy decision’ - Alexander Isak opens up on record-breaking Liverpool move and overcoming injury nightmare - Goal.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMisgFBVV95cUxPdndJX0tESS1Xc2E3alVTZmUtMWpJRkJmTFBtN01sZ1QzbUpNbmd6U3pPTlNvZzQtVnhxNWwzUGZ6YVBUZmZ6QWNMMVVsSTVtWVlDOURNbDdqUzYwRXk4azBsQktORUJGS0hOTG5sQXFRMWlyLVNqWDdMclNwVUtOdElxWFZ4TE4tMGpTc044Q2x0OFRrd082TmtrRWtjOFJHRjU0c1pqcktqSzhMekhHOU9R?oc=5",
+        "reason": "Returned from a calf injury listed until 12 Sep; predicted to start vs Chelsea but this is a recent layoff so minutes could be managed rather than a guaranteed full 90.",
+        "source": "Injury history reports; Sports Mole predicted XI 17 Sep 2026",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 7 medium-risk (Mbeumo, Bijol, Thiago, João Pedro, Palmer, M.Sangaré, Isak) based on FPL data and Google News headlines."
+    "summary": "The squad has no high-risk injuries, suspensions or transfer sagas this round. The two watchpoints are Arsenal rotation affecting Calafiori with multiple defenders returning, and Brentford's Sangaré after a short recent calf layoff (though both are currently predicted to feature). All other named players have no significant fresh news of unavailability or managed minutes in the last 1-2 weeks."
   },
   "risk_penalty": {
-    "427": 3.0,
-    "327": 3.0,
-    "106": 3.0,
-    "165": 3.0,
-    "301": 3.0,
-    "565": 3.0,
-    "379": 3.0
+    "8": 3.0,
+    "565": 3.0
   },
-  "blocked_captain_ids": [
-    106,
-    165,
-    301,
-    327,
-    379,
-    427,
-    565
-  ],
-  "unmatched_names": [],
-  "news_lookup_errors": [],
-  "news_systematically_blocked": false
+  "blocked_captain_ids": [],
+  "unmatched_names": []
 }
