@@ -2,24 +2,31 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "João Pedro",
+        "player_name": "Mbeumo",
         "risk_level": "medium",
-        "reason": "Unspecified injury - 75% chance of playing | Also: Headline mentions injury-related terms: \"Chelsea dealt major Joao Pedro injury worry as in-form striker pulls out of Brazil squad ahead of crunch Brentford clash - The Sun\"",
-        "source": "FPL API status/chance_of_playing_next_round fields",
+        "reason": "Headline suggests an active transfer situation: \"The Scout’s FPL Gameweek 5 transfer radar - premierleague.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMijwFBVV95cUxPY05aSHlreTA3TUJreTJ3NVZuOS1XQlc1SVBhZ2JqRTF0bjU5ZmJZX0RxclZjRldmcDE3UnNKTFFVVEdPTzc5bl90U3R6V1Y4akROcEZXSEhpU2RicFcwZDNXQUw5Zmdyc01OeGFXdmpGVFdKaDUydEdRNkl5amZTdE82aUU2UXI0eTRpQUFmSQ?oc=5",
         "recommendation": "monitor"
       },
       {
         "player_name": "Bijol",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5MaGdXTzV6dEZQNkVDajRsenJ3TXRZUm96RkFuYXRCRG1zVW96b0Y5dDRVSDFFWlB5a1IwZE9nSkxNWXF2LWgwTy10bUZuNU9fTHR1em95UFltbVVGZ3kyQWhCcy1iMDg?oc=5",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1SLWpMSmwyakJlQzV3bWM0MnpEZWFIUjBIU1VXMWE3ZVBWbFcxQ3F0d1NsZ2l5ZWFieXJMZlpwZlBxb0x0T19FTEZNYzZqM1N1WU5JTHY3a3B6d0hEVHFYb2VWUFRZZDkyOHc?oc=5",
         "recommendation": "monitor"
       },
       {
-        "player_name": "Saka",
+        "player_name": "Thiago",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Bukayo Saka earns Arsenal win at Aston Villa. Will this game impact the teams’ transfer plans? - The New York Times\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMikgFBVV95cUxOUGdSZEFrZmFJOFBFaDZsUEpNb0tUaHF4cVZ0SDhPWVVjcHJFUnF3SEZqQmxUNEtGemtuQW53VVE4ek1zeGhWaEdMQTd1UWxGUlFLRlViQTlzdTJ2cWUyMWlCdTg3dzBPN29SZk1tMjVFVE1fSVlXb0N5NE9LMFlGVlJOclkxX0xfbWVJTDNSZTZpdw?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Brentford transfers, latest news, rumours and gossip: Live updates, goals and highlights - skysports.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi3AFBVV95cUxQdXM0Vk5lc0pyd2s0OGhoSnlITkZrcHU1TmF2Um5vbnRFZllfWENGNDZWbzJWaEE3bEFYdWZ2MlNjNU5QOU0wcXBWbW13Tmtwb1RDZGZVbW1yY1phMWVrQTVjYmZ1U2Y3Qmk5TTNQVnlXcm9ZTWRqSDVnTWI4QW1OMGI0bk0yUkVrNHprOGloU2tEcHRJTks3Y0xQTlFCYzVveFFHQ3hzSlRGMnVOcXFoVU5yRlo4bUJJMzVwczV5b3ZnS3lMNVZoRklCWjF4VF9Tb3pJOWMydTl3OXhJ?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "João Pedro",
+        "risk_level": "medium",
+        "reason": "Unspecified injury - 75% chance of playing | Also: Headline mentions injury-related terms: \"Chelsea boss Xabi Alonso gives cryptic update on Joao Pedro injury - talkSPORT\"",
+        "source": "FPL API status/chance_of_playing_next_round fields",
         "recommendation": "monitor"
       },
       {
@@ -35,22 +42,33 @@
         "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
         "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
         "recommendation": "monitor"
+      },
+      {
+        "player_name": "Isak",
+        "risk_level": "medium",
+        "reason": "Headline mentions injury-related terms: \"‘An easy decision’ - Alexander Isak opens up on record-breaking Liverpool move and overcoming injury nightmare - Goal.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMisgFBVV95cUxPdndJX0tESS1Xc2E3alVTZmUtMWpJRkJmTFBtN01sZ1QzbUpNbmd6U3pPTlNvZzQtVnhxNWwzUGZ6YVBUZmZ6QWNMMVVsSTVtWVlDOURNbDdqUzYwRXk4azBsQktORUJGS0hOTG5sQXFRMWlyLVNqWDdMclNwVUtOdElxWFZ4TE4tMGpTc044Q2x0OFRrd082TmtrRWtjOFJHRjU0c1pqcktqSzhMekhHOU9R?oc=5",
+        "recommendation": "monitor"
       }
     ],
-    "summary": "Found 5 medium-risk (João Pedro, Bijol, Saka, Palmer, M.Sangaré) based on FPL data and Google News headlines."
+    "summary": "Found 7 medium-risk (Mbeumo, Bijol, Thiago, João Pedro, Palmer, M.Sangaré, Isak) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "165": 3.0,
+    "427": 3.0,
     "327": 3.0,
-    "12": 3.0,
+    "106": 3.0,
+    "165": 3.0,
     "301": 3.0,
-    "565": 3.0
+    "565": 3.0,
+    "379": 3.0
   },
   "blocked_captain_ids": [
-    12,
+    106,
     165,
     301,
     327,
+    379,
+    427,
     565
   ],
   "unmatched_names": [],

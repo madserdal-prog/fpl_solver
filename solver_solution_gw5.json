@@ -37,9 +37,9 @@
     "Calafiori",
     "Saka",
     "Kelleher",
-    "Thiago",
     "De Cuyper",
     "Palmer",
+    "João Pedro",
     "Tarkowski",
     "Ajayi",
     "Bogle",
@@ -50,17 +50,17 @@
     8,
     12,
     82,
-    106,
     115,
     154,
+    165,
     229,
     279,
     330,
     336,
     427
   ],
-  "captain": "Bogle",
-  "captain_id": 330,
+  "captain": "Saka",
+  "captain_id": 12,
   "transfers_in": [
     "Bogle"
   ],
@@ -74,28 +74,31 @@
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 60.71,
-  "bench_points": 11.4,
+  "expected_points": 62.88,
+  "bench_points": 9.9,
   "squad_value": 95.1,
-  "bank_remaining": 5.4,
+  "bank_remaining": 5.3,
   "risk_adjusted_players": [
     "João Pedro",
-    "Saka",
-    "Nmecha",
-    "M.Sangaré"
-  ],
-  "blocked_from_captaincy_in_squad": [
-    "Saka",
+    "Mbeumo",
+    "Thiago",
     "M.Sangaré",
-    "João Pedro",
     "Nmecha"
   ],
+  "blocked_from_captaincy_in_squad": [
+    "M.Sangaré",
+    "Thiago",
+    "João Pedro",
+    "Nmecha",
+    "Mbeumo"
+  ],
   "price_momentum_notes": [
-    "Bogle looks likely to RISE in price soon (net +1.54% of managers this GW)"
+    "Bogle looks likely to RISE in price soon (net +2.26% of managers this GW)",
+    "Bijol looks likely to FALL in price soon (net -0.07% of managers this GW)"
   ],
   "fixture_difficulty_notes": [
     "De Cuyper has a TOUGH run of fixtures over the next 5 GWs (avg FDR 3.8) -- already reflected in their rotation_value"
   ],
-  "bench_boost_note": "Boosting THIS week's normal bench: +11.4 pts (total 72.11). Restructuring specifically for Bench Boost instead: 72.11 pts (+0.0 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +9.9 pts (total 72.78). Restructuring specifically for Bench Boost instead: 72.78 pts (+0.0 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }
