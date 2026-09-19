@@ -6,17 +6,17 @@
     229,
     279,
     12,
-    565,
+    336,
     427,
     154,
     106,
-    165,
+    379,
     529,
     327,
-    336,
+    565,
     347
   ],
-  "bank": 4.9,
+  "bank": 3.4,
   "free_transfers": 1,
   "chips_available": [
     "wildcard",
@@ -26,5 +26,5 @@
   ],
   "locked_players": [],
   "notes": "current_squad/bank auto-refreshed from FPL. free_transfers computed from your real FPL transfer history (see compute_free_transfers()). chips_available/locked_players carried over from the previous file -- edit them manually if they need correcting.",
-  "last_synced_gw": 4
+  "last_synced_gw": 5
 }

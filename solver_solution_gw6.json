@@ -1,0 +1,97 @@
+{
+  "squad": [
+    "Calafiori",
+    "Saka",
+    "Kelleher",
+    "Thiago",
+    "M.Sangaré",
+    "De Cuyper",
+    "Palmer",
+    "Tarkowski",
+    "Ajayi",
+    "Davis",
+    "Okafor",
+    "Nmecha",
+    "Isak",
+    "Mbeumo",
+    "Roefs"
+  ],
+  "squad_ids": [
+    8,
+    12,
+    82,
+    106,
+    565,
+    115,
+    154,
+    229,
+    279,
+    305,
+    336,
+    347,
+    379,
+    427,
+    529
+  ],
+  "starting_xi": [
+    "Calafiori",
+    "Saka",
+    "Kelleher",
+    "Thiago",
+    "De Cuyper",
+    "Palmer",
+    "Tarkowski",
+    "Ajayi",
+    "Davis",
+    "Isak",
+    "Mbeumo"
+  ],
+  "starting_xi_ids": [
+    8,
+    12,
+    82,
+    106,
+    115,
+    154,
+    229,
+    279,
+    305,
+    379,
+    427
+  ],
+  "captain": "Saka",
+  "captain_id": 12,
+  "transfers_in": [
+    "Davis"
+  ],
+  "transfers_out": [
+    "Bijol"
+  ],
+  "transfer_point_gains": [
+    16.66
+  ],
+  "transfers_made": 1,
+  "free_transfers_used": 1,
+  "hit_taken": 0,
+  "hit_cost": 0,
+  "expected_points": 61.42,
+  "bench_points": 9.03,
+  "squad_value": 95.7,
+  "bank_remaining": 4.4,
+  "risk_adjusted_players": [
+    "Roefs",
+    "Tarkowski",
+    "M.Sangaré",
+    "Mbeumo"
+  ],
+  "blocked_from_captaincy_in_squad": [
+    "Roefs",
+    "M.Sangaré",
+    "Tarkowski",
+    "Mbeumo"
+  ],
+  "price_momentum_notes": [],
+  "fixture_difficulty_notes": [],
+  "bench_boost_note": "Boosting THIS week's normal bench: +9.03 pts (total 70.45). Restructuring specifically for Bench Boost instead: 70.45 pts (+0.0 vs. just boosting the normal squad).",
+  "agent_captain_review": null
+}
