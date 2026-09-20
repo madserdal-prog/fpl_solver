@@ -4,22 +4,22 @@
       {
         "player_name": "Palmer",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - ipswichstar.co.uk\"",
+        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
         "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Kelleher",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Caoimhín Kelleher - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMixAFBVV95cUxONUc2Xzc3UEdMY0swT0dRNkU3dk5PZkZBR0Q4UWIydHdVdm1nUTJKQ0VULVVaUTdQZ1BZNy1pNDNONlVqd2VzUHNnWXVHd2ItNVlKUVRuV01QWFZ4RjNiX0ZLcFFPVEJEclBoQ2RMSEFMcnppcUlHRGZkVjc5RFptSG4zVnM5T200UEpOQWREd2U0Nk1xSXdab3MteFUzeHRSWHVSU0lBdXVzbmVSQ0RtdF9mdzZ5SUEwZXliamJOLWFzeGxJ?oc=5",
         "recommendation": "monitor"
       },
       {
         "player_name": "Roefs",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - thenorthernecho.co.uk\"",
+        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
         "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Tarkowski",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Tarkowski responds to Everton ‘noise’ after turbulent transfer window - Read Everton\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiekFVX3lxTE03cDhQeVhvdk4xVENVNjRITUFaVjg4TDJQTU8zU1ZuQWdLc1hXVWdyWWN0SzJINWJPR0dkbXA2cEZ3WEx2Zmg2WlRVeTlrSWc3REVZNGVXVnpTaHBnRE1XdWpnZVByTlNNSEpubEVWazAzZ1pWbUtVaWVn?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -32,22 +32,22 @@
       {
         "player_name": "Mbeumo",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"The Scout’s FPL Gameweek 5 transfer radar - premierleague.com\"",
+        "reason": "Headline suggests an active transfer situation: \"The Scout’s FPL Gameweek 5 transfer radar - Premier League\"",
         "source": "Google News: https://news.google.com/rss/articles/CBMijwFBVV95cUxPY05aSHlreTA3TUJreTJ3NVZuOS1XQlc1SVBhZ2JqRTF0bjU5ZmJZX0RxclZjRldmcDE3UnNKTFFVVEdPTzc5bl90U3R6V1Y4akROcEZXSEhpU2RicFcwZDNXQUw5Zmdyc01OeGFXdmpGVFdKaDUydEdRNkl5amZTdE82aUU2UXI0eTRpQUFmSQ?oc=5",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 5 medium-risk (Palmer, Roefs, Tarkowski, M.Sangaré, Mbeumo) based on FPL data and Google News headlines."
+    "summary": "Found 5 medium-risk (Palmer, Kelleher, Roefs, M.Sangaré, Mbeumo) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
     "301": 3.0,
+    "82": 3.0,
     "529": 3.0,
-    "229": 3.0,
     "565": 3.0,
     "427": 3.0
   },
   "blocked_captain_ids": [
-    229,
+    82,
     301,
     427,
     529,
