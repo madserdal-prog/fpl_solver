@@ -16,13 +16,6 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Roefs",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
-        "recommendation": "monitor"
-      },
-      {
         "player_name": "M.Sangaré",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
@@ -37,12 +30,11 @@
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 5 medium-risk (Palmer, Kelleher, Roefs, M.Sangaré, Mbeumo) based on FPL data and Google News headlines."
+    "summary": "Found 4 medium-risk (Palmer, Kelleher, M.Sangaré, Mbeumo) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
     "301": 3.0,
     "82": 3.0,
-    "529": 3.0,
     "565": 3.0,
     "427": 3.0
   },
@@ -50,7 +42,6 @@
     82,
     301,
     427,
-    529,
     565
   ],
   "unmatched_names": [],

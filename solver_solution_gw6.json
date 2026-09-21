@@ -74,26 +74,24 @@
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 62.95,
-  "bench_points": 8.63,
+  "expected_points": 62.58,
+  "bench_points": 9.49,
   "squad_value": 95.7,
   "bank_remaining": 4.4,
   "risk_adjusted_players": [
     "Kelleher",
-    "Roefs",
     "M.Sangaré",
     "Mbeumo"
   ],
   "blocked_from_captaincy_in_squad": [
-    "Roefs",
     "M.Sangaré",
     "Kelleher",
     "Mbeumo"
   ],
   "price_momentum_notes": [
-    "Davis looks likely to RISE in price soon (net +0.10% of managers this GW)"
+    "Davis looks likely to RISE in price soon (net +0.15% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +8.63 pts (total 71.58). Restructuring specifically for Bench Boost instead: 71.58 pts (+0.0 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +9.49 pts (total 72.07). Restructuring specifically for Bench Boost instead: 72.07 pts (+0.0 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }
