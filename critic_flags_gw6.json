@@ -2,17 +2,10 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Kelleher",
+        "player_name": "Nmecha",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Caoimhín Kelleher - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMixAFBVV95cUxONUc2Xzc3UEdMY0swT0dRNkU3dk5PZkZBR0Q4UWIydHdVdm1nUTJKQ0VULVVaUTdQZ1BZNy1pNDNONlVqd2VzUHNnWXVHd2ItNVlKUVRuV01QWFZ4RjNiX0ZLcFFPVEJEclBoQ2RMSEFMcnppcUlHRGZkVjc5RFptSG4zVnM5T200UEpOQWREd2U0Nk1xSXdab3MteFUzeHRSWHVSU0lBdXVzbmVSQ0RtdF9mdzZ5SUEwZXliamJOLWFzeGxJ?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Palmer",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Sources: Lukas Nmecha eyes Leeds exit as contract talks stall - Yahoo\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMihgFBVV95cUxORUdIYXFXNnVlRXVYa2lSS0MxTUJOV0JEc2x2NWdCSjI3UnlZcmc0YTNjS05iR3hYVy1jTEx4OW5aelMyUkc0U1h2NzZIOTFqOUdtRzhCeHRaMFhISXZ6dTZ2QnJLQUFzNDRXVkZRbGFwWTNIZFpHeE1mc2pMUzZYVC0yTVVldw?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -21,19 +14,35 @@
         "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
         "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1SLWpMSmwyakJlQzV3bWM0MnpEZWFIUjBIU1VXMWE3ZVBWbFcxQ3F0d1NsZ2l5ZWFieXJMZlpwZlBxb0x0T19FTEZNYzZqM1N1WU5JTHY3a3B6d0hEVHFYb2VWUFRZZDkyOHc?oc=5",
         "recommendation": "monitor"
+      },
+      {
+        "player_name": "Palmer",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - ipswichstar.co.uk\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Kelleher",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Caoimhín Kelleher - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMixAFBVV95cUxONUc2Xzc3UEdMY0swT0dRNkU3dk5PZkZBR0Q4UWIydHdVdm1nUTJKQ0VULVVaUTdQZ1BZNy1pNDNONlVqd2VzUHNnWXVHd2ItNVlKUVRuV01QWFZ4RjNiX0ZLcFFPVEJEclBoQ2RMSEFMcnppcUlHRGZkVjc5RFptSG4zVnM5T200UEpOQWREd2U0Nk1xSXdab3MteFUzeHRSWHVSU0lBdXVzbmVSQ0RtdF9mdzZ5SUEwZXliamJOLWFzeGxJ?oc=5",
+        "recommendation": "monitor"
       }
     ],
-    "summary": "Found 3 medium-risk (Kelleher, Palmer, Bijol) based on FPL data and Google News headlines."
+    "summary": "Found 4 medium-risk (Nmecha, Bijol, Palmer, Kelleher) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "82": 3.0,
+    "347": 3.0,
+    "327": 3.0,
     "301": 3.0,
-    "327": 3.0
+    "82": 3.0
   },
   "blocked_captain_ids": [
     82,
     301,
-    327
+    327,
+    347
   ],
   "unmatched_names": [],
   "news_lookup_errors": [],
