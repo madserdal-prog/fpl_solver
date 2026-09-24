@@ -75,26 +75,30 @@
   "hit_taken": 0,
   "hit_cost": 0,
   "expected_points": 61.31,
-  "bench_points": 8.47,
+  "bench_points": 7.99,
   "squad_value": 96.9,
   "bank_remaining": 3.2,
   "risk_adjusted_players": [
     "Palmer",
-    "Nmecha",
+    "Isak",
     "Bijol",
-    "Kelleher"
+    "Nmecha",
+    "Kelleher",
+    "Mbeumo"
   ],
   "blocked_from_captaincy_in_squad": [
     "Kelleher",
     "Palmer",
     "Bijol",
-    "Nmecha"
+    "Nmecha",
+    "Isak",
+    "Mbeumo"
   ],
   "price_momentum_notes": [
-    "Groß looks likely to RISE in price soon (net +6.16% of managers this GW)",
-    "M.Sangaré looks likely to FALL in price soon (net -1.06% of managers this GW)"
+    "Groß looks likely to RISE in price soon (net +6.40% of managers this GW)",
+    "M.Sangaré looks likely to FALL in price soon (net -1.09% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +8.47 pts (total 69.78). Restructuring specifically for Bench Boost instead: 70.96 pts (+1.18 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +7.99 pts (total 69.3). Restructuring specifically for Bench Boost instead: 70.48 pts (+1.18 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }
