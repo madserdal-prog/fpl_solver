@@ -2,24 +2,10 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Isak",
+        "player_name": "Kelleher",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Andoni Iraola showing Alexander Isak clips of 21-year-old Liverpool rookie in bid to get best out of £125m star - The Sun\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMif0FVX3lxTE5QWF9xUEpia2d4NnNmbGF2SVY0c3dKSURlNUY0UnBXdUczYVdwU0M5c3FPQ3B5MFB2SWJkN2VYZEItZ3hmeWs4Tnp1a0xNNkE5N3phamFzeWxPOFRHV25LUnA0RmJaNWFQWlFTSFZib1Jtam50d1NiZzlSZnFGMzQ?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Bijol",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1SLWpMSmwyakJlQzV3bWM0MnpEZWFIUjBIU1VXMWE3ZVBWbFcxQ3F0d1NsZ2l5ZWFieXJMZlpwZlBxb0x0T19FTEZNYzZqM1N1WU5JTHY3a3B6d0hEVHFYb2VWUFRZZDkyOHc?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Palmer",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Caoimhín Kelleher - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMirwFBVV95cUxNZUc3Q2FFbE9EVGR5enlXaEhOa3haM1lvRVVTU3JLZm9jTjRESjZNaHJ1UFVwX0k3dnVXaWtuRzU4dzd3MjdnejQzLU1taVpUY2pjVlkwTGs5NnNmbktGbU92WHBPZnV6RnZ2QXgyZXpNN1RWRTRldlZxSXRzV1FUY2pUSHFkbWF3REp6eDU2THJ5SC1HRkR5VGFiT0F6cGN6c3psOE91V2RmeGhrNUZZ?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -30,37 +16,33 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Kelleher",
+        "player_name": "Palmer",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Caoimhín Kelleher - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMixAFBVV95cUxONUc2Xzc3UEdMY0swT0dRNkU3dk5PZkZBR0Q4UWIydHdVdm1nUTJKQ0VULVVaUTdQZ1BZNy1pNDNONlVqd2VzUHNnWXVHd2ItNVlKUVRuV01QWFZ4RjNiX0ZLcFFPVEJEclBoQ2RMSEFMcnppcUlHRGZkVjc5RFptSG4zVnM5T200UEpOQWREd2U0Nk1xSXdab3MteFUzeHRSWHVSU0lBdXVzbmVSQ0RtdF9mdzZ5SUEwZXliamJOLWFzeGxJ?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - ipswichstar.co.uk\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
         "recommendation": "monitor"
       },
       {
-        "player_name": "Mbeumo",
+        "player_name": "Bijol",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"‘Fantastic attack’ - Man Utd transfer ‘surgery’ has worked but more required as Michael Owen assesses the tactical approach of Michael Carrick - Goal.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi0wFBVV95cUxQd3JXYmJqWUVzd1M4LTRaVVgyNUhYR0pDcGRVY0puR1JPby1nVFdrV045WGFrRk8waXk3T0NIOW1qQVBGV1lLczV5LXJKY3pxQkJaNW1MR0J6Tm5fMmFhamtsR1R4LVdveEY3NUtuQjZCX0RoUXQ1YTZZblVtRTJSRWZzeFVwUUpOdVE4cWsxTmRDd3QzczAtV0RmalRUYXZGMkdoNEJJRmg3dGxVNmpjUDdWSnUzMW1ESktvOXBMaGNsUkpiSlA2NkF3QVpwd3JVTjZZ?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1SLWpMSmwyakJlQzV3bWM0MnpEZWFIUjBIU1VXMWE3ZVBWbFcxQ3F0d1NsZ2l5ZWFieXJMZlpwZlBxb0x0T19FTEZNYzZqM1N1WU5JTHY3a3B6d0hEVHFYb2VWUFRZZDkyOHc?oc=5",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 6 medium-risk (Isak, Bijol, Palmer, Nmecha, Kelleher, Mbeumo) based on FPL data and Google News headlines."
+    "summary": "Found 4 medium-risk (Kelleher, Nmecha, Palmer, Bijol) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "379": 3.0,
-    "327": 3.0,
-    "301": 3.0,
-    "347": 3.0,
     "82": 3.0,
-    "427": 3.0
+    "347": 3.0,
+    "301": 3.0,
+    "327": 3.0
   },
   "blocked_captain_ids": [
     82,
     301,
     327,
-    347,
-    379,
-    427
+    347
   ],
   "unmatched_names": [],
   "news_lookup_errors": [],
