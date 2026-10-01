@@ -2,10 +2,17 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Kelleher",
+        "player_name": "Isak",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Caoimhín Kelleher - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMirwFBVV95cUxNZUc3Q2FFbE9EVGR5enlXaEhOa3haM1lvRVVTU3JLZm9jTjRESjZNaHJ1UFVwX0k3dnVXaWtuRzU4dzd3MjdnejQzLU1taVpUY2pjVlkwTGs5NnNmbktGbU92WHBPZnV6RnZ2QXgyZXpNN1RWRTRldlZxSXRzV1FUY2pUSHFkbWF3REp6eDU2THJ5SC1HRkR5VGFiT0F6cGN6c3psOE91V2RmeGhrNUZZ?oc=5",
+        "reason": "Thigh injury - 75% chance of playing | Also: Headline mentions injury-related terms: \"Liverpool injury update: Isak, Gakpo and Ekitike latest return dates - standard.co.uk\"",
+        "source": "FPL API status/chance_of_playing_next_round fields",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Palmer",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -16,32 +23,34 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Isak",
+        "player_name": "Kelleher",
         "risk_level": "medium",
-        "reason": "Thigh injury - 75% chance of playing | Also: Headline mentions injury-related terms: \"Isak returns to Liverpool with 'minor injury', Man Utd's Fernandes 'playing with pain' - TNT Sports\"",
-        "source": "FPL API status/chance_of_playing_next_round fields",
+        "reason": "Headline suggests an active transfer situation: \"Caoimhín Kelleher - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMirwFBVV95cUxNZUc3Q2FFbE9EVGR5enlXaEhOa3haM1lvRVVTU3JLZm9jTjRESjZNaHJ1UFVwX0k3dnVXaWtuRzU4dzd3MjdnejQzLU1taVpUY2pjVlkwTGs5NnNmbktGbU92WHBPZnV6RnZ2QXgyZXpNN1RWRTRldlZxSXRzV1FUY2pUSHFkbWF3REp6eDU2THJ5SC1HRkR5VGFiT0F6cGN6c3psOE91V2RmeGhrNUZZ?oc=5",
         "recommendation": "monitor"
       },
       {
-        "player_name": "Palmer",
+        "player_name": "Nmecha",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Report: Leeds United forward could be set for January exit - Yahoo Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiigFBVV95cUxQNGV3VkZqOEhrbmRJM2JIRXNnQzVTdkZ4c1E5RWFKeXNxV0ZRY0NNT0cxaXBPUUdfdl9OOXk0NEhOUTFBNXVBYzU0dnVVbDVMcXlkRTBWWmVFQl9hWWh0aGhjUDFqc1FnSDZieklHUTRJQmpNS1VhbFRqT1RxNDhzTTZjNjg5LUo5cmc?oc=5",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 4 medium-risk (Kelleher, Bijol, Isak, Palmer) based on FPL data and Google News headlines."
+    "summary": "Found 5 medium-risk (Isak, Palmer, Bijol, Kelleher, Nmecha) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "82": 3.0,
-    "327": 3.0,
     "379": 3.0,
-    "301": 3.0
+    "301": 3.0,
+    "327": 3.0,
+    "82": 3.0,
+    "347": 3.0
   },
   "blocked_captain_ids": [
     82,
     301,
     327,
+    347,
     379
   ],
   "unmatched_names": [],
