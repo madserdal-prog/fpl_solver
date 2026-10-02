@@ -2,13 +2,6 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Isak",
-        "risk_level": "medium",
-        "reason": "Thigh injury - 75% chance of playing | Also: Headline mentions injury-related terms: \"Liverpool injury update: Isak, Gakpo and Ekitike latest return dates - standard.co.uk\"",
-        "source": "FPL API status/chance_of_playing_next_round fields",
-        "recommendation": "monitor"
-      },
-      {
         "player_name": "Palmer",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
@@ -20,6 +13,13 @@
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
         "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1SLWpMSmwyakJlQzV3bWM0MnpEZWFIUjBIU1VXMWE3ZVBWbFcxQ3F0d1NsZ2l5ZWFieXJMZlpwZlBxb0x0T19FTEZNYzZqM1N1WU5JTHY3a3B6d0hEVHFYb2VWUFRZZDkyOHc?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Isak",
+        "risk_level": "medium",
+        "reason": "Thigh injury - 75% chance of playing | Also: Headline mentions injury-related terms: \"Liverpool injury update: Isak, Gakpo and Ekitike latest return dates - London Evening Standard\"",
+        "source": "FPL API status/chance_of_playing_next_round fields",
         "recommendation": "monitor"
       },
       {
@@ -37,12 +37,12 @@
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 5 medium-risk (Isak, Palmer, Bijol, Kelleher, Nmecha) based on FPL data and Google News headlines."
+    "summary": "Found 5 medium-risk (Palmer, Bijol, Isak, Kelleher, Nmecha) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "379": 3.0,
     "301": 3.0,
     "327": 3.0,
+    "379": 3.0,
     "82": 3.0,
     "347": 3.0
   },
