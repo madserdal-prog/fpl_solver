@@ -16,38 +16,38 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Isak",
-        "risk_level": "medium",
-        "reason": "Thigh injury - 75% chance of playing | Also: Headline mentions injury-related terms: \"Liverpool injury update: Isak, Gakpo and Ekitike latest return dates - London Evening Standard\"",
-        "source": "FPL API status/chance_of_playing_next_round fields",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Kelleher",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Caoimhín Kelleher - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMirwFBVV95cUxNZUc3Q2FFbE9EVGR5enlXaEhOa3haM1lvRVVTU3JLZm9jTjRESjZNaHJ1UFVwX0k3dnVXaWtuRzU4dzd3MjdnejQzLU1taVpUY2pjVlkwTGs5NnNmbktGbU92WHBPZnV6RnZ2QXgyZXpNN1RWRTRldlZxSXRzV1FUY2pUSHFkbWF3REp6eDU2THJ5SC1HRkR5VGFiT0F6cGN6c3psOE91V2RmeGhrNUZZ?oc=5",
-        "recommendation": "monitor"
-      },
-      {
         "player_name": "Nmecha",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Report: Leeds United forward could be set for January exit - Yahoo Sports\"",
         "source": "Google News: https://news.google.com/rss/articles/CBMiigFBVV95cUxQNGV3VkZqOEhrbmRJM2JIRXNnQzVTdkZ4c1E5RWFKeXNxV0ZRY0NNT0cxaXBPUUdfdl9OOXk0NEhOUTFBNXVBYzU0dnVVbDVMcXlkRTBWWmVFQl9hWWh0aGhjUDFqc1FnSDZieklHUTRJQmpNS1VhbFRqT1RxNDhzTTZjNjg5LUo5cmc?oc=5",
         "recommendation": "monitor"
+      },
+      {
+        "player_name": "Isak",
+        "risk_level": "medium",
+        "reason": "Thigh injury - 75% chance of playing | Also: Headline suggests an active transfer situation: \"Liverpool transfer news, rumours and gossip: Live updates and latest on deals, signings, loans and contracts - Sky Sports\"",
+        "source": "FPL API status/chance_of_playing_next_round fields",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Thiago",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Brentford transfers, latest news, rumours and gossip: Live updates, goals and highlights - Sky Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi1AFBVV95cUxQQVBUZXpaSE00dWtkQTFNZ2U1QmZHRG04djlRLWNUWlQwb25vbnBkQnJfVWZOMEdXckswRDZRU2wtQi1POHk4ZUo5MDBfQVVDWWNJQ01uLV81cUpUYVA5R2dJZmRhX2VaRTFtbDNLWEthLVp4VVdodXdSNTE1MlZ5NmRSMHNZbUlRZHlxWWpQSVNnbnEzS0VRdTJBUnRaVDM3bEdGd1dEX21pSEpKZ281Vm1Hd19UTnBmU2FCUlhHVllBRHlzcmkxdllsbmZMb1RWeW50Uw?oc=5",
+        "recommendation": "monitor"
       }
     ],
-    "summary": "Found 5 medium-risk (Palmer, Bijol, Isak, Kelleher, Nmecha) based on FPL data and Google News headlines."
+    "summary": "Found 5 medium-risk (Palmer, Bijol, Nmecha, Isak, Thiago) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
     "301": 3.0,
     "327": 3.0,
+    "347": 3.0,
     "379": 3.0,
-    "82": 3.0,
-    "347": 3.0
+    "106": 3.0
   },
   "blocked_captain_ids": [
-    82,
+    106,
     301,
     327,
     347,

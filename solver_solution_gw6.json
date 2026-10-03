@@ -36,6 +36,7 @@
   "starting_xi": [
     "Calafiori",
     "Saka",
+    "Kelleher",
     "Thiago",
     "De Cuyper",
     "Groß",
@@ -43,12 +44,12 @@
     "Ajayi",
     "Okafor",
     "Isak",
-    "Mbeumo",
-    "Roefs"
+    "Mbeumo"
   ],
   "starting_xi_ids": [
     8,
     12,
+    82,
     106,
     115,
     124,
@@ -56,8 +57,7 @@
     279,
     336,
     379,
-    427,
-    529
+    427
   ],
   "captain": "Groß",
   "captain_id": 124,
@@ -74,29 +74,29 @@
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 57.4,
-  "bench_points": 8.29,
+  "expected_points": 58.22,
+  "bench_points": 7.47,
   "squad_value": 97.1,
   "bank_remaining": 3.2,
   "risk_adjusted_players": [
     "Palmer",
     "Isak",
     "Bijol",
-    "Kelleher",
-    "Nmecha"
+    "Nmecha",
+    "Thiago"
   ],
   "blocked_from_captaincy_in_squad": [
-    "Kelleher",
+    "Thiago",
     "Palmer",
     "Bijol",
     "Nmecha",
     "Isak"
   ],
   "price_momentum_notes": [
-    "Groß looks likely to RISE in price soon (net +7.13% of managers this GW)",
-    "M.Sangaré looks likely to FALL in price soon (net -1.19% of managers this GW)"
+    "Groß looks likely to RISE in price soon (net +7.24% of managers this GW)",
+    "M.Sangaré looks likely to FALL in price soon (net -1.20% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +8.29 pts (total 65.69). Restructuring specifically for Bench Boost instead: 67.17 pts (+1.48 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +7.47 pts (total 65.69). Restructuring specifically for Bench Boost instead: 67.17 pts (+1.48 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }
