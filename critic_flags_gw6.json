@@ -2,10 +2,17 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Palmer",
+        "player_name": "Nmecha",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Report: Leeds United forward could be set for January exit - Yahoo Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiigFBVV95cUxQNGV3VkZqOEhrbmRJM2JIRXNnQzVTdkZ4c1E5RWFKeXNxV0ZRY0NNT0cxaXBPUUdfdl9OOXk0NEhOUTFBNXVBYzU0dnVVbDVMcXlkRTBWWmVFQl9hWWh0aGhjUDFqc1FnSDZieklHUTRJQmpNS1VhbFRqT1RxNDhzTTZjNjg5LUo5cmc?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Isak",
+        "risk_level": "medium",
+        "reason": "Thigh injury - 75% chance of playing | Also: Headline mentions injury-related terms: \"Internationals: Which Premier League stars are shining - and who's got injured? - Premier League\"",
+        "source": "FPL API status/chance_of_playing_next_round fields",
         "recommendation": "monitor"
       },
       {
@@ -16,38 +23,22 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Nmecha",
+        "player_name": "Palmer",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Report: Leeds United forward could be set for January exit - Yahoo Sports\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiigFBVV95cUxQNGV3VkZqOEhrbmRJM2JIRXNnQzVTdkZ4c1E5RWFKeXNxV0ZRY0NNT0cxaXBPUUdfdl9OOXk0NEhOUTFBNXVBYzU0dnVVbDVMcXlkRTBWWmVFQl9hWWh0aGhjUDFqc1FnSDZieklHUTRJQmpNS1VhbFRqT1RxNDhzTTZjNjg5LUo5cmc?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Isak",
-        "risk_level": "medium",
-        "reason": "Thigh injury - 75% chance of playing | Also: Headline suggests an active transfer situation: \"Liverpool transfer news, rumours and gossip: Live updates and latest on deals, signings, loans and contracts - Sky Sports\"",
-        "source": "FPL API status/chance_of_playing_next_round fields",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Thiago",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Brentford transfers, latest news, rumours and gossip: Live updates, goals and highlights - Sky Sports\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi1AFBVV95cUxQQVBUZXpaSE00dWtkQTFNZ2U1QmZHRG04djlRLWNUWlQwb25vbnBkQnJfVWZOMEdXckswRDZRU2wtQi1POHk4ZUo5MDBfQVVDWWNJQ01uLV81cUpUYVA5R2dJZmRhX2VaRTFtbDNLWEthLVp4VVdodXdSNTE1MlZ5NmRSMHNZbUlRZHlxWWpQSVNnbnEzS0VRdTJBUnRaVDM3bEdGd1dEX21pSEpKZ281Vm1Hd19UTnBmU2FCUlhHVllBRHlzcmkxdllsbmZMb1RWeW50Uw?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 5 medium-risk (Palmer, Bijol, Nmecha, Isak, Thiago) based on FPL data and Google News headlines."
+    "summary": "Found 4 medium-risk (Nmecha, Isak, Bijol, Palmer) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "301": 3.0,
-    "327": 3.0,
     "347": 3.0,
     "379": 3.0,
-    "106": 3.0
+    "327": 3.0,
+    "301": 3.0
   },
   "blocked_captain_ids": [
-    106,
     301,
     327,
     347,

@@ -76,25 +76,23 @@
   "hit_cost": 0,
   "expected_points": 58.22,
   "bench_points": 7.47,
-  "squad_value": 97.1,
-  "bank_remaining": 3.2,
+  "squad_value": 97.2,
+  "bank_remaining": 3.1,
   "risk_adjusted_players": [
     "Palmer",
     "Isak",
-    "Bijol",
     "Nmecha",
-    "Thiago"
+    "Bijol"
   ],
   "blocked_from_captaincy_in_squad": [
-    "Thiago",
     "Palmer",
     "Bijol",
     "Nmecha",
     "Isak"
   ],
   "price_momentum_notes": [
-    "Groß looks likely to RISE in price soon (net +7.24% of managers this GW)",
-    "M.Sangaré looks likely to FALL in price soon (net -1.20% of managers this GW)"
+    "Groß looks likely to RISE in price soon (net +7.33% of managers this GW)",
+    "M.Sangaré looks likely to FALL in price soon (net -1.22% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
   "bench_boost_note": "Boosting THIS week's normal bench: +7.47 pts (total 65.69). Restructuring specifically for Bench Boost instead: 67.17 pts (+1.48 vs. just boosting the normal squad).",
