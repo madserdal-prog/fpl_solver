@@ -2,24 +2,10 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Nmecha",
+        "player_name": "Roefs",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Sources: Lukas Nmecha eyes Leeds exit as contract talks stall - uk.sports.yahoo.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMihgFBVV95cUxORUdIYXFXNnVlRXVYa2lSS0MxTUJOV0JEc2x2NWdCSjI3UnlZcmc0YTNjS05iR3hYVy1jTEx4OW5aelMyUkc0U1h2NzZIOTFqOUdtRzhCeHRaMFhISXZ6dTZ2QnJLQUFzNDRXVkZRbGFwWTNIZFpHeE1mc2pMUzZYVC0yTVVldw?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Palmer",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Bijol",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1SLWpMSmwyakJlQzV3bWM0MnpEZWFIUjBIU1VXMWE3ZVBWbFcxQ3F0d1NsZ2l5ZWFieXJMZlpwZlBxb0x0T19FTEZNYzZqM1N1WU5JTHY3a3B6d0hEVHFYb2VWUFRZZDkyOHc?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -30,26 +16,31 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Roefs",
+        "player_name": "Bijol",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1SLWpMSmwyakJlQzV3bWM0MnpEZWFIUjBIU1VXMWE3ZVBWbFcxQ3F0d1NsZ2l5ZWFieXJMZlpwZlBxb0x0T19FTEZNYzZqM1N1WU5JTHY3a3B6d0hEVHFYb2VWUFRZZDkyOHc?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Palmer",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 5 medium-risk (Nmecha, Palmer, Bijol, Isak, Roefs) based on FPL data and Google News headlines."
+    "summary": "Found 4 medium-risk (Roefs, Isak, Bijol, Palmer) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "347": 3.0,
-    "301": 3.0,
-    "327": 3.0,
+    "529": 3.0,
     "379": 3.0,
-    "529": 3.0
+    "327": 3.0,
+    "301": 3.0
   },
   "blocked_captain_ids": [
     301,
     327,
-    347,
     379,
     529
   ],
