@@ -2,10 +2,10 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Roefs",
+        "player_name": "Kelleher",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Do Liverpool have Caoimhin Kelleher buy-back clause? £18m Brentford transfer explained - Daily Mirror\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxNYVVhaWxYZ1dzTGdya2didm9Va0V4dk5mQkpmXzBlZ3NDQkcyTnlSdmRvczRabGk3T0p4dkkycVhvamtqSnFCT2IydURvcWd0b1Q3M25lYXI5MzM3bHc5a2d1VC1LaGJHZzk4WUZKYnViZEkzWE5SUDFKWVBoOG84cFBvZ1lqcHl4ekhPdm0wdHY1aWlrdmowYjdsSTZuczdzWmfSAacBQVVfeXFMUEdRakVpSEdsMF9yX2NyZzc5dG93aWZxQXdkUEdBQnRnYTF2bjdtUjd0aEV3WHhLSkwzUy1GV2hKdkVYcVo5cDVqdzdsSGJ3eFM2V01tN1huRzQwMnI4Ym5qVGtVRFpDVGQyVzl6cXBmNlpzLXhEVFlGaHhTa2RTNmpHYV9kWnhLN2JVX0F6SHAxVF8tS21ZLTN2RlVyZGR0bm5qa2kzMFk?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -23,22 +23,31 @@
         "recommendation": "monitor"
       },
       {
+        "player_name": "Roefs",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
+        "recommendation": "monitor"
+      },
+      {
         "player_name": "Palmer",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - Ipswich Star\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxPTUpicHMxQ0U0dnc3WW1kVWxDNTZqaFJqTnBwQTZ4TElUUmwxY0poS3N6RDZOeWVKV0VnS3JIdmpSdk5idVVXNUNHaGtISEwzVGg5bUpKRk0tSGp1ZUJEZzVwcWpwVGNMVWwzM1U3VGlsWWlFZkIyT2t4aXM0Nml2aTZQVnhqZjdDVlpUamRqVnJkOS1yX1JXTDBUWVJoRTZiaVE?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Alex Palmer - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiygFBVV95cUxNTlVPcVI5SGxPZ1pWMFZjLWMtb2NkSncwdnRBZkM1M2NXRVZmZlY3SGEwSDI1b0lzV3lvMUpKa3kyTlRndHd4YkRfUEMxUllkdS1NdDAyek1TMVpLMG5zMjJSVkdpLVRZVnAtaWxDdlg2cUZLQTJsYmMwdkxvNVA3THBqcjhDb3J1b0pzbDBLaFBDYmZtNUYtSnNWbXVQdnBvTUtleXJ2WGY1Q2dJQTJGM3BuMW5PcWtYWDd0Mjk3cmI2RlI3MDdHdFln?oc=5",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 4 medium-risk (Roefs, Isak, Bijol, Palmer) based on FPL data and Google News headlines."
+    "summary": "Found 5 medium-risk (Kelleher, Isak, Bijol, Roefs, Palmer) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "529": 3.0,
+    "82": 3.0,
     "379": 3.0,
     "327": 3.0,
+    "529": 3.0,
     "301": 3.0
   },
   "blocked_captain_ids": [
+    82,
     301,
     327,
     379,
