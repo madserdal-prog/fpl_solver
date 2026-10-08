@@ -2,17 +2,10 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Kelleher",
+        "player_name": "Palmer",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Do Liverpool have Caoimhin Kelleher buy-back clause? £18m Brentford transfer explained - Daily Mirror\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiogFBVV95cUxNYVVhaWxYZ1dzTGdya2didm9Va0V4dk5mQkpmXzBlZ3NDQkcyTnlSdmRvczRabGk3T0p4dkkycVhvamtqSnFCT2IydURvcWd0b1Q3M25lYXI5MzM3bHc5a2d1VC1LaGJHZzk4WUZKYnViZEkzWE5SUDFKWVBoOG84cFBvZ1lqcHl4ekhPdm0wdHY1aWlrdmowYjdsSTZuczdzWmfSAacBQVVfeXFMUEdRakVpSEdsMF9yX2NyZzc5dG93aWZxQXdkUEdBQnRnYTF2bjdtUjd0aEV3WHhLSkwzUy1GV2hKdkVYcVo5cDVqdzdsSGJ3eFM2V01tN1huRzQwMnI4Ym5qVGtVRFpDVGQyVzl6cXBmNlpzLXhEVFlGaHhTa2RTNmpHYV9kWnhLN2JVX0F6SHAxVF8tS21ZLTN2RlVyZGR0bm5qa2kzMFk?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Isak",
-        "risk_level": "medium",
-        "reason": "Thigh injury - 75% chance of playing | Also: Headline mentions injury-related terms: \"Internationals: Which Premier League stars are shining - and who's got injured? - Premier League\"",
-        "source": "FPL API status/chance_of_playing_next_round fields",
+        "reason": "Headline suggests an active transfer situation: \"Alex Palmer - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiygFBVV95cUxNTlVPcVI5SGxPZ1pWMFZjLWMtb2NkSncwdnRBZkM1M2NXRVZmZlY3SGEwSDI1b0lzV3lvMUpKa3kyTlRndHd4YkRfUEMxUllkdS1NdDAyek1TMVpLMG5zMjJSVkdpLVRZVnAtaWxDdlg2cUZLQTJsYmMwdkxvNVA3THBqcjhDb3J1b0pzbDBLaFBDYmZtNUYtSnNWbXVQdnBvTUtleXJ2WGY1Q2dJQTJGM3BuMW5PcWtYWDd0Mjk3cmI2RlI3MDdHdFln?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -30,21 +23,28 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Palmer",
+        "player_name": "Kelleher",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Alex Palmer - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiygFBVV95cUxNTlVPcVI5SGxPZ1pWMFZjLWMtb2NkSncwdnRBZkM1M2NXRVZmZlY3SGEwSDI1b0lzV3lvMUpKa3kyTlRndHd4YkRfUEMxUllkdS1NdDAyek1TMVpLMG5zMjJSVkdpLVRZVnAtaWxDdlg2cUZLQTJsYmMwdkxvNVA3THBqcjhDb3J1b0pzbDBLaFBDYmZtNUYtSnNWbXVQdnBvTUtleXJ2WGY1Q2dJQTJGM3BuMW5PcWtYWDd0Mjk3cmI2RlI3MDdHdFln?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Caoimhín Kelleher - Detailed stats - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMisAFBVV95cUxOaGZmdmtEckJjWDVNMWFxQkZwdVl4YXBYZmZwXzFZLXZsc1h2ZnF2aVNSeXhhdmpheFdjeFNMMDFBNWV3Yk9QTGx6NUxiVGNOMkpOaC1abDdENEhwRHZDMFQ5VUI2bHBENTY2WjhSTkpHZEMyMVFOd1JEVENyd05BZVlRbkF4RWNONEIxVEsxcl9xaUM3bUNEM2M0b21JNGotRXhESlFxcS1jMy02a01WVQ?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Isak",
+        "risk_level": "medium",
+        "reason": "Thigh injury - 75% chance of playing | Also: Headline mentions injury-related terms: \"Liverpool hit with double injury blow ahead of Man City Premier League clash - Manchester Evening News\"",
+        "source": "FPL API status/chance_of_playing_next_round fields",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 5 medium-risk (Kelleher, Isak, Bijol, Roefs, Palmer) based on FPL data and Google News headlines."
+    "summary": "Found 5 medium-risk (Palmer, Bijol, Roefs, Kelleher, Isak) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "82": 3.0,
-    "379": 3.0,
+    "301": 3.0,
     "327": 3.0,
     "529": 3.0,
-    "301": 3.0
+    "82": 3.0,
+    "379": 3.0
   },
   "blocked_captain_ids": [
     82,
