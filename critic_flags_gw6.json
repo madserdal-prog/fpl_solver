@@ -9,6 +9,13 @@
         "recommendation": "monitor"
       },
       {
+        "player_name": "Roefs",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Liverpool Show Transfer Interest In Sunderland Youngster Amid EFL Loan - roundtable.io\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi0wFBVV95cUxQa294TktxSXFGcC1zcFp1M0tPb1dSSHlYR2lRaXdGQS1pekZob0FtcGFtbzFfTDVCa1B1Y2lUbjhkV2Joak9fNktQWGI0Y1JZRlJvWmtGT0FENkQxMnFXWjdWakg3OUtqZ0EtRXFJTHNVYTVjOWVTaE85bDNmUE12UnZLS0oxNHZZeEhJV1h0N1JSX1VfUllMamhxWkx1S292emdaUFIxbHNRNEFXWTlzamZOdkJnTXQ2ZFN2VGFBVzR1Xy1RcTJ6aWJYV3VvZzFTclVR?oc=5",
+        "recommendation": "monitor"
+      },
+      {
         "player_name": "Bijol",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
@@ -16,33 +23,26 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Roefs",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
-        "recommendation": "monitor"
-      },
-      {
         "player_name": "Kelleher",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Caoimhín Kelleher - Detailed stats - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMisAFBVV95cUxOaGZmdmtEckJjWDVNMWFxQkZwdVl4YXBYZmZwXzFZLXZsc1h2ZnF2aVNSeXhhdmpheFdjeFNMMDFBNWV3Yk9QTGx6NUxiVGNOMkpOaC1abDdENEhwRHZDMFQ5VUI2bHBENTY2WjhSTkpHZEMyMVFOd1JEVENyd05BZVlRbkF4RWNONEIxVEsxcl9xaUM3bUNEM2M0b21JNGotRXhESlFxcS1jMy02a01WVQ?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Caoimhín Kelleher - Penalty statistics | Page 2 - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiswFBVV95cUxQb0NPMU5QLUJuVWsyeFFxVWxjWGg5eTFWZUdRTzc4eGpkdU1sTEVnMmVvWUhiaVJVZFAzS1owTkRmcGlFMnpPcmpKYnVRdkU0RGY1YU9PY1M0TXBZTHFQeFBHVllKbGZtakY0NHpibnQzdzhENDFxVlo4RjZkSkd0YThONXZtZHdvN0dWRURQVkplb1NIRnZNVjl6SDF1LUNseV82TTdINmZBSnZIYjZaUW5abw?oc=5",
         "recommendation": "monitor"
       },
       {
         "player_name": "Isak",
         "risk_level": "medium",
-        "reason": "Thigh injury - 75% chance of playing | Also: Headline mentions injury-related terms: \"Liverpool hit with double injury blow ahead of Man City Premier League clash - Manchester Evening News\"",
+        "reason": "Thigh injury - 75% chance of playing | Also: Headline mentions injury-related terms: \"Liverpool confirm double injury blow ahead of Man City Premier League clash - Metro.co.uk\"",
         "source": "FPL API status/chance_of_playing_next_round fields",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 5 medium-risk (Palmer, Bijol, Roefs, Kelleher, Isak) based on FPL data and Google News headlines."
+    "summary": "Found 5 medium-risk (Palmer, Roefs, Bijol, Kelleher, Isak) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
     "301": 3.0,
-    "327": 3.0,
     "529": 3.0,
+    "327": 3.0,
     "82": 3.0,
     "379": 3.0
   },
