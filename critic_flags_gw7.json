@@ -1,0 +1,50 @@
+{
+  "critic_output": {
+    "flags": [
+      {
+        "player_name": "Roefs",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Kelleher",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Caoimhín Kelleher - Penalty statistics | Page 2 - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiswFBVV95cUxQb0NPMU5QLUJuVWsyeFFxVWxjWGg5eTFWZUdRTzc4eGpkdU1sTEVnMmVvWUhiaVJVZFAzS1owTkRmcGlFMnpPcmpKYnVRdkU0RGY1YU9PY1M0TXBZTHFQeFBHVllKbGZtakY0NHpibnQzdzhENDFxVlo4RjZkSkd0YThONXZtZHdvN0dWRURQVkplb1NIRnZNVjl6SDF1LUNseV82TTdINmZBSnZIYjZaUW5abw?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Bijol",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1SLWpMSmwyakJlQzV3bWM0MnpEZWFIUjBIU1VXMWE3ZVBWbFcxQ3F0d1NsZ2l5ZWFieXJMZlpwZlBxb0x0T19FTEZNYzZqM1N1WU5JTHY3a3B6d0hEVHFYb2VWUFRZZDkyOHc?oc=5",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Palmer",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Alex Palmer - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiygFBVV95cUxNTlVPcVI5SGxPZ1pWMFZjLWMtb2NkSncwdnRBZkM1M2NXRVZmZlY3SGEwSDI1b0lzV3lvMUpKa3kyTlRndHd4YkRfUEMxUllkdS1NdDAyek1TMVpLMG5zMjJSVkdpLVRZVnAtaWxDdlg2cUZLQTJsYmMwdkxvNVA3THBqcjhDb3J1b0pzbDBLaFBDYmZtNUYtSnNWbXVQdnBvTUtleXJ2WGY1Q2dJQTJGM3BuMW5PcWtYWDd0Mjk3cmI2RlI3MDdHdFln?oc=5",
+        "recommendation": "monitor"
+      }
+    ],
+    "summary": "Found 4 medium-risk (Roefs, Kelleher, Bijol, Palmer) based on FPL data and Google News headlines."
+  },
+  "risk_penalty": {
+    "529": 3.0,
+    "82": 3.0,
+    "327": 3.0,
+    "301": 3.0
+  },
+  "blocked_captain_ids": [
+    82,
+    301,
+    327,
+    529
+  ],
+  "unmatched_names": [],
+  "news_lookup_errors": [],
+  "news_systematically_blocked": false
+}

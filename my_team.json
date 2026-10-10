@@ -17,7 +17,7 @@
     347
   ],
   "bank": 3.4,
-  "free_transfers": 1,
+  "free_transfers": 2,
   "chips_available": [
     "wildcard",
     "bench_boost",
@@ -26,5 +26,5 @@
   ],
   "locked_players": [],
   "notes": "current_squad/bank auto-refreshed from FPL. free_transfers computed from your real FPL transfer history (see compute_free_transfers()). chips_available/locked_players carried over from the previous file -- edit them manually if they need correcting.",
-  "last_synced_gw": 5
+  "last_synced_gw": 6
 }
