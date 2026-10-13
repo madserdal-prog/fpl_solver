@@ -2,10 +2,10 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Palmer",
+        "player_name": "M.Sangaré",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Alex Palmer - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiygFBVV95cUxNTlVPcVI5SGxPZ1pWMFZjLWMtb2NkSncwdnRBZkM1M2NXRVZmZlY3SGEwSDI1b0lzV3lvMUpKa3kyTlRndHd4YkRfUEMxUllkdS1NdDAyek1TMVpLMG5zMjJSVkdpLVRZVnAtaWxDdlg2cUZLQTJsYmMwdkxvNVA3THBqcjhDb3J1b0pzbDBLaFBDYmZtNUYtSnNWbXVQdnBvTUtleXJ2WGY1Q2dJQTJGM3BuMW5PcWtYWDd0Mjk3cmI2RlI3MDdHdFln?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
         "recommendation": "monitor"
       },
       {
@@ -23,44 +23,26 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Barry",
+        "player_name": "Palmer",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Everton news: Barry revelation, Grealish puzzle and transfer interest - Read Everton\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiekFVX3lxTE5VakFpNDBqTVc0SGN6d2QtY0J0a0tzX2lUWTd4cXBQQkZIQTVFalVGQk5TWXlGQUZBbDNmSXZSWGRKOGoyaFBocGF6akhFWjdlb3NDRTlKRFVJZWM4NmJfVDFOa0dIaUZDYmZmTGF2dkZpM2pPLVdxOWxB?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Tarkowski",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"‘Tarky’ linked with shock January Everton exit as Chelsea claim emerges - Read Everton\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMifkFVX3lxTE1uRUo0dnQyeFlVVlVpZHJPM0NLbDVJYmdyV2JoaUJST21zMlhQMm11TFlYd1hManphUTI3c1dLQWFwY2JjTHJBVVRLaVczY0ZNV0JIblQ4TEJVRUEwOGN5cEhyNklURFc4MzR5YmhZUmkwMnY5bjNRQXY2ZTUzdw?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Roefs",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Alex Palmer - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiygFBVV95cUxNTlVPcVI5SGxPZ1pWMFZjLWMtb2NkSncwdnRBZkM1M2NXRVZmZlY3SGEwSDI1b0lzV3lvMUpKa3kyTlRndHd4YkRfUEMxUllkdS1NdDAyek1TMVpLMG5zMjJSVkdpLVRZVnAtaWxDdlg2cUZLQTJsYmMwdkxvNVA3THBqcjhDb3J1b0pzbDBLaFBDYmZtNUYtSnNWbXVQdnBvTUtleXJ2WGY1Q2dJQTJGM3BuMW5PcWtYWDd0Mjk3cmI2RlI3MDdHdFln?oc=5",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 6 medium-risk (Palmer, Kelleher, Bijol, Barry, Tarkowski, Roefs) based on FPL data and Google News headlines."
+    "summary": "Found 4 medium-risk (M.Sangaré, Kelleher, Bijol, Palmer) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "301": 3.0,
+    "565": 3.0,
     "82": 3.0,
     "327": 3.0,
-    "249": 3.0,
-    "229": 3.0,
-    "529": 3.0
+    "301": 3.0
   },
   "blocked_captain_ids": [
     82,
-    229,
-    249,
     301,
     327,
-    529
+    565
   ],
   "unmatched_names": [],
   "news_lookup_errors": [],
