@@ -43,7 +43,7 @@
     "Palmer",
     "Tarkowski",
     "Barry",
-    "Okafor",
+    "Ajayi",
     "Mbeumo"
   ],
   "starting_xi_ids": [
@@ -56,7 +56,7 @@
     154,
     229,
     249,
-    336,
+    279,
     427
   ],
   "captain": "De Cuyper",
@@ -71,32 +71,34 @@
   ],
   "transfer_point_gains": [
     33.69,
-    17.73
+    21.15
   ],
   "transfers_made": 2,
   "free_transfers_used": 2,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 62.32,
-  "bench_points": 6.54,
+  "expected_points": 61.72,
+  "bench_points": 5.93,
   "squad_value": 94.2,
   "bank_remaining": 6.3,
   "risk_adjusted_players": [
-    "Kelleher",
+    "Saka",
     "Bijol",
+    "Kelleher",
     "Roefs"
   ],
   "blocked_from_captaincy_in_squad": [
+    "Saka",
     "Roefs",
     "Kelleher",
     "Bijol"
   ],
   "price_momentum_notes": [
-    "Groß looks likely to RISE in price soon (net +2.99% of managers this GW)",
-    "Isak looks likely to FALL in price soon (net -2.12% of managers this GW)",
-    "M.Sangaré looks likely to FALL in price soon (net -0.38% of managers this GW)"
+    "Groß looks likely to RISE in price soon (net +3.42% of managers this GW)",
+    "Isak looks likely to FALL in price soon (net -2.42% of managers this GW)",
+    "M.Sangaré looks likely to FALL in price soon (net -0.44% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +6.54 pts (total 68.86). Restructuring specifically for Bench Boost instead: 68.86 pts (+0.0 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +5.93 pts (total 67.65). Restructuring specifically for Bench Boost instead: 68.6 pts (+0.95 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }
