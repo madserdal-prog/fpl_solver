@@ -2,6 +2,13 @@
   "critic_output": {
     "flags": [
       {
+        "player_name": "Saka",
+        "risk_level": "medium",
+        "reason": "Headline mentions injury-related terms: \"Bukayo Saka: Arsenal winger more of a goal threat than ever and proving doubters wrong as he evolves - Radio Royal\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi1AFBVV95cUxNc2REY1RSUUd2N0hBT09aVnVDLUlka19ra29kdjVFUFV3RTM1ZWF1MWJFVGF5d1IzSjU2T2lDc05BZXYtbnlUWDZ4aDJ3WEFKODN1aGFfTFRIemhxUmdOVDZ1QUZzN0xJZE1YcU0xVnN5ZFNNZTZObEZVbkl1U0pJRUFSRU90WHRRWm9PUnItNzBGQmZtYzdIWE9pYVlMOElqbl81S0ZoOUhNQlUzcTFCMHYyc1RNMkVpUWRwUUxQZzJUUzlTcWp2Nkh6elVhSldQaFlOaA?oc=5",
+        "recommendation": "monitor"
+      },
+      {
         "player_name": "Palmer",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Alex Palmer - Transfermarkt\"",
@@ -16,49 +23,24 @@
         "recommendation": "monitor"
       },
       {
-        "player_name": "Bijol",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Leeds news: Bijol on Premier League aims and transfers - BBC\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1SLWpMSmwyakJlQzV3bWM0MnpEZWFIUjBIU1VXMWE3ZVBWbFcxQ3F0d1NsZ2l5ZWFieXJMZlpwZlBxb0x0T19FTEZNYzZqM1N1WU5JTHY3a3B6d0hEVHFYb2VWUFRZZDkyOHc?oc=5",
-        "recommendation": "monitor"
-      },
-      {
-        "player_name": "Kelleher",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Caoimhín Kelleher - Penalty statistics | Page 2 - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiswFBVV95cUxQb0NPMU5QLUJuVWsyeFFxVWxjWGg5eTFWZUdRTzc4eGpkdU1sTEVnMmVvWUhiaVJVZFAzS1owTkRmcGlFMnpPcmpKYnVRdkU0RGY1YU9PY1M0TXBZTHFQeFBHVllKbGZtakY0NHpibnQzdzhENDFxVlo4RjZkSkd0YThONXZtZHdvN0dWRURQVkplb1NIRnZNVjl6SDF1LUNseV82TTdINmZBSnZIYjZaUW5abw?oc=5",
-        "recommendation": "monitor"
-      },
-      {
         "player_name": "Roefs",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
         "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
         "recommendation": "monitor"
-      },
-      {
-        "player_name": "Haaland",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Man City charges LIVE: Prem bosses' texts, four punishments proposed, Haaland transfer addressed - Manchester Evening News\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMirwFBVV95cUxPOHl3UWpINDYzWEFiVnFXOGdTd0RROTJKYjlsaWxVX2tJVndVR0xaNmVPcWdGQkNPbmNSd1BTUkZYaTZlaTQtbFB1Y1NMMnFpdlJSX3o1WEtpZzdFT2lUVDl5X2VCcTUyT1FqenJNMXdieWx3bUM2bzJRQmI4amtCTEh4LVl2WlEyeE1xV1hWYzFJVmdmaFY5dnBKaUx4WHR0RmpSYkRiYkQ2eUEwNzRv?oc=5",
-        "recommendation": "monitor"
       }
     ],
-    "summary": "Found 6 medium-risk (Palmer, M.Sangaré, Bijol, Kelleher, Roefs, Haaland) based on FPL data and Google News headlines."
+    "summary": "Found 4 medium-risk (Saka, Palmer, M.Sangaré, Roefs) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
+    "12": 3.0,
     "301": 3.0,
     "565": 3.0,
-    "327": 3.0,
-    "82": 3.0,
-    "529": 3.0,
-    "411": 3.0
+    "529": 3.0
   },
   "blocked_captain_ids": [
-    82,
+    12,
     301,
-    327,
-    411,
     529,
     565
   ],
