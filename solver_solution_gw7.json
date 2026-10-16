@@ -7,12 +7,12 @@
     "De Cuyper",
     "Groß",
     "Palmer",
+    "Dasilva",
     "Tarkowski",
-    "Barry",
     "Ajayi",
-    "Bijol",
     "Okafor",
     "Nmecha",
+    "Isak",
     "Mbeumo",
     "Roefs"
   ],
@@ -24,12 +24,12 @@
     115,
     124,
     154,
+    176,
     229,
-    249,
     279,
-    327,
     336,
     347,
+    379,
     427,
     529
   ],
@@ -41,8 +41,8 @@
     "De Cuyper",
     "Groß",
     "Palmer",
+    "Dasilva",
     "Tarkowski",
-    "Barry",
     "Ajayi",
     "Mbeumo"
   ],
@@ -54,8 +54,8 @@
     115,
     124,
     154,
+    176,
     229,
-    249,
     279,
     427
   ],
@@ -63,40 +63,42 @@
   "captain_id": 115,
   "transfers_in": [
     "Groß",
-    "Barry"
+    "Dasilva"
   ],
   "transfers_out": [
-    "Isak",
+    "Bijol",
     "M.Sangaré"
   ],
   "transfer_point_gains": [
-    33.69,
-    21.15
+    29.4,
+    22.54
   ],
   "transfers_made": 2,
   "free_transfers_used": 2,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 61.72,
-  "bench_points": 5.45,
-  "squad_value": 94.2,
-  "bank_remaining": 6.3,
+  "expected_points": 61.96,
+  "bench_points": 5.9,
+  "squad_value": 96.5,
+  "bank_remaining": 4.0,
   "risk_adjusted_players": [
-    "Saka",
+    "Isak",
+    "Nmecha",
     "Roefs",
-    "Bijol"
+    "Saka"
   ],
   "blocked_from_captaincy_in_squad": [
     "Saka",
     "Roefs",
-    "Bijol"
+    "Nmecha",
+    "Isak"
   ],
   "price_momentum_notes": [
-    "Groß looks likely to RISE in price soon (net +3.80% of managers this GW)",
-    "Isak looks likely to FALL in price soon (net -2.71% of managers this GW)",
-    "M.Sangaré looks likely to FALL in price soon (net -0.51% of managers this GW)"
+    "Groß looks likely to RISE in price soon (net +4.62% of managers this GW)",
+    "Dasilva looks likely to RISE in price soon (net +0.15% of managers this GW)",
+    "M.Sangaré looks likely to FALL in price soon (net -0.65% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +5.45 pts (total 67.17). Restructuring specifically for Bench Boost instead: 67.17 pts (+0.0 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +5.9 pts (total 67.86). Restructuring specifically for Bench Boost instead: 67.86 pts (+0.0 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }
