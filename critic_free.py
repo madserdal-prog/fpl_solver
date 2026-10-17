@@ -159,9 +159,9 @@ def merge_flags(fpl_flag, news_flag):
     and disagree, keep the more severe risk_level but note both reasons.
     """
     if fpl_flag is None:
-        return news_flag
+        return dict(news_flag, news_evidence=True) if news_flag else None
     if news_flag is None:
-        return fpl_flag
+        return dict(fpl_flag, news_evidence=False)
 
     severity = {"high": 2, "medium": 1, "low": 0}
     if severity[news_flag["risk_level"]] > severity[fpl_flag["risk_level"]]:
@@ -171,6 +171,7 @@ def merge_flags(fpl_flag, news_flag):
 
     merged = dict(primary)
     merged["reason"] = f"{primary['reason']} | Also: {secondary['reason']}"
+    merged["news_evidence"] = True
     return merged
 
 
@@ -264,19 +265,17 @@ def full_pool_solver_inputs(master_data: dict, high_penalty=8.0, medium_penalty=
     pool-wide path has the ID sitting right there on every element and
     should always use it directly instead.
     """
+    # BUG FIX: this used to ALSO deduct 3-8 points from every flagged player
+    # (125 players in a real run). forecast.py already prices FPL's own status
+    # in via p_play() (a 75% doubt -> xP x 0.75; injured -> 0), so the extra
+    # deduction double-counted the same information. FPL-status flags now
+    # only block captaincy this week; point penalties are reserved for
+    # NEWS-derived risk the forecast can't see (see flags_to_solver_inputs).
     risk_penalty = {}
     blocked_captain_ids = set()
     for element in master_data["elements"]:
-        flag = assess_player(element)
-        if not flag:
-            continue
-        pid = element["id"]
-        if flag["risk_level"] == "high":
-            risk_penalty[pid] = high_penalty
-            blocked_captain_ids.add(pid)
-        elif flag["risk_level"] == "medium":
-            risk_penalty[pid] = medium_penalty
-            blocked_captain_ids.add(pid)
+        if assess_player(element):
+            blocked_captain_ids.add(element["id"])
     return risk_penalty, blocked_captain_ids, []  # third value kept for API compatibility (no unmatched names possible here)
 
 
@@ -305,12 +304,15 @@ def flags_to_solver_inputs(flags: list, master_data: dict, high_penalty=8.0, med
         if pid is None:
             unmatched.append(flag["player_name"])
             continue
-        if flag["risk_level"] == "high":
-            risk_penalty[pid] = high_penalty
+        # Point penalty only when NEWS backs the flag -- a flag based purely
+        # on FPL's status field is already priced into the forecast (p_play),
+        # so penalising it again would double-count. Captaincy is blocked
+        # either way.
+        has_news = flag.get("news_evidence", not str(flag.get("source", "")).startswith("FPL API"))
+        if flag["risk_level"] in ("high", "medium"):
             blocked_captain_ids.add(pid)
-        elif flag["risk_level"] == "medium":
-            risk_penalty[pid] = medium_penalty
-            blocked_captain_ids.add(pid)
+            if has_news:
+                risk_penalty[pid] = high_penalty if flag["risk_level"] == "high" else medium_penalty
 
     return risk_penalty, blocked_captain_ids, unmatched
 
