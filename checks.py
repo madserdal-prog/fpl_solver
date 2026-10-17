@@ -83,7 +83,7 @@ def bench_boost_summary(normal_solution: dict, bb_solution: dict) -> str:
     """
     normal_total_if_boosted = normal_solution["expected_points"] + normal_solution["bench_points"]
     bb_total = bb_solution["expected_points"] + bb_solution["bench_points"]
-    gain = round(bb_total - normal_total_if_boosted, 2)
+    gain = round(bb_total - normal_total_if_boosted, 2) + 0.0  # "+ 0.0" turns -0.0 into 0.0 (avoids a "+-0.0" display)
 
     return (
         f"Boosting THIS week's normal bench: +{normal_solution['bench_points']} pts "
@@ -137,9 +137,9 @@ def fixture_difficulty_notes(squad_names: list, master_data: dict, fixtures: lis
         avg_fdr = sum(difficulties) / len(difficulties)
         if avg_fdr >= FIXTURE_DIFFICULTY_THRESHOLD:
             notes.append(f"{name} has a TOUGH run of fixtures over the next {horizon} GWs "
-                         f"(avg FDR {avg_fdr:.1f}) -- already reflected in their rotation_value")
+                         f"(avg FDR {avg_fdr:.1f}) -- already priced into the 5-GW projection")
         elif avg_fdr <= FIXTURE_EASE_THRESHOLD:
             notes.append(f"{name} has an EASY run of fixtures over the next {horizon} GWs "
-                         f"(avg FDR {avg_fdr:.1f}) -- already reflected in their rotation_value")
+                         f"(avg FDR {avg_fdr:.1f}) -- already priced into the 5-GW projection")
 
     return notes
