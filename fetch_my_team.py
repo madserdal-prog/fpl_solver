@@ -154,6 +154,14 @@ def build_my_team_from_entry(entry_data: dict, chips_available=None, locked_play
         "locked_players": locked_players,
         "notes": note,
     }
+    # BUG FIX: purchase_prices used to be dropped on every sync, so
+    # run_real.py re-seeded every player at TODAY's price and the FPL
+    # sell-price rule (keep only half of any rise) never actually applied.
+    # Carry tracked prices forward for players still owned; new arrivals
+    # get seeded by run_real.py's update_purchase_prices() as before.
+    if existing and existing.get("purchase_prices"):
+        my_team["purchase_prices"] = {k: v for k, v in existing["purchase_prices"].items()
+                                      if int(k) in set(squad)}
     my_team_module.validate_my_team(my_team)
     return my_team
 
