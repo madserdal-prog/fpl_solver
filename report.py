@@ -116,16 +116,22 @@ def format_message(solution: dict, gw: int, critic_summary: str = None,
     starting_xi = solution.get("starting_xi", [])
     squad = solution.get("squad", [])
     captain = solution.get("captain")
-    bench = [p for p in squad if p not in starting_xi]
+    vice = solution.get("vice_captain")
+    # Prefer the solver's ORDERED bench (FPL autosubs follow bench order);
+    # fall back to squad order for older solution files.
+    bench = solution.get("bench") or [p for p in squad if p not in starting_xi]
 
-    xi_display = [f"{p} (C)" if p == captain else p for p in starting_xi]
+    xi_display = [f"{p} (C)" if p == captain else f"{p} (V)" if p == vice else p for p in starting_xi]
     lines.append(f"*Starting XI:* {', '.join(xi_display)}")
     if bench:
-        lines.append(f"*Bench:* {', '.join(bench)}")
+        lines.append(f"*Bench (in this order):* {', '.join(bench)}")
     lines.append("")
 
-    lines.append(f"*Captain:* {captain}")
-    lines.append(f"*Expected points:* {solution['expected_points']}")
+    lines.append(f"*Captain:* {captain}" + (f"  |  *Vice:* {vice}" if vice else ""))
+    points_line = f"*Expected points:* {solution['expected_points']} this GW"
+    if solution.get("horizon_expected_points") is not None and solution.get("horizon_weeks", 1) > 1:
+        points_line += f"  |  {solution['horizon_expected_points']} over next {solution['horizon_weeks']} GWs"
+    lines.append(points_line)
 
     if solution.get("risk_adjusted_players"):
         lines.append(f":warning: Risk-adjusted (news flags found): {', '.join(solution['risk_adjusted_players'])}")
