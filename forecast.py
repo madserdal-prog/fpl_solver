@@ -225,14 +225,31 @@ FORM_INFLUENCE = 0.35  # minimum weight given to recent actual form, REGARDLESS 
 BASELINE_PPG_BY_POSITION = {"GK": 2.5, "DEF": 3.0, "MID": 3.0, "FWD": 3.0}
 
 
-def p_play(element):
-    """P(player) -- probability of meaningful playing time this round."""
-    if element["status"] == "i":
+def p_play(element, week_offset: int = 0):
+    """
+    P(meaningful minutes) for the round `week_offset` weeks ahead (0 = next).
+
+    BUG FIX: this used to return the SAME value for every week of the
+    horizon, so a "75% - knock" applied to all five weeks and a short-term
+    injury zeroed a player out for the whole horizon. FPL's status and
+    chance_of_playing_next_round describe the NEXT round only. Heuristic
+    recovery curve (not fitted to data):
+      'u' (left club / unavailable)  -> 0 for every week
+      'i'/'s'/'n' or chance 0         -> 0, then 25%, 60%, then normal
+      'd' with chance c (25-75%)      -> c, then halfway to normal, then normal
+    "normal" = start_probability (season-relative minutes share).
+    """
+    normal = element.get("start_probability", 0.75)
+    status = element.get("status", "a")
+    if status == "u":
         return 0.0
     chance = element.get("chance_of_playing_next_round")
+    if status in ("i", "s", "n") or chance == 0:
+        return [0.0, 0.25 * normal, 0.6 * normal][week_offset] if week_offset < 3 else normal
     if chance is not None and chance < 100:
-        return chance / 100.0
-    return element.get("start_probability", 0.75)
+        this_week = min(normal, chance / 100.0)
+        return [this_week, (this_week + normal) / 2][week_offset] if week_offset < 2 else normal
+    return normal
 
 
 def compute_xp_series(element, fixture_lookup, start_gw, horizon):
@@ -260,7 +277,6 @@ def compute_xp_series(element, fixture_lookup, start_gw, horizon):
     """
     pos = element["element_type"]
     goal_pts = GOAL_POINTS[pos]
-    play_prob = p_play(element)
     minutes = element.get("minutes", MINUTES_TRUST_THRESHOLD)  # assume trustworthy if absent (synthetic data)
 
     # IMPORTANT FIX: trust used to be minutes/300 -- a FIXED absolute
@@ -296,6 +312,7 @@ def compute_xp_series(element, fixture_lookup, start_gw, horizon):
 
     series = []
     for i in range(horizon):
+        play_prob = p_play(element, i)
         gw = start_gw + i
         difficulties = fixture_lookup.get((element["team"], gw), [])
         game_factor = len(difficulties)  # 0 = blank, 1 = normal, 2 = double
