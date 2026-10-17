@@ -2,58 +2,45 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Roefs",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Robin Roefs explains why he signed new Sunderland contract after transfer speculation - The Northern Echo\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiowFBVV95cUxPTWVwNTczWWJTMWF1OTJsRVhaaDJZZGZ1NUhaR3R0ZnlqRVlNX1B0TWNzZzUwb2d4Ulp1QktsNUE2WXVIV3QzN1ctOHNrZE4zYm8yRm5hS2haeXRqNkowcHFrYmpRMl9JNDZ0dzh0WGZCWkotTGdFSTE4bUxaQkgydmxjdWlwcVlxbnNvTGN5ZnJqcGZLMTRGZW5EX0hjRC1iY29B?oc=5",
-        "recommendation": "monitor"
-      },
-      {
         "player_name": "Isak",
-        "risk_level": "medium",
-        "reason": "Thigh injury - 25% chance of playing | Also: Headline suggests an active transfer situation: \"Newcastle United medical team worked miracles with Alexander Isak as he has yet another setback - The Mag\"",
-        "source": "FPL API status/chance_of_playing_next_round fields",
-        "recommendation": "monitor"
+        "risk_level": "high",
+        "reason": "Thigh injury sustained on international duty; missed last two matches; FPL lists 25% chance vs Brentford after Friday training assessment; manager left door open but not ready midweek.",
+        "source": "Iraola presser / Fantasy Football Scout / RotoWire, 16 Oct 2026",
+        "recommendation": "avoid_start"
       },
       {
-        "player_name": "Saka",
-        "risk_level": "medium",
-        "reason": "Headline mentions injury-related terms: \"Bukayo Saka: Arsenal winger more of a goal threat than ever and proving doubters wrong as he evolves - Sky Sports\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi4gFBVV95cUxOQ0dQNTFiWFU3YldqWDczb0dVbDVRS1hlc29kTU1HUjBGaG1xTlhqR2VPREFMM1lGRnM4aW9XQlVvRDcwN0ZrRHd4UUNJN3dCWWZieV84QTNlTFpQaHNBcEpIVFpucjEwbWRSZzluc3N1dE1RM0FWbnM1c2dVRmJCMFBfMEd6Z29HMnZsX1dyR2hBSDJ0dlo2OU83OFBkQVhsdWk4WkhvbkVETVVzRXcwR25vR1FuZ1NXYVh2bmlLdHd2cjNKY1FNWmhmQmtCT0RWdFNfU3E3V1NKMkdiUnJvTUV3?oc=5",
-        "recommendation": "monitor"
+        "player_name": "Dasilva",
+        "risk_level": "high",
+        "reason": "Hamstring injury; confirmed out vs Liverpool; yet to make an appearance this season after setback in U21s.",
+        "source": "RotoWire / Sports Mole / Brentford team news, 16 Oct 2026",
+        "recommendation": "avoid_start"
       },
       {
-        "player_name": "M.Sangaré",
+        "player_name": "Calafiori",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"OFFICIAL: Brentford smash club transfer record to sign Lens midfielder Mamadou Sangare - Goal.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxPZXZoUDhsLXBoWkpHRjZKVXdkelQ3dEdGTlNSYzJUSElwa3BsWWJoZ1NWZV9wUUhWWnpiN3lkNUt2UVJQSHY1RzJvZzFvUkFKWW1VTnpyS3htS2dEdV9LdmRIcUtXaXM4NXBwY3NUcjFGbUZuUllzV2NSa2NrRk1CWVRyMzVCRlVpOEEtOHBDd3lmdmozYU1PTWhuaHNLeGNfUmRIQkNpSGE1VTQybHBleW1zVi02UQ?oc=5",
+        "reason": "Fully rested for midweek Champions League vs Lille; extensive injury history and minutes management under Arteta; predicted to start but rotational/load risk remains.",
+        "source": "FFScout notes 14 Oct 2026 / Arsenal predicted XI coverage",
         "recommendation": "monitor"
       },
       {
         "player_name": "Palmer",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Alex Palmer - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiygFBVV95cUxNTlVPcVI5SGxPZ1pWMFZjLWMtb2NkSncwdnRBZkM1M2NXRVZmZlY3SGEwSDI1b0lzV3lvMUpKa3kyTlRndHd4YkRfUEMxUllkdS1NdDAyek1TMVpLMG5zMjJSVkdpLVRZVnAtaWxDdlg2cUZLQTJsYmMwdkxvNVA3THBqcjhDb3J1b0pzbDBLaFBDYmZtNUYtSnNWbXVQdnBvTUtleXJ2WGY1Q2dJQTJGM3BuMW5PcWtYWDd0Mjk3cmI2RlI3MDdHdFln?oc=5",
+        "reason": "Recently managed groin/pubalgia issue that caused withdrawal from England duty over the international break; club used the break for recovery and remains cautious even though currently unflagged and available.",
+        "source": "Xabi Alonso press conference ~9-10 Oct 2026 / Chelsea team news",
         "recommendation": "monitor"
       }
     ],
-    "summary": "Found 5 medium-risk (Roefs, Isak, Saka, M.Sangaré, Palmer) based on FPL data and Google News headlines."
+    "summary": "Isak (25% chance) and Dasilva (confirmed out) are the clearest non-playing risks this round. Calafiori was fully rested midweek amid a well-documented injury-prone profile, while Palmer is only just back from a managed groin problem. No other squad members have fresh injury, suspension or transfer-window flags of note."
   },
   "risk_penalty": {
-    "529": 3.0,
-    "379": 3.0,
-    "12": 3.0,
-    "565": 3.0,
-    "301": 3.0
+    "379": 8.0,
+    "103": 8.0,
+    "8": 3.0,
+    "154": 3.0
   },
   "blocked_captain_ids": [
-    12,
-    301,
-    379,
-    529,
-    565
+    103,
+    379
   ],
-  "unmatched_names": [],
-  "news_lookup_errors": [],
-  "news_systematically_blocked": false
+  "unmatched_names": []
 }

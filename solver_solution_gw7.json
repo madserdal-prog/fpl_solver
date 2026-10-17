@@ -7,13 +7,13 @@
     "De Cuyper",
     "Groß",
     "Palmer",
+    "Dasilva",
     "Tarkowski",
     "Barry",
     "Ajayi",
-    "Bijol",
-    "Okafor",
-    "Nmecha",
+    "Isak",
     "Mbeumo",
+    "Cunha",
     "Roefs"
   ],
   "squad_ids": [
@@ -24,72 +24,161 @@
     115,
     124,
     154,
+    176,
     229,
     249,
     279,
-    327,
-    336,
-    347,
+    379,
     427,
+    428,
     529
   ],
   "starting_xi": [
-    "Calafiori",
     "Saka",
     "Kelleher",
     "Thiago",
     "De Cuyper",
     "Groß",
-    "Palmer",
+    "Dasilva",
     "Tarkowski",
     "Barry",
     "Ajayi",
-    "Mbeumo"
+    "Mbeumo",
+    "Cunha"
   ],
   "starting_xi_ids": [
-    8,
     12,
     82,
     106,
     115,
     124,
-    154,
+    176,
     229,
     249,
     279,
-    427
+    427,
+    428
+  ],
+  "bench": [
+    "Roefs",
+    "Palmer",
+    "Calafiori",
+    "Isak"
+  ],
+  "bench_ids": [
+    529,
+    154,
+    8,
+    379
   ],
   "captain": "De Cuyper",
   "captain_id": 115,
+  "vice_captain": "Groß",
   "transfers_in": [
+    "Dasilva",
     "Groß",
+    "Cunha",
     "Barry"
   ],
   "transfers_out": [
-    "Isak",
-    "M.Sangaré"
+    "Bijol",
+    "Okafor",
+    "M.Sangaré",
+    "Nmecha"
   ],
   "transfer_point_gains": [
-    27.51,
-    21.15
+    25.41,
+    25.11,
+    20.87,
+    23.44
   ],
-  "transfers_made": 2,
+  "transfers_made": 4,
   "free_transfers_used": 2,
-  "hit_taken": 0,
-  "hit_cost": 0,
-  "expected_points": 61.72,
-  "bench_points": 5.45,
-  "squad_value": 94.3,
-  "bank_remaining": 6.1,
-  "risk_adjusted_players": [],
-  "blocked_from_captaincy_in_squad": [],
+  "hit_taken": 2,
+  "hit_cost": 8,
+  "expected_points": 55.72,
+  "horizon_expected_points": 318.45,
+  "horizon_weeks": 5,
+  "bench_points": 12.82,
+  "squad_value": 99.0,
+  "bank_remaining": 1.4,
+  "risk_adjusted_players": [
+    "Isak",
+    "Palmer",
+    "Calafiori"
+  ],
+  "blocked_from_captaincy_in_squad": [
+    "Isak"
+  ],
   "price_momentum_notes": [
-    "Groß looks likely to RISE in price soon (net +6.66% of managers this GW)",
+    "Dasilva looks likely to RISE in price soon (net +0.28% of managers this GW)",
+    "Groß looks likely to RISE in price soon (net +6.68% of managers this GW)",
+    "Cunha looks likely to RISE in price soon (net +0.52% of managers this GW)",
     "Barry looks likely to RISE in price soon (net +0.08% of managers this GW)",
-    "Isak looks likely to FALL in price soon (net -4.23% of managers this GW)",
-    "M.Sangaré looks likely to FALL in price soon (net -0.97% of managers this GW)"
+    "M.Sangaré looks likely to FALL in price soon (net -0.98% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +5.45 pts (total 67.17). Restructuring specifically for Bench Boost instead: 67.17 pts (+0.0 vs. just boosting the normal squad).",
-  "agent_captain_review": null
+  "bench_boost_note": "Boosting THIS week's normal bench: +12.82 pts (total 68.54). Restructuring specifically for Bench Boost instead: 66.13 pts (-2.41 vs. just boosting the normal squad).",
+  "agent_captain_review": {
+    "recommended_captain": "Groß",
+    "same_as_solver_top_pick": false,
+    "reasoning": "De Cuyper is a defender whose high xp rests on a structurally low captaincy ceiling, as clean-sheet-dependent hauls are rarer and less repeatable than attacking returns from mids. Groß has nearly identical xp (7.15 vs 7.44), full minutes, and no such positional cap. No other shortlist player matches this closeness without the same risk.",
+    "shortlist": [
+      {
+        "name": "De Cuyper",
+        "xp": 7.44,
+        "price": 5.2,
+        "position": "DEF",
+        "minutes_this_season": 490,
+        "form": 10.5,
+        "points_per_game": 8.8,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Groß",
+        "xp": 7.15,
+        "price": 6.1,
+        "position": "MID",
+        "minutes_this_season": 540,
+        "form": 10.0,
+        "points_per_game": 8.8,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Dasilva",
+        "xp": 5.74,
+        "price": 4.0,
+        "position": "DEF",
+        "minutes_this_season": 534,
+        "form": 10.0,
+        "points_per_game": 4.2,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Cunha",
+        "xp": 5.73,
+        "price": 7.9,
+        "position": "MID",
+        "minutes_this_season": 497,
+        "form": 10.0,
+        "points_per_game": 6.0,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Barry",
+        "xp": 5.5,
+        "price": 5.7,
+        "position": "FWD",
+        "minutes_this_season": 502,
+        "form": 6.0,
+        "points_per_game": 4.3,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      }
+    ]
+  }
 }
