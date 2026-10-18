@@ -1,0 +1,54 @@
+{
+  "critic_output": {
+    "flags": [
+      {
+        "player_name": "Isak",
+        "risk_level": "medium",
+        "reason": "Headline mentions injury-related terms: \"Liverpool injury update: Szoboszlai, Isak, Gakpo latest return dates - London Evening Standard\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiyAFBVV95cUxNdG1TRFd1d0psT1hkT2JqcWR6TWFIYjF1V1c5Rk9LOFBVaTROd0d4X2JMcHYxR1Q2RGx1NmV0WHJOVHBSUUxCWEVyWU44OFZ0WkpoTHRJakFvcXVzUU5xem9TZ1JNQll1aF9aS3hOYUhMQmxtcFFTYXM4aWhUZEIxZHJFTHhUMnhSNjh1Z1c5Y2YyZnVDOXVkY1drbjdGRG8wTzNUaDY4UXdDbUp2cWNWcGVtWjhOLTZjWm1SZGpaRFN3aWpxLW9lTg?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true
+      },
+      {
+        "player_name": "Mbeumo",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Better than Cunha and Mbeumo: Man Utd to battle Arsenal for €50m Premier League wonderkid - FootballTransfers.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiggJBVV95cUxQMUZVLVFsbFdiTV8ycEpqMnJYenZsMWZBek04cWpSRmFCRWNlTi1IRDVodzZqbktlWTg4Q1kzWUlXMko4MVNsXzBpeFVMZFo1RjlRdm9XUF9lWFpiYld4VnU0XzdEb3dBNm84N2M1V1FULVBuLWwzYnluRzVpcFgxbmp1czRNZjNIclNTT2tTVEZJMDk2b1oyVEhEV2dJcGlyQ2Y5M2NLNGhtRGxCOXNDdTUzai1XQWJkRXQzUE9aTm1pMW4xRkhlalhBWXYwRFlOeEwyNUY2MDdCRWJwT3RfVEx1T2M1dVB4Zmh4U0xzazZpUEdvRXAzOEp1TFYzQUFWNkE?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true
+      },
+      {
+        "player_name": "Saka",
+        "risk_level": "medium",
+        "reason": "Headline mentions injury-related terms: \"Bukayo Saka: Arsenal winger more of a goal threat than ever and proving doubters wrong as he evolves - Sky Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi4gFBVV95cUxOQ0dQNTFiWFU3YldqWDczb0dVbDVRS1hlc29kTU1HUjBGaG1xTlhqR2VPREFMM1lGRnM4aW9XQlVvRDcwN0ZrRHd4UUNJN3dCWWZieV84QTNlTFpQaHNBcEpIVFpucjEwbWRSZzluc3N1dE1RM0FWbnM1c2dVRmJCMFBfMEd6Z29HMnZsX1dyR2hBSDJ0dlo2OU83OFBkQVhsdWk4WkhvbkVETVVzRXcwR25vR1FuZ1NXYVh2bmlLdHd2cjNKY1FNWmhmQmtCT0RWdFNfU3E3V1NKMkdiUnJvTUV3?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true
+      },
+      {
+        "player_name": "Palmer",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Alex Palmer - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiygFBVV95cUxNTlVPcVI5SGxPZ1pWMFZjLWMtb2NkSncwdnRBZkM1M2NXRVZmZlY3SGEwSDI1b0lzV3lvMUpKa3kyTlRndHd4YkRfUEMxUllkdS1NdDAyek1TMVpLMG5zMjJSVkdpLVRZVnAtaWxDdlg2cUZLQTJsYmMwdkxvNVA3THBqcjhDb3J1b0pzbDBLaFBDYmZtNUYtSnNWbXVQdnBvTUtleXJ2WGY1Q2dJQTJGM3BuMW5PcWtYWDd0Mjk3cmI2RlI3MDdHdFln?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true
+      }
+    ],
+    "summary": "Found 4 medium-risk (Isak, Mbeumo, Saka, Palmer) based on FPL data and Google News headlines."
+  },
+  "risk_penalty": {
+    "379": 3.0,
+    "427": 3.0,
+    "12": 3.0,
+    "301": 3.0
+  },
+  "blocked_captain_ids": [
+    12,
+    301,
+    379,
+    427
+  ],
+  "unmatched_names": [],
+  "news_lookup_errors": [],
+  "news_systematically_blocked": false
+}

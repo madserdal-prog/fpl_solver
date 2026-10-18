@@ -1,0 +1,110 @@
+{
+  "squad": [
+    "Calafiori",
+    "Saka",
+    "Kelleher",
+    "Thiago",
+    "De Cuyper",
+    "Groß",
+    "Palmer",
+    "Rushworth",
+    "Dasilva",
+    "Tarkowski",
+    "Barry",
+    "Ajayi",
+    "Isak",
+    "Mbeumo",
+    "Cunha"
+  ],
+  "squad_ids": [
+    8,
+    12,
+    82,
+    106,
+    115,
+    124,
+    154,
+    110,
+    176,
+    229,
+    249,
+    279,
+    379,
+    427,
+    428
+  ],
+  "starting_xi": [
+    "Calafiori",
+    "Thiago",
+    "De Cuyper",
+    "Groß",
+    "Palmer",
+    "Rushworth",
+    "Dasilva",
+    "Tarkowski",
+    "Barry",
+    "Ajayi",
+    "Cunha"
+  ],
+  "starting_xi_ids": [
+    8,
+    106,
+    115,
+    124,
+    154,
+    110,
+    176,
+    229,
+    249,
+    279,
+    428
+  ],
+  "bench": [
+    "Kelleher",
+    "Isak",
+    "Mbeumo",
+    "Saka"
+  ],
+  "bench_ids": [
+    82,
+    379,
+    427,
+    12
+  ],
+  "captain": "Groß",
+  "captain_id": 124,
+  "vice_captain": "De Cuyper",
+  "transfers_in": [
+    "Rushworth"
+  ],
+  "transfers_out": [
+    "Roefs"
+  ],
+  "transfer_point_gains": [
+    7.65
+  ],
+  "transfers_made": 1,
+  "free_transfers_used": 1,
+  "hit_taken": 0,
+  "hit_cost": 0,
+  "expected_points": 53.87,
+  "horizon_expected_points": 287.18,
+  "horizon_weeks": 5,
+  "bench_points": 18.49,
+  "squad_value": 98.7,
+  "bank_remaining": 1.8,
+  "risk_adjusted_players": [
+    "Isak",
+    "Mbeumo",
+    "Saka"
+  ],
+  "blocked_from_captaincy_in_squad": [
+    "Saka",
+    "Isak",
+    "Mbeumo"
+  ],
+  "price_momentum_notes": [],
+  "fixture_difficulty_notes": [],
+  "bench_boost_note": "Boosting THIS week's normal bench: +18.49 pts (total 72.36). Restructuring specifically for Bench Boost instead: 72.36 pts (+0.0 vs. just boosting the normal squad).",
+  "agent_captain_review": null
+}
