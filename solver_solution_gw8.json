@@ -6,15 +6,15 @@
     "Thiago",
     "De Cuyper",
     "Groß",
+    "Vuskovic",
     "Palmer",
-    "Rushworth",
     "Dasilva",
-    "Tarkowski",
     "Barry",
     "Ajayi",
     "Isak",
     "Mbeumo",
-    "Cunha"
+    "Cunha",
+    "Roefs"
   ],
   "squad_ids": [
     8,
@@ -23,88 +23,90 @@
     106,
     115,
     124,
+    504,
     154,
-    110,
     176,
-    229,
     249,
     279,
     379,
     427,
-    428
+    428,
+    529
   ],
   "starting_xi": [
     "Calafiori",
+    "Kelleher",
     "Thiago",
     "De Cuyper",
     "Groß",
+    "Vuskovic",
     "Palmer",
-    "Rushworth",
     "Dasilva",
-    "Tarkowski",
     "Barry",
     "Ajayi",
-    "Cunha"
+    "Mbeumo"
   ],
   "starting_xi_ids": [
     8,
+    82,
     106,
     115,
     124,
+    504,
     154,
-    110,
     176,
-    229,
     249,
     279,
-    428
+    427
   ],
   "bench": [
-    "Kelleher",
+    "Roefs",
     "Isak",
-    "Mbeumo",
-    "Saka"
+    "Saka",
+    "Cunha"
   ],
   "bench_ids": [
-    82,
+    529,
     379,
-    427,
-    12
+    12,
+    428
   ],
   "captain": "Groß",
   "captain_id": 124,
   "vice_captain": "De Cuyper",
   "transfers_in": [
-    "Rushworth"
+    "Vuskovic"
   ],
   "transfers_out": [
-    "Roefs"
+    "Tarkowski"
   ],
   "transfer_point_gains": [
-    7.65
+    7.73
   ],
   "transfers_made": 1,
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 53.87,
-  "horizon_expected_points": 287.18,
+  "expected_points": 58.16,
+  "horizon_expected_points": 302.83,
   "horizon_weeks": 5,
-  "bench_points": 18.49,
-  "squad_value": 98.7,
-  "bank_remaining": 1.8,
+  "bench_points": 17.07,
+  "squad_value": 98.0,
+  "bank_remaining": 2.5,
   "risk_adjusted_players": [
     "Isak",
-    "Mbeumo",
-    "Saka"
+    "Saka",
+    "Cunha"
   ],
   "blocked_from_captaincy_in_squad": [
     "Saka",
     "Isak",
-    "Mbeumo"
+    "Cunha"
   ],
-  "price_momentum_notes": [],
+  "price_momentum_notes": [
+    "Vuskovic looks likely to RISE in price soon (net +0.32% of managers this GW)"
+  ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +18.49 pts (total 72.36). Restructuring specifically for Bench Boost instead: 72.36 pts (+0.0 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +17.07 pts (total 75.23). Restructuring specifically for Bench Boost instead: 75.23 pts (+0.0 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }
