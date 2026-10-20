@@ -2,14 +2,6 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Isak",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Newcastle United medical team worked miracles with Alexander Isak as he has yet another setback - The Mag\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiyAFBVV95cUxQMVdKTjBXUTJvUlVPM3ZqbXdEOGtOc1JxZlNMekZ4d0UzYUtRa3Y3cE1YWHdkWkJTak1EMEpzRXNFZENxeGxBMjhoU3RadW1CV29xTmJ6Um9CRWh2cngwY3RrbG5PX0I3S2NQY3hTNFpFa0hrWWQ2VTMyUTZ4LVpSWnV5U3lvY1VnOVdtSWhIdFphdWFMcWJMQlJfWTd2QjJMbFhhaGlVWEN2WEw1ckZqTWtBRFFVNjZpNGE2Y1c5NER5Wl9mQWczTQ?oc=5",
-        "recommendation": "monitor",
-        "news_evidence": true
-      },
-      {
         "player_name": "Cunha",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Better than Cunha and Mbeumo: Man Utd to battle Arsenal for €50m Premier League wonderkid - FootballTransfers.com\"",
@@ -26,16 +18,14 @@
         "news_evidence": true
       }
     ],
-    "summary": "Found 3 medium-risk (Isak, Cunha, Saka) based on FPL data and Google News headlines."
+    "summary": "Found 2 medium-risk (Cunha, Saka) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "379": 3.0,
     "428": 3.0,
     "12": 3.0
   },
   "blocked_captain_ids": [
     12,
-    379,
     428
   ],
   "unmatched_names": [],
