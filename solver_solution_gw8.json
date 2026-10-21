@@ -39,12 +39,12 @@
     "Thiago",
     "De Cuyper",
     "Groß",
-    "Vuskovic",
     "Palmer",
     "Dasilva",
     "Barry",
     "Isak",
-    "Mbeumo"
+    "Mbeumo",
+    "Cunha"
   ],
   "starting_xi_ids": [
     8,
@@ -52,28 +52,28 @@
     106,
     115,
     124,
-    504,
     154,
     176,
     249,
     379,
-    427
+    427,
+    428
   ],
   "bench": [
     "Roefs",
     "Ajayi",
-    "Saka",
-    "Cunha"
+    "Vuskovic",
+    "Saka"
   ],
   "bench_ids": [
     529,
     279,
-    12,
-    428
+    504,
+    12
   ],
-  "captain": "De Cuyper",
-  "captain_id": 115,
-  "vice_captain": "Mbeumo",
+  "captain": "Mbeumo",
+  "captain_id": 427,
+  "vice_captain": "De Cuyper",
   "transfers_in": [
     "Vuskovic"
   ],
@@ -81,31 +81,31 @@
     "Tarkowski"
   ],
   "transfer_point_gains": [
-    15.4
+    15.48
   ],
   "transfers_made": 1,
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 60.57,
-  "horizon_expected_points": 309.22,
+  "expected_points": 59.52,
+  "horizon_expected_points": 306.71,
   "horizon_weeks": 5,
-  "bench_points": 14.89,
+  "bench_points": 15.45,
   "squad_value": 98.2,
   "bank_remaining": 2.5,
   "risk_adjusted_players": [
-    "Cunha",
-    "Saka"
+    "Saka",
+    "Vuskovic"
   ],
   "blocked_from_captaincy_in_squad": [
     "Saka",
-    "Cunha"
+    "Vuskovic"
   ],
   "price_momentum_notes": [
-    "Vuskovic looks likely to RISE in price soon (net +0.47% of managers this GW)",
-    "Tarkowski looks likely to FALL in price soon (net -0.06% of managers this GW)"
+    "Vuskovic looks likely to RISE in price soon (net +0.60% of managers this GW)",
+    "Tarkowski looks likely to FALL in price soon (net -0.09% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +14.89 pts (total 75.46). Restructuring specifically for Bench Boost instead: 75.46 pts (+0.0 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +15.45 pts (total 74.97). Restructuring specifically for Bench Boost instead: 74.28 pts (-0.69 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }

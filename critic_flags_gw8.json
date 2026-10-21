@@ -2,31 +2,31 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Cunha",
+        "player_name": "Saka",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Better than Cunha and Mbeumo: Man Utd to battle Arsenal for €50m Premier League wonderkid - FootballTransfers.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiggJBVV95cUxQMUZVLVFsbFdiTV8ycEpqMnJYenZsMWZBek04cWpSRmFCRWNlTi1IRDVodzZqbktlWTg4Q1kzWUlXMko4MVNsXzBpeFVMZFo1RjlRdm9XUF9lWFpiYld4VnU0XzdEb3dBNm84N2M1V1FULVBuLWwzYnluRzVpcFgxbmp1czRNZjNIclNTT2tTVEZJMDk2b1oyVEhEV2dJcGlyQ2Y5M2NLNGhtRGxCOXNDdTUzai1XQWJkRXQzUE9aTm1pMW4xRkhlalhBWXYwRFlOeEwyNUY2MDdCRWJwT3RfVEx1T2M1dVB4Zmh4U0xzazZpUEdvRXAzOEp1TFYzQUFWNkE?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Bayern Munich vs Arsenal: Bukayo Saka misses out combined XI worth €940m - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNzJqRHZyUFRhc1FVdUxGVlpPemdnc1hnRWY5N0F2bHZHbF9EcmRTMkVZdXVDUzdUQmpEMWU4bVYyR2RNT0tTdHBWMGl6elZNT0lLN0dxQzRrNFJJOHRtZ3FCbUFvR1VWTHRfV2dsU29WejJ1TXBlQ3FBYU94UklTcEF3NXU5M3NfYWJEaGpHZVM2ejFkUnhxRGcwQTlicjVSa2h0dkxubmRYbWt4djZnRTV1X29QbkRDT2tyRDVIVlIxQQ?oc=5",
         "recommendation": "monitor",
         "news_evidence": true
       },
       {
-        "player_name": "Saka",
-        "risk_level": "medium",
-        "reason": "Headline mentions injury-related terms: \"Bukayo Saka: Arsenal winger more of a goal threat than ever and proving doubters wrong as he evolves - Sky Sports\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi4gFBVV95cUxOQ0dQNTFiWFU3YldqWDczb0dVbDVRS1hlc29kTU1HUjBGaG1xTlhqR2VPREFMM1lGRnM4aW9XQlVvRDcwN0ZrRHd4UUNJN3dCWWZieV84QTNlTFpQaHNBcEpIVFpucjEwbWRSZzluc3N1dE1RM0FWbnM1c2dVRmJCMFBfMEd6Z29HMnZsX1dyR2hBSDJ0dlo2OU83OFBkQVhsdWk4WkhvbkVETVVzRXcwR25vR1FuZ1NXYVh2bmlLdHd2cjNKY1FNWmhmQmtCT0RWdFNfU3E3V1NKMkdiUnJvTUV3?oc=5",
-        "recommendation": "monitor",
+        "player_name": "Neto",
+        "risk_level": "high",
+        "reason": "Headline suggests a suspension: \"Everton 0-2 Chelsea: Pedro Neto scores twice after Morgan Rogers escapes red card in Premier League win - Sky Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi5gFBVV95cUxNTzVvdE1SdEZ5a3FoYnFEUmxmNV9aYWpHRTFZa09sTUtEX0Y5NEFhWVNmVnQzOFF1NVVHcTg3aTlFQklhQWxiUVNSVkdKWjdKTW1KVlhqTGZKRHVlUjhRUC0zNmh1M0V2aWJXcWlEejVsTk1HZDZSZzRIWDhWeGFSNGs1YXRlU1laUlhjbjNaVV9WRHFzM1RDYXVrVm81VWloUVdCdjJoSWpGbzFmaDYwaGNhNGd4MWtNZ1NsUHFlaFotNHpjZnRMZWVIaTVVQ3ctNmdnZWxURFprZlM5YW1ReHpPODhvdw?oc=5",
+        "recommendation": "avoid_start",
         "news_evidence": true
       }
     ],
-    "summary": "Found 2 medium-risk (Cunha, Saka) based on FPL data and Google News headlines."
+    "summary": "Found 1 high-risk (Neto) and 1 medium-risk (Saka) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "428": 3.0,
-    "12": 3.0
+    "12": 3.0,
+    "156": 8.0
   },
   "blocked_captain_ids": [
     12,
-    428
+    156
   ],
   "unmatched_names": [],
   "news_lookup_errors": [],
