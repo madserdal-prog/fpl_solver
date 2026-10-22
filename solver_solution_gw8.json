@@ -42,9 +42,9 @@
     "Palmer",
     "Dasilva",
     "Barry",
+    "Ajayi",
     "Isak",
-    "Mbeumo",
-    "Cunha"
+    "Mbeumo"
   ],
   "starting_xi_ids": [
     8,
@@ -55,20 +55,20 @@
     154,
     176,
     249,
+    279,
     379,
-    427,
-    428
+    427
   ],
   "bench": [
     "Roefs",
-    "Ajayi",
     "Vuskovic",
+    "Cunha",
     "Saka"
   ],
   "bench_ids": [
     529,
-    279,
     504,
+    428,
     12
   ],
   "captain": "Mbeumo",
@@ -87,25 +87,27 @@
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 59.52,
-  "horizon_expected_points": 306.71,
+  "expected_points": 58.12,
+  "horizon_expected_points": 304.6,
   "horizon_weeks": 5,
-  "bench_points": 15.45,
+  "bench_points": 14.65,
   "squad_value": 98.2,
   "bank_remaining": 2.5,
   "risk_adjusted_players": [
+    "Vuskovic",
     "Saka",
-    "Vuskovic"
+    "Cunha"
   ],
   "blocked_from_captaincy_in_squad": [
     "Saka",
+    "Cunha",
     "Vuskovic"
   ],
   "price_momentum_notes": [
-    "Vuskovic looks likely to RISE in price soon (net +0.60% of managers this GW)",
-    "Tarkowski looks likely to FALL in price soon (net -0.09% of managers this GW)"
+    "Vuskovic looks likely to RISE in price soon (net +0.70% of managers this GW)",
+    "Tarkowski looks likely to FALL in price soon (net -0.12% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +15.45 pts (total 74.97). Restructuring specifically for Bench Boost instead: 74.28 pts (-0.69 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +14.65 pts (total 72.77). Restructuring specifically for Bench Boost instead: 69.7 pts (-3.07 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }
