@@ -2,16 +2,16 @@
   "squad": [
     "Calafiori",
     "Saka",
+    "Evanilson",
     "Kelleher",
     "Thiago",
     "De Cuyper",
     "Groß",
-    "Vuskovic",
     "Palmer",
     "Dasilva",
+    "Tarkowski",
     "Barry",
     "Ajayi",
-    "Isak",
     "Mbeumo",
     "Cunha",
     "Roefs"
@@ -19,22 +19,23 @@
   "squad_ids": [
     8,
     12,
+    79,
     82,
     106,
     115,
     124,
-    504,
     154,
     176,
+    229,
     249,
     279,
-    379,
     427,
     428,
     529
   ],
   "starting_xi": [
     "Calafiori",
+    "Evanilson",
     "Kelleher",
     "Thiago",
     "De Cuyper",
@@ -42,12 +43,12 @@
     "Palmer",
     "Dasilva",
     "Barry",
-    "Ajayi",
-    "Isak",
-    "Mbeumo"
+    "Mbeumo",
+    "Cunha"
   ],
   "starting_xi_ids": [
     8,
+    79,
     82,
     106,
     115,
@@ -55,59 +56,53 @@
     154,
     176,
     249,
-    279,
-    379,
-    427
+    427,
+    428
   ],
   "bench": [
     "Roefs",
-    "Vuskovic",
-    "Cunha",
+    "Ajayi",
+    "Tarkowski",
     "Saka"
   ],
   "bench_ids": [
     529,
-    504,
-    428,
+    279,
+    229,
     12
   ],
   "captain": "Mbeumo",
   "captain_id": 427,
   "vice_captain": "De Cuyper",
   "transfers_in": [
-    "Vuskovic"
+    "Evanilson"
   ],
   "transfers_out": [
-    "Tarkowski"
+    "Isak"
   ],
   "transfer_point_gains": [
-    15.48
+    6.62
   ],
   "transfers_made": 1,
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 58.12,
-  "horizon_expected_points": 304.6,
+  "expected_points": 60.48,
+  "horizon_expected_points": 303.66,
   "horizon_weeks": 5,
-  "bench_points": 14.65,
-  "squad_value": 98.2,
-  "bank_remaining": 2.5,
+  "bench_points": 9.64,
+  "squad_value": 96.6,
+  "bank_remaining": 4.3,
   "risk_adjusted_players": [
-    "Vuskovic",
-    "Saka",
-    "Cunha"
+    "Saka"
   ],
   "blocked_from_captaincy_in_squad": [
-    "Saka",
-    "Cunha",
-    "Vuskovic"
+    "Saka"
   ],
   "price_momentum_notes": [
-    "Vuskovic looks likely to RISE in price soon (net +0.70% of managers this GW)",
-    "Tarkowski looks likely to FALL in price soon (net -0.12% of managers this GW)"
+    "Evanilson looks likely to RISE in price soon (net +0.97% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +14.65 pts (total 72.77). Restructuring specifically for Bench Boost instead: 69.7 pts (-3.07 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +9.64 pts (total 70.12). Restructuring specifically for Bench Boost instead: 70.12 pts (+0.0 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }

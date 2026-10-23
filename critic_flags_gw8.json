@@ -2,10 +2,18 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Saka",
+        "player_name": "Palmer",
         "risk_level": "medium",
-        "reason": "Thigh injury - 50% chance of playing | Also: Headline mentions injury-related terms: \"How will Arsenal cope without injured Bukayo Saka? Noni Madueke and Max Dowman in frame for more minutes - Sky Sports\"",
-        "source": "FPL API status/chance_of_playing_next_round fields",
+        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - www.kingsofanglia.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMioAFBVV95cUxNcTFPTEd3bUJMamlkc01qX0t0QVlnSUdzLXNKOEtuNzdTZVlaaTllSmxSN19XRWpYLWh1cWtNNUZueHJaTWxMMmxhVGRFbWhKc3NSdHZKVm1MdkV1ZTFwX3VXbl9XNzFNOGZxcEFTbWoxdFVkMXBtUGVQamtoZ0tnNWVJaFgtVkVHVTRjRjd4S2xfOUl2LXNuUXM2SHhtdHh2?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true
+      },
+      {
+        "player_name": "Haaland",
+        "risk_level": "medium",
+        "reason": "Headline mentions injury-related terms: \"Man City XI vs Aston Villa: Haaland injury latest, team news, predicted lineup - London Evening Standard\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi8wFBVV95cUxQWVJMUUVuVWs4V0RUTmFnaTRpQm0tdDJXS0prUlpPV0hhU2NOVWwybll3V202Q25lcENhNWZ4TDhIdFJpWGdHSi02Tkh2OGtqS0h4T1o3WGs5YWdSQnRKaXZGcEw5TFdCZ0J1Nmc2Nzk1VnVLQlBsMHh5b1g1cFNvOHVhbUlsQU9aenhIZGFxdHhWOXlfSldKSmUtcUJOdWE0Z1lvVHRrZnEteW5HM0xaRXZDWk9QZVpZS0FSSEdxemlBYS1oS0hfZWJFU3M4LVhXdHdIeV9JV3RMUndJSWlyTXhVLUUxVkl3bkRlajYxdTV2Yzg?oc=5",
         "recommendation": "monitor",
         "news_evidence": true
       },
@@ -16,27 +24,19 @@
         "source": "Google News: https://news.google.com/rss/articles/CBMi5gFBVV95cUxNTzVvdE1SdEZ5a3FoYnFEUmxmNV9aYWpHRTFZa09sTUtEX0Y5NEFhWVNmVnQzOFF1NVVHcTg3aTlFQklhQWxiUVNSVkdKWjdKTW1KVlhqTGZKRHVlUjhRUC0zNmh1M0V2aWJXcWlEejVsTk1HZDZSZzRIWDhWeGFSNGs1YXRlU1laUlhjbjNaVV9WRHFzM1RDYXVrVm81VWloUVdCdjJoSWpGbzFmaDYwaGNhNGd4MWtNZ1NsUHFlaFotNHpjZnRMZWVIaTVVQ3ctNmdnZWxURFprZlM5YW1ReHpPODhvdw?oc=5",
         "recommendation": "avoid_start",
         "news_evidence": true
-      },
-      {
-        "player_name": "Palmer",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - www.kingsofanglia.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMioAFBVV95cUxNcTFPTEd3bUJMamlkc01qX0t0QVlnSUdzLXNKOEtuNzdTZVlaaTllSmxSN19XRWpYLWh1cWtNNUZueHJaTWxMMmxhVGRFbWhKc3NSdHZKVm1MdkV1ZTFwX3VXbl9XNzFNOGZxcEFTbWoxdFVkMXBtUGVQamtoZ0tnNWVJaFgtVkVHVTRjRjd4S2xfOUl2LXNuUXM2SHhtdHh2?oc=5",
-        "recommendation": "monitor",
-        "news_evidence": true
       }
     ],
-    "summary": "Found 1 high-risk (Neto) and 2 medium-risk (Saka, Palmer) based on FPL data and Google News headlines."
+    "summary": "Found 1 high-risk (Neto) and 2 medium-risk (Palmer, Haaland) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "12": 3.0,
-    "156": 8.0,
-    "301": 3.0
+    "301": 3.0,
+    "411": 3.0,
+    "156": 8.0
   },
   "blocked_captain_ids": [
-    12,
     156,
-    301
+    301,
+    411
   ],
   "unmatched_names": [],
   "news_lookup_errors": [],
