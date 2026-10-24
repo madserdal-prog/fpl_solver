@@ -1,0 +1,54 @@
+{
+  "critic_output": {
+    "flags": [
+      {
+        "player_name": "Haaland",
+        "risk_level": "medium",
+        "reason": "Headline mentions injury-related terms: \"Man City XI vs Aston Villa: Haaland injury latest, team news, predicted lineup - London Evening Standard\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi8wFBVV95cUxQWVJMUUVuVWs4V0RUTmFnaTRpQm0tdDJXS0prUlpPV0hhU2NOVWwybll3V202Q25lcENhNWZ4TDhIdFJpWGdHSi02Tkh2OGtqS0h4T1o3WGs5YWdSQnRKaXZGcEw5TFdCZ0J1Nmc2Nzk1VnVLQlBsMHh5b1g1cFNvOHVhbUlsQU9aenhIZGFxdHhWOXlfSldKSmUtcUJOdWE0Z1lvVHRrZnEteW5HM0xaRXZDWk9QZVpZS0FSSEdxemlBYS1oS0hfZWJFU3M4LVhXdHdIeV9JV3RMUndJSWlyTXhVLUUxVkl3bkRlajYxdTV2Yzg?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true
+      },
+      {
+        "player_name": "Palmer",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - www.kingsofanglia.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMioAFBVV95cUxNcTFPTEd3bUJMamlkc01qX0t0QVlnSUdzLXNKOEtuNzdTZVlaaTllSmxSN19XRWpYLWh1cWtNNUZueHJaTWxMMmxhVGRFbWhKc3NSdHZKVm1MdkV1ZTFwX3VXbl9XNzFNOGZxcEFTbWoxdFVkMXBtUGVQamtoZ0tnNWVJaFgtVkVHVTRjRjd4S2xfOUl2LXNuUXM2SHhtdHh2?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true
+      },
+      {
+        "player_name": "Tavernier",
+        "risk_level": "high",
+        "reason": "Headline suggests a suspension: \"Bournemouth 2-0 Sunderland: Marcus Tavernier and Evanilson score either side of Kevin Danso's red card as Cherries pick up first league win of season - Sky Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiogJBVV95cUxNNUlpWlVIOGwxV2owQjZ6VXRQYTJvUzJjQ0E1UzJNZFhGc0tnOUZpZHZ3N3RvWXZyZWsxTk83M21oZGtSdDlwSVNmOVk4MGF3SGNKbTM1TWFHazlVZ29sak9BZUdCMmdWeG5WMGxXTGxzR0FfcWFCN0I1Y2hUZWdTd3Z6d2l2UUk4UGYzc0l1MUJ1V3cxTEdDdnpUVXZMUE9pY1hCdW1ocDVXaWRwSjZtYnU2WUpwdHg3SDI1Ykd1c1o2NW5UTFlRUVZNMENTVC02WjM5bjVXTGVrbkZPYVg4VkNCY0ZUNGFwNXNxZWJ0ZU1WSXZPOGp0X25mR1FYSWlERDBxTm4xNlJWY2M4b1VEdEIyVUxRbmhoYko0XzA5NWFwdw?oc=5",
+        "recommendation": "avoid_start",
+        "news_evidence": true
+      },
+      {
+        "player_name": "Cunha",
+        "risk_level": "medium",
+        "reason": "Headline mentions injury-related terms: \"Mainoo, Rashford, Heaven: Man Utd Injury Latest vs Bournemouth (Premier League) - Yahoo Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMihgFBVV95cUxNNWZ4ZTdCdVZ0RzhIM1V2S0JHRDJwUXl3d3VReDE0NUR2UVNYcG5KRF9uMUlRX1loYS1xcFc4S3NmQm5WbWlQWndEcHd3N3NOY1BYNHBrLTNXVHhDNG1ILUlZd2hQRTlWZnBnSS04eVNqSjlUSzB2SHYzYUJuVGhHNzJwX1dGQQ?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true
+      }
+    ],
+    "summary": "Found 1 high-risk (Tavernier) and 3 medium-risk (Haaland, Palmer, Cunha) based on FPL data and Google News headlines."
+  },
+  "risk_penalty": {
+    "411": 3.0,
+    "301": 3.0,
+    "68": 8.0,
+    "428": 3.0
+  },
+  "blocked_captain_ids": [
+    68,
+    301,
+    411,
+    428
+  ],
+  "unmatched_names": [],
+  "news_lookup_errors": [],
+  "news_systematically_blocked": false
+}
