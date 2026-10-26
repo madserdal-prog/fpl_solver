@@ -2,50 +2,30 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Neto",
-        "risk_level": "medium",
-        "reason": "Headline mentions injury-related terms: \"Neto double at Everton leads Chelsea to victory marred by Martínez head injury - The Guardian\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMilwFBVV95cUxOdlhVUTRjcTZOZHdqdHpZRlpDX3RDLWVIZ3hjMFFpNzY1ckJ6M2FBZjFtdHFEdnRLbzY4WExycWc3V0VSZnhOM09tQTd5MkpTcGg2OGowSktRQXVjRkZxOGVhUDJSdmJYMTRmNkp3RTVJZllhUFBYQk9FNTMyX2xsZEtGUl9FdVFNWVQ5c2Z2Y2t0amx3eHJN?oc=5",
-        "recommendation": "monitor",
-        "news_evidence": true
-      },
-      {
-        "player_name": "Palmer",
-        "risk_level": "high",
-        "reason": "Headline suggests a suspension: \"Why Cole Palmer is suspended for Liverpool clash but can face Manchester United after Tottenham red card - Goal.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi1gFBVV95cUxNcENQT3ctZ1lqaml1V2xxY1N6TVplU21kME9ibXJtd0dxQnhYWThfcUZuNTVVTklrLTNBOS14M2ZfckUwS25KWFk1clBUN2ZxQUU0dDNheEhFUjE5QVVhLTBIYUtfMFNma0szN2pfOEtwNW1wZ05IVEtzcHotQ0xLX3d4TUt4Q2V4c0JmdEdfUlR4dk5tUzJKN2lqSHhfMTBlQUNFT3IxRllLOGtoT0J2THVTcTBNWnJ4a0dKMlpMeEhqN09TMlJSZzJMYjV3aElFVGxoNGxn?oc=5",
-        "recommendation": "avoid_start",
-        "news_evidence": true
-      },
-      {
-        "player_name": "Gabriel",
-        "risk_level": "medium",
-        "reason": "Headline mentions injury-related terms: \"'We were all scared': Arteta reacts to Arsenal injury fright in update - London Evening Standard\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMimwFBVV95cUxPSkd4R1NnOFNsTEh3MFlQZ3dVamVtUF8xZXV3NUNsNkpPMTkwQjM5c0UzeFp2STBGZ3ZQWU1tTVhBeTBiaUlvalllb0xUWXd1WmtJLVZNQjNYTW1KN2N4Tm9XSWhTMzlxY0F0Um9FR0pjbWVlSklUU2NTYkRmZEl5N2xGdm4wdWNtRjBKczJJTFBENnA3ZUFteXRFcw?oc=5",
-        "recommendation": "monitor",
-        "news_evidence": true
-      },
-      {
         "player_name": "Calafiori",
         "risk_level": "medium",
         "reason": "Hip injury - 75% chance of playing | Also: Headline mentions injury-related terms: \"Arsenal rocked by Riccardo Calafiori injury as Mikel Arteta confirms latest blow - Daily Mirror\"",
         "source": "FPL API status/chance_of_playing_next_round fields",
         "recommendation": "monitor",
         "news_evidence": true
+      },
+      {
+        "player_name": "Palmer",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - www.kingsofanglia.com\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMioAFBVV95cUxNcTFPTEd3bUJMamlkc01qX0t0QVlnSUdzLXNKOEtuNzdTZVlaaTllSmxSN19XRWpYLWh1cWtNNUZueHJaTWxMMmxhVGRFbWhKc3NSdHZKVm1MdkV1ZTFwX3VXbl9XNzFNOGZxcEFTbWoxdFVkMXBtUGVQamtoZ0tnNWVJaFgtVkVHVTRjRjd4S2xfOUl2LXNuUXM2SHhtdHh2?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true
       }
     ],
-    "summary": "Found 1 high-risk (Palmer) and 3 medium-risk (Neto, Gabriel, Calafiori) based on FPL data and Google News headlines."
+    "summary": "Found 2 medium-risk (Calafiori, Palmer) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "156": 3.0,
-    "301": 8.0,
-    "4": 3.0,
-    "8": 3.0
+    "8": 3.0,
+    "301": 3.0
   },
   "blocked_captain_ids": [
-    4,
     8,
-    156,
     301
   ],
   "unmatched_names": [],

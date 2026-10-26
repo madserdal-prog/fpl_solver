@@ -1,113 +1,113 @@
 {
   "squad": [
+    "Gabriel",
     "Calafiori",
-    "Saka",
-    "Konsa",
+    "Tavernier",
+    "Kelleher",
     "Thiago",
     "De Cuyper",
     "Groß",
     "Palmer",
     "Dasilva",
-    "Tarkowski",
     "Barry",
+    "Ajayi",
     "Isak",
     "Mbeumo",
     "Cunha",
-    "Kinsky",
     "Roefs"
   ],
   "squad_ids": [
+    4,
     8,
-    12,
-    31,
+    68,
+    82,
     106,
     115,
     124,
     154,
     176,
-    229,
     249,
+    279,
     379,
     427,
     428,
-    496,
     529
   ],
   "starting_xi": [
-    "Konsa",
+    "Gabriel",
+    "Tavernier",
     "Thiago",
     "De Cuyper",
     "Groß",
     "Palmer",
-    "Dasilva",
     "Barry",
+    "Ajayi",
     "Isak",
     "Mbeumo",
-    "Cunha",
-    "Kinsky"
+    "Roefs"
   ],
   "starting_xi_ids": [
-    31,
+    4,
+    68,
     106,
     115,
     124,
     154,
-    176,
     249,
+    279,
     379,
     427,
-    428,
-    496
+    529
   ],
   "bench": [
-    "Roefs",
-    "Tarkowski",
-    "Calafiori",
-    "Saka"
+    "Kelleher",
+    "Cunha",
+    "Dasilva",
+    "Calafiori"
   ],
   "bench_ids": [
-    529,
-    229,
-    8,
-    12
+    82,
+    428,
+    176,
+    8
   ],
-  "captain": "Mbeumo",
-  "captain_id": 427,
-  "vice_captain": "Konsa",
+  "captain": "Tavernier",
+  "captain_id": 68,
+  "vice_captain": "Mbeumo",
   "transfers_in": [
-    "Kinsky",
-    "Konsa"
+    "Gabriel",
+    "Tavernier"
   ],
   "transfers_out": [
-    "Kelleher",
-    "Ajayi"
+    "Tarkowski",
+    "Saka"
   ],
   "transfer_point_gains": [
-    8.13,
-    13.09
+    14.44,
+    17.08
   ],
   "transfers_made": 2,
   "free_transfers_used": 2,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 50.59,
-  "horizon_expected_points": 274.34,
+  "expected_points": 56.36,
+  "horizon_expected_points": 296.82,
   "horizon_weeks": 5,
-  "bench_points": 8.99,
-  "squad_value": 99.2,
-  "bank_remaining": 1.6,
+  "bench_points": 12.85,
+  "squad_value": 97.8,
+  "bank_remaining": 2.9,
   "risk_adjusted_players": [
     "Calafiori"
   ],
   "blocked_from_captaincy_in_squad": [
-    "Calafiori",
-    "Saka"
+    "Calafiori"
   ],
   "price_momentum_notes": [
-    "Konsa looks likely to RISE in price soon (net +0.54% of managers this GW)",
-    "Ajayi looks likely to FALL in price soon (net -0.07% of managers this GW)"
+    "Gabriel looks likely to RISE in price soon (net +0.85% of managers this GW)",
+    "Tavernier looks likely to RISE in price soon (net +3.30% of managers this GW)",
+    "Saka looks likely to FALL in price soon (net -1.45% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +8.99 pts (total 59.58). Restructuring specifically for Bench Boost instead: 62.05 pts (+2.47 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +12.85 pts (total 69.21). Restructuring specifically for Bench Boost instead: 69.21 pts (+0.0 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }
