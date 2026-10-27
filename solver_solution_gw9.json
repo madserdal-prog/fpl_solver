@@ -40,10 +40,10 @@
     "De Cuyper",
     "Groß",
     "Palmer",
-    "Barry",
     "Ajayi",
     "Isak",
     "Mbeumo",
+    "Cunha",
     "Roefs"
   ],
   "starting_xi_ids": [
@@ -53,22 +53,22 @@
     115,
     124,
     154,
-    249,
     279,
     379,
     427,
+    428,
     529
   ],
   "bench": [
     "Kelleher",
-    "Cunha",
     "Dasilva",
+    "Barry",
     "Calafiori"
   ],
   "bench_ids": [
     82,
-    428,
     176,
+    249,
     8
   ],
   "captain": "Tavernier",
@@ -84,30 +84,32 @@
   ],
   "transfer_point_gains": [
     14.44,
-    17.08
+    17.34
   ],
   "transfers_made": 2,
   "free_transfers_used": 2,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 56.36,
-  "horizon_expected_points": 296.82,
+  "expected_points": 54.77,
+  "horizon_expected_points": 292.62,
   "horizon_weeks": 5,
-  "bench_points": 12.85,
-  "squad_value": 97.8,
-  "bank_remaining": 2.9,
+  "bench_points": 13.89,
+  "squad_value": 97.9,
+  "bank_remaining": 2.8,
   "risk_adjusted_players": [
+    "Barry",
     "Calafiori"
   ],
   "blocked_from_captaincy_in_squad": [
-    "Calafiori"
+    "Calafiori",
+    "Barry"
   ],
   "price_momentum_notes": [
-    "Gabriel looks likely to RISE in price soon (net +0.85% of managers this GW)",
-    "Tavernier looks likely to RISE in price soon (net +3.30% of managers this GW)",
-    "Saka looks likely to FALL in price soon (net -1.45% of managers this GW)"
+    "Gabriel looks likely to RISE in price soon (net +1.09% of managers this GW)",
+    "Tavernier looks likely to RISE in price soon (net +4.33% of managers this GW)",
+    "Saka looks likely to FALL in price soon (net -1.73% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +12.85 pts (total 69.21). Restructuring specifically for Bench Boost instead: 69.21 pts (+0.0 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +13.89 pts (total 68.66). Restructuring specifically for Bench Boost instead: 68.66 pts (+0.0 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }

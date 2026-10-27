@@ -2,30 +2,40 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Calafiori",
-        "risk_level": "medium",
-        "reason": "Hip injury - 75% chance of playing | Also: Headline mentions injury-related terms: \"Arsenal rocked by Riccardo Calafiori injury as Mikel Arteta confirms latest blow - Daily Mirror\"",
-        "source": "FPL API status/chance_of_playing_next_round fields",
-        "recommendation": "monitor",
-        "news_evidence": true
-      },
-      {
         "player_name": "Palmer",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - www.kingsofanglia.com\"",
         "source": "Google News: https://news.google.com/rss/articles/CBMioAFBVV95cUxNcTFPTEd3bUJMamlkc01qX0t0QVlnSUdzLXNKOEtuNzdTZVlaaTllSmxSN19XRWpYLWh1cWtNNUZueHJaTWxMMmxhVGRFbWhKc3NSdHZKVm1MdkV1ZTFwX3VXbl9XNzFNOGZxcEFTbWoxdFVkMXBtUGVQamtoZ0tnNWVJaFgtVkVHVTRjRjd4S2xfOUl2LXNuUXM2SHhtdHh2?oc=5",
         "recommendation": "monitor",
         "news_evidence": true
+      },
+      {
+        "player_name": "Barry",
+        "risk_level": "medium",
+        "reason": "Headline mentions injury-related terms: \"Thierno Barry, Everton's last striker standing, begins to silence doubters - ESPN\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxQeDFISl9nWG5Ld0tGWGRBRVBaR0p6N01YVVN2Q2tXSWJ4d2p3bFUtT2U0THNtWTllTmpHN1lVbkRXRTlIclRoYWtRYVdiMExXVnJpeXhPN2pxQTJzbFJuV3A2Tm5iaURLMzR5OHlmU2ZaMExKLXRNa2xvNnVYbS1JbnNlWG1fVjhna1c3UU5CUzdhNDFHTVRpQXVPSVNNS0paVGQtSFhNZnNmYmp0dlVQSm1xa0JGZw?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true
+      },
+      {
+        "player_name": "Calafiori",
+        "risk_level": "medium",
+        "reason": "Hip injury - 75% chance of playing | Also: Headline mentions injury-related terms: \"Arsenal rocked by Riccardo Calafiori injury as Mikel Arteta confirms latest blow - The Mirror\"",
+        "source": "FPL API status/chance_of_playing_next_round fields",
+        "recommendation": "monitor",
+        "news_evidence": true
       }
     ],
-    "summary": "Found 2 medium-risk (Calafiori, Palmer) based on FPL data and Google News headlines."
+    "summary": "Found 3 medium-risk (Palmer, Barry, Calafiori) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "8": 3.0,
-    "301": 3.0
+    "301": 3.0,
+    "249": 3.0,
+    "8": 3.0
   },
   "blocked_captain_ids": [
     8,
+    249,
     301
   ],
   "unmatched_names": [],
