@@ -2,12 +2,12 @@
   "squad": [
     "Gabriel",
     "Calafiori",
-    "Tavernier",
     "Kelleher",
     "Thiago",
     "De Cuyper",
     "Groß",
     "Palmer",
+    "Neto",
     "Dasilva",
     "Barry",
     "Ajayi",
@@ -19,12 +19,12 @@
   "squad_ids": [
     4,
     8,
-    68,
     82,
     106,
     115,
     124,
     154,
+    156,
     176,
     249,
     279,
@@ -35,48 +35,48 @@
   ],
   "starting_xi": [
     "Gabriel",
-    "Tavernier",
     "Thiago",
     "De Cuyper",
     "Groß",
     "Palmer",
-    "Barry",
+    "Neto",
     "Ajayi",
     "Isak",
     "Mbeumo",
+    "Cunha",
     "Roefs"
   ],
   "starting_xi_ids": [
     4,
-    68,
     106,
     115,
     124,
     154,
-    249,
+    156,
     279,
     379,
     427,
+    428,
     529
   ],
   "bench": [
     "Kelleher",
-    "Cunha",
     "Dasilva",
+    "Barry",
     "Calafiori"
   ],
   "bench_ids": [
     82,
-    428,
     176,
+    249,
     8
   ],
-  "captain": "Tavernier",
-  "captain_id": 68,
-  "vice_captain": "Mbeumo",
+  "captain": "Mbeumo",
+  "captain_id": 427,
+  "vice_captain": "Gabriel",
   "transfers_in": [
     "Gabriel",
-    "Tavernier"
+    "Neto"
   ],
   "transfers_out": [
     "Tarkowski",
@@ -84,30 +84,32 @@
   ],
   "transfer_point_gains": [
     14.44,
-    17.34
+    13.73
   ],
   "transfers_made": 2,
   "free_transfers_used": 2,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 55.92,
-  "horizon_expected_points": 293.77,
+  "expected_points": 53.27,
+  "horizon_expected_points": 288.14,
   "horizon_weeks": 5,
-  "bench_points": 12.74,
-  "squad_value": 97.9,
-  "bank_remaining": 2.8,
+  "bench_points": 13.89,
+  "squad_value": 98.1,
+  "bank_remaining": 2.6,
   "risk_adjusted_players": [
+    "Barry",
     "Calafiori"
   ],
   "blocked_from_captaincy_in_squad": [
-    "Calafiori"
+    "Calafiori",
+    "Barry"
   ],
   "price_momentum_notes": [
-    "Gabriel looks likely to RISE in price soon (net +1.35% of managers this GW)",
-    "Tavernier looks likely to RISE in price soon (net +5.37% of managers this GW)",
-    "Saka looks likely to FALL in price soon (net -1.99% of managers this GW)"
+    "Gabriel looks likely to RISE in price soon (net +1.54% of managers this GW)",
+    "Neto looks likely to RISE in price soon (net +0.62% of managers this GW)",
+    "Saka looks likely to FALL in price soon (net -2.20% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +12.74 pts (total 68.66). Restructuring specifically for Bench Boost instead: 68.66 pts (+0.0 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +13.89 pts (total 67.16). Restructuring specifically for Bench Boost instead: 67.16 pts (+0.0 vs. just boosting the normal squad).",
   "agent_captain_review": null
 }
