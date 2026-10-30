@@ -2,43 +2,36 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Palmer",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Ipswich Town transfer rumour: Wrexham interested in Blues keeper - www.kingsofanglia.com\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMioAFBVV95cUxNcTFPTEd3bUJMamlkc01qX0t0QVlnSUdzLXNKOEtuNzdTZVlaaTllSmxSN19XRWpYLWh1cWtNNUZueHJaTWxMMmxhVGRFbWhKc3NSdHZKVm1MdkV1ZTFwX3VXbl9XNzFNOGZxcEFTbWoxdFVkMXBtUGVQamtoZ0tnNWVJaFgtVkVHVTRjRjd4S2xfOUl2LXNuUXM2SHhtdHh2?oc=5",
-        "recommendation": "monitor",
-        "news_evidence": true
-      },
-      {
-        "player_name": "Barry",
-        "risk_level": "medium",
-        "reason": "Headline mentions injury-related terms: \"Thierno Barry, Everton's last striker standing, begins to silence doubters - ESPN\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMitgFBVV95cUxQeDFISl9nWG5Ld0tGWGRBRVBaR0p6N01YVVN2Q2tXSWJ4d2p3bFUtT2U0THNtWTllTmpHN1lVbkRXRTlIclRoYWtRYVdiMExXVnJpeXhPN2pxQTJzbFJuV3A2Tm5iaURLMzR5OHlmU2ZaMExKLXRNa2xvNnVYbS1JbnNlWG1fVjhna1c3UU5CUzdhNDFHTVRpQXVPSVNNS0paVGQtSFhNZnNmYmp0dlVQSm1xa0JGZw?oc=5",
-        "recommendation": "monitor",
-        "news_evidence": true
-      },
-      {
         "player_name": "Calafiori",
         "risk_level": "medium",
-        "reason": "Hip injury - 75% chance of playing | Also: Headline mentions injury-related terms: \"Arsenal rocked by Riccardo Calafiori injury as Mikel Arteta confirms latest blow - The Mirror\"",
-        "source": "FPL API status/chance_of_playing_next_round fields",
-        "recommendation": "monitor",
-        "news_evidence": true
+        "reason": "Picked up a minor hip/stomach/rib issue in the Everton win, missed the midweek cup squad, and is a 50% doubt for Sunday's trip to Liverpool; Arteta described it as 'very small' but he is in a race to prove fitness.",
+        "source": "Squawka tracker 30 Oct 2026; Arteta quotes via Sports Mole/Independent 28-29 Oct",
+        "recommendation": "monitor"
+      },
+      {
+        "player_name": "Dasilva",
+        "risk_level": "high",
+        "reason": "Still listed as out with hamstring/thigh injury (no appearances this season); building training load but estimated return 8 Nov, so unavailable for this round.",
+        "source": "Squawka 30 Oct 2026; RotoWire 27 Oct",
+        "recommendation": "avoid_start"
+      },
+      {
+        "player_name": "Isak",
+        "risk_level": "medium",
+        "reason": "Recurring injury history (recent thigh issue); manager is explicitly managing his minutes and often replaces him late with Koumas even when starting, to avoid further setbacks.",
+        "source": "Sky Sports 29 Oct 2026",
+        "recommendation": "avoid_captain"
       }
     ],
-    "summary": "Found 3 medium-risk (Palmer, Barry, Calafiori) based on FPL data and Google News headlines."
+    "summary": "The clearest availability risks are Calafiori (fitness doubt for Arsenal's Anfield trip) and Dasilva (still out). Isak is available but carries a managed-minutes red flag given his injury record, making him less reliable for a full 90 or captaincy this round. No other squad members have significant fresh injury, suspension or transfer concerns."
   },
   "risk_penalty": {
-    "301": 3.0,
-    "249": 3.0,
-    "8": 3.0
+    "8": 3.0,
+    "103": 8.0,
+    "379": 3.0
   },
   "blocked_captain_ids": [
-    8,
-    249,
-    301
+    103
   ],
-  "unmatched_names": [],
-  "news_lookup_errors": [],
-  "news_systematically_blocked": false
+  "unmatched_names": []
 }

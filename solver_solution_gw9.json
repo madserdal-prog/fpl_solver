@@ -2,12 +2,12 @@
   "squad": [
     "Gabriel",
     "Calafiori",
+    "Tavernier",
     "Kelleher",
     "Thiago",
     "De Cuyper",
     "Groß",
     "Palmer",
-    "Neto",
     "Dasilva",
     "Barry",
     "Ajayi",
@@ -19,12 +19,12 @@
   "squad_ids": [
     4,
     8,
+    68,
     82,
     106,
     115,
     124,
     154,
-    156,
     176,
     249,
     279,
@@ -35,26 +35,26 @@
   ],
   "starting_xi": [
     "Gabriel",
+    "Tavernier",
     "Thiago",
     "De Cuyper",
     "Groß",
     "Palmer",
-    "Neto",
+    "Barry",
     "Ajayi",
-    "Isak",
     "Mbeumo",
     "Cunha",
     "Roefs"
   ],
   "starting_xi_ids": [
     4,
+    68,
     106,
     115,
     124,
     154,
-    156,
+    249,
     279,
-    379,
     427,
     428,
     529
@@ -62,21 +62,21 @@
   "bench": [
     "Kelleher",
     "Dasilva",
-    "Barry",
+    "Isak",
     "Calafiori"
   ],
   "bench_ids": [
     82,
     176,
-    249,
+    379,
     8
   ],
-  "captain": "Mbeumo",
-  "captain_id": 427,
-  "vice_captain": "Gabriel",
+  "captain": "Tavernier",
+  "captain_id": 68,
+  "vice_captain": "Mbeumo",
   "transfers_in": [
     "Gabriel",
-    "Neto"
+    "Tavernier"
   ],
   "transfers_out": [
     "Tarkowski",
@@ -84,32 +84,92 @@
   ],
   "transfer_point_gains": [
     14.44,
-    13.73
+    17.34
   ],
   "transfers_made": 2,
   "free_transfers_used": 2,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 53.27,
-  "horizon_expected_points": 288.14,
+  "expected_points": 54.44,
+  "horizon_expected_points": 292.29,
   "horizon_weeks": 5,
-  "bench_points": 13.89,
-  "squad_value": 98.1,
-  "bank_remaining": 2.6,
+  "bench_points": 14.22,
+  "squad_value": 97.8,
+  "bank_remaining": 2.8,
   "risk_adjusted_players": [
-    "Barry",
-    "Calafiori"
+    "Calafiori",
+    "Isak"
   ],
   "blocked_from_captaincy_in_squad": [
-    "Calafiori",
-    "Barry"
+    "Calafiori"
   ],
   "price_momentum_notes": [
-    "Gabriel looks likely to RISE in price soon (net +1.54% of managers this GW)",
-    "Neto looks likely to RISE in price soon (net +0.62% of managers this GW)",
-    "Saka looks likely to FALL in price soon (net -2.20% of managers this GW)"
+    "Gabriel looks likely to RISE in price soon (net +1.85% of managers this GW)",
+    "Tavernier looks likely to RISE in price soon (net +7.43% of managers this GW)",
+    "Saka looks likely to FALL in price soon (net -2.55% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +13.89 pts (total 67.16). Restructuring specifically for Bench Boost instead: 67.16 pts (+0.0 vs. just boosting the normal squad).",
-  "agent_captain_review": null
+  "bench_boost_note": "Boosting THIS week's normal bench: +14.22 pts (total 68.66). Restructuring specifically for Bench Boost instead: 68.66 pts (+0.0 vs. just boosting the normal squad).",
+  "agent_captain_review": {
+    "recommended_captain": "Tavernier",
+    "same_as_solver_top_pick": true,
+    "reasoning": "Tavernier is the solver's clear top pick by xp and is a midfielder with solid minutes (660) and no structural risks like those affecting defenders. No other candidate in the shortlist shows a clear qualitative advantage that would justify overriding the xp ranking.",
+    "shortlist": [
+      {
+        "name": "Tavernier",
+        "xp": 5.87,
+        "price": 6.4,
+        "position": "MID",
+        "minutes_this_season": 660,
+        "form": 7.0,
+        "points_per_game": 6.5,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Mbeumo",
+        "xp": 5.31,
+        "price": 7.9,
+        "position": "MID",
+        "minutes_this_season": 720,
+        "form": 6.0,
+        "points_per_game": 5.4,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Gabriel",
+        "xp": 5.22,
+        "price": 7.9,
+        "position": "DEF",
+        "minutes_this_season": 720,
+        "form": 9.0,
+        "points_per_game": 6.5,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "De Cuyper",
+        "xp": 4.77,
+        "price": 5.3,
+        "position": "DEF",
+        "minutes_this_season": 670,
+        "form": 7.3,
+        "points_per_game": 7.5,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Barry",
+        "xp": 4.59,
+        "price": 5.6,
+        "position": "FWD",
+        "minutes_this_season": 682,
+        "form": 3.3,
+        "points_per_game": 3.8,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      }
+    ]
+  }
 }
