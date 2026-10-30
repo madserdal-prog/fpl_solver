@@ -4,33 +4,33 @@
       {
         "player_name": "Calafiori",
         "risk_level": "medium",
-        "reason": "Picked up a minor hip/stomach/rib issue in the Everton win, missed the midweek cup squad, and is a 50% doubt for Sunday's trip to Liverpool; Arteta described it as 'very small' but he is in a race to prove fitness.",
-        "source": "Squawka tracker 30 Oct 2026; Arteta quotes via Sports Mole/Independent 28-29 Oct",
+        "reason": "Minor hip/stomach issue vs Everton; missed midweek cup squad; listed 50% chance and racing fitness for Liverpool away.",
+        "source": "Squawka 30 Oct 2026; Sports Mole 29 Oct 2026",
         "recommendation": "monitor"
       },
       {
         "player_name": "Dasilva",
         "risk_level": "high",
-        "reason": "Still listed as out with hamstring/thigh injury (no appearances this season); building training load but estimated return 8 Nov, so unavailable for this round.",
-        "source": "Squawka 30 Oct 2026; RotoWire 27 Oct",
+        "reason": "Hamstring issue with long-term injury history (ACL/knee); building in training but yet to feature in Premier League this season, unlikely to start.",
+        "source": "Brentford FC 27 Oct 2026; RotoWire 27 Oct 2026",
         "recommendation": "avoid_start"
       },
       {
-        "player_name": "Isak",
-        "risk_level": "medium",
-        "reason": "Recurring injury history (recent thigh issue); manager is explicitly managing his minutes and often replaces him late with Koumas even when starting, to avoid further setbacks.",
-        "source": "Sky Sports 29 Oct 2026",
-        "recommendation": "avoid_captain"
+        "player_name": "Gabriel",
+        "risk_level": "low",
+        "reason": "Knee scare requiring treatment vs Everton but played on, scored, and Arteta confirmed he seems okay; no subsequent availability flag.",
+        "source": "Arteta post-match comments 24 Oct 2026",
+        "recommendation": "no_concern"
       }
     ],
-    "summary": "The clearest availability risks are Calafiori (fitness doubt for Arsenal's Anfield trip) and Dasilva (still out). Isak is available but carries a managed-minutes red flag given his injury record, making him less reliable for a full 90 or captaincy this round. No other squad members have significant fresh injury, suspension or transfer concerns."
+    "summary": "Calafiori is the primary fitness doubt heading into Arsenal's away game at Liverpool after a late issue last weekend. Dasilva remains in the recovery phase at Brentford with no Premier League minutes this season. Gabriel overcame an in-game scare and the rest of the squad shows no significant fresh injury, suspension or rotation flags for this round."
   },
   "risk_penalty": {
-    "8": 3.0,
-    "103": 8.0,
-    "379": 3.0
+    "8": 0.3,
+    "103": 0.7
   },
   "blocked_captain_ids": [
+    8,
     103
   ],
   "unmatched_names": []

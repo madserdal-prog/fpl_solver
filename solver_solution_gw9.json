@@ -42,8 +42,8 @@
     "Palmer",
     "Barry",
     "Ajayi",
+    "Isak",
     "Mbeumo",
-    "Cunha",
     "Roefs"
   ],
   "starting_xi_ids": [
@@ -55,20 +55,20 @@
     154,
     249,
     279,
+    379,
     427,
-    428,
     529
   ],
   "bench": [
     "Kelleher",
+    "Cunha",
     "Dasilva",
-    "Isak",
     "Calafiori"
   ],
   "bench_ids": [
     82,
+    428,
     176,
-    379,
     8
   ],
   "captain": "Tavernier",
@@ -90,30 +90,29 @@
   "free_transfers_used": 2,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 54.44,
-  "horizon_expected_points": 292.29,
+  "expected_points": 55.92,
+  "horizon_expected_points": 293.77,
   "horizon_weeks": 5,
-  "bench_points": 14.22,
+  "bench_points": 12.74,
   "squad_value": 97.8,
   "bank_remaining": 2.8,
   "risk_adjusted_players": [
-    "Calafiori",
-    "Isak"
+    "Calafiori"
   ],
   "blocked_from_captaincy_in_squad": [
     "Calafiori"
   ],
   "price_momentum_notes": [
     "Gabriel looks likely to RISE in price soon (net +1.85% of managers this GW)",
-    "Tavernier looks likely to RISE in price soon (net +7.43% of managers this GW)",
-    "Saka looks likely to FALL in price soon (net -2.55% of managers this GW)"
+    "Tavernier looks likely to RISE in price soon (net +7.47% of managers this GW)",
+    "Saka looks likely to FALL in price soon (net -2.56% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +14.22 pts (total 68.66). Restructuring specifically for Bench Boost instead: 68.66 pts (+0.0 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +12.74 pts (total 68.66). Restructuring specifically for Bench Boost instead: 68.66 pts (+0.0 vs. just boosting the normal squad).",
   "agent_captain_review": {
     "recommended_captain": "Tavernier",
     "same_as_solver_top_pick": true,
-    "reasoning": "Tavernier is the solver's clear top pick by xp and is a midfielder with solid minutes (660) and no structural risks like those affecting defenders. No other candidate in the shortlist shows a clear qualitative advantage that would justify overriding the xp ranking.",
+    "reasoning": "Tavernier is the solver's highest-xp pick and a midfielder with solid minutes (660) and no structural ceiling issues. No other shortlist player presents a clear qualitative advantage such as higher repeatability or better role. Defenders in the list carry the noted low captaincy ceiling risk.",
     "shortlist": [
       {
         "name": "Tavernier",
@@ -149,6 +148,17 @@
         "chance_of_playing_next_round": null
       },
       {
+        "name": "Isak",
+        "xp": 4.92,
+        "price": 9.1,
+        "position": "FWD",
+        "minutes_this_season": 567,
+        "form": 6.0,
+        "points_per_game": 7.3,
+        "status": "a",
+        "chance_of_playing_next_round": 100
+      },
+      {
         "name": "De Cuyper",
         "xp": 4.77,
         "price": 5.3,
@@ -156,17 +166,6 @@
         "minutes_this_season": 670,
         "form": 7.3,
         "points_per_game": 7.5,
-        "status": "a",
-        "chance_of_playing_next_round": null
-      },
-      {
-        "name": "Barry",
-        "xp": 4.59,
-        "price": 5.6,
-        "position": "FWD",
-        "minutes_this_season": 682,
-        "form": 3.3,
-        "points_per_game": 3.8,
         "status": "a",
         "chance_of_playing_next_round": null
       }
