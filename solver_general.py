@@ -180,7 +180,7 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
     not modelled). That's the standard simplification -- it can only
     UNDER-state the value of flexibility, never invent value.
 
-    risk_penalty: {player_id: points} deducted from THIS WEEK's xP only. The
+    risk_penalty: {player_id: share 0..1} of THIS WEEK's xP removed (proportional). The
       critic assesses near-term risk (news, rotation, a knock) and re-runs
       every week, so it shouldn't depress all five weeks.
     blocked_captain_ids: cannot captain THIS week (later weeks unaffected).
@@ -206,7 +206,12 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
     T = max(len(p.get("xp_series") or [p["xp"]]) for p in pool)
     xp = np.array([_xp_series(p, T) for p in pool]).T          # shape (T, N), nominal
     xp_adj = xp.copy()
-    xp_adj[0] -= np.array([risk_penalty.get(p["id"], 0.0) for p in pool])  # this week only
+    # risk_penalty values are the SHARE of this week's xP to remove (0..1), not
+    # flat points. BUG FIX: a flat -8 for a "high" flag exceeded most players'
+    # whole weekly xP, so an AVAILABLE player (Isak, managed minutes) was
+    # valued below a player who was OUT. Proportional scaling can't go below 0.
+    risk_share = np.clip(np.array([risk_penalty.get(p["id"], 0.0) for p in pool]), 0.0, 1.0)
+    xp_adj[0] *= (1.0 - risk_share)  # this week only
     discount = np.array([HORIZON_DISCOUNT ** t for t in range(T)])
     week_bench_weight = np.full(T, BENCH_WEIGHT)
     if bench_weight is not None:
