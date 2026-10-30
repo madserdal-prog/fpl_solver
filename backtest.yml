@@ -1,0 +1,62 @@
+name: Backtest (old vs new on real past gameweeks)
+
+on:
+  workflow_dispatch:
+    inputs:
+      baseline_ref:
+        description: 'Commit SHA of the OLD code to compare against (your last commit before the update)'
+        required: true
+        type: string
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # full history, so the old commit can be checked out alongside
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests numpy scipy
+
+      - name: Check out the old code next to the new
+        run: git worktree add /tmp/baseline "${{ github.event.inputs.baseline_ref }}"
+
+      - name: Fetch real inputs (your squads, actual points, fixtures)
+        env:
+          FPL_TEAM_ID: ${{ secrets.FPL_TEAM_ID }}
+        run: python backtest.py fetch --team-id "$FPL_TEAM_ID"
+
+      - name: Replay old and new code
+        run: |
+          python backtest.py replay --code-dir /tmp/baseline --out data/backtest/results_old.json
+          python backtest.py replay --code-dir . --out data/backtest/results_new.json
+          for m in 4 8 12; do
+            python backtest.py replay --code-dir . --out data/backtest/results_margin$m.json \
+              --set solver_general.HIT_SAFETY_MARGIN=$m
+          done
+
+      - name: Compare and publish report
+        run: |
+          python backtest.py compare --baseline data/backtest/results_old.json \
+            --candidate data/backtest/results_new.json --out data/backtest/report.md
+          cat data/backtest/report.md >> "$GITHUB_STEP_SUMMARY"
+          echo -e "\n## Hit safety margin sweep (new code vs old)\n" >> "$GITHUB_STEP_SUMMARY"
+          for m in 4 8 12; do
+            python backtest.py compare --baseline data/backtest/results_old.json \
+              --candidate data/backtest/results_margin$m.json --out data/backtest/report_margin$m.md > /dev/null
+            echo "**Margin $m:**" >> "$GITHUB_STEP_SUMMARY"
+            grep -E "Totals|held for" data/backtest/report_margin$m.md >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+          done
+
+      - name: Upload full results
+        uses: actions/upload-artifact@v4
+        with:
+          name: backtest-results
+          path: data/backtest/

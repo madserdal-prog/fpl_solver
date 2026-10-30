@@ -300,7 +300,7 @@ def flags_to_solver_inputs(flags: list, master_data: dict, high_penalty=0.7, med
     unmatched = []
 
     for flag in flags:
-        pid = name_to_id.get(flag["player_name"])
+        pid = flag.get("player_id") or name_to_id.get(flag["player_name"])
         if pid is None:
             unmatched.append(flag["player_name"])
             continue
@@ -323,15 +323,20 @@ def run_free_critic(solution_path: str, master_data_path: str, out_path: str, us
     with open(master_data_path, encoding="utf-8") as f:
         master_data = json.load(f)
 
-    squad_names = set(solution["squad"])
-    elements_by_name = {e["web_name"]: e for e in master_data["elements"]}
+    # Resolve squad members by ID -- a name lookup silently picks ONE of two
+    # same-named players (e.g. "Palmer") and can check the wrong one.
+    elements_by_id = {e["id"]: e for e in master_data["elements"]}
+    if solution.get("squad_ids"):
+        squad_elements = [elements_by_id[i] for i in solution["squad_ids"] if i in elements_by_id]
+    else:  # older solution files without ids
+        elements_by_name = {e["web_name"]: e for e in master_data["elements"]}
+        squad_elements = [elements_by_name[n] for n in solution["squad"] if n in elements_by_name]
+    squad_names = [e["web_name"] for e in squad_elements]
 
     flags = []
     news_errors = []
-    for i, name in enumerate(squad_names):
-        element = elements_by_name.get(name)
-        if element is None:
-            continue
+    for i, element in enumerate(squad_elements):
+        name = element["web_name"]
 
         fpl_flag = assess_player(element)
 
@@ -351,6 +356,7 @@ def run_free_critic(solution_path: str, master_data_path: str, out_path: str, us
 
         merged = merge_flags(fpl_flag, news_flag)
         if merged:
+            merged["player_id"] = element["id"]  # carry the id; never re-resolve by name
             flags.append(merged)
 
     # Distinguish "a few isolated lookups failed" from "every single one failed" --

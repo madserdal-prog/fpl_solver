@@ -31,21 +31,21 @@ MAX_PER_CLUB = 3
 BUDGET_DEFAULT = 100.0
 HIT_COST = 4  # TRUE points per transfer beyond free transfers -- what FPL actually charges,
               # used for REPORTING (hit_cost, expected_points), never inflated.
-HIT_SAFETY_MARGIN = 4  # extra buffer used ONLY inside the optimization's decision-making, not
-                        # in what gets reported/charged. A plain linear optimizer has no concept
-                        # of caution -- it takes a hit for a net gain of +0.01 exactly as readily
-                        # as +20, both being "optimal" given the exact numbers it's fed. Real FPL
-                        # practice is explicit that a hit should only be taken for a CLEAR margin,
-                        # not a marginal one, precisely because projections carry real uncertainty.
-                        # This makes the solver require the combined gain from a hit-taking swap
-                        # to exceed HIT_COST + HIT_SAFETY_MARGIN (default: 8, not 4) before it's
-                        # recommended, while still reporting/charging the true 4-per-hit cost.
+HIT_SAFETY_MARGIN = 10  # extra decision-only buffer per hit (reported cost stays the true 4).
+                        # Counters the "optimizer's curse": picking the highest FORECASTS
+                        # systematically picks over-estimates, so marginal-looking gains
+                        # don't materialise. Backtest on a simulated season (GW2-9): every
+                        # margin from 8 to 12 beat the old code on both 1-week and 3-week
+                        # scoring; 2-6 did not. 10 = middle of that region. Simulated, so
+                        # re-check with backtest.py on real weeks (--set ...=8/12).
 BENCH_WEIGHT = 0.25  # bench xP only counts via autosubs (a starter blanking), so a bench
                      # player is worth a fraction of a starter. Was 0.5, which over-valued the
                      # bench and pulled money away from starters. Heuristic, not fitted.
 FREE_TRANSFER_VALUE = 1.0  # decision-only cost of USING a free transfer instead of banking it
                            # (a banked FT has option value). Stops churn for trivial gains.
 MAX_BANKED_FREE_TRANSFERS = 5
+FT_TERMINAL_VALUE = 1.0  # value of each free transfer still banked at the END of the planning
+                         # horizon (option value beyond what the plan can see). Heuristic.
 
 
 # ---------------------------------------------------------------------------
@@ -151,45 +151,56 @@ def load_pool_from_forecast(forecast_path: str, master_data_path: str, horizon_g
 
 def _xp_series(player, horizon_len):
     """Per-week xP for the horizon. Pool entries from load_pool_from_forecast()
-    carry 'xp_series'; older/synthetic entries only have 'xp' (treated as a
-    1-week horizon, i.e. the old single-week behaviour)."""
+    carry 'xp_series'; older/synthetic entries only have 'xp' (1-week horizon)."""
     series = list(player.get("xp_series") or [player["xp"]])
     if len(series) < horizon_len:
         series += [series[-1]] * (horizon_len - len(series))
     return series[:horizon_len]
 
 
+def prune_pool(pool, keep_ids, per_position_top=45, per_position_cheapest=10, per_position_value=15):
+    """Candidate pruning for speed: keeps owned/locked players plus, per position,
+    the best by horizon xP, the cheapest (budget enablers) and the best xP-per-£.
+    A heuristic -- a player outside all three lists is almost never optimal."""
+    keep = set(keep_ids)
+    for pos in SQUAD_REQ:
+        group = [p for p in pool if p["position"] == pos]
+        horizon = lambda p: p.get("xp_horizon_sum", p["xp"])
+        for ranked, k in ((sorted(group, key=lambda p: -horizon(p)), per_position_top),
+                          (sorted(group, key=lambda p: p["price"]), per_position_cheapest),
+                          (sorted(group, key=lambda p: -horizon(p) / max(p["price"], 3.5)), per_position_value)):
+            keep.update(p["id"] for p in ranked[:k])
+    return [p for p in pool if p["id"] in keep]
+
+
 def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
           locked_ids=None, unlimited_transfers=False, risk_penalty=None,
           blocked_captain_ids=None, bench_weight=None, sell_values=None,
-          hit_safety_margin=None, free_transfer_value=None):
+          hit_safety_margin=None, free_transfer_value=None, plan_future_transfers=True,
+          horizon_weeks=None, forbid_week0_squads=None, prune=True):
     """
-    Multi-week MILP: picks ONE 15-man squad (this week's transfers), then the
-    best starting XI + captain for EACH week of the forecast horizon, holding
-    that squad fixed. Objective = discounted sum over the horizon of
-    (starters' xP + captain's xP + BENCH_WEIGHT * bench xP), minus hit cost.
+    Multi-week MILP. For every week of the horizon it chooses the squad (so
+    transfers can be PLANNED across weeks), the starting XI and the captain.
+    Objective = discounted sum over weeks of (starters + captain bonus +
+    BENCH_WEIGHT * bench) xP, minus discounted hit costs, plus a small value
+    for free transfers still banked at the end of the horizon.
 
-    WHY (bug fix): the previous single-week version valued every starter by
-    THIS WEEK's xP only -- the horizon only influenced bench players. Verified
-    directly: given two otherwise identical candidates, it bought one worth
-    ~10 pts over 5 GWs instead of one worth ~42, because of a 0.1-pt edge this
-    week. That made fixture runs nearly irrelevant for starters, and made
-    spending the bank on a premium with a good run rarely look worthwhile.
+    Free-transfer rules modelled exactly: +1 per week, max 5 banked, each
+    transfer beyond what's banked costs a hit, and taking any hit resets the
+    following week to 1 free transfer.
 
-    Assumption: the squad is held for the whole horizon (future transfers are
-    not modelled). That's the standard simplification -- it can only
-    UNDER-state the value of flexibility, never invent value.
+    Only THIS week's decisions are actionable; later weeks are a plan that is
+    re-optimised every run as forecasts update.
 
-    risk_penalty: {player_id: share 0..1} of THIS WEEK's xP removed (proportional). The
-      critic assesses near-term risk (news, rotation, a knock) and re-runs
-      every week, so it shouldn't depress all five weeks.
-    blocked_captain_ids: cannot captain THIS week (later weeks unaffected).
-    bench_weight: overrides BENCH_WEIGHT for THIS WEEK only -- used for the
-      Bench Boost alternative (1.0), since the chip only applies to one week.
-    hit_safety_margin: extra decision-only buffer on top of HIT_COST (see
-      HIT_SAFETY_MARGIN). Reported hit_cost always uses the true HIT_COST.
-    free_transfer_value: decision-only cost of using a free transfer instead
-      of banking it (see FREE_TRANSFER_VALUE). Zero when 5 are already banked.
+    plan_future_transfers=False -> squad held fixed after this week (the
+      previous behaviour); FREE_TRANSFER_VALUE then stands in for banking.
+    unlimited_transfers=True -> this week is a Wildcard/initial build: any
+      number of changes, no hit, and the banked count is preserved (+1).
+    risk_penalty: {player_id: share 0..1} of THIS week's xP removed.
+    blocked_captain_ids: cannot captain THIS week.
+    bench_weight: overrides BENCH_WEIGHT for THIS week only (Bench Boost).
+    forbid_week0_squads: list of squads (sets of ids) this week's squad must
+      differ from -- used to find the runner-up plan.
     """
     import scipy.sparse as sp
 
@@ -202,27 +213,38 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
     free_transfer_value = FREE_TRANSFER_VALUE if free_transfer_value is None else free_transfer_value
     effective_hit_cost = HIT_COST + hit_safety_margin
 
+    if prune and len(pool) > 150:
+        pool = prune_pool(pool, current_squad_ids | locked_ids | set(risk_penalty))
     N = len(pool)
     T = max(len(p.get("xp_series") or [p["xp"]]) for p in pool)
-    xp = np.array([_xp_series(p, T) for p in pool]).T          # shape (T, N), nominal
+    if horizon_weeks:
+        T = min(T, horizon_weeks)
+    xp = np.array([_xp_series(p, T) for p in pool], dtype=float).T   # (T, N) nominal
     xp_adj = xp.copy()
-    # risk_penalty values are the SHARE of this week's xP to remove (0..1), not
-    # flat points. BUG FIX: a flat -8 for a "high" flag exceeded most players'
-    # whole weekly xP, so an AVAILABLE player (Isak, managed minutes) was
-    # valued below a player who was OUT. Proportional scaling can't go below 0.
     risk_share = np.clip(np.array([risk_penalty.get(p["id"], 0.0) for p in pool]), 0.0, 1.0)
-    xp_adj[0] *= (1.0 - risk_share)  # this week only
+    xp_adj[0] *= (1.0 - risk_share)
     discount = np.array([HORIZON_DISCOUNT ** t for t in range(T)])
-    week_bench_weight = np.full(T, BENCH_WEIGHT)
+    week_bw = np.full(T, BENCH_WEIGHT)
     if bench_weight is not None:
-        week_bench_weight[0] = bench_weight
+        week_bw[0] = bench_weight
 
-    # Variable layout: [squad (N)] [start week0..T-1 (T*N)] [captain week0..T-1 (T*N)] [extra transfers (1)]
-    SQ = 0
-    def ST(t): return N + t * N
-    def CP(t): return N + T * N + t * N
-    EX = N + 2 * T * N
-    num_vars = EX + 1
+    # ---- variable layout -------------------------------------------------
+    blocks = {}
+    nxt = 0
+    for name, size in (("x", T * N), ("s", T * N), ("c", T * N), ("tin", T * N), ("tout", T * N),
+                       ("n", T), ("h", T), ("ft", T + 1), ("z", T)):
+        blocks[name] = nxt
+        nxt += size
+    num_vars = nxt
+    X = lambda t, i: blocks["x"] + t * N + i
+    S = lambda t, i: blocks["s"] + t * N + i
+    C = lambda t, i: blocks["c"] + t * N + i
+    TIN = lambda t, i: blocks["tin"] + t * N + i
+    TOUT = lambda t, i: blocks["tout"] + t * N + i
+    NN = lambda t: blocks["n"] + t
+    H = lambda t: blocks["h"] + t
+    FT = lambda t: blocks["ft"] + t
+    Z = lambda t: blocks["z"] + t
 
     rows, cols, vals, lbs, ubs = [], [], [], [], []
     def add_row(col_idx, coeffs, lb, ub):
@@ -230,104 +252,148 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
         rows.extend([r] * len(col_idx)); cols.extend(col_idx); vals.extend(coeffs)
         lbs.append(lb); ubs.append(ub)
 
-    idx = np.arange(N)
     by_pos = {pos: [i for i, p in enumerate(pool) if p["position"] == pos] for pos in SQUAD_REQ}
+    teams = sorted({p["team"] for p in pool})
+    cost = [sell_values.get(p["id"], p["price"]) for p in pool]
+    owned = [1 if p["id"] in current_squad_ids else 0 for p in pool]
+    fresh_build = not current_squad_ids
 
-    for pos, n in SQUAD_REQ.items():                      # squad shape
-        add_row([SQ + i for i in by_pos[pos]], [1] * len(by_pos[pos]), n, n)
-    add_row(list(SQ + idx), [sell_values.get(p["id"], p["price"]) for p in pool], -np.inf, budget)
-    for team in sorted({p["team"] for p in pool}):        # max 3 per club
-        members = [i for i, p in enumerate(pool) if p["team"] == team]
-        add_row([SQ + i for i in members], [1] * len(members), -np.inf, MAX_PER_CLUB)
-
-    for t in range(T):                                     # a lineup per week
-        add_row(list(ST(t) + idx), [1] * N, 11, 11)
+    for t in range(T):
+        for pos, n in SQUAD_REQ.items():
+            add_row([X(t, i) for i in by_pos[pos]], [1] * len(by_pos[pos]), n, n)
+        add_row([X(t, i) for i in range(N)], cost, -np.inf, budget)
+        for team in teams:
+            members = [i for i, p in enumerate(pool) if p["team"] == team]
+            add_row([X(t, i) for i in members], [1] * len(members), -np.inf, MAX_PER_CLUB)
+        add_row([S(t, i) for i in range(N)], [1] * N, 11, 11)
         for pos, (lo, hi) in XI_MIN_MAX.items():
-            add_row([ST(t) + i for i in by_pos[pos]], [1] * len(by_pos[pos]), lo, hi)
-        add_row(list(CP(t) + idx), [1] * N, 1, 1)
+            add_row([S(t, i) for i in by_pos[pos]], [1] * len(by_pos[pos]), lo, hi)
+        add_row([C(t, i) for i in range(N)], [1] * N, 1, 1)
         for i in range(N):
-            add_row([ST(t) + i, SQ + i], [1, -1], -np.inf, 0)   # start only if owned
-            add_row([CP(t) + i, ST(t) + i], [1, -1], -np.inf, 0)  # captain only if starting
+            add_row([S(t, i), X(t, i)], [1, -1], -np.inf, 0)
+            add_row([C(t, i), S(t, i)], [1, -1], -np.inf, 0)
+            # squad flow: x_t - x_{t-1} = in - out   (x_{-1} = current squad)
+            if t == 0:
+                add_row([X(0, i), TIN(0, i), TOUT(0, i)], [1, -1, 1], owned[i], owned[i])
+            else:
+                add_row([X(t, i), X(t - 1, i), TIN(t, i), TOUT(t, i)], [1, -1, -1, 1], 0, 0)
+        add_row([NN(t)] + [TIN(t, i) for i in range(N)], [1] + [-1] * N, 0, 0)  # n_t = sum(in)
+        # free transfers & hits
+        week_unlimited = (t == 0 and (unlimited_transfers or fresh_build))
+        if week_unlimited:
+            add_row([H(t)], [1], 0, 0)
+            add_row([FT(t + 1), FT(t)], [1, -1], -np.inf, 1)       # banked count kept (+1)
+        else:
+            add_row([H(t), NN(t), FT(t)], [1, -1, 1], 0, np.inf)    # h >= n - ft
+            add_row([H(t), Z(t)], [1, -15], -np.inf, 0)             # any hit -> z = 1
+            add_row([FT(t + 1), FT(t), NN(t), H(t)], [1, -1, 1, -1], -np.inf, 1)  # ft' <= ft - n + h + 1
+            add_row([FT(t + 1), Z(t)], [1, 4], -np.inf, 5)          # hit taken -> ft' <= 1
+        if t >= 1 and not plan_future_transfers:
+            add_row([NN(t)], [1], 0, 0)
 
-    owned_idx = [i for i, p in enumerate(pool) if p["id"] in current_squad_ids]
-    if current_squad_ids and not unlimited_transfers:      # extra >= sold - free
-        add_row([EX] + [SQ + i for i in owned_idx], [1] + [1] * len(owned_idx),
-                len(current_squad_ids) - free_transfers, np.inf)
+    for forbidden in (forbid_week0_squads or []):
+        idx = [i for i, p in enumerate(pool) if p["id"] in set(forbidden)]
+        add_row([X(0, i) for i in idx], [1] * len(idx), -np.inf, len(idx) - 1)
 
     A = sp.csr_matrix((vals, (rows, cols)), shape=(len(lbs), num_vars))
-    constraints = [LinearConstraint(A, np.array(lbs), np.array(ubs))]
-
     lower = np.zeros(num_vars); upper = np.ones(num_vars)
-    for i, p in enumerate(pool):
-        if p["id"] in locked_ids:
-            lower[SQ + i] = 1
-        if p["id"] in blocked_captain_ids:
-            upper[CP(0) + i] = 0
-    upper[EX] = 15.0
-    integrality = np.ones(num_vars); integrality[EX] = 0
-
-    # Objective (milp minimises, so negate). Per player per week t:
-    #   bench:   d_t * bw_t * xp      starter: d_t * xp      captain: d_t * 2 * xp
-    c = np.zeros(num_vars)
-    c[SQ:SQ + N] = -(discount[:, None] * week_bench_weight[:, None] * xp_adj).sum(axis=0)
     for t in range(T):
-        c[ST(t):ST(t) + N] = -discount[t] * (1 - week_bench_weight[t]) * xp_adj[t]
-        c[CP(t):CP(t) + N] = -discount[t] * xp_adj[t]
-    c[EX] = effective_hit_cost
-    if (current_squad_ids and not unlimited_transfers
-            and free_transfers < MAX_BANKED_FREE_TRANSFERS and free_transfer_value):
-        # Each transfer = (owned count) - (owned kept); rewarding "kept" by
-        # free_transfer_value is the same as charging it per transfer made.
-        for i in owned_idx:
-            c[SQ + i] -= free_transfer_value
+        lower[NN(t)], upper[NN(t)] = 0, 15
+        lower[H(t)], upper[H(t)] = 0, 15
+        for i, p in enumerate(pool):
+            if p["id"] in locked_ids:
+                lower[X(t, i)] = 1
+    for t in range(T + 1):
+        lower[FT(t)], upper[FT(t)] = 0, MAX_BANKED_FREE_TRANSFERS
+    lower[FT(0)] = upper[FT(0)] = min(free_transfers, MAX_BANKED_FREE_TRANSFERS)
+    for i, p in enumerate(pool):
+        if p["id"] in blocked_captain_ids:
+            upper[C(0, i)] = 0
+    integrality = np.ones(num_vars)
 
-    result = milp(c=c, constraints=constraints, integrality=integrality,
-                  bounds=Bounds(lower, upper), options={"mip_rel_gap": 1e-4})
-    if not result.success:
+    # ---- objective (milp minimises) -------------------------------------
+    c = np.zeros(num_vars)
+    for t in range(T):
+        for i in range(N):
+            c[X(t, i)] = -discount[t] * week_bw[t] * xp_adj[t][i]
+            c[S(t, i)] = -discount[t] * (1 - week_bw[t]) * xp_adj[t][i]
+            c[C(t, i)] = -discount[t] * xp_adj[t][i]
+        c[H(t)] = discount[t] * effective_hit_cost
+    if plan_future_transfers:
+        c[FT(T)] = -FT_TERMINAL_VALUE * discount[-1]   # value of FTs still banked at the end
+    elif not unlimited_transfers and not fresh_build and free_transfers < MAX_BANKED_FREE_TRANSFERS:
+        c[NN(0)] = free_transfer_value                  # old single-decision banking heuristic
+
+    result = milp(c=c, constraints=[LinearConstraint(A, np.array(lbs), np.array(ubs))],
+                  integrality=integrality, bounds=Bounds(lower, upper),
+                  options={"mip_rel_gap": 1e-4, "time_limit": 120})
+    if result.x is None:
         raise RuntimeError(f"MILP failed to solve the problem: {result.message}")
     x = result.x
+    on = lambda v: v > 0.5
 
     pool_by_id = {p["id"]: p for p in pool}
-    squad_ids = [pool[i]["id"] for i in range(N) if x[SQ + i] > 0.5]
-    xi_ids = [pool[i]["id"] for i in range(N) if x[ST(0) + i] > 0.5]
-    captain_id = next(pool[i]["id"] for i in range(N) if x[CP(0) + i] > 0.5)
+    ids = [p["id"] for p in pool]
+    def week(t):
+        squad = [ids[i] for i in range(N) if on(x[X(t, i)])]
+        xi = [ids[i] for i in range(N) if on(x[S(t, i)])]
+        cap = next(ids[i] for i in range(N) if on(x[C(t, i)]))
+        return squad, xi, cap
+    squad_ids, xi_ids, captain_id = week(0)
     adj0 = {p["id"]: xp_adj[0][i] for i, p in enumerate(pool)}
 
-    # Vice-captain: best remaining starter this week who isn't blocked.
     vice_candidates = [i for i in xi_ids if i != captain_id and i not in blocked_captain_ids]
     vice_id = max(vice_candidates, key=lambda i: adj0[i]) if vice_candidates else None
+    bench_ids = sorted((i for i in squad_ids if i not in xi_ids),
+                       key=lambda i: (pool_by_id[i]["position"] != "GK", -adj0[i]))
 
-    # Bench ORDER matters for FPL autosubs: GK slot first (fixed by FPL),
-    # then outfielders by this week's xP, best first.
-    bench_ids = [i for i in squad_ids if i not in xi_ids]
-    bench_ids.sort(key=lambda i: (pool_by_id[i]["position"] != "GK", -adj0[i]))
+    def paired(ins, outs):
+        pairs = []
+        hz = lambda i: pool_by_id[i].get("xp_horizon_sum", pool_by_id[i]["xp"])
+        for pos in SQUAD_REQ:
+            a = sorted([i for i in ins if pool_by_id[i]["position"] == pos], key=lambda i: -hz(i))
+            b = sorted([i for i in outs if pool_by_id[i]["position"] == pos], key=lambda i: -hz(i))
+            pairs.extend(zip(a, b))
+        return pairs
 
-    transfers_in = sorted(set(squad_ids) - current_squad_ids)
+    transfers_in = sorted(set(squad_ids) - current_squad_ids) if current_squad_ids else []
     transfers_out = sorted(current_squad_ids - set(squad_ids))
+    pairs = paired(transfers_in, transfers_out)
     transfers_made = len(transfers_out)
-    hit_taken = 0 if unlimited_transfers else max(0, transfers_made - free_transfers)
+    hit_taken = 0 if (unlimited_transfers or fresh_build) else max(0, transfers_made - free_transfers)
     hit_cost = HIT_COST * hit_taken
 
-    # Pair IN/OUT by POSITION (FPL requires like-for-like), highest-xP first
-    # within each position -- the old version paired by sorted id, which could
-    # pair e.g. a DEF in against a MID out and show a misleading gain.
-    pairs = []
-    for pos in SQUAD_REQ:
-        ins = sorted([i for i in transfers_in if pool_by_id[i]["position"] == pos],
-                     key=lambda i: -pool_by_id[i].get("xp_horizon_sum", pool_by_id[i]["xp"]))
-        outs = sorted([i for i in transfers_out if pool_by_id[i]["position"] == pos],
-                      key=lambda i: -pool_by_id[i].get("xp_horizon_sum", pool_by_id[i]["xp"]))
-        pairs.extend(zip(ins, outs))
-    transfer_point_gains = [
-        round(pool_by_id[a].get("xp_horizon_sum", pool_by_id[a]["xp"])
-              - pool_by_id[b].get("xp_horizon_sum", pool_by_id[b]["xp"]), 2)
-        for a, b in pairs
-    ]
+    # True free-transfer counts, replayed with FPL's rules from the chosen
+    # transfer counts. (The model only uses FTs as an upper bound, so its own
+    # FT variables can sit below the real value without affecting decisions.)
+    true_ft = [min(free_transfers, MAX_BANKED_FREE_TRANSFERS)]
+    for t in range(T):
+        n_t = int(round(x[NN(t)]))
+        if t == 0 and (unlimited_transfers or fresh_build):
+            true_ft.append(min(MAX_BANKED_FREE_TRANSFERS, true_ft[0] + 1))
+        elif n_t > true_ft[t]:
+            true_ft.append(1)
+        else:
+            true_ft.append(min(MAX_BANKED_FREE_TRANSFERS, true_ft[t] - n_t + 1))
+
+    # Future-week plan (informational; re-optimised every run)
+    plan, prev = [], set(squad_ids)
+    for t in range(1, T):
+        sq, xi_t, cap_t = week(t)
+        ins, outs = sorted(set(sq) - prev), sorted(prev - set(sq))
+        plan.append({
+            "week_offset": t,
+            "free_transfers_available": true_ft[t],
+            "transfers": [(pool_by_id[a]["name"], pool_by_id[b]["name"]) for a, b in paired(ins, outs)],
+            "hit_cost": HIT_COST * int(round(x[H(t)])),
+            "captain": pool_by_id[cap_t]["name"],
+            "starting_xi_ids": xi_t, "squad_ids": sq, "captain_id": cap_t,
+        })
+        prev = set(sq)
 
     expected_points = sum(pool_by_id[i]["xp"] for i in xi_ids) + pool_by_id[captain_id]["xp"] - hit_cost
-    horizon_points = sum(
-        xp[t][i] * (x[ST(t) + i] > 0.5) + xp[t][i] * (x[CP(t) + i] > 0.5)
-        for t in range(T) for i in range(N)) - hit_cost
+    horizon_points = sum(xp[t][i] * (on(x[S(t, i)]) + on(x[C(t, i)])) for t in range(T) for i in range(N)) \
+        - sum(HIT_COST * round(x[H(t)]) for t in range(T))
     squad_value = round(sum(sell_values.get(i, pool_by_id[i]["price"]) for i in squad_ids), 1)
 
     return {
@@ -335,21 +401,25 @@ def solve(pool, current_squad_ids=None, budget=BUDGET_DEFAULT, free_transfers=1,
         "squad_ids": squad_ids,
         "starting_xi": [pool_by_id[i]["name"] for i in xi_ids],
         "starting_xi_ids": xi_ids,
-        "bench": [pool_by_id[i]["name"] for i in bench_ids],        # in recommended autosub order
+        "bench": [pool_by_id[i]["name"] for i in bench_ids],
         "bench_ids": bench_ids,
         "captain": pool_by_id[captain_id]["name"],
         "captain_id": captain_id,
         "vice_captain": pool_by_id[vice_id]["name"] if vice_id else None,
         "transfers_in": [pool_by_id[a]["name"] for a, _ in pairs],
         "transfers_out": [pool_by_id[b]["name"] for _, b in pairs],
-        "transfer_point_gains": transfer_point_gains,  # per IN/OUT pair, summed over the horizon
+        "transfer_point_gains": [round(pool_by_id[a].get("xp_horizon_sum", pool_by_id[a]["xp"])
+                                       - pool_by_id[b].get("xp_horizon_sum", pool_by_id[b]["xp"]), 2)
+                                 for a, b in pairs],
         "transfers_made": transfers_made,
         "free_transfers_used": min(transfers_made, free_transfers),
         "hit_taken": hit_taken,
         "hit_cost": hit_cost,
-        "expected_points": round(float(expected_points), 2),       # THIS week, nominal, excl. bench
-        "horizon_expected_points": round(float(horizon_points), 2),  # undiscounted, over T weeks
+        "expected_points": round(float(expected_points), 2),
+        "horizon_expected_points": round(float(horizon_points), 2),
         "horizon_weeks": T,
+        "future_plan": plan,
+        "objective_value": round(float(-result.fun), 3),
         "bench_points": round(sum(pool_by_id[i]["xp"] for i in bench_ids), 2),
         "squad_value": squad_value,
         "bank_remaining": round(budget - squad_value, 1),

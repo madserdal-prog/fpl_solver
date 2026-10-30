@@ -33,6 +33,9 @@ import critic_free
 import collector
 import checks
 import captain_review
+import chips
+
+NEAR_TIE_GAP = 2.0  # show the runner-up plan when it is within this many (discounted) points
 
 
 def resolve_gw(gw_arg, events_path="events.json"):
@@ -94,29 +97,48 @@ def main():
     with open(args.fixtures, encoding="utf-8") as f:
         fixtures = json.load(f)
 
-    fc = forecast.build_forecast(master, fixtures, start_gw=args.gw, horizon=args.horizon)
+    # Forecast far enough ahead for the chip planner to value every week up to
+    # the chip deadline (GW18 in the first half), not just the 5-week horizon.
+    chip_window = chips.last_usable_gw(args.gw) - args.gw + 1
+    forecast_horizon = max(args.horizon, min(chip_window, 38 - args.gw + 1))
+    fc = forecast.build_forecast(master, fixtures, start_gw=args.gw, horizon=forecast_horizon)
     forecast_path = f"forecast_gw{args.gw}.json"
     with open(forecast_path, "w", encoding="utf-8") as f:
         json.dump(fc, f, ensure_ascii=False, indent=2)
     print(f"Wrote {forecast_path}")
 
-    pool = solver.load_pool_from_forecast(forecast_path, args.master, horizon_gw=0)
+    pool_extended = solver.load_pool_from_forecast(forecast_path, args.master, horizon_gw=0)
+    pool = chips.pool_for_horizon(pool_extended, args.horizon)  # transfer planning uses the 5-GW horizon
 
     my_team = my_team_module.load_my_team(args.my_team)
 
-    # IMPORTANT: budget must reflect your ACTUAL current squad's market value
-    # + bank, not a fixed 100.0. A hardcoded 100.0 is only correct at the very
-    # start of a season, before any player's price has moved -- once prices
-    # drift (which happens constantly), it silently over- or under-states what
-    # you actually have to spend. This was causing real transfer suggestions
-    # that turned out infeasible by the exact size of the accumulated drift.
-    pool_by_id = {p["id"]: p for p in pool}
-    real_squad_value = round(sum(pool_by_id[i]["price"] for i in my_team["current_squad"]
-                                  if i in pool_by_id), 1)
-    print(f"Real current squad value (from actual prices, not a fixed 100.0): £{real_squad_value}m")
+    # Keep purchase_prices in sync BEFORE computing anything else -- carries
+    # forward tracked prices for players you still own, records today's
+    # price as the starting estimate for anyone new. Write it back to
+    # my_team.json so next week's run has this week's info to build on.
+    my_team["purchase_prices"] = my_team_module.update_purchase_prices(my_team, pool)
+    with open(args.my_team, "w", encoding="utf-8") as f:
+        json.dump(my_team, f, ensure_ascii=False, indent=2)
 
-    kwargs = my_team_module.to_solver_kwargs(my_team, active_chip=args.chip, base_budget=real_squad_value)
+    # IMPORTANT: budget must reflect your ACTUAL current squad's SELL VALUE
+    # (not raw market price, and not a fixed 100.0). A hardcoded 100.0 is
+    # only correct at the very start of a season, before any player's price
+    # has moved -- once prices drift (which happens constantly), it silently
+    # over- or under-states what you actually have to spend. And even using
+    # current market price for owned players overstates it slightly further,
+    # since FPL's real sell-price rule only returns half of any profit,
+    # rounded down. This combination was causing real transfer suggestions
+    # that turned out infeasible in practice by the exact size of the drift.
+    sell_values = my_team_module.compute_squad_sell_values(my_team, pool)
+    real_squad_value = round(sum(sell_values.values()), 1)
+    print(f"Real current squad sell value (purchase price + 50% profit rule, not a fixed 100.0): "
+          f"£{real_squad_value}m")
 
+    kwargs = my_team_module.to_solver_kwargs(my_team, active_chip=args.chip,
+                                              base_budget=real_squad_value, pool=pool)
+
+    if args.chip == "bench_boost":
+        kwargs["bench_weight"] = 1.0  # bench points count in full this week
     if args.initial_team:
         kwargs["unlimited_transfers"] = True
         print("(--initial-team set: building from scratch, current_squad ignored for transfer-cost "
@@ -295,6 +317,39 @@ def main():
                 print(f"  Agent {agree} solver's pick -> recommends: {agent_review['recommended_captain']}")
                 print(f"  Reasoning: {agent_review['reasoning']}")
     final_solution["agent_captain_review"] = agent_review
+
+    # --- Runner-up plan: shown only when it's a near-tie, so you can see when
+    # the top recommendation is a coin flip rather than a clear call ---
+    final_solution["runner_up"] = None
+    try:
+        runner = solver.solve(pool, risk_penalty=risk_penalty, blocked_captain_ids=blocked_captain_ids,
+                              forbid_week0_squads=[final_solution["squad_ids"]], **kwargs)
+        gap = round(final_solution["objective_value"] - runner["objective_value"], 2)
+        if gap < NEAR_TIE_GAP:
+            final_solution["runner_up"] = {"transfers_in": runner["transfers_in"],
+                                           "transfers_out": runner["transfers_out"],
+                                           "hit_cost": runner["hit_cost"], "gap": gap}
+            print(f"\nNear-tie runner-up ({gap} pts behind): IN {runner['transfers_in']} OUT {runner['transfers_out']}")
+    except RuntimeError as e:
+        print(f"(No runner-up plan found: {e})")
+
+    # --- Chip planner (first-half chips expire at the GW19 deadline) ---
+    final_solution["chip_plan"] = None
+    if my_team.get("chips_available") and not args.chip:
+        print("\n=== Chip planner ===")
+        plan = chips.plan_chips(pool_extended, final_solution, my_team["chips_available"], args.gw,
+                                kwargs, risk_penalty=risk_penalty, blocked_captain_ids=blocked_captain_ids)
+        chip_alt = {"wildcard": plan.get("wildcard_solution"), "free_hit": plan.get("free_hit_solution")}
+        play_alt = chip_alt.get(plan["play_now"]) if plan["play_now"] else None
+        final_solution["chip_plan"] = {
+            "summary": chips.summary_line(plan),
+            "play_now": plan["play_now"], "play_now_value": plan["play_now_value"],
+            "assignment": plan["assignment"], "values": plan["values"], "deadline_gw": plan["deadline_gw"],
+            "play_now_squad": None if not play_alt else {
+                "transfers_in": play_alt["transfers_in"], "transfers_out": play_alt["transfers_out"],
+                "captain": play_alt["captain"], "starting_xi": play_alt["starting_xi"]},
+        }
+        print("  " + final_solution["chip_plan"]["summary"])
 
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(final_solution, f, ensure_ascii=False, indent=2)

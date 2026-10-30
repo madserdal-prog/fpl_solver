@@ -105,6 +105,32 @@ def format_message(solution: dict, gw: int, critic_summary: str = None,
 
     # Bench Boost alternative -- only present when checks.RUN_BENCH_BOOST_ALTERNATIVE
     # was on and bench_boost was actually available this run (see run_real.py).
+    chip_plan = solution.get("chip_plan")
+    if chip_plan and chip_plan.get("summary"):
+        lines.append(f":dart: *Chips:* {chip_plan['summary']}")
+        alt = chip_plan.get("play_now_squad")
+        if alt:
+            swaps = ", ".join(f"{i} for {o}" for i, o in zip(alt["transfers_in"], alt["transfers_out"])) or "no changes"
+            lines.append(f"    _If you play it:_ {swaps} | captain {alt['captain']}")
+
+    runner = solution.get("runner_up")
+    if runner:
+        swaps = ", ".join(f"{i} for {o}" for i, o in zip(runner["transfers_in"], runner["transfers_out"])) or "roll the transfer"
+        lines.append(f":balance_scale: Near-tie alternative ({runner['gap']} pts behind over the horizon): {swaps}"
+                     + (f" (hit -{runner['hit_cost']})" if runner.get("hit_cost") else ""))
+
+    plan = solution.get("future_plan") or []
+    nxt = next((w for w in plan if w.get("transfers")), None)
+    if plan:
+        if nxt:
+            swaps = ", ".join(f"{i} for {o}" for i, o in nxt["transfers"])
+            lines.append(f":spiral_calendar_pad: Planned next: GW+{nxt['week_offset']} {swaps}"
+                         + (f" (hit -{nxt['hit_cost']})" if nxt["hit_cost"] else "")
+                         + " _(provisional, re-planned weekly)_")
+        else:
+            lines.append(f":spiral_calendar_pad: Plan: no further transfers in the horizon; "
+                         f"bank up to {plan[-1]['free_transfers_available']} free transfers")
+
     if solution.get("bench_boost_note"):
         lines.append(f":bench: {solution['bench_boost_note']}")
 

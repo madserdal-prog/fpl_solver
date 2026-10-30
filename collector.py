@@ -70,36 +70,39 @@ def count_games_played_so_far(raw_bootstrap: dict) -> int:
     return sum(1 for e in raw_bootstrap.get("events", []) if e.get("finished"))
 
 
-def estimate_start_probability(minutes: int, games_played_so_far: int) -> float:
+def estimate_start_probability(minutes: int, games_played_so_far: int, starts: int = None) -> float:
     """
-    Heuristic probability of meaningful playing time, used as the
-    'start_probability' fallback in forecast.py's p_play(). FPL's API
-    doesn't provide this directly.
+    Probability of starting, used by forecast.py's p_play().
 
-    IMPORTANT FIX: this used to bucket on ABSOLUTE cumulative minutes
-    (>450, >90, else) -- calibrated for a mature, fully-progressed season.
-    Early in a season, almost NO player can reach 450 minutes yet, even a
-    completely nailed-on starter who's played every single available
-    match -- verified directly against real players in this pipeline
-    (Palmer, Gibbs-White, De Cuyper all landed in the worst 0.2 bucket
-    purely because the season was young, not because they were actually
-    doubtful). The fix: normalize by the FRACTION of available minutes
-    actually played (minutes / (games_played_so_far * 90)), which gives a
-    fair "how nailed is this player" signal regardless of how far into
-    the season it currently is.
+    Preferred signal: STARTS / games played (FPL's own 'starts' field). It is
+    cleaner than minutes share, which counts substitute cameos as partial
+    starts. Falls back to the season-relative minutes share when 'starts'
+    is unavailable (older data). Neither signal sees a recent role change --
+    a player who missed early weeks injured but now starts every game is
+    still under-rated until his season totals catch up.
     """
     if games_played_so_far <= 0:
-        return 0.75  # true preseason, no real data yet -- neutral default, unchanged from before
-    possible_minutes = games_played_so_far * 90
-    fraction_played = min(1.0, minutes / possible_minutes)
+        return 0.75  # true preseason, no data yet -- neutral default
+    if starts is not None:
+        return round(max(0.05, min(0.95, starts / games_played_so_far)), 3)
+    fraction_played = min(1.0, minutes / (games_played_so_far * 90))
     if fraction_played >= 0.75:
-        return 0.90  # played the large majority of available minutes -- a nailed starter
+        return 0.90
     elif fraction_played >= 0.4:
-        return 0.60  # partial/rotation-risk starter
+        return 0.60
     elif fraction_played >= 0.1:
-        return 0.35  # fringe player, occasional appearances
+        return 0.35
     else:
-        return 0.15  # barely featured so far
+        return 0.15
+
+
+def _first_present(e: dict, *keys):
+    """Returns the first of these raw fields that FPL actually supplies, else None.
+    Used for fields whose exact name isn't verified (e.g. defensive contributions)."""
+    for k in keys:
+        if e.get(k) is not None:
+            return e[k]
+    return None
 
 
 def normalize_master(raw_bootstrap: dict) -> dict:
@@ -184,7 +187,23 @@ def normalize_master(raw_bootstrap: dict) -> dict:
                                   # that ISN'T subject to the small-sample shrinkage the rest of the
                                   # model applies, since being FPL's officially published taker is a
                                   # fact independent of how few minutes a player has racked up.
-            "start_probability": estimate_start_probability(minutes, games_played_so_far),
+            "start_probability": estimate_start_probability(
+                minutes, games_played_so_far,
+                int(e["starts"]) if e.get("starts") is not None else None),
+            "starts": int(e["starts"]) if e.get("starts") is not None else None,
+            # --- Fields for the scoring components added to forecast.py ---
+            # Season TOTALS (not per-90) for the team strength model: summing a
+            # team's players gives the team's xG for, and its GK's xGC gives xG against.
+            "expected_goals_total": expected_goals,
+            "expected_goals_conceded_total": float(e.get("expected_goals_conceded", 0) or 0),
+            "saves_per_90": round(float(e.get("saves", 0) or 0) * per90_factor, 3),
+            # Defensive contributions (DEFCON). The exact FPL field name is NOT
+            # verified, so try the plausible names; None means "not supplied" and
+            # forecast.py then simply adds no DEFCON points (never crashes).
+            "defensive_contribution_per_90": (
+                round(float(_first_present(e, "defensive_contribution")) * per90_factor, 3)
+                if _first_present(e, "defensive_contribution") is not None
+                else _first_present(e, "defensive_contribution_per_90")),
             "games_played_so_far": games_played_so_far,  # embedded per-element (same value for
                                                            # everyone) so forecast.py's trust
                                                            # calculation can use the SAME season-

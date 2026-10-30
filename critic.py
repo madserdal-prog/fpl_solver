@@ -67,6 +67,7 @@ Respond with ONLY valid JSON in this exact format, no other text before or after
 {
   "flags": [
     {
+      "player_id": 123,
       "player_name": "...",
       "risk_level": "high" | "medium" | "low",
       "reason": "brief, concrete justification with what was found",
@@ -77,12 +78,13 @@ Respond with ONLY valid JSON in this exact format, no other text before or after
   "summary": "2-3 sentences summarizing the most important findings across the squad"
 }
 
-Include ONLY players where you found something real to say -- do not create entries for players \
+Copy each player's player_id EXACTLY from the squad list you were given -- names can be shared
+by several players, the id cannot. Include ONLY players where you found something real to say -- do not create entries for players \
 with no news of significance. If you find nothing concerning for a player, do not include them.
 """
 
 
-def call_grok_with_search(squad_names: list, api_key: str) -> dict:
+def call_grok_with_search(squad_labels: list, api_key: str) -> dict:
     """
     Calls xAI's Responses API with the web_search tool enabled. The
     response's "output" is a list of typed items (message, tool calls,
@@ -91,7 +93,7 @@ def call_grok_with_search(squad_names: list, api_key: str) -> dict:
     sits at a fixed position either.
     """
     user_message = (
-        "Proposed squad this round: " + ", ".join(squad_names) + ". "
+        "Proposed squad this round (name, id, club, position): " + "; ".join(squad_labels) + ". "
         "Search for fresh information about these players and assess risk per your instructions."
     )
 
@@ -198,13 +200,24 @@ def flags_to_solver_inputs(critic_output: dict, master_data: dict,
     blocked_captain_ids = set()
     unmatched = []
 
+    valid_ids = {e["id"] for e in master_data["elements"]}
+    name_counts = {}
+    for e in master_data["elements"]:
+        name_counts[e["web_name"].lower()] = name_counts.get(e["web_name"].lower(), 0) + 1
     for flag in critic_output.get("flags", []):
-        player_name = flag["player_name"]
-        matches = [pid for name, pid in name_to_id.items() if player_name.lower() in name]
-        if not matches:
+        player_name = flag.get("player_name", "")
+        # Prefer the id Grok was asked to copy back. Fall back to an EXACT,
+        # UNAMBIGUOUS name only -- the old substring match + "lowest id" rule
+        # could attach a flag to the wrong player (e.g. two "Palmer"s).
+        try:
+            pid = int(flag.get("player_id")) if flag.get("player_id") is not None else None
+        except (TypeError, ValueError):
+            pid = None
+        if pid not in valid_ids:
+            pid = name_to_id.get(player_name.lower()) if name_counts.get(player_name.lower()) == 1 else None
+        if pid is None:
             unmatched.append(player_name)
             continue
-        pid = matches[0]
 
         # Penalties are SHARES of this week's xP removed (see solver_general.solve):
         # high -> 70% (likely to miss/not start), medium -> 30% (starts, minutes at
@@ -233,10 +246,13 @@ def run_critic(solution_path: str, master_data_path: str, out_path: str):
     with open(master_data_path, encoding="utf-8") as f:
         master_data = json.load(f)
 
-    squad_names = solution["squad"]
-    print(f"Sending {len(squad_names)} players to the critic for a news check...")
+    by_id = {e["id"]: e for e in master_data["elements"]}
+    squad_ids = solution.get("squad_ids") or []
+    squad_labels = [f"{by_id[i]['web_name']} (id={i}, {by_id[i]['team']}, {by_id[i]['element_type']})"
+                    for i in squad_ids if i in by_id] or list(solution["squad"])
+    print(f"Sending {len(squad_labels)} players to the critic for a news check...")
 
-    api_response = call_grok_with_search(squad_names, api_key)
+    api_response = call_grok_with_search(squad_labels, api_key)
     raw_text = extract_text_blocks(api_response)
     critic_output = parse_critic_response(raw_text)
 

@@ -103,8 +103,31 @@ def compute_free_transfers(history_data: dict, upcoming_gw: int) -> int:
     return free_transfers
 
 
+FPL_CHIP_NAMES = {"wildcard": "wildcard", "freehit": "free_hit", "bboost": "bench_boost",
+                  "3xc": "triple_captain"}
+FIRST_HALF_LAST_GW = 18  # first-half chips must be played before the GW19 deadline
+
+
+def compute_chips_available(history_data: dict, upcoming_gw: int) -> list:
+    """
+    Chips still available for the half of the season `upcoming_gw` falls in,
+    from FPL's own record of chips played (history["chips"]). 2026/27 gives
+    one full set per half; first-half chips expire at the GW19 deadline and
+    don't carry over. This replaces hand-maintained chips_available, which
+    would otherwise never reset for the second half.
+    """
+    half = 1 if upcoming_gw <= FIRST_HALF_LAST_GW else 2
+    used = set()
+    for chip in history_data.get("chips", []):
+        chip_half = 1 if chip["event"] <= FIRST_HALF_LAST_GW else 2
+        if chip_half == half and chip["event"] < upcoming_gw and chip.get("name") in FPL_CHIP_NAMES:
+            used.add(FPL_CHIP_NAMES[chip["name"]])
+    return [c for c in ("wildcard", "free_hit", "bench_boost", "triple_captain") if c not in used]
+
+
 def build_my_team_from_entry(entry_data: dict, chips_available=None, locked_players=None,
-                              existing: dict = None, computed_free_transfers: int = None) -> dict:
+                              existing: dict = None, computed_free_transfers: int = None,
+                              computed_chips_available: list = None) -> dict:
     """
     entry_data is the response from fetch_entry_picks(). Structure
     (publicly documented FPL API format):
@@ -136,6 +159,8 @@ def build_my_team_from_entry(entry_data: dict, chips_available=None, locked_play
         free_transfers = 1
         ft_note = "free_transfers defaulted to 1 (no history available, no previous file to carry over)."
 
+    if computed_chips_available is not None and chips_available is None:
+        chips_available = computed_chips_available  # derived from FPL's own chip history
     if existing:
         chips_available = chips_available if chips_available is not None else existing.get("chips_available", [])
         locked_players = locked_players if locked_players is not None else existing.get("locked_players", [])
@@ -203,6 +228,7 @@ def main():
     if args.self_test:
         entry_data = _self_test_entry_data()
         computed_ft = compute_free_transfers(_self_test_history_data(), upcoming_gw=args.gw + 1)
+        computed_chips = compute_chips_available(_self_test_history_data(), upcoming_gw=args.gw + 1)
     else:
         if args.team_id is None or args.gw is None:
             parser.error("--team-id and --gw are required (or use --self-test)")
@@ -215,14 +241,17 @@ def main():
             raise
 
         computed_ft = None
+        computed_chips = None
         try:
             history = fetch_entry_history(args.team_id)
             computed_ft = compute_free_transfers(history, upcoming_gw=args.gw + 1)
+            computed_chips = compute_chips_available(history, upcoming_gw=args.gw + 1)
         except Exception as e:
             print(f"Could not fetch/compute free_transfers from history ({e}) -- "
                   f"falling back to carried-over/default value.")
 
-    my_team = build_my_team_from_entry(entry_data, existing=existing, computed_free_transfers=computed_ft)
+    my_team = build_my_team_from_entry(entry_data, existing=existing, computed_free_transfers=computed_ft,
+                                       computed_chips_available=computed_chips)
     my_team["last_synced_gw"] = args.gw  # marks this sync so future runs for the SAME gw skip
                                           # re-overwriting (see the check above)
 

@@ -1,0 +1,110 @@
+name: FPL solver run
+
+on:
+  schedule:
+    # Ticks hourly; should_run.py decides whether this tick does real work:
+    # the daily 09:00 UTC run, plus a pre-deadline run ~3h before each
+    # deadline (deadlines move around, so a fixed daily time can't track them).
+    - cron: '5 * * * *'
+  workflow_dispatch:
+    inputs:
+      initial_team:
+        description: 'Build initial squad from scratch (no transfer penalty, e.g. GW1 before deadline)'
+        type: boolean
+        default: false
+      use_paid_critic:
+        description: 'Use paid critic (xAI Grok + web search) instead of the free critic'
+        type: boolean
+        default: false
+      use_agent_review:
+        description: 'Run the captain review agent (xAI Grok) -- costs money per run'
+        type: boolean
+        default: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Deadline gate
+        id: gate
+        run: python should_run.py
+
+      - name: Install dependencies
+        if: steps.gate.outputs.run == 'true'
+        run: pip install requests numpy scipy
+
+      - name: Collect fresh FPL data
+        if: steps.gate.outputs.run == 'true'
+        run: python collector.py
+
+      - name: Refresh my_team.json from your actual FPL team
+        if: steps.gate.outputs.run == 'true'
+        env:
+          FPL_TEAM_ID: ${{ secrets.FPL_TEAM_ID }}
+        run: |
+          # Auto-detects the current gameweek from events.json (written by collector.py),
+          # then pulls picks for the PREVIOUS gameweek -- that reflects your squad as it
+          # actually stands right now, including any real transfers you've made since.
+          # --allow-missing means: if that gameweek's picks aren't public yet (e.g. its
+          # deadline hasn't passed), this step quietly does nothing rather than failing
+          # the whole workflow -- my_team.json just stays as it was.
+          LAST_GW=$(python -c "
+          import json
+          with open('events.json') as f:
+              events = json.load(f)
+          import collector
+          current = collector.get_current_gameweek(events)
+          print(max(1, current['id'] - 1))
+          " 2>/dev/null || echo "")
+          if [ -n "$LAST_GW" ]; then
+            python fetch_my_team.py --team-id "$FPL_TEAM_ID" --gw "$LAST_GW" --allow-missing
+          else
+            echo "Could not determine last gameweek (events.json missing?) -- skipping refresh."
+          fi
+
+      - name: Run solver
+        if: steps.gate.outputs.run == 'true'
+        env:
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+        run: |
+          ARGS=""
+          if [ "${{ github.event.inputs.initial_team }}" = "true" ]; then
+            echo "Running with --initial-team (building from scratch, no transfer penalty)"
+            ARGS="$ARGS --initial-team"
+          fi
+          if [ "${{ github.event.inputs.use_paid_critic }}" = "true" ]; then
+            echo "Running with --paid-critic (xAI Grok + web search)"
+            ARGS="$ARGS --paid-critic"
+          fi
+          if [ "${{ github.event.inputs.use_agent_review }}" = "true" ]; then
+            echo "Running with --agent-review (xAI Grok captain review)"
+            ARGS="$ARGS --agent-review"
+          fi
+          python run_real.py $ARGS
+
+      - name: Post to Slack
+        if: steps.gate.outputs.run == 'true'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          # Post ONLY the newest gameweek's solution. (The old loop posted every
+          # solver_solution_gw*.json in the repo -- one message per stored GW.)
+          f=$(ls solver_solution_gw*.json | sort -V | tail -n 1)
+          gw="${f#solver_solution_gw}"; gw="${gw%.json}"
+          python report.py --solution "$f" --gw "$gw" --critic-flags "critic_flags_gw${gw}.json"
+
+      - name: Commit updated files
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          git config user.name "fpl-auto-pipeline-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add solver_solution_gw*.json critic_flags_gw*.json forecast_gw*.json my_team.json master_data.json fixtures.json events.json data/
+          git diff --staged --quiet || git commit -m "Auto solver run $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git pull --rebase --autostash origin main
+          git push

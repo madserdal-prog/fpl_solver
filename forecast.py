@@ -27,6 +27,7 @@ load_pool_from_forecast() expects.
 """
 
 import json
+import math
 import numpy as np
 
 ELEMENT_TYPES = ["GK", "DEF", "MID", "FWD"]
@@ -178,6 +179,144 @@ def make_synthetic_fixtures(teams, seed: int = 7, start_gw: int = 4, horizon: in
 # Core model
 # ---------------------------------------------------------------------------
 
+# ---------------------------------------------------------------------------
+# Team strength model + extra scoring components
+# ---------------------------------------------------------------------------
+# All heuristic constants below are reasoned starting points, NOT fitted to
+# data -- backtest.py exists precisely to measure whether they help.
+TEAM_SHRINK_GAMES = 6       # team rates lean on the FDR-based prior until ~6 games in
+FDR_PRIOR_K = 0.15          # each FDR step (1-5) ~ +/-16% attack and defence strength (heuristic)
+HOME_ATTACK_MULT = 1.10     # home sides score ~10% more, away ~10% less (heuristic)
+AWAY_ATTACK_MULT = 0.90
+DEFCON_POINTS = 2
+DEFCON_THRESHOLD = {"DEF": 10, "MID": 12, "FWD": 12}   # GKs are not eligible
+SAVES_PER_POINT = 3
+GOALS_CONCEDED_PER_MINUS_POINT = 2  # GK/DEF lose 1 pt per 2 goals conceded
+
+
+def _poisson_pmf(lam, n):
+    return math.exp(-lam) * lam ** n / math.factorial(n)
+
+
+def _expected_floor_div(lam, k, n_max=40):
+    """E[floor(X / k)] for X ~ Poisson(lam)."""
+    return sum(_poisson_pmf(lam, n) * (n // k) for n in range(n_max))
+
+
+def _prob_at_least(lam, threshold):
+    return 1.0 - sum(_poisson_pmf(lam, n) for n in range(threshold))
+
+
+def team_strength_ratings(fixtures):
+    """FPL's own 1-5 strength rating per team, read off the fixture list: the
+    difficulty FPL assigns a side when facing team X is X's rating."""
+    seen = {}
+    for fx in fixtures or []:
+        seen.setdefault(fx["team_a"], []).append(fx["team_h_difficulty"])   # home side facing team_a
+        seen.setdefault(fx["team_h"], []).append(fx["team_a_difficulty"])   # away side facing team_h
+    return {t: sum(v) / len(v) for t, v in seen.items() if v}
+
+
+def build_team_model(master, fixtures=None):
+    """
+    Per-team expected goals FOR and AGAINST per game, from real season data:
+      xG for     = sum of the team's players' season expected goals / games
+      xG against = the main goalkeeper's expected goals conceded per 90
+    While the sample is small, each team is pulled toward a PRIOR built from
+    FPL's own difficulty rating (when fixtures are given), not toward a flat
+    league average. FIX: the first version discarded FDR entirely and relied
+    on a few noisy games -- it backtested worse than the old FDR model.
+    Returns None when there's no usable data (preseason / older master
+    files) -- forecast then falls back to the FDR-only formula.
+    """
+    elements = master["elements"]
+    games = max((e.get("games_played_so_far") or 0) for e in elements) if elements else 0
+    if games <= 0 or not any(e.get("expected_goals_total") for e in elements):
+        return None
+    teams = sorted({e["team"] for e in elements})
+    xg_for, xg_against = {}, {}
+    for t in teams:
+        members = [e for e in elements if e["team"] == t]
+        xg_for[t] = sum(e.get("expected_goals_total") or 0.0 for e in members) / games
+        gks = [e for e in members if e["element_type"] == "GK" and (e.get("minutes") or 0) > 0]
+        if gks:
+            gk = max(gks, key=lambda e: e["minutes"])
+            xg_against[t] = (gk.get("expected_goals_conceded_total") or 0.0) / (gk["minutes"] / 90.0)
+    if not xg_against:
+        return None
+    avg_for = sum(xg_for.values()) / len(xg_for)
+    avg_against = sum(xg_against.values()) / len(xg_against)
+    ratings = team_strength_ratings(fixtures)
+    prior_att = {t: avg_for * math.exp(FDR_PRIOR_K * (ratings.get(t, 3.0) - 3.0)) for t in teams}
+    prior_def = {t: avg_against * math.exp(-FDR_PRIOR_K * (ratings.get(t, 3.0) - 3.0)) for t in teams}
+    w = games / (games + TEAM_SHRINK_GAMES)
+    attack = {t: w * xg_for[t] + (1 - w) * prior_att[t] for t in teams}
+    defence = {t: w * xg_against.get(t, avg_against) + (1 - w) * prior_def[t] for t in teams}
+    return {"attack": attack, "defence": defence, "avg_for": avg_for,
+            "avg_against": avg_against, "league_avg": (avg_for + avg_against) / 2}
+
+
+def fixture_expected_goals(team_model, team, opponent, is_home):
+    """(goals this team is expected to score, goals it's expected to concede)."""
+    m = team_model
+    avg = m["league_avg"]
+    venue_for = HOME_ATTACK_MULT if is_home else AWAY_ATTACK_MULT
+    venue_against = AWAY_ATTACK_MULT if is_home else HOME_ATTACK_MULT
+    lam_for = avg * (m["attack"][team] / avg) * (m["defence"][opponent] / avg) * venue_for
+    lam_against = avg * (m["attack"][opponent] / avg) * (m["defence"][team] / avg) * venue_against
+    return lam_for, lam_against
+
+
+def build_fixture_details(fixtures):
+    """dict[(team, gw)] -> list of (opponent, is_home, own_fdr) -- like
+    build_fixture_lookup, but keeping who the opponent is and the venue."""
+    details = {}
+    for fx in fixtures:
+        gw = fx["event"]
+        details.setdefault((fx["team_h"], gw), []).append((fx["team_a"], True, fx["team_h_difficulty"]))
+        details.setdefault((fx["team_a"], gw), []).append((fx["team_h"], False, fx["team_a_difficulty"]))
+    return details
+
+
+def prob_60_plus_given_start(element):
+    """P(60+ minutes | starts), from average minutes per start. Fallback 0.85."""
+    starts = element.get("starts")
+    if starts:
+        minutes_per_start = (element.get("minutes") or 0) / starts
+        return max(0.3, min(0.97, (minutes_per_start - 30) / 50))
+    return 0.85
+
+
+def match_points_breakdown(element, team_model, team, opponent, is_home):
+    """Expected points for ONE match given the player starts (before the
+    form blend, play probability and penalty bonus). Returns a dict so each
+    component is inspectable/testable."""
+    pos = element["element_type"]
+    lam_for, lam_against = fixture_expected_goals(team_model, team, opponent, is_home)
+    team_attack_avg = team_model["attack"][team]
+    attack_mult = lam_for / team_attack_avg if team_attack_avg > 0 else 1.0
+    p60 = prob_60_plus_given_start(element)
+    out = {
+        "attack": attack_mult * (element["expected_goals_per_90"] * GOAL_POINTS[pos]
+                                 + element["expected_assists_per_90"] * ASSIST_POINTS),
+        "appearance": 1.0 + p60,  # 1 pt for playing, +1 more for reaching 60 minutes
+        "bonus": attack_mult * (element["ict_index_per_90"] / 10.0) * BONUS_SCALE,
+        "clean_sheet": p60 * CLEAN_SHEET_POINTS.get(pos, 0) * math.exp(-lam_against),
+        "goals_conceded": 0.0, "saves": 0.0, "defcon": 0.0,
+    }
+    if pos in ("GK", "DEF"):
+        out["goals_conceded"] = -_expected_floor_div(lam_against, GOALS_CONCEDED_PER_MINUS_POINT)
+    if pos == "GK" and element.get("saves_per_90"):
+        defence_avg = team_model["defence"][team]
+        lam_saves = element["saves_per_90"] * (lam_against / defence_avg if defence_avg > 0 else 1.0)
+        out["saves"] = _expected_floor_div(lam_saves, SAVES_PER_POINT)
+    dc90 = element.get("defensive_contribution_per_90")
+    if pos in DEFCON_THRESHOLD and dc90:
+        lam_dc = float(dc90) * p60  # roughly, a full match's worth when he plays 60+
+        out["defcon"] = DEFCON_POINTS * _prob_at_least(lam_dc, DEFCON_THRESHOLD[pos])
+    return out
+
+
 def build_fixture_lookup(fixtures):
     """
     Returns dict[(team, gameweek)] -> list of FDR values the team faces in
@@ -252,7 +391,8 @@ def p_play(element, week_offset: int = 0):
     return normal
 
 
-def compute_xp_series(element, fixture_lookup, start_gw, horizon):
+def compute_xp_series(element, fixture_lookup, start_gw, horizon,
+                      fixture_details=None, team_model=None):
     """
     Computes xP for one player for each round in the horizon, following
     the guide's formula. Returns a list of length `horizon`.
@@ -324,26 +464,31 @@ def compute_xp_series(element, fixture_lookup, start_gw, horizon):
         avg_fdr = sum(difficulties) / len(difficulties)
         fdr_adjustment = (avg_fdr - 3.0) * FDR_WEIGHT  # >0 => tough opponent, pulls xP down
 
-        attack_value = (
-            element["expected_goals_per_90"] * game_factor * goal_pts
-            + element["expected_assists_per_90"] * game_factor * ASSIST_POINTS
-        )
-        expected_bonus = (element["ict_index_per_90"] / 10.0) * BONUS_SCALE * game_factor
-
-        # Explicit clean-sheet contribution -- see CLEAN_SHEET_POINTS/
-        # estimate_clean_sheet_probability() above. Zero for forwards
-        # (CLEAN_SHEET_POINTS["FWD"] = 0), small for midfielders, and the
-        # main fixture-sensitive term for defenders/goalkeepers.
-        clean_sheet_probability = estimate_clean_sheet_probability(avg_fdr)
-        clean_sheet_contribution = CLEAN_SHEET_POINTS.get(pos, 0) * clean_sheet_probability * game_factor
-
-        process_based_xp = play_prob * (
-            attack_value
-            + APPEARANCE_POINTS * game_factor
-            + expected_bonus
-            + clean_sheet_contribution
-            - fdr_adjustment * game_factor
-        )
+        matches = (fixture_details or {}).get((element["team"], gw), [])
+        if team_model is not None and matches and element["team"] in team_model["attack"]:
+            # Team-strength path: per-match model from real xG for/against
+            # (opponent strength + venue) -- includes goals conceded, saves,
+            # DEFCON and 1-vs-2 appearance points. Replaces the flat FDR nudge.
+            process_based_xp = play_prob * sum(
+                sum(match_points_breakdown(element, team_model, element["team"], opp, home).values())
+                for opp, home, _ in matches
+                if opp in team_model["attack"])
+        else:
+            # Fallback (preseason / older data): the original FDR-based formula.
+            attack_value = (
+                element["expected_goals_per_90"] * game_factor * goal_pts
+                + element["expected_assists_per_90"] * game_factor * ASSIST_POINTS
+            )
+            expected_bonus = (element["ict_index_per_90"] / 10.0) * BONUS_SCALE * game_factor
+            clean_sheet_probability = estimate_clean_sheet_probability(avg_fdr)
+            clean_sheet_contribution = CLEAN_SHEET_POINTS.get(pos, 0) * clean_sheet_probability * game_factor
+            process_based_xp = play_prob * (
+                attack_value
+                + APPEARANCE_POINTS * game_factor
+                + expected_bonus
+                + clean_sheet_contribution
+                - fdr_adjustment * game_factor
+            )
 
         # Blend: trust the process-based estimate proportional to sample size,
         # fall back toward the real outcome-anchor (form, or points_per_game if
@@ -379,12 +524,14 @@ def compute_xp_series(element, fixture_lookup, start_gw, horizon):
 
 
 def build_forecast(master, fixtures, start_gw, horizon=5):
-    teams = sorted(set(e["team"] for e in master["elements"]))
     fixture_lookup = build_fixture_lookup(fixtures)
+    fixture_details = build_fixture_details(fixtures)
+    team_model = build_team_model(master, fixtures)  # None -> FDR fallback for everyone
 
     players = []
     for element in master["elements"]:
-        xp_series = compute_xp_series(element, fixture_lookup, start_gw, horizon)
+        xp_series = compute_xp_series(element, fixture_lookup, start_gw, horizon,
+                                      fixture_details=fixture_details, team_model=team_model)
         players.append({
             "id": element["id"],
             "name": element["web_name"],
@@ -394,6 +541,7 @@ def build_forecast(master, fixtures, start_gw, horizon=5):
     return {
         "gameweek": start_gw,
         "horizon": horizon,
+        "model": "team_strength" if team_model else "fdr_fallback",
         "players": players,
     }
 
