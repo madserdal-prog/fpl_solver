@@ -47,7 +47,7 @@ weeks) about each player and assess the risk that they will NOT play/perform as 
 
 Check specifically for:
 - Injuries (ongoing, or recently returned from a long-term injury -- "eased back in",
-  "managed minutes", "rotational role" are all red flags even if the player is technically "available")
+  "managed minutes", "rotational role" reduce expected minutes even if the player is "available")
 - Active transfer sagas (the player could be sold/distracted/benched before the transfer window closes)
 - Suspensions/bans
 - Press conference statements about rotation/resting
@@ -55,6 +55,13 @@ Check specifically for:
 You are EXPLICITLY PROHIBITED from computing, estimating, or implying your own point values (xP, \
 expected points, etc.) for any player. You assess QUALITATIVE risk, not quantitative value. If you \
 find yourself about to say something like "this should get him roughly X points", stop -- that is not your job.
+
+Use risk_level STRICTLY as follows:
+- "high":   likely to MISS the match or NOT START (injured/doubtful, suspended, confirmed rest/benching)
+- "medium": expected to start, but minutes are at real risk (managed minutes, just back from injury,
+            rotation risk, active transfer saga)
+- "low":    worth knowing, no expected impact on minutes
+A player who is available and expected to start is NEVER "high", even with an injury history.
 
 Respond with ONLY valid JSON in this exact format, no other text before or after:
 {
@@ -170,7 +177,7 @@ def parse_critic_response(raw_text: str) -> dict:
 
 
 def flags_to_solver_inputs(critic_output: dict, master_data: dict,
-                            high_penalty=8.0, medium_penalty=3.0):
+                            high_penalty=0.7, medium_penalty=0.3):
     """
     Translates the critic's qualitative flags into the quantitative inputs
     solver_general.solve() expects:
@@ -199,11 +206,15 @@ def flags_to_solver_inputs(critic_output: dict, master_data: dict,
             continue
         pid = matches[0]
 
+        # Penalties are SHARES of this week's xP removed (see solver_general.solve):
+        # high -> 70% (likely to miss/not start), medium -> 30% (starts, minutes at
+        # risk). Both block captaincy this week, matching critic_free.py.
         if flag["risk_level"] == "high":
             risk_penalty[pid] = high_penalty
             blocked_captain_ids.add(pid)
         elif flag["risk_level"] == "medium":
             risk_penalty[pid] = medium_penalty
+            blocked_captain_ids.add(pid)
 
     return risk_penalty, blocked_captain_ids, unmatched
 
