@@ -235,7 +235,7 @@ def assess_player(element: dict):
     return None
 
 
-def full_pool_solver_inputs(master_data: dict, high_penalty=8.0, medium_penalty=3.0):
+def full_pool_solver_inputs(master_data: dict, high_penalty=0.7, medium_penalty=0.3):
     """
     Runs the FREE FPL-status check (assess_player -- no network needed)
     against EVERY player in master_data, not just whoever happens to be in
@@ -279,7 +279,7 @@ def full_pool_solver_inputs(master_data: dict, high_penalty=8.0, medium_penalty=
     return risk_penalty, blocked_captain_ids, []  # third value kept for API compatibility (no unmatched names possible here)
 
 
-def flags_to_solver_inputs(flags: list, master_data: dict, high_penalty=8.0, medium_penalty=3.0):
+def flags_to_solver_inputs(flags: list, master_data: dict, high_penalty=0.7, medium_penalty=0.3):
     """
     Translates the critic's qualitative flags into the quantitative inputs
     solver_general.solve() expects:
