@@ -1,0 +1,464 @@
+{
+  "squad": [
+    "Gabriel",
+    "Calafiori",
+    "Tavernier",
+    "Kelleher",
+    "Thiago",
+    "De Cuyper",
+    "Groß",
+    "Palmer",
+    "Dasilva",
+    "Barry",
+    "Isak",
+    "Mbeumo",
+    "Cunha",
+    "Van Hecke",
+    "Roefs"
+  ],
+  "squad_ids": [
+    4,
+    8,
+    68,
+    82,
+    106,
+    115,
+    124,
+    154,
+    176,
+    249,
+    379,
+    427,
+    428,
+    112,
+    529
+  ],
+  "starting_xi": [
+    "Gabriel",
+    "Calafiori",
+    "Tavernier",
+    "Kelleher",
+    "De Cuyper",
+    "Groß",
+    "Barry",
+    "Isak",
+    "Mbeumo",
+    "Cunha",
+    "Van Hecke"
+  ],
+  "starting_xi_ids": [
+    4,
+    8,
+    68,
+    82,
+    115,
+    124,
+    249,
+    379,
+    427,
+    428,
+    112
+  ],
+  "bench": [
+    "Roefs",
+    "Thiago",
+    "Palmer",
+    "Dasilva"
+  ],
+  "bench_ids": [
+    529,
+    106,
+    154,
+    176
+  ],
+  "captain": "Gabriel",
+  "captain_id": 4,
+  "vice_captain": "Tavernier",
+  "transfers_in": [
+    "Van Hecke"
+  ],
+  "transfers_out": [
+    "Ajayi"
+  ],
+  "transfer_point_gains": [
+    14.73
+  ],
+  "transfers_made": 1,
+  "free_transfers_used": 1,
+  "hit_taken": 0,
+  "hit_cost": 0,
+  "expected_points": 62.05,
+  "horizon_expected_points": 287.21,
+  "horizon_weeks": 5,
+  "future_plan": [
+    {
+      "week_offset": 1,
+      "free_transfers_available": 1,
+      "transfers": [
+        [
+          "Rudoni",
+          "Cunha"
+        ]
+      ],
+      "hit_cost": 0,
+      "captain": "Van Hecke",
+      "starting_xi_ids": [
+        4,
+        8,
+        68,
+        82,
+        106,
+        115,
+        154,
+        183,
+        379,
+        427,
+        112
+      ],
+      "squad_ids": [
+        4,
+        8,
+        68,
+        82,
+        106,
+        115,
+        124,
+        154,
+        176,
+        183,
+        249,
+        379,
+        427,
+        112,
+        529
+      ],
+      "captain_id": 112
+    },
+    {
+      "week_offset": 2,
+      "free_transfers_available": 1,
+      "transfers": [
+        [
+          "Verbruggen",
+          "Roefs"
+        ]
+      ],
+      "hit_cost": 0,
+      "captain": "De Cuyper",
+      "starting_xi_ids": [
+        4,
+        8,
+        68,
+        106,
+        109,
+        115,
+        124,
+        183,
+        379,
+        427,
+        112
+      ],
+      "squad_ids": [
+        4,
+        8,
+        68,
+        82,
+        106,
+        109,
+        115,
+        124,
+        154,
+        176,
+        183,
+        249,
+        379,
+        427,
+        112
+      ],
+      "captain_id": 115
+    },
+    {
+      "week_offset": 3,
+      "free_transfers_available": 1,
+      "transfers": [
+        [
+          "Evanilson",
+          "Barry"
+        ]
+      ],
+      "hit_cost": 0,
+      "captain": "Rudoni",
+      "starting_xi_ids": [
+        4,
+        8,
+        68,
+        79,
+        109,
+        115,
+        154,
+        183,
+        379,
+        427,
+        112
+      ],
+      "squad_ids": [
+        4,
+        8,
+        68,
+        79,
+        82,
+        106,
+        109,
+        115,
+        124,
+        154,
+        176,
+        183,
+        379,
+        427,
+        112
+      ],
+      "captain_id": 183
+    },
+    {
+      "week_offset": 4,
+      "free_transfers_available": 1,
+      "transfers": [
+        [
+          "Silva",
+          "Dasilva"
+        ]
+      ],
+      "hit_cost": 0,
+      "captain": "Tavernier",
+      "starting_xi_ids": [
+        4,
+        68,
+        79,
+        566,
+        106,
+        109,
+        115,
+        183,
+        379,
+        427,
+        112
+      ],
+      "squad_ids": [
+        4,
+        8,
+        68,
+        79,
+        566,
+        82,
+        106,
+        109,
+        115,
+        124,
+        154,
+        183,
+        379,
+        427,
+        112
+      ],
+      "captain_id": 68
+    }
+  ],
+  "objective_value": 245.82,
+  "bench_points": 14.76,
+  "squad_value": 99.1,
+  "bank_remaining": 1.9,
+  "risk_adjusted_players": [
+    "Calafiori",
+    "Palmer",
+    "Isak",
+    "Thiago"
+  ],
+  "blocked_from_captaincy_in_squad": [
+    "Calafiori",
+    "Thiago",
+    "Palmer",
+    "Isak"
+  ],
+  "price_momentum_notes": [
+    "Van Hecke looks likely to RISE in price soon (net +1.09% of managers this GW)",
+    "Ajayi looks likely to FALL in price soon (net -0.24% of managers this GW)"
+  ],
+  "fixture_difficulty_notes": [
+    "Kelleher has a TOUGH run of fixtures over the next 5 GWs (avg FDR 3.8) -- already priced into the 5-GW projection",
+    "Thiago has a TOUGH run of fixtures over the next 5 GWs (avg FDR 3.8) -- already priced into the 5-GW projection"
+  ],
+  "bench_boost_note": "Boosting THIS week's normal bench: +14.76 pts (total 76.81). Restructuring specifically for Bench Boost instead: 76.81 pts (+0.0 vs. just boosting the normal squad).",
+  "agent_captain_review": {
+    "recommended_captain": "Tavernier",
+    "same_as_solver_top_pick": false,
+    "reasoning": "Gabriel is a defender whose high xp rests on a structurally lower captaincy ceiling (rare goal+assist+CS outcomes) with no set-piece duties noted. Tavernier is a similarly-ranked midfielder (xp 6.07) without that positional risk.",
+    "shortlist": [
+      {
+        "name": "Gabriel",
+        "xp": 6.62,
+        "price": 8.0,
+        "position": "DEF",
+        "minutes_this_season": 810,
+        "form": 8.2,
+        "points_per_game": 6.4,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Tavernier",
+        "xp": 6.07,
+        "price": 6.6,
+        "position": "MID",
+        "minutes_this_season": 750,
+        "form": 6.0,
+        "points_per_game": 6.1,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "De Cuyper",
+        "xp": 5.81,
+        "price": 5.4,
+        "position": "DEF",
+        "minutes_this_season": 741,
+        "form": 7.8,
+        "points_per_game": 7.7,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Calafiori",
+        "xp": 5.41,
+        "price": 5.9,
+        "position": "DEF",
+        "minutes_this_season": 699,
+        "form": 5.5,
+        "points_per_game": 5.7,
+        "status": "a",
+        "chance_of_playing_next_round": 100
+      },
+      {
+        "name": "Mbeumo",
+        "xp": 5.41,
+        "price": 7.9,
+        "position": "MID",
+        "minutes_this_season": 810,
+        "form": 4.8,
+        "points_per_game": 4.9,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      }
+    ]
+  },
+  "runner_up": {
+    "transfers_in": [
+      "Van Hecke"
+    ],
+    "transfers_out": [
+      "Dasilva"
+    ],
+    "hit_cost": 0,
+    "gap": 0.23
+  },
+  "chip_plan": {
+    "summary": "PLAY WILDCARD NOW (+27.2) | Plan (chips expire after GW18): Wildcard GW10 (+27.2), Free Hit GW11 (+5.8), Triple Captain GW12 (+6.3), Bench Boost GW16 (+17.3)",
+    "play_now": "wildcard",
+    "play_now_value": 27.23,
+    "assignment": {
+      "wildcard": 10,
+      "free_hit": 11,
+      "bench_boost": 16,
+      "triple_captain": 12
+    },
+    "values": {
+      "wildcard": {
+        "10": 27.23,
+        "11": 12.0,
+        "12": 12.0,
+        "13": 12.0,
+        "14": 12.0,
+        "15": 12.0,
+        "16": 12.0,
+        "17": 12.0,
+        "18": 12.0
+      },
+      "free_hit": {
+        "10": 9.82,
+        "11": 5.81,
+        "12": 3.27,
+        "13": 3.29,
+        "14": 2.66,
+        "15": 4.04,
+        "16": 3.29,
+        "17": 2.51,
+        "18": 2.05
+      },
+      "bench_boost": {
+        "10": 11.92,
+        "11": 14.29,
+        "12": 14.01,
+        "13": 14.7,
+        "14": 16.14,
+        "15": 16.31,
+        "16": 17.33,
+        "17": 16.96,
+        "18": 16.65
+      },
+      "triple_captain": {
+        "10": 6.62,
+        "11": 6.16,
+        "12": 6.32,
+        "13": 6.18,
+        "14": 6.14,
+        "15": 6.09,
+        "16": 6.58,
+        "17": 6.15,
+        "18": 5.88
+      }
+    },
+    "deadline_gw": 18,
+    "play_now_squad": {
+      "transfers_in": [
+        "Verbruggen",
+        "Raya",
+        "Van Hecke",
+        "Konsa",
+        "Vuskovic",
+        "Rudoni",
+        "Neto",
+        "Iwobi",
+        "Haaland",
+        "Evanilson",
+        "N.Jackson"
+      ],
+      "transfers_out": [
+        "Kelleher",
+        "Roefs",
+        "Calafiori",
+        "Dasilva",
+        "Ajayi",
+        "Palmer",
+        "Groß",
+        "Cunha",
+        "Isak",
+        "Thiago",
+        "Barry"
+      ],
+      "captain": "Gabriel",
+      "starting_xi": [
+        "Raya",
+        "Gabriel",
+        "Konsa",
+        "N.Jackson",
+        "Tavernier",
+        "Evanilson",
+        "De Cuyper",
+        "Rudoni",
+        "Iwobi",
+        "Haaland",
+        "Mbeumo"
+      ]
+    }
+  }
+}

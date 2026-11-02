@@ -1,30 +1,47 @@
 {
   "current_squad": [
-    82,
+    529,
     115,
-    229,
+    4,
     279,
-    176,
+    154,
     428,
-    12,
+    68,
     124,
     427,
     106,
     249,
-    529,
-    154,
+    82,
+    176,
     8,
     379
   ],
-  "bank": 1.4,
-  "free_transfers": 2,
+  "bank": 2.7,
+  "free_transfers": 1,
   "chips_available": [
     "wildcard",
-    "bench_boost",
     "free_hit",
+    "bench_boost",
     "triple_captain"
   ],
   "locked_players": [],
   "notes": "current_squad/bank auto-refreshed from FPL. free_transfers computed from your real FPL transfer history (see compute_free_transfers()). chips_available/locked_players carried over from the previous file -- edit them manually if they need correcting.",
-  "last_synced_gw": 8
+  "last_synced_gw": 9,
+  "purchase_prices": {
+    "529": 4.9,
+    "115": 5.4,
+    "4": 8.0,
+    "279": 4.2,
+    "154": 9.8,
+    "428": 7.8,
+    "68": 6.6,
+    "124": 6.2,
+    "427": 7.9,
+    "106": 7.8,
+    "249": 5.6,
+    "82": 5.0,
+    "176": 4.0,
+    "8": 5.9,
+    "379": 9.2
+  }
 }
