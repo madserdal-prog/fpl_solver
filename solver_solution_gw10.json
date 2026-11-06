@@ -40,7 +40,7 @@
     "Kelleher",
     "Thiago",
     "De Cuyper",
-    "Groß",
+    "Palmer",
     "Barry",
     "Isak",
     "Mbeumo",
@@ -53,7 +53,7 @@
     82,
     106,
     115,
-    124,
+    154,
     249,
     379,
     427,
@@ -61,19 +61,19 @@
   ],
   "bench": [
     "Roefs",
+    "Groß",
     "Cunha",
-    "Dasilva",
-    "Palmer"
+    "Dasilva"
   ],
   "bench_ids": [
     529,
+    124,
     428,
-    176,
-    154
+    176
   ],
   "captain": "Gabriel",
   "captain_id": 4,
-  "vice_captain": "Barry",
+  "vice_captain": "Tavernier",
   "transfers_in": [
     "Van Hecke"
   ],
@@ -87,8 +87,8 @@
   "free_transfers_used": 1,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 65.11,
-  "horizon_expected_points": 297.65,
+  "expected_points": 65.44,
+  "horizon_expected_points": 297.98,
   "horizon_weeks": 5,
   "future_plan": [
     {
@@ -264,45 +264,100 @@
       "captain_id": 79
     }
   ],
-  "objective_value": 252.934,
-  "bench_points": 13.36,
+  "objective_value": 256.07,
+  "bench_points": 13.03,
   "squad_value": 99.1,
   "bank_remaining": 1.9,
   "risk_adjusted_players": [
-    "Calafiori",
-    "Tavernier",
-    "Palmer",
-    "Dasilva",
-    "Cunha"
+    "Groß",
+    "Isak"
   ],
   "blocked_from_captaincy_in_squad": [
-    "Calafiori",
-    "Tavernier",
-    "Palmer",
-    "Dasilva",
-    "Cunha"
+    "Groß",
+    "Isak"
   ],
   "price_momentum_notes": [
-    "Van Hecke looks likely to RISE in price soon (net +2.56% of managers this GW)",
-    "Ajayi looks likely to FALL in price soon (net -0.55% of managers this GW)"
+    "Van Hecke looks likely to RISE in price soon (net +2.72% of managers this GW)",
+    "Ajayi looks likely to FALL in price soon (net -0.59% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +13.36 pts (total 78.47). Restructuring specifically for Bench Boost instead: 78.17 pts (-0.3 vs. just boosting the normal squad).",
-  "agent_captain_review": null,
+  "bench_boost_note": "Boosting THIS week's normal bench: +13.03 pts (total 78.47). Restructuring specifically for Bench Boost instead: 78.47 pts (+0.0 vs. just boosting the normal squad).",
+  "agent_captain_review": {
+    "recommended_captain": "Tavernier",
+    "same_as_solver_top_pick": false,
+    "reasoning": "Gabriel is a defender, which carries a structurally low captaincy ceiling in FPL as a goal+assist+clean sheet combination is rare. Tavernier is a midfielder with comparable xp (6.16) and no such positional constraint, making him the better qualitative choice from the shortlist.",
+    "shortlist": [
+      {
+        "name": "Gabriel",
+        "xp": 6.78,
+        "price": 8.0,
+        "position": "DEF",
+        "minutes_this_season": 810,
+        "form": 8.2,
+        "points_per_game": 6.4,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Tavernier",
+        "xp": 6.16,
+        "price": 6.6,
+        "position": "MID",
+        "minutes_this_season": 750,
+        "form": 6.0,
+        "points_per_game": 6.1,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Barry",
+        "xp": 6.08,
+        "price": 5.6,
+        "position": "FWD",
+        "minutes_this_season": 761,
+        "form": 4.8,
+        "points_per_game": 4.3,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "De Cuyper",
+        "xp": 5.94,
+        "price": 5.4,
+        "position": "DEF",
+        "minutes_this_season": 741,
+        "form": 7.8,
+        "points_per_game": 7.7,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Mbeumo",
+        "xp": 5.58,
+        "price": 7.9,
+        "position": "MID",
+        "minutes_this_season": 810,
+        "form": 4.8,
+        "points_per_game": 4.9,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      }
+    ]
+  },
   "runner_up": {
     "transfers_in": [
-      "Van Hecke"
+      "Evanilson"
     ],
     "transfers_out": [
-      "Dasilva"
+      "Isak"
     ],
     "hit_cost": 0,
-    "gap": 0.02
+    "gap": 0.11
   },
   "chip_plan": {
-    "summary": "PLAY WILDCARD NOW (+23.6) | Plan (chips expire after GW18): Wildcard GW10 (+23.6), Free Hit GW11 (+5.0), Triple Captain GW16 (+6.8), Bench Boost GW17 (+17.2)",
+    "summary": "PLAY WILDCARD NOW (+21.6) | Plan (chips expire after GW18): Wildcard GW10 (+21.6), Free Hit GW11 (+5.0), Triple Captain GW16 (+6.8), Bench Boost GW17 (+17.2)",
     "play_now": "wildcard",
-    "play_now_value": 23.62,
+    "play_now_value": 21.55,
     "assignment": {
       "wildcard": 10,
       "free_hit": 11,
@@ -311,7 +366,7 @@
     },
     "values": {
       "wildcard": {
-        "10": 23.62,
+        "10": 21.55,
         "11": 12.0,
         "12": 12.0,
         "13": 12.0,
@@ -322,7 +377,7 @@
         "18": 12.0
       },
       "free_hit": {
-        "10": 8.01,
+        "10": 6.63,
         "11": 4.95,
         "12": 1.79,
         "13": 3.13,
@@ -333,7 +388,7 @@
         "18": 1.53
       },
       "bench_boost": {
-        "10": 8.19,
+        "10": 11.65,
         "11": 13.85,
         "12": 13.13,
         "13": 14.68,
@@ -364,9 +419,8 @@
         "Silva",
         "Vuskovic",
         "Rudoni",
-        "Rogers",
+        "Rice",
         "Iwobi",
-        "Dewsbury-Hall",
         "Haaland",
         "Evanilson"
       ],
@@ -376,7 +430,6 @@
         "Calafiori",
         "Dasilva",
         "Ajayi",
-        "Tavernier",
         "Palmer",
         "Groß",
         "Cunha",
@@ -387,10 +440,10 @@
       "starting_xi": [
         "Raya",
         "Gabriel",
+        "Tavernier",
         "Evanilson",
         "Silva",
         "De Cuyper",
-        "Vuskovic",
         "Barry",
         "Iwobi",
         "Haaland",

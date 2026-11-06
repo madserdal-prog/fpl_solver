@@ -2,68 +2,21 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Calafiori",
+        "player_id": 379,
+        "player_name": "Isak",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Arsenal star Riccardo Calafiori linked with bombshell exit following enquiry: report - FourFourTwo\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMivAFBVV95cUxPRVZsNzZic09va1B0UlNnVFJJTjFGTE9NQXRmQkYzd05mbDJuODQ3VDNNUk50UXlIQzlnV1RlWjQ4SERfRVl5aU83Zmc2dHVpcHdONHNEMVV0SE9HakxVUkpzM3hNOHZwTlh0cW45MU1nbjI3RTZHbDdCR1lTX1p6Qnd1SWZQZS1wVml1TXNiS0JjcjBmUVlMWjFfVkZ1YnhtQkVSNTY1RDgwQnpLNkd0U3JXLXBYYTgtYWNrNA?oc=5",
-        "recommendation": "monitor",
-        "news_evidence": true,
-        "player_id": 8
-      },
-      {
-        "player_name": "Tavernier",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Arsenal considering double Premier League transfer raid - Yahoo Sports\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMilAFBVV95cUxNUjdjdmY0WEpSeVBtWW11Nm5KUjVzWDN4MUxrX242TnFiMVhfaFdxaWVxSHZiSFlsYXcxVUdRdWljRmliX0VJOGhaMS1sZVljZm82enJYbWdqUTRHVDdZbXAyekJJQUFNbjNDZFVraFoxcmVUUFBRSUVodmpMUHk3ZHlhbXlsRndVbks4bTNEaFlhWjct?oc=5",
-        "recommendation": "monitor",
-        "news_evidence": true,
-        "player_id": 68
-      },
-      {
-        "player_name": "Palmer",
-        "risk_level": "high",
-        "reason": "Headline suggests a suspension: \"Cole Palmer sent off for first time, Chelsea reach unwanted red card milestone - ESPN\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdkdLWXZ5VFRzTmRnTF9NdFhBVklmTEIxZzVaRUJveWk3eVQyb3FxOTdwSHhsTXpTU09RM3FocFU5SXlGeV9CWmM5NlZLWVRZeV83dmhXYjZfTk5rTlY5aWp6NWlrU2RsZnJqMzNFaWpyNXZMMUdKQXRscHk2Vk9BemVkT3Z5b1A5ekZaZmNnNVRydnRYWTZydXB4NXhMc3p3a3NGZFg5Rlo?oc=5",
-        "recommendation": "avoid_start",
-        "news_evidence": true,
-        "player_id": 154
-      },
-      {
-        "player_name": "Dasilva",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Jay Dasilva - Player profile 26/27 - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMic0FVX3lxTE91UDk5OGJqaFAydHhBblZyUWFPUTJtM1NHSjF2cHVkcmlNRVlfRGM1QmJMeC1FdW9OeG96YmxfZ085WVNrRjB2Rm1lRzNGWkRITDJ3Y2lBdVNZLXpWRll6aUdVUTc1eW9odGxQb3hfbDNHVjA?oc=5",
-        "recommendation": "monitor",
-        "news_evidence": true,
-        "player_id": 176
-      },
-      {
-        "player_name": "Cunha",
-        "risk_level": "medium",
-        "reason": "Headline mentions injury-related terms: \"Man Utd News Today: Cunha Double, Carrick Future and Baleba Injury (5 November) - The False 9\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMieEFVX3lxTE8taHgzdHF5SUFHTzR0aVV3Umo1ODhDZnBHWHE3ZUlYSmhiNFZVeU82UnFFTnFvM0RubzF4UzBOMm9zX0ZEUzFFTVRqVFlvV0x4LW1UTmxQWFZnTWpWVjVDNTAwZlh1cXRlYkpLbmRlQlhTWGZPeVRqSw?oc=5",
-        "recommendation": "monitor",
-        "news_evidence": true,
-        "player_id": 428
+        "reason": "Iraola regularly manages his minutes due to injury history (often replaced late by Koumas); benched in midweek CL vs Fenerbahce (on at 66' and scored) to keep him fresh, so expected to start vs Palace but full 90 not guaranteed.",
+        "source": "Sky Sports 30 Oct; The False 9 4-5 Nov 2026",
+        "recommendation": "monitor"
       }
     ],
-    "summary": "Found 1 high-risk (Palmer) and 4 medium-risk (Calafiori, Tavernier, Dasilva, Cunha) based on FPL data and Google News headlines."
+    "summary": "The squad is largely clear of fresh injury, suspension or availability issues for GW10, with most players nailed starters and no flags in latest team news. Isak is the main exception due to persistent minutes management rather than a current injury. Arsenal pair Gabriel and Calafiori, Brighton assets, Palmer, Mbeumo/Cunha, Barry and the keepers all look set to start as expected."
   },
   "risk_penalty": {
-    "8": 0.3,
-    "68": 0.3,
-    "154": 0.7,
-    "176": 0.3,
-    "428": 0.3
+    "379": 0.3
   },
   "blocked_captain_ids": [
-    8,
-    68,
-    154,
-    176,
-    428
+    379
   ],
-  "unmatched_names": [],
-  "news_lookup_errors": [],
-  "news_systematically_blocked": false
+  "unmatched_names": []
 }
