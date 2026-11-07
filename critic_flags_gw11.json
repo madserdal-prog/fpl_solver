@@ -1,0 +1,47 @@
+{
+  "critic_output": {
+    "flags": [
+      {
+        "player_name": "Tavernier",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Premier League transfer LATEST: Newcastle want Toney, Arsenal & Man Utd track Tavernier - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi0gFBVV95cUxPQkZLaHUwdTZfX0RhWm0xSGd4NUZiY2U3UGJWLTBMTWMxbzNCd3BUMjlWVVJESTktNVAzMFpkMmFNNkNKc3BtcEtEbF9nZDVNTkV2aGxsTmozM3FKTGpfdFlBbTU3MFFiVWNwRFVxZ2FEVGxBT2hoeDBZZ08xbmtMWlc3RW9Jd2pfclJDMndJNVdCZEZDVE05ZUhEbk4zbkM2ckpIX0hJcHlnRXYyd0tYeVJnYTk2ZnVGRGFXUGhBTDY2Ri1VZzB3NW1JYkUtWG4tQmc?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true,
+        "player_id": 68
+      },
+      {
+        "player_name": "Rudoni",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"How Jack Rudoni is spearheading Coventry City’s Premier League survival bid - Squawka\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMihwFBVV95cUxOMjRfQjlyZ29BRVBScHF2dVozX19kdEFJeElpangwX1RJdU1VZFNfeDVMZlVyUTVPQTlZR2p4c0dtbnBSNVgtSl9ZYWNMOHBGejBwWlFQR2lWMjVpU2xPTWIzRExYZzJwQWwtZi1pbVNVZjVGVXZyRnJ4anBXVUFubW40N1lpZGc?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true,
+        "player_id": 183
+      },
+      {
+        "player_name": "Haaland",
+        "risk_level": "medium",
+        "reason": "Headline mentions injury-related terms: \"Enzo Maresca speaks out on Man City's reliance on Erling Haaland after Premier League setbacks - The Independent\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMimwFBVV95cUxNNEtzdWxUNE1Oal9GNDB2X2FNc2xMMzhVSEljc3hUREUzR2c5eW9SMmxxS0lTaTVWbDJHUUxCY0JsWWZ6Q19ZaEw4NXppNXp4LWpSVEJWTnRJNGUzUlFla3Eta3hNVWpqWVlmekVRVUtobGdNU2Z6OTVjU2xBbmdjSkpWMXpkamZURGVyaUY2Ty1xRk00aThsd19qOA?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true,
+        "player_id": 411
+      }
+    ],
+    "summary": "Found 3 medium-risk (Tavernier, Rudoni, Haaland) based on FPL data and Google News headlines."
+  },
+  "risk_penalty": {
+    "68": 0.3,
+    "183": 0.3,
+    "411": 0.3
+  },
+  "blocked_captain_ids": [
+    68,
+    183,
+    411
+  ],
+  "unmatched_names": [],
+  "news_lookup_errors": [],
+  "news_systematically_blocked": false
+}
