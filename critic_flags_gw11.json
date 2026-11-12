@@ -2,13 +2,49 @@
   "critic_output": {
     "flags": [
       {
-        "player_name": "Tavernier",
+        "player_name": "Rice",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Premier League transfer LATEST: Newcastle want Toney, Arsenal & Man Utd track Tavernier - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi0gFBVV95cUxPQkZLaHUwdTZfX0RhWm0xSGd4NUZiY2U3UGJWLTBMTWMxbzNCd3BUMjlWVVJESTktNVAzMFpkMmFNNkNKc3BtcEtEbF9nZDVNTkV2aGxsTmozM3FKTGpfdFlBbTU3MFFiVWNwRFVxZ2FEVGxBT2hoeDBZZ08xbmtMWlc3RW9Jd2pfclJDMndJNVdCZEZDVE05ZUhEbk4zbkM2ckpIX0hJcHlnRXYyd0tYeVJnYTk2ZnVGRGFXUGhBTDY2Ri1VZzB3NW1JYkUtWG4tQmc?oc=5",
+        "reason": "Headline mentions injury-related terms: \"Arsenal injury update: Rice, Saliba and Saka latest return dates - London Evening Standard\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMivwFBVV95cUxOVGV6d19tQmFhOTVBaWhjcTVMNkRQLXpLaEVIdkZnRVh6Y2FGUU9Bak1CTUlUeVBJdnBEdV9fbVVDdEd6a2ZXQ19EM3RqUkoyanNOa3pBWlhTaHdDOXk5YkJxUlZQQ0hRSjBJcDNPWHYwblNNQl9ramYweXFTbUF4VHd0RzdjUnJlQUpURDQ2TVdlZnlLMHMzZnQ1MGJYbUdsbE5KZzd6STJ0dzVlZVFyRmFpTXBCMVA2ZnlibGFJNA?oc=5",
         "recommendation": "monitor",
         "news_evidence": true,
-        "player_id": 68
+        "player_id": 13
+      },
+      {
+        "player_name": "N.Jackson",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Nicolas Jackson could smash record - Aston Villa's most expensive signings ranked - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWkYyQVI3VVl1QkQxMXNJVE1yaUVuOE4tQ0p4cEJPREJBS3NLMF9TMS05SHNjNmlMRTFHRGQwbl9GZnBXaGhwejBiYTlkT1FOSzFYdDh5WXFvOTNlcVlKMTRjZjBHMEhqdjhMWEJ0ckYtb0dIZFhqT2YzZmx4eTE4MzlISWhkYl9MUU80OXI1emJMZEpZanZ6TENHYm5SQko1NTFSdzFkdkpxTEF5N1hlbVJlUk5xYU1sVEN2OEJKeFJZdEE?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true,
+        "player_id": 166
+      },
+      {
+        "player_name": "Silva",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Bournemouth transfers: Benfica accept £26m offer for Antonio Silva - BBC\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiakFVX3lxTE1oTkdlR0lXdFAtZV9TUkFHajNSWVY5VFJTYTByUHdHV2dSbzNsUmtUZWRfRHI5QmtSdEhrcjNSYWVrU0JIV0V1VUkwcjg4Y19zbWY3RTRockhTd2JPYVJ2R3JoeTF4VzdhU1E?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true,
+        "player_id": 566
+      },
+      {
+        "player_name": "Verbruggen",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Liverpool Eye Verbruggen: Sunday Transfer Gossip Roundup - The False 9\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMinAFBVV95cUxQUzZRVERCcmdobHB4ekJDVEs2N192WUllWUVON0p0UHI3d1RZM3g5ZExBRFppenZjUXJYNGQ0WU8ydUdoNjdiOWtIbnpGV3Q0bFNKTVRCRVNYTnd5QWtOVmVCOHZ4WjI2VEcxdlNPUEdjLWpGVFRXNVdkR3RXRkVjRFFhR08xOTJ6MjljaEdIRXFjZUg4aTg5UXhqRVk?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true,
+        "player_id": 109
+      },
+      {
+        "player_name": "Vuskovic",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Liverpool eye sensational £85m bid for Premier League star - Liverpool FC\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMijwFBVV95cUxPM3RMZHA2NHFrY055YzBmeDlPaTNZd2d3V0g2S0lFMHNWU2dDVzc4UU54SHRSWl81U2FZNGFGVkRjT3E1NjgzLW1Ld1Rrb0NwWGk3cXJiR2d0RFhpSFpWVC1vOXVFMTdEYnhnYzQtVnZENEdKa00wWDJKUC1pdmdKa1ZDcGoyVlU2cjFuUUlYSQ?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true,
+        "player_id": 504
       },
       {
         "player_name": "Rudoni",
@@ -20,26 +56,34 @@
         "player_id": 183
       },
       {
-        "player_name": "Haaland",
+        "player_name": "Iwobi",
         "risk_level": "medium",
-        "reason": "Headline mentions injury-related terms: \"Enzo Maresca speaks out on Man City's reliance on Erling Haaland after Premier League setbacks - The Independent\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMimwFBVV95cUxNNEtzdWxUNE1Oal9GNDB2X2FNc2xMMzhVSEljc3hUREUzR2c5eW9SMmxxS0lTaTVWbDJHUUxCY0JsWWZ6Q19ZaEw4NXppNXp4LWpSVEJWTnRJNGUzUlFla3Eta3hNVWpqWVlmekVRVUtobGdNU2Z6OTVjU2xBbmdjSkpWMXpkamZURGVyaUY2Ty1xRk00aThsd19qOA?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Premier League exclusive club - Alex Iwobi joins icons with 100th Fulham league appearance - Transfermarkt\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMi0AFBVV95cUxNSEN1enJNOTNrRTB4R3VrQi1DTU1aUGExRGp0bndTWnJqajFEeVhaYTNrZ0U2azNmdDVZYnYtbkJjdWEwTGhONHc4ekJabHVfOUdKcnU2U2pEZGV5RFNzZUlIdFFKMHJsVkY3LUlGYWw5R0NrcTVxN3V6dTFFWkp5bVFLWGFwMHVMMlprRmxGRXlMcHhYOTYxLW1qMlVick8xQjdxVXAtUFFrOGpZTi1qYmtVZWhSMUFfbU5GQUhZYWwwWnFjbXZYVkZpWm5ucVly?oc=5",
         "recommendation": "monitor",
         "news_evidence": true,
-        "player_id": 411
+        "player_id": 261
       }
     ],
-    "summary": "Found 3 medium-risk (Tavernier, Rudoni, Haaland) based on FPL data and Google News headlines."
+    "summary": "Found 7 medium-risk (Rice, N.Jackson, Silva, Verbruggen, Vuskovic, Rudoni, Iwobi) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
-    "68": 0.3,
+    "13": 0.3,
+    "166": 0.3,
+    "566": 0.3,
+    "109": 0.3,
+    "504": 0.3,
     "183": 0.3,
-    "411": 0.3
+    "261": 0.3
   },
   "blocked_captain_ids": [
-    68,
+    13,
+    109,
+    166,
     183,
-    411
+    261,
+    504,
+    566
   ],
   "unmatched_names": [],
   "news_lookup_errors": [],
