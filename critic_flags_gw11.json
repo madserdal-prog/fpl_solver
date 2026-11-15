@@ -4,8 +4,8 @@
       {
         "player_name": "Rice",
         "risk_level": "medium",
-        "reason": "Headline mentions injury-related terms: \"Arsenal injury update: Rice, Saliba and Saka latest return dates - London Evening Standard\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMivwFBVV95cUxOVGV6d19tQmFhOTVBaWhjcTVMNkRQLXpLaEVIdkZnRVh6Y2FGUU9Bak1CTUlUeVBJdnBEdV9fbVVDdEd6a2ZXQ19EM3RqUkoyanNOa3pBWlhTaHdDOXk5YkJxUlZQQ0hRSjBJcDNPWHYwblNNQl9ramYweXFTbUF4VHd0RzdjUnJlQUpURDQ2TVdlZnlLMHMzZnQ1MGJYbUdsbE5KZzd6STJ0dzVlZVFyRmFpTXBCMVA2ZnlibGFJNA?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Rice gives verdict on £100m Arsenal transfer target after ‘contact made’ - London Evening Standard\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMilgFBVV95cUxNOHQ3OFpVTVZqTlVBT2tpRmF4SVJtMHc3R05XOE5KVGQ0QlNBbmJCajJIUV9pOHEtVGF6N0ZPclUteERwaFUzR0ZNUEx5eklBVjJUN0lOZ2NCbXdoeU5TZF9QclpmT0pJNkc0OFpBbXFSTXFZX2FUaHhSTnlSSW00WWZCX2hOdlJXaGNoVXFIY3dBTjdsekE?oc=5",
         "recommendation": "monitor",
         "news_evidence": true,
         "player_id": 13
@@ -14,10 +14,19 @@
         "player_name": "N.Jackson",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Nicolas Jackson could smash record - Aston Villa's most expensive signings ranked - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWkYyQVI3VVl1QkQxMXNJVE1yaUVuOE4tQ0p4cEJPREJBS3NLMF9TMS05SHNjNmlMRTFHRGQwbl9GZnBXaGhwejBiYTlkT1FOSzFYdDh5WXFvOTNlcVlKMTRjZjBHMEhqdjhMWEJ0ckYtb0dIZFhqT2YzZmx4eTE4MzlISWhkYl9MUU80OXI1emJMZEpZanZ6TENHYm5SQko1NTFSdzFkdkpxTEF5N1hlbVJlUk5xYU1sVEN2OEJKeFJZdEE?oc=5",
+        "source": "Google News: https://news.google.com/rss/articles/CBMixgFBVV95cUxOcER5OEpmT1ZkYkZMZUZqRm1qOEEzNlNkYng0TjJCcnNzWE5CVkdMQnFjaUpwczVHaHpUbFZrOXF4RXdNU3ZDNW9jdERSVnYwLUZkVTE0RV9vR0NrX2tBaDNoTUNzTFZwMkJHTHM3VWk0MTE4eTlaU0NHZS1DWWtiNGxROXJCcUJreU84bDQyeGVMVHhqcWxWSkg5eVRjRGtpbndIbkRoekp4Nm9lM0F1VW9UOG5qdHlkQ1QydEFHTm9saGZXQXc?oc=5",
         "recommendation": "monitor",
         "news_evidence": true,
         "player_id": 166
+      },
+      {
+        "player_name": "Tavernier",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Marcus Tavernier - transfermarkt.us\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMidkFVX3lxTE5lOVlrVVlMZ3l2MXpPc01lSVpnTEtOOHFta05MbWtpRW93bWhCNFNtZmhjeE9ac0hoUmdmS0p1SnVQMDA5bFhhV2ZVUV9ydUNKdUJNT1RUdzVTQlNORGVfZzFpaVByQTgtNkdaTmk5MXpsa2I4SXc?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true,
+        "player_id": 68
       },
       {
         "player_name": "Silva",
@@ -29,59 +38,39 @@
         "player_id": 566
       },
       {
-        "player_name": "Verbruggen",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Liverpool Eye Verbruggen: Sunday Transfer Gossip Roundup - The False 9\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMinAFBVV95cUxQUzZRVERCcmdobHB4ekJDVEs2N192WUllWUVON0p0UHI3d1RZM3g5ZExBRFppenZjUXJYNGQ0WU8ydUdoNjdiOWtIbnpGV3Q0bFNKTVRCRVNYTnd5QWtOVmVCOHZ4WjI2VEcxdlNPUEdjLWpGVFRXNVdkR3RXRkVjRFFhR08xOTJ6MjljaEdIRXFjZUg4aTg5UXhqRVk?oc=5",
-        "recommendation": "monitor",
-        "news_evidence": true,
-        "player_id": 109
-      },
-      {
         "player_name": "Vuskovic",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Liverpool eye sensational £85m bid for Premier League star - Liverpool FC\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMijwFBVV95cUxPM3RMZHA2NHFrY055YzBmeDlPaTNZd2d3V0g2S0lFMHNWU2dDVzc4UU54SHRSWl81U2FZNGFGVkRjT3E1NjgzLW1Ld1Rrb0NwWGk3cXJiR2d0RFhpSFpWVC1vOXVFMTdEYnhnYzQtVnZENEdKa00wWDJKUC1pdmdKa1ZDcGoyVlU2cjFuUUlYSQ?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Liverpool shortlist Luka Vuskovic in £80million-plus deal - but Anfield is not Brighton star's dream transfer - The Sun\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMioAFBVV95cUxOY05EUVZIak9lRlc4RTZITzkzYk1WeUstRy1FT0ZMNDk5YWhpYktwTWxwRkdvZUNxRmFJRm1Gc1lwV0tXSVFUT0FBWnRfYnlCcEpfWmZ4NFdMU2hNQjQ2SkhSdk9PZkpxVDFvRHRpdHprd2JOUVRDWHM1WEQxRy13RWxoTEpNQW9WQlFxZzhDSEo0N1h2c0NoV2RQZ1hPb2ZN?oc=5",
         "recommendation": "monitor",
         "news_evidence": true,
         "player_id": 504
       },
       {
-        "player_name": "Rudoni",
+        "player_name": "Van Hecke",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"How Jack Rudoni is spearheading Coventry City’s Premier League survival bid - Squawka\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMihwFBVV95cUxOMjRfQjlyZ29BRVBScHF2dVozX19kdEFJeElpangwX1RJdU1VZFNfeDVMZlVyUTVPQTlZR2p4c0dtbnBSNVgtSl9ZYWNMOHBGejBwWlFQR2lWMjVpU2xPTWIzRExYZzJwQWwtZi1pbVNVZjVGVXZyRnJ4anBXVUFubW40N1lpZGc?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"FPL player price changes - risers, fallers and top transfers for Gameweek 11 - Premier League\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiuwFBVV95cUxQMXROZF9qR3M0al9OOVJaMzlKQ1N3QWZXNXAxa2tRVGl1NFBBNXhoUmFPdnRnNk9HbGVlZjJpUjVGcFljbWJfaXl2Vk9qazdEWURybUVBcEdWSmtTNzdVMzdTd2wwVjlYSW1ubjJTRl94SVhpRU1RcHktNy1oaXhVM3d6ak9mS3VUSTZxaXEyTjEzbUJBbUR3TEw4OEFSYXpRX3RkMXdERkhGb01Dc3Q0dDdUMGxtTzhGM0xn?oc=5",
         "recommendation": "monitor",
         "news_evidence": true,
-        "player_id": 183
-      },
-      {
-        "player_name": "Iwobi",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Premier League exclusive club - Alex Iwobi joins icons with 100th Fulham league appearance - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMi0AFBVV95cUxNSEN1enJNOTNrRTB4R3VrQi1DTU1aUGExRGp0bndTWnJqajFEeVhaYTNrZ0U2azNmdDVZYnYtbkJjdWEwTGhONHc4ekJabHVfOUdKcnU2U2pEZGV5RFNzZUlIdFFKMHJsVkY3LUlGYWw5R0NrcTVxN3V6dTFFWkp5bVFLWGFwMHVMMlprRmxGRXlMcHhYOTYxLW1qMlVick8xQjdxVXAtUFFrOGpZTi1qYmtVZWhSMUFfbU5GQUhZYWwwWnFjbXZYVkZpWm5ucVly?oc=5",
-        "recommendation": "monitor",
-        "news_evidence": true,
-        "player_id": 261
+        "player_id": 112
       }
     ],
-    "summary": "Found 7 medium-risk (Rice, N.Jackson, Silva, Verbruggen, Vuskovic, Rudoni, Iwobi) based on FPL data and Google News headlines."
+    "summary": "Found 6 medium-risk (Rice, N.Jackson, Tavernier, Silva, Vuskovic, Van Hecke) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
     "13": 0.3,
     "166": 0.3,
+    "68": 0.3,
     "566": 0.3,
-    "109": 0.3,
     "504": 0.3,
-    "183": 0.3,
-    "261": 0.3
+    "112": 0.3
   },
   "blocked_captain_ids": [
     13,
-    109,
+    68,
+    112,
     166,
-    183,
-    261,
     504,
     566
   ],

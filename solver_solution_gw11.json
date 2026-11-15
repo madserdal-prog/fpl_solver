@@ -36,44 +36,44 @@
   "starting_xi": [
     "Raya",
     "Gabriel",
-    "Tavernier",
     "Evanilson",
     "De Cuyper",
     "Rudoni",
     "Barry",
     "Wirtz",
     "Haaland",
+    "Mbeumo",
     "Van Hecke",
     "E.Le Fée"
   ],
   "starting_xi_ids": [
     1,
     4,
-    68,
     79,
     115,
     183,
     249,
     366,
     411,
+    427,
     112,
     542
   ],
   "bench": [
     "Verbruggen",
+    "Tavernier",
     "Vuskovic",
-    "Silva",
-    "Mbeumo"
+    "Silva"
   ],
   "bench_ids": [
     109,
+    68,
     504,
-    566,
-    427
+    566
   ],
   "captain": "Gabriel",
   "captain_id": 4,
-  "vice_captain": "Van Hecke",
+  "vice_captain": "Barry",
   "transfers_in": [
     "E.Le Fée",
     "Wirtz"
@@ -83,15 +83,15 @@
     "Rice"
   ],
   "transfer_point_gains": [
-    4.55,
+    5.95,
     3.09
   ],
   "transfers_made": 2,
   "free_transfers_used": 2,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 71.43,
-  "horizon_expected_points": 316.83,
+  "expected_points": 70.06,
+  "horizon_expected_points": 316.58,
   "horizon_weeks": 5,
   "future_plan": [
     {
@@ -252,67 +252,65 @@
       "captain_id": 4
     }
   ],
-  "objective_value": 274.546,
-  "bench_points": 19.73,
+  "objective_value": 274.294,
+  "bench_points": 21.38,
   "squad_value": 99.7,
   "bank_remaining": 1.0,
   "risk_adjusted_players": [
+    "Tavernier",
     "Silva",
-    "Verbruggen",
     "Vuskovic",
-    "Rudoni",
     "Haaland",
-    "Mbeumo"
+    "Van Hecke"
   ],
   "blocked_from_captaincy_in_squad": [
     "Silva",
-    "Verbruggen",
-    "Rudoni",
+    "Tavernier",
+    "Van Hecke",
     "Haaland",
-    "Mbeumo",
     "Vuskovic"
   ],
   "price_momentum_notes": [
-    "E.Le Fée looks likely to RISE in price soon (net +0.08% of managers this GW)",
-    "Wirtz looks likely to RISE in price soon (net +0.39% of managers this GW)"
+    "E.Le Fée looks likely to RISE in price soon (net +0.11% of managers this GW)",
+    "Wirtz looks likely to RISE in price soon (net +0.46% of managers this GW)"
   ],
   "fixture_difficulty_notes": [],
-  "bench_boost_note": "Boosting THIS week's normal bench: +19.73 pts (total 91.16). Restructuring specifically for Bench Boost instead: 91.16 pts (+0.0 vs. just boosting the normal squad).",
+  "bench_boost_note": "Boosting THIS week's normal bench: +21.38 pts (total 91.44). Restructuring specifically for Bench Boost instead: 90.43 pts (-1.01 vs. just boosting the normal squad).",
   "agent_captain_review": null,
   "runner_up": {
     "transfers_in": [
-      "E.Le Fée",
-      "Wirtz"
+      "Hill",
+      "E.Le Fée"
     ],
     "transfers_out": [
-      "Mbeumo",
-      "Iwobi"
+      "Silva",
+      "Rice"
     ],
     "hit_cost": 0,
-    "gap": 0.44
+    "gap": 0.15
   },
   "chip_plan": {
-    "summary": "PLAY FREE HIT NOW (+2.8) | Plan (chips expire after GW18): Free Hit GW11 (+2.8), Bench Boost GW15 (+19.2), Triple Captain GW17 (+7.1)",
+    "summary": "PLAY FREE HIT NOW (+3.3) | Plan (chips expire after GW18): Free Hit GW11 (+3.3), Bench Boost GW15 (+19.2), Triple Captain GW16 (+7.2)",
     "play_now": "free_hit",
-    "play_now_value": 2.82,
+    "play_now_value": 3.32,
     "assignment": {
       "free_hit": 11,
       "bench_boost": 15,
-      "triple_captain": 17
+      "triple_captain": 16
     },
     "values": {
       "free_hit": {
-        "11": 2.82,
+        "11": 3.32,
         "12": 0.68,
-        "13": 0.8,
-        "14": 0.78,
+        "13": 0.64,
+        "14": 1.04,
         "15": 1.26,
         "16": 2.0,
         "17": 1.05,
         "18": 0.53
       },
       "bench_boost": {
-        "11": 13.81,
+        "11": 16.27,
         "12": 18.75,
         "13": 18.0,
         "14": 18.44,
@@ -327,7 +325,7 @@
         "13": 6.46,
         "14": 6.78,
         "15": 6.56,
-        "16": 6.97,
+        "16": 7.25,
         "17": 7.08,
         "18": 6.87
       }
@@ -335,23 +333,23 @@
     "deadline_gw": 18,
     "play_now_squad": {
       "transfers_in": [
-        "Trafford",
         "Hill",
         "Konsa",
+        "Muharemović",
         "E.Le Fée",
         "Wirtz",
         "Groß",
-        "Ayari",
+        "McGinn",
         "Isak"
       ],
       "transfers_out": [
-        "Verbruggen",
+        "Van Hecke",
         "Vuskovic",
         "Silva",
-        "Rudoni",
-        "Rice",
         "Iwobi",
         "Mbeumo",
+        "Tavernier",
+        "Rice",
         "Haaland"
       ],
       "captain": "Gabriel",
@@ -360,12 +358,12 @@
         "Gabriel",
         "Konsa",
         "Hill",
-        "Tavernier",
         "Evanilson",
+        "De Cuyper",
+        "Rudoni",
         "Barry",
         "Wirtz",
         "Isak",
-        "Van Hecke",
         "E.Le Fée"
       ]
     }
