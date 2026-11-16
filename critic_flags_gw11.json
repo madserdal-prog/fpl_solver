@@ -11,15 +11,6 @@
         "player_id": 13
       },
       {
-        "player_name": "N.Jackson",
-        "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"Nicolas Jackson could smash record - Aston Villa's most expensive signings ranked - Transfermarkt\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMixgFBVV95cUxOcER5OEpmT1ZkYkZMZUZqRm1qOEEzNlNkYng0TjJCcnNzWE5CVkdMQnFjaUpwczVHaHpUbFZrOXF4RXdNU3ZDNW9jdERSVnYwLUZkVTE0RV9vR0NrX2tBaDNoTUNzTFZwMkJHTHM3VWk0MTE4eTlaU0NHZS1DWWtiNGxROXJCcUJreU84bDQyeGVMVHhqcWxWSkg5eVRjRGtpbndIbkRoekp4Nm9lM0F1VW9UOG5qdHlkQ1QydEFHTm9saGZXQXc?oc=5",
-        "recommendation": "monitor",
-        "news_evidence": true,
-        "player_id": 166
-      },
-      {
         "player_name": "Tavernier",
         "risk_level": "medium",
         "reason": "Headline suggests an active transfer situation: \"Marcus Tavernier - transfermarkt.us\"",
@@ -47,30 +38,39 @@
         "player_id": 504
       },
       {
+        "player_name": "Rudoni",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Coventry Midfielder Emerges on Newcastle Radar Ahead of January Transfer Window - Yahoo Sports\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMilwFBVV95cUxQVE1OeTNHQVM1bjBnVzMtaTdTQ09sOHNFTXRudDNpV21jQTJmNHJobjB4YlNFVF9wODhGYXNEVFhHU2ZFWHh2S3dsbkpqWnhMT2UwRGRJT1lXSi02c0tJR2Q0MUp2RzVJd0xPUGdOTk9sMVpFWGtNZnc2T0I1OHpKNm9sWDRoeElacUhyalJXX2FlZ0p1VEU4?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true,
+        "player_id": 183
+      },
+      {
         "player_name": "Van Hecke",
         "risk_level": "medium",
-        "reason": "Headline suggests an active transfer situation: \"FPL player price changes - risers, fallers and top transfers for Gameweek 11 - Premier League\"",
-        "source": "Google News: https://news.google.com/rss/articles/CBMiuwFBVV95cUxQMXROZF9qR3M0al9OOVJaMzlKQ1N3QWZXNXAxa2tRVGl1NFBBNXhoUmFPdnRnNk9HbGVlZjJpUjVGcFljbWJfaXl2Vk9qazdEWURybUVBcEdWSmtTNzdVMzdTd2wwVjlYSW1ubjJTRl94SVhpRU1RcHktNy1oaXhVM3d6ak9mS3VUSTZxaXEyTjEzbUJBbUR3TEw4OEFSYXpRX3RkMXdERkhGb01Dc3Q0dDdUMGxtTzhGM0xn?oc=5",
+        "reason": "Headline suggests an active transfer situation: \"Jan Paul van Hecke reflects on Tottenham start and reveals Roberto De Zerbi's role in transfer - Football London\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMilAFBVV95cUxNb3JuWC1wdWhINkh2OXVPbzgyXzVBd09LclVQN2daOVg5X1AwSVZ1Nnl2b0NDMjgwbmJGTHNDNUNSdEdFaHUwRkMwNV9nbHVyRE0wR2dvMTJhNVNEUkZud3pwZlEzZ2xfcFFXZUlkRHJsYUstYW5NRE1BUl9yVUxnVFR6M2xqa2VvbWFFM3ZxSV9URS1K0gGaAUFVX3lxTE8xcGdDZTREMHNtc2xEYUlGUGJ0OFdCTVRUbGFwa2NJR0pOVnZ2NGdXRDB6TU1NZlFTcVJ0My1JNXpVSTFQRHJMeFFpN3M1QnZLVFY2dGM2UGVyUXA0VTN3cFFPMXR2bk9WS0hRWVRaRU5iTnJ5bTA5ZW1JbTVLNkJvamJqTng5a2ZIVWcyRXU0WXBETzNSaUMtRkE?oc=5",
         "recommendation": "monitor",
         "news_evidence": true,
         "player_id": 112
       }
     ],
-    "summary": "Found 6 medium-risk (Rice, N.Jackson, Tavernier, Silva, Vuskovic, Van Hecke) based on FPL data and Google News headlines."
+    "summary": "Found 6 medium-risk (Rice, Tavernier, Silva, Vuskovic, Rudoni, Van Hecke) based on FPL data and Google News headlines."
   },
   "risk_penalty": {
     "13": 0.3,
-    "166": 0.3,
     "68": 0.3,
     "566": 0.3,
     "504": 0.3,
+    "183": 0.3,
     "112": 0.3
   },
   "blocked_captain_ids": [
     13,
     68,
     112,
-    166,
+    183,
     504,
     566
   ],
