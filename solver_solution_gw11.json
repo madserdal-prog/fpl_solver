@@ -2,6 +2,7 @@
   "squad": [
     "Raya",
     "Gabriel",
+    "Rice",
     "N.Jackson",
     "Tavernier",
     "Evanilson",
@@ -11,7 +12,6 @@
     "Vuskovic",
     "Rudoni",
     "Barry",
-    "Iwobi",
     "Mbeumo",
     "Van Hecke",
     "E.Le Fée"
@@ -19,6 +19,7 @@
   "squad_ids": [
     1,
     4,
+    13,
     166,
     68,
     79,
@@ -28,7 +29,6 @@
     504,
     183,
     249,
-    261,
     427,
     112,
     542
@@ -39,10 +39,10 @@
     "N.Jackson",
     "Tavernier",
     "Evanilson",
+    "Silva",
     "De Cuyper",
+    "Rudoni",
     "Barry",
-    "Iwobi",
-    "Mbeumo",
     "Van Hecke",
     "E.Le Fée"
   ],
@@ -52,46 +52,46 @@
     166,
     68,
     79,
+    566,
     115,
+    183,
     249,
-    261,
-    427,
     112,
     542
   ],
   "bench": [
     "Verbruggen",
-    "Rudoni",
     "Vuskovic",
-    "Silva"
+    "Rice",
+    "Mbeumo"
   ],
   "bench_ids": [
     109,
-    183,
     504,
-    566
+    13,
+    427
   ],
-  "captain": "Gabriel",
-  "captain_id": 4,
-  "vice_captain": "Barry",
+  "captain": "Van Hecke",
+  "captain_id": 112,
+  "vice_captain": "Gabriel",
   "transfers_in": [
     "E.Le Fée",
     "N.Jackson"
   ],
   "transfers_out": [
-    "Rice",
+    "Iwobi",
     "Haaland"
   ],
   "transfer_point_gains": [
-    6.45,
-    0.0
+    10.52,
+    7.5
   ],
   "transfers_made": 2,
   "free_transfers_used": 2,
   "hit_taken": 0,
   "hit_cost": 0,
-  "expected_points": 68.71,
-  "horizon_expected_points": 315.44,
+  "expected_points": 72.46,
+  "horizon_expected_points": 325.49,
   "horizon_weeks": 5,
   "future_plan": [
     {
@@ -99,14 +99,13 @@
       "free_transfers_available": 1,
       "transfers": [
         [
-          "B.Fernandes",
-          "Iwobi"
+          "Trafford",
+          "Verbruggen"
         ]
       ],
       "hit_cost": 0,
       "captain": "Barry",
       "starting_xi_ids": [
-        1,
         4,
         166,
         68,
@@ -115,22 +114,23 @@
         115,
         504,
         249,
+        385,
         112,
         542
       ],
       "squad_ids": [
         1,
         4,
+        13,
         166,
         68,
         79,
         566,
-        109,
         115,
         504,
         183,
         249,
-        426,
+        385,
         427,
         112,
         542
@@ -140,35 +140,40 @@
     {
       "week_offset": 2,
       "free_transfers_available": 1,
-      "transfers": [],
+      "transfers": [
+        [
+          "McGinn",
+          "Rice"
+        ]
+      ],
       "hit_cost": 0,
       "captain": "Barry",
       "starting_xi_ids": [
-        1,
         4,
+        45,
         166,
         68,
         79,
         566,
-        504,
         183,
         249,
+        385,
         112,
         542
       ],
       "squad_ids": [
         1,
         4,
+        45,
         166,
         68,
         79,
         566,
-        109,
         115,
         504,
         183,
         249,
-        426,
+        385,
         427,
         112,
         542
@@ -177,35 +182,40 @@
     },
     {
       "week_offset": 3,
-      "free_transfers_available": 2,
-      "transfers": [],
+      "free_transfers_available": 1,
+      "transfers": [
+        [
+          "B.Fernandes",
+          "Rudoni"
+        ]
+      ],
       "hit_cost": 0,
       "captain": "Barry",
       "starting_xi_ids": [
-        1,
         4,
+        45,
         166,
         68,
         79,
         566,
         249,
+        385,
         426,
-        427,
         112,
         542
       ],
       "squad_ids": [
         1,
         4,
+        45,
         166,
         68,
         79,
         566,
-        109,
         115,
         504,
-        183,
         249,
+        385,
         426,
         427,
         112,
@@ -215,18 +225,18 @@
     },
     {
       "week_offset": 4,
-      "free_transfers_available": 3,
+      "free_transfers_available": 1,
       "transfers": [],
       "hit_cost": 0,
       "captain": "Gabriel",
       "starting_xi_ids": [
-        1,
         4,
         166,
         79,
         115,
         504,
         249,
+        385,
         426,
         427,
         112,
@@ -235,15 +245,15 @@
       "squad_ids": [
         1,
         4,
+        45,
         166,
         68,
         79,
         566,
-        109,
         115,
         504,
-        183,
         249,
+        385,
         426,
         427,
         112,
@@ -252,127 +262,138 @@
       "captain_id": 4
     }
   ],
-  "objective_value": 273.148,
-  "bench_points": 21.26,
-  "squad_value": 89.2,
-  "bank_remaining": 11.5,
-  "risk_adjusted_players": [
-    "Tavernier",
-    "Silva",
-    "Vuskovic",
-    "Rudoni",
-    "Van Hecke"
-  ],
-  "blocked_from_captaincy_in_squad": [
-    "Silva",
-    "Tavernier",
-    "Van Hecke",
-    "Rudoni",
-    "Vuskovic"
-  ],
+  "objective_value": 285.164,
+  "bench_points": 17.56,
+  "squad_value": 91.3,
+  "bank_remaining": 9.3,
+  "risk_adjusted_players": [],
+  "blocked_from_captaincy_in_squad": [],
   "price_momentum_notes": [
-    "E.Le Fée looks likely to RISE in price soon (net +0.11% of managers this GW)",
-    "N.Jackson looks likely to RISE in price soon (net +2.95% of managers this GW)",
-    "Haaland looks likely to FALL in price soon (net -0.24% of managers this GW)"
+    "E.Le Fée looks likely to RISE in price soon (net +0.29% of managers this GW)",
+    "N.Jackson looks likely to RISE in price soon (net +6.34% of managers this GW)",
+    "Iwobi looks likely to FALL in price soon (net -0.11% of managers this GW)",
+    "Haaland looks likely to FALL in price soon (net -0.20% of managers this GW)"
   ],
   "fixture_difficulty_notes": [
     "N.Jackson has an EASY run of fixtures over the next 5 GWs (avg FDR 2.2) -- already priced into the 5-GW projection"
   ],
-  "bench_boost_note": "Boosting THIS week's normal bench: +21.26 pts (total 89.97). Restructuring specifically for Bench Boost instead: 89.97 pts (+0.0 vs. just boosting the normal squad).",
-  "agent_captain_review": null,
+  "bench_boost_note": "Boosting THIS week's normal bench: +17.56 pts (total 90.02). Restructuring specifically for Bench Boost instead: 90.82 pts (+0.8 vs. just boosting the normal squad).",
+  "agent_captain_review": {
+    "recommended_captain": "Van Hecke",
+    "same_as_solver_top_pick": true,
+    "reasoning": "Van Hecke has the highest xp and full-season minutes with no small-sample concerns. No qualitative factors in the shortlist (such as injury risk or structural positional limits) differentiate him enough from the near-identical xp alternatives to override the solver ranking.",
+    "shortlist": [
+      {
+        "name": "Van Hecke",
+        "xp": 7.0,
+        "price": 5.1,
+        "position": "DEF",
+        "minutes_this_season": 900,
+        "form": 8.7,
+        "points_per_game": 5.7,
+        "status": "a",
+        "chance_of_playing_next_round": 100
+      },
+      {
+        "name": "Gabriel",
+        "xp": 6.91,
+        "price": 8.1,
+        "position": "DEF",
+        "minutes_this_season": 900,
+        "form": 10.3,
+        "points_per_game": 6.6,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "Barry",
+        "xp": 6.86,
+        "price": 5.7,
+        "position": "FWD",
+        "minutes_this_season": 851,
+        "form": 9.0,
+        "points_per_game": 5.5,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "N.Jackson",
+        "xp": 6.71,
+        "price": 7.2,
+        "position": "FWD",
+        "minutes_this_season": 722,
+        "form": 11.0,
+        "points_per_game": 6.0,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      },
+      {
+        "name": "E.Le Fée",
+        "xp": 6.12,
+        "price": 5.7,
+        "position": "MID",
+        "minutes_this_season": 863,
+        "form": 7.3,
+        "points_per_game": 4.6,
+        "status": "a",
+        "chance_of_playing_next_round": null
+      }
+    ]
+  },
   "runner_up": {
     "transfers_in": [
       "E.Le Fée",
-      "Wirtz"
+      "N.Jackson"
     ],
     "transfers_out": [
-      "Iwobi",
-      "Rice"
+      "Rice",
+      "Haaland"
     ],
     "hit_cost": 0,
-    "gap": 0.52
+    "gap": 0.15
   },
   "chip_plan": {
-    "summary": "PLAY FREE HIT NOW (+4.1) | Plan (chips expire after GW18): Free Hit GW11 (+4.1), Bench Boost GW15 (+19.2), Triple Captain GW16 (+7.2)",
-    "play_now": "free_hit",
-    "play_now_value": 4.08,
+    "summary": "No chip this week | Plan (chips expire after GW18): Triple Captain GW16 (+7.5), Free Hit GW17 (+1.9), Bench Boost GW18 (+18.6)",
+    "play_now": null,
+    "play_now_value": 0.0,
     "assignment": {
-      "free_hit": 11,
-      "bench_boost": 15,
+      "free_hit": 17,
+      "bench_boost": 18,
       "triple_captain": 16
     },
     "values": {
       "free_hit": {
-        "11": 4.08,
-        "12": 0.68,
-        "13": 1.11,
-        "14": 0.84,
-        "15": 0.78,
-        "16": 2.0,
-        "17": 1.14,
-        "18": 0.45
+        "11": 0.81,
+        "12": 1.16,
+        "13": 1.08,
+        "14": 0.51,
+        "15": 1.07,
+        "16": 0.58,
+        "17": 1.92,
+        "18": 0.84
       },
       "bench_boost": {
-        "11": 16.19,
-        "12": 18.84,
-        "13": 17.89,
-        "14": 18.63,
-        "15": 19.17,
-        "16": 16.4,
-        "17": 18.43,
-        "18": 19.1
+        "11": 17.56,
+        "12": 17.1,
+        "13": 17.31,
+        "14": 18.34,
+        "15": 18.44,
+        "16": 16.45,
+        "17": 18.27,
+        "18": 18.62
       },
       "triple_captain": {
-        "11": 6.74,
-        "12": 6.47,
-        "13": 6.46,
-        "14": 6.78,
-        "15": 6.56,
-        "16": 7.25,
-        "17": 7.08,
-        "18": 6.87
+        "11": 7.0,
+        "12": 7.09,
+        "13": 7.09,
+        "14": 7.41,
+        "15": 6.73,
+        "16": 7.53,
+        "17": 7.71,
+        "18": 6.97
       }
     },
     "deadline_gw": 18,
-    "play_now_squad": {
-      "transfers_in": [
-        "Trafford",
-        "Hill",
-        "Konsa",
-        "Muharemović",
-        "E.Le Fée",
-        "Wirtz",
-        "Groß",
-        "McGinn",
-        "Ayari",
-        "N.Jackson"
-      ],
-      "transfers_out": [
-        "Verbruggen",
-        "Van Hecke",
-        "Vuskovic",
-        "Silva",
-        "Iwobi",
-        "Mbeumo",
-        "Tavernier",
-        "Rudoni",
-        "Rice",
-        "Haaland"
-      ],
-      "captain": "Gabriel",
-      "starting_xi": [
-        "Raya",
-        "Gabriel",
-        "Konsa",
-        "N.Jackson",
-        "Hill",
-        "Evanilson",
-        "De Cuyper",
-        "Groß",
-        "Barry",
-        "Wirtz",
-        "E.Le Fée"
-      ]
-    }
+    "play_now_squad": null
   }
 }
