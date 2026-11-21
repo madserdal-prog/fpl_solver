@@ -1,9 +1,58 @@
 {
   "critic_output": {
-    "flags": [],
-    "summary": "No significant recent injuries, suspensions, confirmed rest, or active transfer sagas that would affect minutes this round were found for any player in the squad. All appear available and are expected to start based on the latest team news and predicted line-ups from the past 1-2 weeks."
+    "flags": [
+      {
+        "player_name": "Tavernier",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Transfer rumors, news: Man United, Arsenal eye Bournemouth's Tavernier - ESPN\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiygFBVV95cUxNQ1VHUlhKcW5xb3FWYWViRDMxX3ZEaEtzSWxsNm1QUXFwdDBSaUJPOHFSNjJ3bTBDMU9vaEdKNlA0M1hPdWxhMFRyRGJZTGRvOEpySXRyTjFWTDVLdHE2UGs4X1E2ZTAyTExPQTFndVFPeUdBRGt4cFhFMVRZdFNTWk1xM2hodC1aeUx2NHdnUzJRd1F2c0xiUFhGb1pNWG4tRmJtWEhiRmo3WElQVldoZ2pxT21fRldKSk16elJ5U0RHMmtfWjZaMGFB?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true,
+        "player_id": 68
+      },
+      {
+        "player_name": "Silva",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Bournemouth transfers: Portugal defender Antonio Silva joins Cherries - BBC\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9KQlNpZC0xRkJWV2hFZXBnUjVPX2EyQnpXaEZkUDVHdGpKVzEtaGdvc0x2MVlnaVN4dUFRei03cFZ3Y19tUEZveUhWeU16ZXVacHNWd0RXODFIV0dMNkNPc2NMZ1Y0YTA?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true,
+        "player_id": 566
+      },
+      {
+        "player_name": "Vuskovic",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"Liverpool eye sensational £85m bid for Premier League star - Liverpool FC\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMijwFBVV95cUxPM3RMZHA2NHFrY055YzBmeDlPaTNZd2d3V0g2S0lFMHNWU2dDVzc4UU54SHRSWl81U2FZNGFGVkRjT3E1NjgzLW1Ld1Rrb0NwWGk3cXJiR2d0RFhpSFpWVC1vOXVFMTdEYnhnYzQtVnZENEdKa00wWDJKUC1pdmdKa1ZDcGoyVlU2cjFuUUlYSQ?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true,
+        "player_id": 504
+      },
+      {
+        "player_name": "Rudoni",
+        "risk_level": "medium",
+        "reason": "Headline suggests an active transfer situation: \"How Jack Rudoni is spearheading Coventry City’s Premier League survival bid - Squawka\"",
+        "source": "Google News: https://news.google.com/rss/articles/CBMihwFBVV95cUxOMjRfQjlyZ29BRVBScHF2dVozX19kdEFJeElpangwX1RJdU1VZFNfeDVMZlVyUTVPQTlZR2p4c0dtbnBSNVgtSl9ZYWNMOHBGejBwWlFQR2lWMjVpU2xPTWIzRExYZzJwQWwtZi1pbVNVZjVGVXZyRnJ4anBXVUFubW40N1lpZGc?oc=5",
+        "recommendation": "monitor",
+        "news_evidence": true,
+        "player_id": 183
+      }
+    ],
+    "summary": "Found 4 medium-risk (Tavernier, Silva, Vuskovic, Rudoni) based on FPL data and Google News headlines."
   },
-  "risk_penalty": {},
-  "blocked_captain_ids": [],
-  "unmatched_names": []
+  "risk_penalty": {
+    "68": 0.3,
+    "566": 0.3,
+    "504": 0.3,
+    "183": 0.3
+  },
+  "blocked_captain_ids": [
+    68,
+    183,
+    504,
+    566
+  ],
+  "unmatched_names": [],
+  "news_lookup_errors": [],
+  "news_systematically_blocked": false
 }
